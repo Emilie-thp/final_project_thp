@@ -27,9 +27,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_111139) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
-    t.index ["first_name"], name: "index_admins_on_first_name"
-    t.index ["last_name"], name: "index_admins_on_last_name"
-    t.index ["pseudo"], name: "index_admins_on_pseudo", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
