@@ -64,3 +64,5 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 
 gem "letter_opener", "~> 1.7"
+
+gem "dotenv-rails", "~> 2.7"
