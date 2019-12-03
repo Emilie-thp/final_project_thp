@@ -2,8 +2,8 @@
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.
  *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ * Any CSS and SCSS file within this directory, lib/stylesheets, or any plugin's
+ * vendor/stylesheets directory can be referenced here using a relative path.
  *
  * You're free to add application-wide styles to this file and they'll appear at the bottom of the
  * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
@@ -12,54 +12,54 @@
  *
  *= require_tree .
  *= require_self
- *= require assets/style
- *= require assets/style/css/color/aqua
- *= require assets/style/css/color/blue
- *= require assets/style/css/color/brown
- *= require assets/style/css/color/forest
- *= require assets/style/css/color/green
- *= require assets/style/css/color/ice
- *= require assets/style/css/color/navy
- *= require assets/style/css/color/oasis
- *= require assets/style/css/color/orange
- *= require assets/style/css/color/pink
- *= require assets/style/css/color/purple
- *= require assets/style/css/color/red
- *= require assets/style/css/color/salmon
- *= require assets/style/css/color/sky
- *= require assets/style/css/color/teal
- *= require assets/style/css/color/yellow
- *= require assets/style/css/font/font2
- *= require assets/style/css/font/font3
- *= require assets/style/css/font/font4
- *= require assets/style/css/font/font5
- *= require assets/style/css/font/font6
- *= require assets/style/css/bootstrap.min
- *= require assets/style/css/plugins
- *= require assets/style/revolution/css/layers
- *= require assets/style/revolution/css/navigation
- *= require assets/style/revolution/css/settings
- *= require assets/style/revolution/css/settings-source
- *= require assets/style/revolution/css/tp-color-picker
- *= require assets/style/revolution/css/navigation-skins/ares
- *= require assets/style/revolution/css/navigation-skins/custom
- *= require assets/style/revolution/css/navigation-skins/dione
- *= require assets/style/revolution/css/navigation-skins/erinyen
- *= require assets/style/revolution/css/navigation-skins/gyges
- *= require assets/style/revolution/css/navigation-skins/hades
- *= require assets/style/revolution/css/navigation-skins/hebe
- *= require assets/style/revolution/css/navigation-skins/hephaistos
- *= require assets/style/revolution/css/navigation-skins/hermes
- *= require assets/style/revolution/css/navigation-skins/hesperiden
- *= require assets/style/revolution/css/navigation-skins/metis
- *= require assets/style/revolution/css/navigation-skins/persephone
- *= require assets/style/revolution/css/navigation-skins/uranus
- *= require assets/style/revolution/css/navigation-skins/zeus
- *= require assets/style/revolution/fonts/font-awesome/css/font-awesome
- *= require assets/style/revolution/fonts/font-awesome/css/font-awesome.min
- *= require assets/style/revolution/fonts/pe-icon-7-stroke/css/helper
- *= require assets/style/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke
- *= require assets/style/revolution/revolution-addons/filmstrip/css/revolution.addon.filmstrip
- *= require assets/style/revolution/revolution-addons/typewriter/css/typewriter
- *= require assets/style/type/icons
+ *= require style
+ *= require style/css/color/aqua
+ *= require style/css/color/blue
+ *= require style/css/color/brown
+ *= require style/css/color/forest
+ *= require style/css/color/green
+ *= require style/css/color/ice
+ *= require style/css/color/navy
+ *= require style/css/color/oasis
+ *= require style/css/color/orange
+ *= require style/css/color/pink
+ *= require style/css/color/purple
+ *= require style/css/color/red
+ *= require style/css/color/salmon
+ *= require style/css/color/sky
+ *= require style/css/color/teal
+ *= require style/css/color/yellow
+ *= require style/css/font/font2
+ *= require style/css/font/font3
+ *= require style/css/font/font4
+ *= require style/css/font/font5
+ *= require style/css/font/font6
+ *= require style/css/bootstrap.min
+ *= require style/css/plugins
+ *= require style/revolution/css/layers
+ *= require style/revolution/css/navigation
+ *= require style/revolution/css/settings
+ *= require style/revolution/css/settings-source
+ *= require style/revolution/css/tp-color-picker
+ *= require style/revolution/css/navigation-skins/ares
+ *= require style/revolution/css/navigation-skins/custom
+ *= require style/revolution/css/navigation-skins/dione
+ *= require style/revolution/css/navigation-skins/erinyen
+ *= require style/revolution/css/navigation-skins/gyges
+ *= require style/revolution/css/navigation-skins/hades
+ *= require style/revolution/css/navigation-skins/hebe
+ *= require style/revolution/css/navigation-skins/hephaistos
+ *= require style/revolution/css/navigation-skins/hermes
+ *= require style/revolution/css/navigation-skins/hesperiden
+ *= require style/revolution/css/navigation-skins/metis
+ *= require style/revolution/css/navigation-skins/persephone
+ *= require style/revolution/css/navigation-skins/uranus
+ *= require style/revolution/css/navigation-skins/zeus
+ *= require style/revolution/fonts/font-awesome/css/font-awesome
+ *= require style/revolution/fonts/font-awesome/css/font-awesome.min
+ *= require style/revolution/fonts/pe-icon-7-stroke/css/helper
+ *= require style/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke
+ *= require style/revolution/revolution-addons/filmstrip/css/revolution.addon.filmstrip
+ *= require style/revolution/revolution-addons/typewriter/css/typewriter
+ *= require style/type/icons
  */
