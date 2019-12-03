@@ -758,7 +758,7 @@ opacity:1
     font-size:13px;
     font-weight:700;
     text-transform:uppercase;
-    font-family:"Roboto Slab"
+    font-family:"Roboto Slab";
     margin-bottom:5px;
 }
 
@@ -1415,7 +1415,7 @@ border-radius:6px;
     font-size:13px;
     font-weight:700;
     text-transform:uppercase;
-    font-family:"Roboto Slab"
+    font-family:"Roboto Slab";
     margin-bottom:5px;
 }
 
@@ -1728,7 +1728,7 @@ website:    http://www.themepunch.com
 }
 @media only screen and (max-width: 768px) {
   .hermes .tp-tab .tp-tab-title {font-size:12px;line-height:14px;}
-  .hermes .tp-tab-date {font-size:10px; line-height:12px;margin-bottom:5px;}
+  .hermes .tp-tab-date {font-size:10px;line-height:12px;margin-bottom:5px;}
   .hermes .tp-tab-content {padding:10px 10px 10px 20px;}
 }
 
