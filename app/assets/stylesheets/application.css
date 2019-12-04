@@ -26,3 +26,7 @@
  *= require style/revolution/revolution-addons/typewriter/css/typewriter
  *= require style/type/icons
  */
+
+.icon-bottom {
+  margin-bottom: 0px !important;
+}
