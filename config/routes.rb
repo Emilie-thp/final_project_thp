@@ -3,9 +3,10 @@ Rails.application.routes.draw do
 	root to: 'static_pages#home'
 
   devise_for :admins
+  resources :admins, only: [:show]
 
-  resources :articles
-  resources :projects
+  resources :articles, only: [:index, :show]
+  resources :projects, only: [:index, :show]
   resources :project_categories
   resources :categories
 
