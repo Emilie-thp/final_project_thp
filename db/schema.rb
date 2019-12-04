@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_111139) do
+ActiveRecord::Schema.define(version: 2019_12_03_142618) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,4 +30,44 @@ ActiveRecord::Schema.define(version: 2019_12_03_111139) do
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
   end
 
+  create_table "articles", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.text "content"
+    t.boolean "published"
+    t.bigint "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_articles_on_admin_id", unique: true
+  end
+
+  create_table "categories", force: :cascade do |t|
+    t.string "category_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "project_categories", force: :cascade do |t|
+    t.bigint "project_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category_id"], name: "index_project_categories_on_category_id"
+    t.index ["project_id"], name: "index_project_categories_on_project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.text "content"
+    t.date "date"
+    t.boolean "published"
+    t.bigint "admin_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_projects_on_admin_id", unique: true
+  end
+
+  add_foreign_key "articles", "admins"
+  add_foreign_key "projects", "admins"
 end
