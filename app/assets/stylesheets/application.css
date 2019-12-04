@@ -14,6 +14,7 @@
  *= require_self
  *= require style
  *= require style/css/bootstrap.min
+ *= require font-awesome
  *= require style/css/color/blue
  *= require style/css/plugins
  *= require style/revolution/css/layers
