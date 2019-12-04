@@ -4,13 +4,14 @@ Rails.application.routes.draw do
 
   devise_for :admins
   resources :admins, only: [:show]
-
   resources :articles, only: [:index, :show]
-  resources :projects, only: [:index, :show]
+  resources :projects, only: [:index, :show] do
+    resources :pictures
+  end
   resources :project_categories
   resources :categories
 
-  namespace :admin do 
+  namespace :dashboard do 
   	resources :articles, :projects, :categories 
   end
 
