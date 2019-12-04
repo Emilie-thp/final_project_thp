@@ -70,3 +70,5 @@ gem "dotenv-rails", "~> 2.7"
 gem "font-awesome-rails", "~> 4.7"
 
 gem "faker", "~> 2.8"
+
+gem 'devise-i18n'
