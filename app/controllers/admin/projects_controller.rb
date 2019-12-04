@@ -1,6 +1,6 @@
 module Admin
 
-	class ArticlesController < ApplicationController
+	class ProjectsController < ApplicationController
 
 		def index
 	    @project = Project.all
