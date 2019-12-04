@@ -66,3 +66,5 @@ gem 'devise'
 gem "letter_opener", "~> 1.7"
 
 gem "dotenv-rails", "~> 2.7"
+
+gem "font-awesome-rails", "~> 4.7"

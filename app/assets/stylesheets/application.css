@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  *= require style
+ *= require font-awesome
  *= require style/css/color/aqua
  *= require style/css/color/blue
  *= require style/css/color/brown
