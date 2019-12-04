@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'pictures/create'
+  get 'pictures/destroy'
 	root to: 'static_pages#home'
 
   devise_for :admins

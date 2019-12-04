@@ -6,6 +6,7 @@ class Admin < ApplicationRecord
 
   after_create :welcome_send
 
+
   def welcome_send
     AdminMailer.welcome_email(self).deliver_now
   end
