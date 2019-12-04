@@ -7,7 +7,9 @@ Rails.application.routes.draw do
   devise_for :admins
 
   resources :articles
-  resources :projects
+  resources :projects do
+    resources :pictures
+  end
   resources :project_categories
   resources :categories
 
