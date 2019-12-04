@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :project_categories
   resources :categories
 
-  namespace :admin do 
+  namespace :dashboard do 
   	resources :articles, :projects, :categories 
   end
 

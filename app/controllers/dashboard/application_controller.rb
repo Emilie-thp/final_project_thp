@@ -1,4 +1,4 @@
-module Admin
+module Dashboard
 
 	class ApplicationController < ::ApplicationController
 
