@@ -5,7 +5,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :description
       t.text :content
       t.boolean :published
-      t.belongs_to :user, index: { unique: true }, foreign_key: true
+      t.belongs_to :admin, index: { unique: true }, foreign_key: true
       t.timestamps
     end
   end
