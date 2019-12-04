@@ -27,6 +27,9 @@
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="<%= articles_path %>">Blog</a></li>
             <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <% if admin_signed_in? %>
+            <li class="nav-item"><a class="nav-link badge badge-pill bg-forest" <%= link_to 'Espace Admin', current_admin %> </a> </li>
+            <%end%>
           </ul>
         </div>
         <!-- /.navbar-nav-wrapper -->
