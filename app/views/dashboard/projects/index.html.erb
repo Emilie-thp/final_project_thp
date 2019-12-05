@@ -22,7 +22,7 @@
             <% @projects.each do |project| %>
             <tr>            
               <td><%= project.title %>  </td>
-              <td>Admin n° <%= project.admin.id %> </td>
+              <td>Admin n°<%= project.admin.id %> </td>
               <td><%= project.created_at.strftime("%d/%m/%Y") %> </td>
               <td><%= project.updated_at.strftime("%d/%m/%Y") %> </td>
                 <%if project.published %>
