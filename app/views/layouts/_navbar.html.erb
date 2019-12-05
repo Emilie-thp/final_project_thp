@@ -1,0 +1,49 @@
+<div class="content-wrapper">
+  <nav class="navbar transparent absolute nav-wrapper-dark inverse-text navbar-expand-lg center justify-content-between">
+    <div class="container">
+      <div class="navbar-header">
+        <div class="navbar-brand d-lg-none d-xl-none"><a href="#"><img src="#" srcset="#" alt=""/></a></div>
+        <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
+      </div>
+      <!-- /.navbar-header -->
+      <div class="collapse navbar-collapse">
+        <div class="navbar-nav-wrapper">
+          <ul class="nav navbar-nav mr-auto">
+            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="<%= root_path %>">L'association</a>
+              <ul class="dropdown-menu dropdown-menu-left">
+                <li class="nav-item"><a class="dropdown-item" href="#">Qui sommes-nous ?</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">Nos missions</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">L'équipe</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">Nos réalisations</a></li>
+                <li class="nav-item"><a class="dropdown-item" href="#">Notre matériel</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="<%= projects_path %>">Réalisations</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Actualités</a></li>
+          </ul>
+        </div>
+        <div class="navbar-brand d-none d-lg-block"><a href="<%= root_path %>"><img src="#" srcset="<%= image_path("images_brailie/logo-light.png") %> 1x, <%= image_path("images_brailie/logo-light.png") %> 2x" alt="" /></a></div>
+        <div class="navbar-nav-wrapper">
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="<%= articles_path %>">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+            <% if admin_signed_in? %>
+            <li class="nav-item dashboard-btn"><a class="nav-link badge badge-pill bg-forest dashboard-text" <%= link_to 'Espace Admin', admin_path(current_admin) %> </a> </li>
+            <%end%>
+          </ul>
+        </div>
+        <!-- /.navbar-nav-wrapper -->
+      </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- /.navbar -->
+	<div class="wrapper image-wrapper bg-image inverse-text" data-image-src="style/images/art/bg9.jpg">
+	  <div class="container inner pt-120 pb-120 text-center">
+	  	</br></br>
+	    <h1 class="heading"><%=page_title%></h1>
+	  </div>
+	  <!-- /.container --> 
+	</div>
+	<!-- /.wrapper -->
