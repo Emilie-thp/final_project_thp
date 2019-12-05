@@ -7,13 +7,15 @@
   <br>
   <h2 class="section-title mb-40 text-center">Espace de nos réalisations, xx</h2>
 
-  <h4>Les réalisation :</h4>
+  <h4>Les réalisations :</h4>
     <ul> <% @project.each do |project| %>
     <li> Image <a href=' xx '> lien ou photo</a></li>
     <li> Titre <%= project.title %>  </li>
     <li> Description:  <%= project.description %>  </li>
-    <li> Projet crée le :<%= project.created_at.strftime("%d/%m/%Y à %k:%M") %> </li>
-    <li> Projet crée par :<%= project.created_at.strftime("%d/%m/%Y à %k:%M") %> </li>
+    <li> Créée le :<%= project.created_at.strftime("%d/%m/%Y à %k:%M") %> </li>
+    <li> Créée par :<%= admin_id.name %> </li>
+    <li> Publié :<%= published? ? 'yes' : 'no' %> </li>
+    <li> Modifiée le :<%= project.updated_at.strftime("%d/%m/%Y à %k:%M") %> </li>
 
     <%end%>
    
