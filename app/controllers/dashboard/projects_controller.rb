@@ -14,7 +14,7 @@ module Dashboard
 		@project = Project.new(project_params)
 		@project.admin = current_admin
 		 if @project.save
-			redirect_to dashboard_projects_path
+			redirect_to edit_dashboard_project
 		 else
 			new_dashboard_project_path
 		 end
