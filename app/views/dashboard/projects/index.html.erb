@@ -5,7 +5,7 @@
   </head>
   <body>
   <br>
-  <h2 class="section-title mb-40 text-center">Espace de nos réalisations, xx</h2>
+  <h2 class="section-title mb-40 text-center">Espace de nos réalisations,</h2>
 
   <h4>Les réalisations :</h4>
     <ul> <% @project.each do |project| %>
@@ -13,11 +13,13 @@
     <li> Titre <%= project.title %>  </li>
     <li> Description:  <%= project.description %>  </li>
     <li> Créée le :<%= project.created_at.strftime("%d/%m/%Y à %k:%M") %> </li>
-    <li> Créée par :<%= admin_id.name %> </li>
+    
     <li> Publié :<%= published? ? 'yes' : 'no' %> </li>
     <li> Modifiée le :<%= project.updated_at.strftime("%d/%m/%Y à %k:%M") %> </li>
 
     <%end%>
+
+
    
 </body>
 </html>

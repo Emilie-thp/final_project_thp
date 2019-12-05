@@ -3,7 +3,7 @@ module Dashboard
 	class ApplicationController < ::ApplicationController
 		layout 'dashboard'
 
-		def index
+		def show
 			@admin = Admin.find(params[:id])
 			@project = Project.find(params[:id])
 			@article = Article.find(params[:id])
