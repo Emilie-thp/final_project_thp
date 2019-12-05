@@ -4,8 +4,13 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :projects
+  has_many :articles
+  
   after_create :welcome_send
 
+  has_many :projects
+  has_many :articles
 
   def welcome_send
     AdminMailer.welcome_email(self).deliver_now
