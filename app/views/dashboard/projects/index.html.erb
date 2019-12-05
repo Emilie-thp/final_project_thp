@@ -2,26 +2,27 @@
 <html>
     <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <body>
-  <br>
-  <h2 class="section-title mb-40 text-center">Espace de nos réalisations,</h2>
+    </head>
+    <body>
+    <br>
+    <h2 class="section-title mb-40 text-center">Espace de nos réalisations,</h2>
 
-  <h4>Les réalisations :</h4>
-    <ul> <% @project.each do |project| %>
-    <li> Image <a href=' xx '> lien ou photo</a></li>
-    <li> Titre <%= project.title %>  </li>
-    <li> Description:  <%= project.description %>  </li>
-    <li> Créée le :<%= project.created_at.strftime("%d/%m/%Y à %k:%M") %> </li>
-    
-    <li> Publié :<%= published? ? 'yes' : 'no' %> </li>
-    <li> Modifiée le :<%= project.updated_at.strftime("%d/%m/%Y à %k:%M") %> </li>
-
-    <%end%>
-
-
-   
+     <h4>Les réalisations :</h4>
+     
+     <table class="table table-striped table-sm">
+          <tbody>
+              <ul> <% @project.each do |project| %>
+                <li> Image <a href=' # '> lien ou photo</a></li>
+                <li> Titre <%= project.title %>  </li>
+                <li> Description:  <%= project.description %>  </li>
+                <li> Créée le :<%= project.created_at.strftime("%d/%m/%Y à %k:%M") %> </li>
+                <li> Publié? 
+                <li> Modifiée le :<%= project.updated_at.strftime("%d/%m/%Y à %k:%M") %> </li>
+                <br>
+                <%end%>
+              </tbody>
+              <br>
+            </table>
+           
 </body>
-</html>
-
-
+</html>                             

@@ -3,7 +3,7 @@ module Dashboard
 	class ProjectsController < ApplicationController
 
 		def index
-	    @projects = Project.all
+	    @project = Project.all
 	  end
 
 	  def new
