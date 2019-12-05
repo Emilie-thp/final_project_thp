@@ -11,20 +11,20 @@
           <table class="table table-striped table-sm">
             <tr>
               <th>Titre</th>
+              <th>Auteur</th>
               <th>Créée le</th>
               <th>Modifiée le</th>
-              <th>Par</th>
               <th>Statut</th>
               <th>Edition</th>
               <th>Suppression</th>
             </tr>
             
             <% @projects.each do |project| %>
-            <tr>
+            <tr>            
               <td><%= project.title %>  </td>
+              <td>Admin n° <%= project.admin.id %> </td>
               <td><%= project.created_at.strftime("%d/%m/%Y") %> </td>
               <td><%= project.updated_at.strftime("%d/%m/%Y") %> </td>
-              <td>Admin n° <%= project.admin.id %> </td>
                 <%if project.published %>
                   <td>En ligne</td>
                 <%else%>
