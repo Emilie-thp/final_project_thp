@@ -27,6 +27,6 @@
  *= require style/type/icons
  */
 
-.icon-bottom {
-  margin-bottom: 0px !important;
+.text-color {
+  color: white !important;
 }
