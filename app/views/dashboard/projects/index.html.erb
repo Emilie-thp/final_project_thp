@@ -1,4 +1,3 @@
-<br>
 <div class="container">
   <br>
     <div class="card">
@@ -6,9 +5,8 @@
         <h2 class="section-title mb-40 text-center">Espace de nos réalisations, pseudo</h2>
         <p align ="center"><%= link_to "Nouveau Projet ?", new_dashboard_project_path %></p>
       </div>
-    </div>
-
-    <div class="card-body">
+    
+      <div class="card-body">
         <div class="card-text">
           <h4>Les réalisations :</h4>
           <table class="table table-striped table-sm">
@@ -24,15 +22,15 @@
             <tr>
               <td><%= project.title %>  </td>
               <td><%= project.created_at.strftime("%d/%m/%Y") %> </td>
-              <td> par? </td>
-              <td> oui ou non </td>
+              <td><%= project.admin.id %> </td>
+              <td>oui ou non </td>
               <td><%= project.updated_at.strftime("%d/%m/%Y") %> </td>
               <td> update/delete </td>
             </tr>
             <%end%>      
           </table>
         <br>
+      </div>
     </div>
   </div>
-</div>
 </div>
