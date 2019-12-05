@@ -36,6 +36,9 @@ module Dashboard
 
 	  def destroy
 	    @project = Project.find(params[:id])
+	    @project.destroy
+    	flash[:danger] = "La réalisation n°#{@project.id} a bien été supprimée !"
+    	redirect_to dashboard_projects_path
 	  end
 
 	  private
