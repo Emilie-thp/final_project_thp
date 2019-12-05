@@ -6,7 +6,7 @@
           <p class="lead text-center">Remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
           <h6><b>Titre du projet<b></h6>
-          <%= form_with model: @project, url: dashboard_projects_path, multipart: true do |f| %>
+          <%= form_with model: @project, url: dashboard_projects_path do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
             <h6><b>Description<b></h6>
