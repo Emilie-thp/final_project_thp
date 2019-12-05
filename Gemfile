@@ -72,3 +72,5 @@ gem "font-awesome-rails", "~> 4.7"
 gem "faker", "~> 2.8"
 
 gem 'devise-i18n'
+
+gem "table_print"
