@@ -11,7 +11,11 @@ module Dashboard
 	  end
 
 	  def create
-	   @project = Project.create(project_params)
+		@project = current_user.project
+	   	@project = Project.create(project_params)
+	   	@project.pictures.attach(params[:pictures])
+	   	redirect_to new_dashboard_project_path
+
 	  end
 
 	  def show
@@ -34,7 +38,7 @@ module Dashboard
 	  private
 
 	  def project_params
-	    params.require(:project).permit(:title, :description, :content, :date, :published, :pictures)
+	    params.require(:project).permit(:title, :description, :content, :date, :published)
 	  end
 
 	end
