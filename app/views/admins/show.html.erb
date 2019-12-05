@@ -1,10 +1,18 @@
+<!DOCTYPE html>
 <html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
 <h1>Admins#show</h1>
+<h2>Bienvenue dans ton espace administrateur <%= @admin.email %>, <%= @admin.pseudo %> </h2>
 <p>Find me in app/views/admins/show.html.erb</p>
 
-
-<p>Bienvenue dans ton espace administrateur  <%= @admin.email %></p> //pseudo à mettre
+<p> Article créé le <%= @article.created_at.strftime("%d/%m/%Y à %k:%M") %>
+<p> Projet crée le <%= @project.created_at.strftime("%d/%m/%Y à %k:%M") %>
+<p>
 <br>
 <p>
 <br>
+</body>
 </html>

@@ -39,7 +39,7 @@ end
       description: "Article d'exception des animaux dans son cadre naturel. Un instant de magie pure, capturé par nos photographes de renom.",
       content: Faker::Lorem.paragraph(sentence_count: 20),
       admin_id: admin.id)
-      puts "seed aritcle"
+      puts "seed article"
 
   end
 
