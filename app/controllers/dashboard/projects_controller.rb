@@ -1,7 +1,8 @@
 module Dashboard
 
 	class ProjectsController < ApplicationController
-
+		layout 'dashboard'
+		
 		def index
 			@projects = Project.all
 		end
@@ -14,12 +15,11 @@ module Dashboard
 		@project = Project.new(project_params)
 		@project.admin = current_admin
 			if @project.save
-	    	flash[:notice] = "Une nouvelle réalisation a bien été créée !"
-				redirect_to root_path
+	    	flash[:notice] = "Une nouvelle réalisation a bien été créée (n°#{@project.id})!"
+				redirect_to edit_dashboard_project_path(@project)
 		 	else
-				render root_path
+				render "new"
 		 	end
-		  
 	  end
 
 	  def show
@@ -32,9 +32,14 @@ module Dashboard
 
 	  def update
 	    @project = Project.find(params[:id])
-	    @project.update(project_params)
-			redirect_to root_path
+	    if @project.update(project_params)
+	    	flash[:notice] = "La réalisation n°#{@project.id} a bien été éditée !"
+				redirect_to dashboard_projects_path
+			else
+				render "edit"
+	  	end
 	  end
+
 
 	  def destroy
 	    @project = Project.find(params[:id])

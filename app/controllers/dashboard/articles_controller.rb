@@ -1,6 +1,7 @@
 module Dashboard
 
 	class ArticlesController < ApplicationController
+		layout 'dashboard'
 
 		def index
 			@articles = Article.all
