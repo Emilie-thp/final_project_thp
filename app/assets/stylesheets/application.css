@@ -30,3 +30,17 @@
 .icon-bottom {
   margin-bottom: 0px !important;
 }
+
+.dashboard-text {
+	font-size: 11px !important;
+	letter-spacing: 0px !important;
+	font-weight: 500 !important;
+	padding-top: 9px !important;
+	padding-bottom: 9px !important;
+	padding-left: 7px !important;
+   padding-right: 7px !important;
+}
+
+.dashboard-btn {
+	margin-top: 11px !important;
+}
