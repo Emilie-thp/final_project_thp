@@ -59,7 +59,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_151137) do
     t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_articles_on_admin_id", unique: true
+    t.index ["admin_id"], name: "index_articles_on_admin_id"
   end
 
   create_table "categories", force: :cascade do |t|
@@ -96,7 +96,7 @@ ActiveRecord::Schema.define(version: 2019_12_04_151137) do
     t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["admin_id"], name: "index_projects_on_admin_id", unique: true
+    t.index ["admin_id"], name: "index_projects_on_admin_id"
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
