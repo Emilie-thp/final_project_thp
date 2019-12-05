@@ -18,7 +18,7 @@
               <th>Modifié le</th>
               <th>Mettre à jour</th>
             </tr>
-            <% @project.each do |project| %>
+            <% @projects.each do |project| %>
             <tr>
               <td><%= project.title %>  </td>
               <td><%= project.created_at.strftime("%d/%m/%Y") %> </td>

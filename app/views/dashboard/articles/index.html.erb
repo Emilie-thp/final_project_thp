@@ -18,7 +18,7 @@
               <th>Modifié le</th>
               <th>Mettre à jour</th>
             </tr>
-            <% @article.each do |article| %>
+            <% @articles.each do |article| %>
             <tr>
               <td><%= article.title %>  </td>
               <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
