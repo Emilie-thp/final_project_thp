@@ -12,13 +12,12 @@
             <h6>Description</h6>
             <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
             <div class="space30"></div>
-            
-
-
-           
-            <div class="space40"></div>
             <%= f.submit "Create" %>
              <% end %>
+             <%= form_tag dashboard_pictures_path(@project_picture), multipart: true do %>
+              <%= file_field_tag :pictures %>
+              <%= submit_tag "mettre à jour" %>
+              <% end %>
                     
           <div class="space30"></div>
           
