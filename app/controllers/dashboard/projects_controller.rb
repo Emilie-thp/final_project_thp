@@ -11,10 +11,8 @@ module Dashboard
 	  end
 
 	  def create
-		@project = current_user.project
-	   	@project = Project.create(project_params)
-	   	@project.pictures.attach(params[:pictures])
-	   	redirect_to new_dashboard_project_path
+		@project = current_admin.projects
+	   	@project << Project.create(project_params)
 
 	  end
 
