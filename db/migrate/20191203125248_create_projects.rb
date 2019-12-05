@@ -6,7 +6,7 @@ class CreateProjects < ActiveRecord::Migration[5.2]
       t.text :content
       t.date :date
       t.boolean :published
-      t.belongs_to :admin, index: { unique: true }, foreign_key: true
+      t.belongs_to :admin, index: true, foreign_key: true
       t.timestamps
     end
   end
