@@ -68,10 +68,10 @@ $(document).ready(function() {
                     slidesPerView: 1
                 },
                 1010: {
-                    slidesPerView: 2 
+                    slidesPerView: 2
                 },
                 1130: {
-                    slidesPerView: 3 
+                    slidesPerView: 3
                 }
             },
             spaceBetween: 30,
@@ -85,7 +85,7 @@ $(document).ready(function() {
                 prevEl: ".btn-prev-" + index
             }
         });
-    });    
+    });
     $(".swiper-col3-20").each(function(index, element) {
         var $this = $(this);
         $this.find(".swiper-container").addClass("swiper-col3-20-" + index);
@@ -99,10 +99,10 @@ $(document).ready(function() {
                     slidesPerView: 1
                 },
                 1010: {
-                    slidesPerView: 2 
+                    slidesPerView: 2
                 },
                 1130: {
-                    slidesPerView: 3 
+                    slidesPerView: 3
                 }
             },
             spaceBetween: 20,
@@ -130,10 +130,10 @@ $(document).ready(function() {
                     slidesPerView: 1
                 },
                 1010: {
-                    slidesPerView: 2 
+                    slidesPerView: 2
                 },
                 1130: {
-                    slidesPerView: 3 
+                    slidesPerView: 3
                 }
             },
             spaceBetween: 30,
@@ -160,10 +160,10 @@ $(document).ready(function() {
 	                    slidesPerView: 3
 	                },
 	                1000: {
-	                    slidesPerView: 4 
+	                    slidesPerView: 4
 	                },
 	                1680: {
-	                    slidesPerView: 5 
+	                    slidesPerView: 5
 	                }
 	        },
             spaceBetween: 30,
@@ -194,7 +194,7 @@ $(document).ready(function() {
                 prevEl: ".btn-prev-" + index
             }
         });
-    });   
+    });
     $(".swiper-auto-tab").each(function(index, element) {
         var $this = $(this);
         $this.find(".swiper-container").addClass("swiper-auto-tab-" + index);
@@ -217,7 +217,7 @@ $(document).ready(function() {
                 prevEl: ".btn-prev-" + index
             }
         });
-    });  
+    });
     $(".swiper-full").each(function(index, element) {
         var $this = $(this);
         $this.find(".swiper-container").addClass("swiper-full-" + index);
@@ -231,7 +231,7 @@ $(document).ready(function() {
                     slidesPerView: 1
                 },
                 1024: {
-                    slidesPerView: 2 
+                    slidesPerView: 2
                 }
             },
             spaceBetween: 15,
@@ -321,7 +321,7 @@ $(document).ready(function() {
                 prevEl: ".btn-prev-" + index
             }
         });
-    }); 
+    });
     $(".swiper-auto-centered").each(function(index, element) {
         var $this = $(this);
         $this.find(".swiper-container").addClass("swiper-auto-centered-" + index);
@@ -435,17 +435,17 @@ $(document).ready(function() {
             arrows: {
                 enable: false
             },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: false
             }
-        }    
+        }
     });
 	$('#slider4').revolution(
     {
@@ -465,12 +465,12 @@ $(document).ready(function() {
                 style: 'uranus',
                 tmp: ''
             },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: true,
@@ -484,7 +484,7 @@ $(document).ready(function() {
                 h_offset: 0,
                 v_offset: 20
             }
-        }   
+        }
     });
     $('#slider5').revolution(
     {
@@ -538,17 +538,17 @@ $(document).ready(function() {
                         h_offset: 0,
                         v_offset: 0
                     },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: false
             }
-        }    
+        }
     });
     $('#slider6').revolution(
     {
@@ -602,17 +602,17 @@ $(document).ready(function() {
                         h_offset: 0,
                         v_offset: 0
                     },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: false
             }
-        }    
+        }
     });
     $('#slider7').revolution({
         sliderType: "standard",
@@ -639,7 +639,7 @@ $(document).ready(function() {
 				}
 			}
     });
-    
+
     $('#slider8').revolution(
     {
         sliderType: "standard",
@@ -654,17 +654,17 @@ $(document).ready(function() {
             arrows: {
                 enable: false
             },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: false
             }
-        }    
+        }
     });
     $('#slider9').revolution(
     {
@@ -720,17 +720,17 @@ $(document).ready(function() {
                         h_offset: 0,
                         v_offset: 0
                     },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: false
             }
-        }    
+        }
     });
     $('#slider10').revolution(
     {
@@ -825,7 +825,7 @@ $(document).ready(function() {
 							simplifyAll:"off",
 							nextSlideOnWindowFocus:"off",
 							disableFocusListener:false,
-						}    
+						}
     });
     $('#slider11').revolution({
         sliderType:"carousel",
@@ -881,11 +881,11 @@ $(document).ready(function() {
 							stretch: "off"
 						}
     });
-    
+
     if ($("#slider12").length) {
         var tpj = jQuery;
 		var slider12 = jQuery('#slider12').show().revolution({
-	 
+
 	    sliderType: "standard",
         sliderLayout: "fullwidth",
         spinner:"off",
@@ -898,18 +898,18 @@ $(document).ready(function() {
             arrows: {
                 enable: false
             },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: false
             }
-        } 
-	 
+        }
+
 	});
 	RsFilmstripAddOn(tpj, slider12, "style/revolution/revolution-addons/filmstrip", false);
     }
@@ -956,7 +956,7 @@ $(document).ready(function() {
 			},
 			responsiveLevels:[1240,1024,778,480],
 			visibilityLevels:[1240,1024,778,480],
-			gridwidth: [1140,1200,1000,480], 
+			gridwidth: [1140,1200,1000,480],
 			gridheight: [700,900,700,700],
 			spinner: "spinner2",
 			autoHeight:"off",
@@ -965,12 +965,12 @@ $(document).ready(function() {
 			hideSliderAtLimit:0,
 			hideCaptionAtLimit:0,
 			hideAllCaptionAtLilmit:0,
-			debugMode:false 
+			debugMode:false
     });
     if ($("#slider14").length) {
         var tpj = jQuery;
 		var slider14 = jQuery('#slider14').show().revolution({
-	 
+
 	    sliderType: "standard",
         sliderLayout: "fullscreen",
         spinner: "spinner2",
@@ -1005,10 +1005,10 @@ $(document).ready(function() {
                 v_offset: 20
             }
         }
-	 
+
 	});
 	RsTypewriterAddOn(tpj, slider14);
-	}	
+	}
     $('#slider15').revolution(
     {
         sliderType: "standard",
@@ -1023,22 +1023,22 @@ $(document).ready(function() {
             arrows: {
                 enable: false
             },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: false
             }
-        }    
+        }
     });
     if ($("#slider16").length) {
         var tpj = jQuery;
 		var slider16 = jQuery('#slider16').show().revolution({
-	 
+
 	    sliderType: "standard",
         sliderLayout: "fullscreen",
         spinner:"off",
@@ -1050,25 +1050,25 @@ $(document).ready(function() {
             arrows: {
                 enable: false
             },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: false
             }
-        } 
-	 
+        }
+
 	});
 	RsFilmstripAddOn(tpj, slider16, "style/revolution/revolution-addons/filmstrip", false);
     }
     if ($("#slider17").length) {
         var tpj = jQuery;
 		var slider17 = jQuery('#slider17').show().revolution({
-	 
+
 	    sliderType: "standard",
         sliderLayout: "fullscreen",
         fullScreenOffsetContainer: ".navbar:not(.fixed)",
@@ -1086,12 +1086,12 @@ $(document).ready(function() {
                 style: 'uranus',
                 tmp: ''
             },
-            touch: { 
+            touch: {
 		        touchenabled: 'on',
 		        swipe_threshold: 75,
 		        swipe_min_touches: 1,
 		        swipe_direction: 'horizontal',
-		        drag_block_vertical: true		 
+		        drag_block_vertical: true
 		    },
             bullets: {
                 enable: true,
@@ -1106,7 +1106,7 @@ $(document).ready(function() {
                 v_offset: 20
             }
         }
-	 
+
 	});
 	RsTypewriterAddOn(tpj, slider17);
 	}
@@ -1147,7 +1147,7 @@ $(document).ready(function() {
 		                    slidesPerView: 3
 		                },
 		                1000: {
-		                    slidesPerView: 4 
+		                    slidesPerView: 4
 		                }
 		            },
 	                spaceBetween: 10,
@@ -1180,13 +1180,13 @@ $(document).ready(function() {
 		                    slidesPerView: 3
 		                },
 		                1000: {
-		                    slidesPerView: 4 
+		                    slidesPerView: 4
 		                },
 		                1680: {
-		                    slidesPerView: 5 
+		                    slidesPerView: 5
 		                },
 		                1920: {
-		                    slidesPerView: 6 
+		                    slidesPerView: 6
 		                }
 		            },
 	                pagination: {
@@ -1239,7 +1239,7 @@ $(document).ready(function() {
                       slidesPerView: 3
                   },
                   1000: {
-                      slidesPerView: 4 
+                      slidesPerView: 4
                   },
 				  1130: {
                       slidesPerView: 5
@@ -1425,7 +1425,7 @@ $(document).ready(function() {
 	        videojs: true,
 	        share: false
 	    });
-        
+
     });
     var $cubegridlarge = $('#cube-grid-large');
     $cubegridlarge.cubeportfolio({
@@ -1512,7 +1512,7 @@ $(document).ready(function() {
 	        videojs: true,
 	        share: false
 	    });
-        
+
     });
     var $cubegridfulllarge = $('#cube-grid-full-large');
     $cubegridfulllarge.cubeportfolio({
@@ -1556,7 +1556,7 @@ $(document).ready(function() {
 	        videojs: true,
 	        share: false
 	    });
-        
+
     });
     var $cubemosaic = $('#cube-grid-mosaic');
     $cubemosaic.cubeportfolio({
@@ -1600,7 +1600,7 @@ $(document).ready(function() {
 	        videojs: true,
 	        share: false
 	    });
-        
+
     });
     var $cubegrid2 = $('#cube-grid2');
     $cubegrid2.cubeportfolio({
@@ -1644,7 +1644,7 @@ $(document).ready(function() {
 	        videojs: true,
 	        share: false
 	    });
-        
+
     });
     var $cubegridlarge2 = $('#cube-grid-large2');
     $cubegridlarge2.cubeportfolio({
@@ -1795,7 +1795,7 @@ $(document).ready(function() {
     });
     /*-----------------------------------------------------------------------------------*/
     /*	ONEPAGE HEADER OFFSET
-    /*-----------------------------------------------------------------------------------*/	
+    /*-----------------------------------------------------------------------------------*/
     var header_height = $('.navbar:not(.banner--clone)').outerHeight();
     var shrinked_header_height = 68;
     var firstStyle = {
@@ -1810,14 +1810,14 @@ $(document).ready(function() {
     $('.onepage section:first-of-type').css(secondStyle);
 	/*-----------------------------------------------------------------------------------*/
     /*	ONEPAGE NAV LINKS
-    /*-----------------------------------------------------------------------------------*/	
-	var empty_a = $('.onepage .navbar ul.navbar-nav a[href="#"]');	
+    /*-----------------------------------------------------------------------------------*/
+	var empty_a = $('.onepage .navbar ul.navbar-nav a[href="#"]');
 	empty_a.on('click', function(e) {
 	    e.preventDefault();
 	});
     /*-----------------------------------------------------------------------------------*/
 	/*	ONEPAGE SMOOTH SCROLL
-	/*-----------------------------------------------------------------------------------*/	
+	/*-----------------------------------------------------------------------------------*/
 	$(function() {
 	  setTimeout(function() {
 	    if (location.hash) {
@@ -1825,16 +1825,16 @@ $(document).ready(function() {
 	      var target = location.hash.split('#');
 	      smoothScrollTo($('#'+target[1]));
 	    }
-	  }, 1);  
+	  }, 1);
 	  $('a.scroll[href*=#]:not([href=#])').on('click', function() {
 	    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
 	      smoothScrollTo($(this.hash));
 	      return false;
 	    }
-	  });  
+	  });
 	  function smoothScrollTo(target) {
 	    var target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	    
+
 	    if (target.length) {
 	      $('html,body').animate({
 	        scrollTop: target.offset().top
@@ -1854,10 +1854,10 @@ $(document).ready(function() {
     /*	PAGE LOADING
     /*-----------------------------------------------------------------------------------*/
 	$('.page-loading').delay(350).fadeOut('slow');
-    $('.page-loading .status').fadeOut('slow');  
+    $('.page-loading .status').fadeOut('slow');
     /*-----------------------------------------------------------------------------------*/
     /*	VANILLA
     /*-----------------------------------------------------------------------------------*/
     var myForm;
-    myForm = new VanillaForm($("form.vanilla-form")); 
+    myForm = new VanillaForm($("form.vanilla-form"));
 });
