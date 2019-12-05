@@ -11,10 +11,10 @@ module Dashboard
 	  end
 
 	  def create
-		@project = current_admin.projects
-		@project << Project.create(project_params)
+		@project = Project.new(project_params)
+		@project.admin = current_admin
+		@project.save
 		   
-
 	  end
 
 	  def show
