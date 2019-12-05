@@ -10,7 +10,11 @@ Rails.application.routes.draw do
   resources :categories
 
   namespace :dashboard do 
-  	resources :articles, :projects, :categories, :pictures
+    resources :articles, :categories
+    resources :projects do
+      resources :pictures
+    end
+    
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

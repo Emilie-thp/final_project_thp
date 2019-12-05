@@ -1,0 +1,24 @@
+<div class="wrapper gray-wrapper">
+    <div class="container inner">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+          <h2 class="section-title text-center">Mise à jour du project</h2>
+          <p class="lead text-center">Remplir le formulaire ci-dessous</p>
+          <div class="space40"></div>
+          <h6><b>Titre du projet<b></h6>
+          <%= form_with model: @project, url: dashboard_project_path do |f| %>
+            <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
+            <div class="space30"></div>
+            <h6><b>Description<b></h6>
+            <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
+            <div class="space30"></div>
+            <h6><b>Contenu<b></h6>
+            <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+            <%= f.submit "Mettre à jour" %>
+             <% end %>
+                    
+          <div class="space30"></div>
+          
+        </div>
+    </div>
+</div>
