@@ -8,8 +8,23 @@
   <h2 class="section-title mb-40 text-center">Espace de nos réalisations, <%= @admin.pseudo %> xxx.</h2>
 <br>
 <p> projet 1</p>
+<%= @project_name %></p>
+    <p>les projets :
+    <ul> <% @project.each do |order_item| %>
+    <li> <%= project.title %> : <a href=' xx>'></a></li>
+    <%end%>
 
 
+    create_table "projects", force: :cascade do |t|
+        t.string "title"
+        t.string "description"
+        t.text "content"
+        t.date "date"
+        t.boolean "published"
+        t.bigint "admin_id"
+        t.datetime "created_at", null: false
+        t.datetime "updated_at", null: false
+        t.index ["admin_id"], name: "index_projects_on_admin_id", unique: true
 </body>
 </html>
 
