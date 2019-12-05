@@ -1,7 +1,8 @@
 module Dashboard
 
 	class ProjectsController < ApplicationController
-
+		layout 'dashboard'
+		
 		def index
 			@projects = Project.all
 		end
