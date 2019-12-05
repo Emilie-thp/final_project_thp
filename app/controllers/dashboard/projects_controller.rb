@@ -13,7 +13,11 @@ module Dashboard
 	  def create
 		@project = Project.new(project_params)
 		@project.admin = current_admin
-		@project.save
+		 if @project.save
+			redirect_to dashboard_projects_path
+		 else
+			new_dashboard_project_path
+		 end
 		   
 	  end
 
