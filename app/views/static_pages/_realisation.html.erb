@@ -14,10 +14,13 @@
     <div class="space20"></div>
     <div id="cube-grid2" class="cbp text-center">
       <div class="cbp-item conceptual interior">
-        <figure class="overlay overlay1 mb-20"><a href="<%= image_path("realisations/realisation1.jpg") %>"> <img src="<%= image_path("realisations/realisation1.jpg") %>" alt="" /></a>
+        <figure class="overlay overlay1 mb-20">
+          <%= link_to image_path('realisations/realisation1.jpg') do %>
+              <%= image_tag('realisations/realisation1.jpg', class:'', alt:'') %>
+          <%end%>
           <figcaption class="d-flex">
             <div class="align-self-center mx-auto">
-              <h5 class="mb-0">Voir plus</h5>
+              <h5 class="mb-0">Voir l'image</h5>
             </div>
           </figcaption>
         </figure>
@@ -25,10 +28,13 @@
       </div>
       <!--/.cbp-item -->
       <div class="cbp-item commercial">
-        <figure class="overlay overlay1 mb-20"><a href="<%= image_path("realisations/realisation2.jpg") %>"> <img src="<%= image_path("realisations/realisation2.jpg") %>" alt="" /></a>
+        <figure class="overlay overlay1 mb-20">
+          <%= link_to image_path('realisations/realisation2.jpg') do %>
+              <%= image_tag('realisations/realisation2.jpg', class:'', alt:'') %>
+          <%end%>
           <figcaption class="d-flex">
             <div class="align-self-center mx-auto">
-              <h5 class="mb-0">Voir plus</h5>
+              <h5 class="mb-0">Voir l'image</h5>
             </div>
           </figcaption>
         </figure>
@@ -36,10 +42,13 @@
       </div>
       <!--/.cbp-item -->
       <div class="cbp-item commercial macro">
-        <figure class="overlay overlay1 mb-20"><a href="<%= image_path("realisations/realisation3.jpg") %>"> <img src="<%= image_path("realisations/realisation3.jpg") %>" alt="" /></a>
+        <figure class="overlay overlay1 mb-20">
+          <%= link_to image_path('realisations/realisation3.jpg') do %>
+              <%= image_tag('realisations/realisation3.jpg', class:'', alt:'') %>
+          <%end%>
           <figcaption class="d-flex">
             <div class="align-self-center mx-auto">
-              <h5 class="mb-0">Voir plus</h5>
+              <h5 class="mb-0">Voir l'image</h5>
             </div>
           </figcaption>
         </figure>
