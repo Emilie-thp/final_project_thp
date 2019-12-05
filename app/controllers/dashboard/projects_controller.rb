@@ -18,7 +18,7 @@ module Dashboard
 		 else
 			new_dashboard_project_path
 		 end
-		   
+		  
 	  end
 
 	  def show
