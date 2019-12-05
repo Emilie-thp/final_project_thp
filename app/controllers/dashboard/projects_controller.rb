@@ -13,11 +13,12 @@ module Dashboard
 	  def create
 		@project = Project.new(project_params)
 		@project.admin = current_admin
-		if @project.save
-			redirect_to(edit_dashboard_project_path(@project))
-		 else
-			render new_dashboard_project_path
-		 end
+			if @project.save
+	    	flash[:notice] = "Une nouvelle réalisation a bien été créée !"
+				redirect_to root_path
+		 	else
+				render root_path
+		 	end
 		  
 	  end
 
@@ -32,12 +33,13 @@ module Dashboard
 	  def update
 	    @project = Project.find(params[:id])
 	    @project.update(project_params)
+			redirect_to root_path
 	  end
 
 	  def destroy
 	    @project = Project.find(params[:id])
 	    @project.destroy
-    	flash[:danger] = "La réalisation n°#{@project.id} a bien été supprimée !"
+    	flash[:notice] = "La réalisation n°#{@project.id} a bien été supprimée !"
     	redirect_to dashboard_projects_path
 	  end
 
