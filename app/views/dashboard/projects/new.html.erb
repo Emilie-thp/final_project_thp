@@ -2,22 +2,23 @@
     <div class="container inner">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-          <h2 class="section-title text-center">Nouveau project</h2>
+          <h2 class="section-title text-center">Nouvelle réalisation</h2>
           <p class="lead text-center">Remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
-          <h6><b>Titre du projet<b></h6>
-          <%= form_with model: @project, url: dashboard_projects_path do |f| %>
+          <h6><b>Titre de la réalisation<b></h6>   
+            <%= form_with model: @project, url: dashboard_projects_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
             <h6><b>Description<b></h6>
-            <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
+            <%= f.text_area :description, class:"form-control", placeholder: "Description (en 1 phrase)" %>
             <div class="space30"></div>
             <h6><b>Contenu<b></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
-            <h6><b>Date de creation<b></h6>
+            <div class="space30"></div>
+            <h6><b>Date de la réalisation<b></h6>
             <%= f.text_field :date, class:"form-control", placeholder: "2019-12-31" %><br>
             <br>
-            <%= f.submit "Create" %>
+            <%= f.submit "Créer la réalisation",  class: 'btn btn-oasis' %>
              <% end %>
                     
           <div class="space30"></div>
