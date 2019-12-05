@@ -12,7 +12,8 @@ module Dashboard
 
 	  def create
 		@project = current_admin.projects
-	   	@project << Project.create(project_params)
+		@project << Project.create(project_params)
+		   
 
 	  end
 
