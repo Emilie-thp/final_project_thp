@@ -11,6 +11,8 @@ require 'faker'
 Project.destroy_all
 Article.destroy_all
 Category.destroy_all
+Admin.destroy_all
+
 
 
 admin = Admin.create(email: "admin@yopmail.com", password: "thpstrabourg")
@@ -28,7 +30,7 @@ t2 = Date.parse("2022-01-01")
     content: Faker::Lorem.paragraph(sentence_count: 10),
     date: rand(t1..t2),
     admin_id: admin.id)
-    puts "seed project"
+    puts "seed projects"
 
 end
 
@@ -39,7 +41,7 @@ end
       description: "Article d'exception des animaux dans son cadre naturel. Un instant de magie pure, capturé par nos photographes de renom.",
       content: Faker::Lorem.paragraph(sentence_count: 20),
       admin_id: admin.id)
-      puts "seed aritcle"
+      puts "seed articles"
 
   end
 
@@ -47,6 +49,6 @@ end
 10.times do
     category = Category.create(
       category_name: categories_array.sample)
-      puts "seed category"
+      puts "seed categories"
 
 end
