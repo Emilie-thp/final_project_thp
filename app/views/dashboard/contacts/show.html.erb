@@ -9,14 +9,20 @@
       <div class="card-body">
         <div class="card-text">
           <table class="table table-striped table-sm">
-            <h>
-
-            tess
-            
-            </table>
+              <li>Message reçu le <%= @contact.created_at.strftime("%d/%m/%Y à  %Hh%M") %> </li> 
+              <br>
+              <li>Envoyé par :<%= @contact.name %></li>
+              <br>    
+              <li>Ses coordonnées:<%= @contact.email %></li>
+              <br>              
+              <li>Particulier ou professionnel<%= @contact.status %></li>
+              <br>  
+              <li>Message:<%= @contact.content %> </li>                           
+              </tr>
+            </p>
+          </table>
+        </div>
       </div>
     </div>
   </div>
-</div>
-</div>
-<br>
+ </div>
