@@ -1,9 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+"Oeil de Biche Productions" is a beautiful website designed for a real association established in the French-Jura region whose mission are documentary productions.
 
-Things you may want to cover:
+-----
+
+Visitors' pathway:
+
+Visitors arrive on a home page where they have full-access to overwhelming photos and projets, to a blog section. The events feature is oncoming.
+
+
+----
+
+
+Oeil de Biche Production
+
+
+*https://oeil-de-biche-development.herokuapp.com/*
 
 * Ruby version
 
@@ -22,3 +34,7 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+
+The hacking projet - session n°10 - Projet final :  "
+
+Décembre 2019
