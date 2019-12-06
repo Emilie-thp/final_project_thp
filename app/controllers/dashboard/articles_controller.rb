@@ -7,24 +7,24 @@ module Dashboard
 			@articles = Article.all
 		end 
 
-	  def show
-	    @article = Article.find(params[:id])
-	  end
-
-		def create
-			@article = Article.new(article_params)
-			@article.admin = current_admin
-				if @article.save
-					flash[:notice] = "Un nouvel article a bien été créé (n°#{@article.id})!"
-					redirect_to edit_dashboard_articles_path(@article)
-				 else
-					render "new"
-				 end
-			end
-
 		def new
 			@article = Article.new
 		end
+
+	 	def create
+			@article = Article.new(article_params)
+			@article.admin = current_admin
+			if @article.save
+				flash[:notice] = "Un nouvel article a bien été créé (n°#{@article.id})!"
+				redirect_to edit_dashboard_article_path(@article)
+			else
+				render "new"
+			end
+		end
+
+		def show
+	    @article = Article.find(params[:id])
+	  end
 
 		def edit
 			@article = Article.find(params[:id])
@@ -32,7 +32,7 @@ module Dashboard
 
 	  def update
 			@article = Article.find(params[:id])
-			if @article.update(project_params)
+			if @article.update(article_params)
 	    	flash[:notice] = "L'article n°#{@article.id} a bien été édité !"
 				redirect_to dashboard_articles_path
 			else
@@ -52,7 +52,5 @@ module Dashboard
 	  def article_params
 	    params.require(:article).permit(:title, :description, :content, :date, :published)
 	  end
-
 	end
-
 end
