@@ -1,0 +1,38 @@
+<!-- Vertical navbar-->
+<div class="py-4 px-3 mb-4 bg-light">    
+  <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+     <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+      <span class="d-flex align-items-center text-muted">Gérer mon site</span>
+    </h6>
+    
+    <ul class="nav flex-column bg-white mb-0">
+      <li class="nav-item">
+        <li class="nav-link">
+          <i class="fa fa-line-chart mr-3 text-primary fa-fw"></i>
+          <%= link_to "Les réalisations", dashboard_projects_path %>
+        </li>
+        <li class="nav-link">
+          <i class="fa fa-picture-o mr-3 text-primary fa-fw"></i>
+          <%= link_to "Les articles", dashboard_articles_path %>
+        </li>        
+        <li class="nav-link">
+          <i class="fa fa-cubes mr-3 text-primary fa-fw"></i>
+          <%= link_to "Les messages" %>
+        </li>
+      </li>
+              
+      <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+        <span class="d-flex align-items-center text-muted">Gérer mon compte</span>
+      </h6>
+    
+      <li class="nav-link">
+        <i class="fa fa-th-large mr-3 text-primary fa-fw"></i>
+        <%= link_to "Editer mon profil", edit_admin_registration_path %>
+      </li>
+      <li class="nav-link">
+        <i class="fa fa-address-card mr-3 text-primary fa-fw"></i>
+        <%= link_to "Modifier mon mot de passe", edit_admin_registration_path %>
+      </li>
+    </ul>
+  </nav>
+<div>
