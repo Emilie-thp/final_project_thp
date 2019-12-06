@@ -51,3 +51,14 @@ end
   category = Category.create(category_name: categories_array.sample)
   puts "seed categories"
 end
+
+k=1
+10.times do
+  contact = Contact.create(email: "contact#{k}@mail.com",
+                           name: "Visiteur0#{k}",
+                           status: ["Particulier","Professionnel"].sample,
+                           subject: "Message du visiteur n°#{k}",
+                           content: Faker::Lorem.paragraph(sentence_count: 5)
+                          )
+  puts "seed messages"
+end
