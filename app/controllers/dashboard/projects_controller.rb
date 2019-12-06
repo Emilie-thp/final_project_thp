@@ -51,11 +51,11 @@ module Dashboard
 	  end
 
 		def secret
-			@article = Article.find(params[:id])
-			@admin = Admin.find(@article.admin_id)
+			@project = Project.find(params[:id])
+			@admin = Admin.find(@project.admin_id)
 				unless @admin.id == current_admin.id
 					flash[:notice] = "Vous n'avez pas le droit d'éditer le projet car vous n'êtes pas l'auteur !"
-					redirect_to dashboard_articles_path
+					redirect_to dashboard_projects_path
 		end
 	end
 
