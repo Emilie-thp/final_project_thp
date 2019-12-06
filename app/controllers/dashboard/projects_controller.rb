@@ -64,5 +64,7 @@ module Dashboard
 	  def project_params
 	    params.require(:project).permit(:title, :description, :content, :date, :published)
 	  end
+
 	end
+	
 end
