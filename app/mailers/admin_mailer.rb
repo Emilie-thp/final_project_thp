@@ -11,7 +11,7 @@ class AdminMailer < ApplicationMailer
   def contact_email(contact)
     @contact = contact
     @url  = 'http://oeil-de-biche.fr/' 
-    mail(to: @admin.email, subject: "Demande d'utilisateur")
+    mail(to: @contact.email, subject: "Demande d'utilisateur")
   end
 
 
