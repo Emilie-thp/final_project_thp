@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+
+  <body>
+    <h1>Bonjour!</h1>
+    <p>
+      Tu viens de recevoir un message sur le space admin du site https://oeil-de-biche-development.herokuapp.com/admins/sign_in. Aperçu du message:
+    </p>
+    <ul>
+      <li><%= @contact.email %>
+      <li><%= @contact.name %>
+      <li><%= @contact.status %>
+      <li><%= @contact.subject %>
+      <li><%= @contact.content %>
+    </ul>
+    <p>
+      Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : https://oeil-de-biche-development.herokuapp.com/.
+    </p>
+    <p> Bonne journée !  </p>
+  </body>
+
+</html>
