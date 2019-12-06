@@ -57,5 +57,6 @@ k=1
                            subject: "Message du visiteur n°#{k}",
                            content: Faker::Lorem.paragraph(sentence_count: 5)
                           )
+  k+=1
   puts "seed messages"
 end
