@@ -8,16 +8,17 @@
     
       <div class="card-body">
         <div class="card-text">
-          <table class="table table-striped table-sm">
-          <p align text="center">Message envoyé le <%= @contact.created_at.strftime("%d/%m/%Y à  %Hh%M") %></p>
+          <p align ="center">Message envoyé le <%= @contact.created_at.strftime("%d/%m/%Y à  %Hh%M") %></p>
           <div class="row">
             <div class="col">
               <br>
-              <p>Envoyé par :</p>
+              <p>Envoyé par </p>
               <br>    
-              <p>Ses coordonnées:</p>
+              <p>Ses coordonnées</p>
               <br>              
-              <p>Particuper ou professionnel:</p>
+              <p>Particulier ou professionnel?</p>
+              <br>
+              <p>Objet</p>
               <br>  
               <p>Message:</p>    
             </div>
@@ -29,11 +30,12 @@
               <br>              
               <p><%= @contact.status %></p>
               <br>  
+              <p><%= @contact.subject %></p>
+              <br>  
               <p><%= @contact.content %></p>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
- </div>
+</div>
