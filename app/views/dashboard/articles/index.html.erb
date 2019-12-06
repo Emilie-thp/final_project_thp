@@ -5,7 +5,7 @@
         <h2 class="section-title mb-40 text-center">Gérer les articles</h2>
         <p align ="center"><%= link_to "Créer un nouvel article", new_dashboard_article_path, class:"btn btn-success" %></p>
       </div>
-    
+
       <div class="card-body">
         <div class="card-text">
           <table class="table table-striped table-sm">
@@ -29,10 +29,15 @@
                 <%else%>
                   <td>Hors ligne</td>
                 <%end%>
+              <%if article.admin == current_admin %>
               <td><%= link_to "Editer", edit_dashboard_article_path(article.id), class:"btn btn-info" %></td>
               <td><%= link_to "Supprimer", dashboard_article_path(article.id), class:"btn btn-danger",  data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cet article à tout jamais ?"}, method: :delete %></td>
+                <%else%>
+              <td><%= link_to "Editer", edit_dashboard_article_path(article.id), class:"btn btn-info disabled" %></td>
+              <td><%= link_to "Supprimer", dashboard_article_path(article.id), class:"btn btn-danger disabled",  data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cet article à tout jamais ?"}, method: :delete %></td>
             </tr>
-            <%end%>       
+              <%end%>
+            <%end%>
           </table>
         <br>
       </div>
