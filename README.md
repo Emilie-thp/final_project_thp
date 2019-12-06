@@ -4,27 +4,33 @@
 
 *https://oeil-de-biche.herokuapp.com/*
 
-
 -----
 
 * Visitors' pathway:
 
-Visitors arrive on a home page where they have preview-access to unique photos and projets, to a blog section. The events feature is oncoming.
+Visitors land on a home page where they have a preview-access to unique photos and PROJETS (Réalisations) and to a BLOG (Articles) section. The events (Actualités) feature is oncoming...
 
 Through the navigation bar visitors can access the association profil: Who we are, our missions, our equipment, etc..
-Also they access to PROJETS (Réalisations) where they will find all the projects created by the association members.
-A complete access to the blog pages also exists. By clicking into "En savoir plus", they will see each projet on detail.
-
-If they want to get in touch with administrators, visitors can complete and send a form. They will receive an email as confirmation.
+Also they access to PROJETS where they will find all the projects created by the association members.
+A complete access to the blog (ARTICLES) pages a
 
 However only administratons can create, edit or delete PROJETS and ARTICLES.
+
+If they want to get in touch with administrators, visitors can complete and send a CONTACT form. The administrator webmaster will receive a warning email to let them know.
+
+
 
 -----
 
 * Administrators' pathway
 
-After a sign-in / sign up form, administrators
+*https://oeil-de-biche.herokuapp.com/admins/sign_up*
 
+After completing a sign-in or a sign up form, administrators land in a DASHBOARD page where they will find all the PROJETS, ARTICLES and CONTACTS sent by visitors. They are allow tho create, edit and destroy these three objets.
+
+First time singing up, they receive an welcome email and if they need a new password.
+
+Administrators can change their profile, nickname, mail and password. 
 
 -----
 
