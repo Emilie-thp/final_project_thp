@@ -1,30 +1,23 @@
 class ContactsController < ApplicationController
 
-    def new
-        @contact = Contact.new
-    end
-    
-    def index
-        @contacts = Contact.all
-    end
+  def new
+    @contact = Contact.new
+  end
 
-    def create
-        @contact = Contact.new(contact_params)
-        if @contact.save
-            redirect_to root_path
-        else
-            render new_contact_path
+  def create
+    @contact = Contact.new(contact_params)
+      if @contact.save
+        redirect_to root_path
+      else
+        render new_contact_path
+      end
+  end
 
-        end
 
-    end
-
-    private
+  private
 
     def contact_params
-
-    params.require(:contact).permit(:email, :name, :status, :content, :subject)
-
+      params.require(:contact).permit(:email, :name, :status, :content, :subject)
     end
 
 end
