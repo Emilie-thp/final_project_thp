@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
         if @contact.save
             redirect_to root_path
         else
-            render root_path
+            render new_contact_path
 
         end
 
