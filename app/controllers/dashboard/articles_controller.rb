@@ -2,10 +2,12 @@ module Dashboard
 
 	class ArticlesController < ApplicationController
 		layout 'dashboard'
+		before_action :authenticate_admin!
+		before_action :secret, only: [:edit, :update, :destroy]
 
 		def index
 			@articles = Article.all
-		end 
+		end
 
 		def new
 			@article = Article.new
@@ -46,6 +48,15 @@ module Dashboard
     	flash[:notice] = "L'article n°#{@article.id} a bien été supprimé !"
     	redirect_to dashboard_articles_path
 	  end
+
+		def secret
+			@article = Article.find(params[:id])
+			@admin = Admin.find(@article.admin_id)
+	 			unless @admin.id == current_admin.id
+					flash[:notice] = "Vous n'avez pas les droits d'accès !"
+					redirect_to dashboard_articles_path
+		end
+ end
 
 	  private
 
