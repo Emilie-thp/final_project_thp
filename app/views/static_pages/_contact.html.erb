@@ -20,25 +20,27 @@
         <div class="space30"></div>
         <label for="status" class="text-color">Status</label><br/>
       <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio" id="status1" name="status1" class="custom-control-input">
+        <%= f.radio_button("status", "professionel", { id: "status1",class:"custom-control-input"} )%>
         <label class="custom-control-label text-color" for="status1">Professionel</label>
       </div>
       <div class="custom-control custom-radio custom-control-inline">
-        <input type="radio" id="status2" name="status1" class="custom-control-input">
+        <%= f.radio_button("status", "particulier", { id: "status2", class:"custom-control-input"} )%> 
         <label class="custom-control-label text-color" for="status2">Particulier</label>
       </div>
         <div class="space30"></div>
         <div class="form-group">
           <label for="subject" class="text-color">Objet</label>
-          <input type="text" class="form-control" id="subject" placeholder="Votre objet">
+          <%= f.text_field :subject, class:"form-control", id:"subject", placeholder:"Votre objet"%>
         </div>
         <div class="space30"></div>
         <div class="form-group">
           <label for="content" class="text-color">Message</label>
-        <textarea class="form-control" rows="3" placeholder="Votre message"></textarea>
+        <%= f.text_area :content, class:"form-control", placeholder:"Votre message"%>
         </div>
         <div class="space30"></div>
-        <div class="text-center"><button type="submit" class="btn btn-full-rounded btn-salmon">Envoyer</button></div>
+        <div class="text-center">
+        <%=f.submit "Envoyer", class:"btn btn-full-rounded btn-salmon"%>
+        </div>
         <% end %>
         </form>
         </div>
