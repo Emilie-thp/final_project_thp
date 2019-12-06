@@ -39,6 +39,7 @@ j=1
                            description: "Un article sur la faune et la flore du Jura par l'association Oeil de Biche.",
                            content: Faker::Lorem.paragraph(sentence_count: 80),
                            admin_id: admin.id)
+  j+=1
   puts "seed articles"
 end
 
