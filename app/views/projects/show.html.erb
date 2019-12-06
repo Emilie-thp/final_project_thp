@@ -6,6 +6,7 @@
     <h1 class="section-title text-center"><%=@project.title%></h1>
     <p class="text-center"><%=@project.description%></p>
   </div>
+ </div>
 
 
  	<!-- video => if condition to do ! -->
@@ -24,9 +25,9 @@
 		      <div class="swiper-wrapper">
 		  			
 		  			<% @project.pictures.each do |image| %>      
-			        <div class="swiper-slide"><img src="style/images/art/cr1.jpg" alt="" />
+			        <div class="swiper-slide"><%= image_tag image %>
 			          <div class="link-wrapper">
-			            <div class="link lightbox"><%= image_tag image %></div>
+			        
 			          </div>
 			          <!-- .link-wrapper --> 
 			        </div>
