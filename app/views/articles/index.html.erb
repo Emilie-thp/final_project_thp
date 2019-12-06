@@ -5,7 +5,7 @@
     <div class="space30"></div>
     <div class="blog grid grid-view text-center">
       <div class="row isotope">
-        <% @articles.each_with_index do |article, index| %>
+        <% @articles.each do |article| %>
         <div class="item post grid-sizer col-md-6 col-lg-4">
           <figure class="overlay overlay2 mb-25">
             <%= link_to image_path('articles/article11.jpg') do %>
