@@ -8,19 +8,15 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show] 
   resources :project_categories
   resources :categories
-  resources :contacts, only: [:new, :index, :create]
+  resources :contacts, only: [:new, :create]
 
   namespace :dashboard do 
     resources :articles, :categories
+    resources :contacts, only: [:index, :show]
     resources :projects do
       resources :pictures
       resources :thumbnails
     end
-
-    
-
-    
   end
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
