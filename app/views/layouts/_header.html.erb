@@ -9,7 +9,7 @@
       <div class="collapse navbar-collapse">
         <div class="navbar-nav-wrapper">
           <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item dropdown"><%= link_to 'L\'association', root_path, class: 'nav-link dropdown-toggle' %>
+            <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle' %>
               <ul class="dropdown-menu dropdown-menu-left">
                 <li class="nav-item"><a class="dropdown-item" href="#association">Qui sommes-nous ?</a></li>
                 <li class="nav-item"><a class="dropdown-item" href="#mission">Nos missions</a></li>
@@ -19,7 +19,6 @@
               </ul>
             </li>
             <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link' %></li>
-            <li class="nav-item"><a class="nav-link" href="#">Actualités</a></li>
           </ul>
         </div>
         <div class="navbar-brand d-none d-lg-block">
@@ -29,6 +28,7 @@
         </div>
         <div class="navbar-nav-wrapper">
           <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="#">Actualités</a></li>
             <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link' %></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             <% if admin_signed_in? %>
