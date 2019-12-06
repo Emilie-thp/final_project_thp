@@ -1,6 +1,6 @@
 # README
 
-"Oeil de Biche Productions" is a beautiful website designed for a real association established in the French-Jura region whose mission are documentary productions.
+"Oeil de Biche Production" is a beautiful website designed for a real association established in the French-Jura region whose mission is to produce documentary.
 
 *https://oeil-de-biche.herokuapp.com/*
 
@@ -12,7 +12,7 @@ Visitors land on a home page where they have a preview-access to unique photos a
 
 Through the navigation bar visitors can access the association profil: Who we are, our missions, our equipment, etc..
 Also they access to PROJETS where they will find all the projects created by the association members.
-A complete access to the blog (ARTICLES) pages a
+A complete access to the blog (ARTICLES) pages is available through the navbar.
 
 However only administratons can create, edit or delete PROJETS and ARTICLES.
 
@@ -26,9 +26,9 @@ If they want to get in touch with administrators, visitors can complete and send
 
 *https://oeil-de-biche.herokuapp.com/admins/sign_up*
 
-After completing a sign-in or a sign up form, administrators land in a DASHBOARD page where they will find all the PROJETS, ARTICLES and CONTACTS sent by visitors. They are allow tho create, edit and destroy these three objets.
+After completing a sign-in or a sign up form, administrators land in a DASHBOARD page where they will find all the PROJETS, ARTICLES and CONTACTS sent by visitors. They are allow tho create, edit and destroy only the objects they created on their own.
 
-First time singing up, they receive an welcome email and if they need a new password.
+First time siging up, they receive a welcome email and if they need a new password.
 
 Administrators can change their profile, nickname, mail and password. 
 
