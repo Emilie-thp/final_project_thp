@@ -14,7 +14,11 @@ Rails.application.routes.draw do
     resources :articles, :categories
     resources :projects do
       resources :pictures
+      resources :thumbnails
     end
+
+    
+
     
   end
 
