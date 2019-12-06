@@ -8,8 +8,8 @@ class AdminMailer < ApplicationMailer
     mail(to: @admin.email, subject: "Création d'un compte administrateur") 
   end
 
-  def contact_email(admin)
-    @admin = admin
+  def contact_email(contact)
+    @contact = contact
     @url  = 'http://oeil-de-biche.fr/' 
     mail(to: @admin.email, subject: "Demande d'utilisateur")
   end
