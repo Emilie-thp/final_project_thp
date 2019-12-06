@@ -10,7 +10,7 @@ class AdminsController < ApplicationController
   def secret
     @admin = Admin.find(params[:id])
       unless @admin.id == current_admin.id
-        flash[:notice] = "Vous n'avez pas les droits d'accès !"
+        flash[:notice] = "Vous n'avez pas les droits d'accès au dashboard d'un autre admin!"
         redirect_to admin_path(current_admin)
       end
   end
