@@ -1,5 +1,9 @@
 class ContactsController < ApplicationController
 
+    def new
+        @contact = Contact.new
+    end
+    
     def index
         @contacts = Contact.all
     end
@@ -10,7 +14,7 @@ class ContactsController < ApplicationController
             redirect_to root_path
         else
             render root_path
-            
+
         end
 
     end

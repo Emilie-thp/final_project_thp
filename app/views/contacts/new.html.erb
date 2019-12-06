@@ -1,0 +1,52 @@
+<!-- /.wrapper -->
+<div id="contact" class="wrapper dark-wrapper">
+  <div class="container inner">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <h2 class="title-color color-default mb-20 text-center">Nous contacter</h2>
+        <p class="lead text-center text-color">Merci de remplir le formulaire ci-dessous</p>
+        <div class="space40"></div>
+        <form>
+        <%= form_with model: @contact, url: contacts_path, local: true, class: "form-group" do |f| %>
+          <div class="form-group">
+            <label for="email" class="text-color">Email</label>
+            <%= f.text_field :email, class:"form-control", id:"email", placeholder: "exemple@exemple.com" %>
+          </div>
+        <div class="space30"></div>
+        <div class="form-group">
+          <label for="name" class="text-color">Prénom et nom</label>
+          <%= f.text_field :name, class:"form-control", id: "name", placeholder:"John Doe"%>
+        </div>
+        <div class="space30"></div>
+        <label for="status" class="text-color">Status</label><br/>
+      <div class="custom-control custom-radio custom-control-inline">
+        <%= f.radio_button("status", "professionel", { id: "status1",class:"custom-control-input"} )%>
+        <label class="custom-control-label text-color" for="status1">Professionel</label>
+      </div>
+      <div class="custom-control custom-radio custom-control-inline">
+        <%= f.radio_button("status", "particulier", { id: "status2", class:"custom-control-input"} )%> 
+        <label class="custom-control-label text-color" for="status2">Particulier</label>
+      </div>
+        <div class="space30"></div>
+        <div class="form-group">
+          <label for="subject" class="text-color">Objet</label>
+          <%= f.text_field :subject, class:"form-control", id:"subject", placeholder:"Votre objet"%>
+        </div>
+        <div class="space30"></div>
+        <div class="form-group">
+          <label for="content" class="text-color">Message</label>
+        <%= f.text_area :content, class:"form-control", placeholder:"Votre message"%>
+        </div>
+        <div class="space30"></div>
+        <div class="text-center">
+        <%=f.submit "Envoyer", class:"btn btn-full-rounded btn-salmon"%>
+        </div>
+        <% end %>
+        </form>
+        </div>
+      </div>
+      <!-- /column -->
+    </div>
+    <!-- /.row -->
+  </div>
+  <!-- /.container -->
