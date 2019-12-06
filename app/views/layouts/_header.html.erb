@@ -2,14 +2,14 @@
   <nav class="navbar transparent absolute nav-wrapper-dark inverse-text navbar-expand-lg center justify-content-between">
     <div class="container">
       <div class="navbar-header">
-        <div class="navbar-brand d-lg-none d-xl-none"><a href="#"><img src="#" srcset="#" alt=""/></a></div>
+        <div class="navbar-brand d-lg-none d-xl-none"><%= link_to root_path do %><%= image_tag('logos/logo1.png', class:'', alt:'') %><%end%></div>
         <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
       </div>
       <!-- /.navbar-header -->
       <div class="collapse navbar-collapse">
         <div class="navbar-nav-wrapper">
           <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item dropdown"><a class="nav-link dropdown-toggle" href="<%= root_path %>">L'association</a>
+            <li class="nav-item dropdown"><%= link_to 'L\'association', root_path, class: 'nav-link dropdown-toggle' %>
               <ul class="dropdown-menu dropdown-menu-left">
                 <li class="nav-item"><a class="dropdown-item" href="#association">Qui sommes-nous ?</a></li>
                 <li class="nav-item"><a class="dropdown-item" href="#mission">Nos missions</a></li>
@@ -18,14 +18,18 @@
                 <li class="nav-item"><a class="dropdown-item" href="#equipment">Notre matériel</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a class="nav-link" href="<%= projects_path %>">Réalisations</a></li>
+            <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link' %></li>
             <li class="nav-item"><a class="nav-link" href="#">Actualités</a></li>
           </ul>
         </div>
-        <div class="navbar-brand d-none d-lg-block"><a href="<%= root_path %>"><img src="#" srcset="<%= image_path("images_brailie/logo-light.png") %> 1x, <%= image_path("images_brailie/logo-light.png") %> 2x" alt="" /></a></div>
+        <div class="navbar-brand d-none d-lg-block">
+          <%= link_to root_path do %>
+              <%= image_tag('logos/logo1.png', class:'', alt:'') %>
+          <%end%>
+        </div>
         <div class="navbar-nav-wrapper">
           <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="<%= articles_path %>">Blog</a></li>
+            <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link' %></li>
             <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
             <% if admin_signed_in? %>
             <li class="nav-item dashboard-btn"><%= link_to 'Espace Admin', admin_path(current_admin), class:'nav-link badge badge-pill bg-forest dashboard-text' %></li>
@@ -42,7 +46,7 @@
   <div class="rev_slider_wrapper fullscreen-container">
     <div id="slider" class="rev_slider fullscreenbanner bg-dark" data-version="5.4.7">
       <ul>
-        <li data-transition="fade" data-thumb="<%= image_path("header/header1.jpg") %>"><img src="<%= image_path("header/header1.jpg") %>" alt="" />
+        <li data-transition="fade" data-thumb="<%= image_path("header/header1.jpg") %>"><%= image_tag('header/header1.jpg', class:'', alt:'') %>
           <div class="tp-caption font-weight-500 text-uppercase color-white text-center"
 	        data-x="center"
 			data-y="middle"
@@ -85,7 +89,7 @@
 			data-responsive="on"
 			data-responsive_offset="on"
 			style="z-index: 9;" href="#">View Images</a> </li>
-        <li data-transition="fade" data-thumb="<%= image_path("header/header2.jpg") %>"><img src="<%= image_path("header/header2.jpg") %>" alt="" />
+        <li data-transition="fade" data-thumb="<%= image_path("header/header2.jpg") %>"><%= image_tag('header/header2.jpg', class:'', alt:'') %>
           <div class="tp-caption font-weight-500 text-uppercase color-white text-center"
 	        data-x="center"
 			data-y="middle"
@@ -128,7 +132,7 @@
 			data-responsive="on"
 			data-responsive_offset="on"
 			style="z-index: 9;" href="#">View Images</a> </li>
-        <li data-transition="fade" data-thumb="<%= image_path("header/header3.jpg") %>"><img src="<%= image_path("header/header3.jpg") %>" alt="" />
+        <li data-transition="fade" data-thumb="<%= image_path("header/header3.jpg") %>"><%= image_tag('header/header3.jpg', class:'', alt:'') %>
           <div class="tp-caption font-weight-500 text-uppercase color-white text-center"
 	        data-x="center"
 			data-y="middle"
