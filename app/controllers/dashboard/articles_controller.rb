@@ -44,7 +44,7 @@ module Dashboard
 			@article = Article.find(params[:id])
 			@article.destroy
     	flash[:notice] = "L'article n°#{@article.id} a bien été supprimé !"
-    	redirect_to dashboard_article_path
+    	redirect_to dashboard_articles_path
 	  end
 
 	  private
