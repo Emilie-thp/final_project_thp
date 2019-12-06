@@ -6,12 +6,19 @@
   </head>
 
   <body>
-    <h1>Bonjour <%= @admin.first_name %> !</h1>
+    <h1>Bonjour!</h1>
     <p>
-      Tu viens de créer un compte adminsitrateur sur le site XXà_modifierXX avec l'e-mail suivant : <%= @admin.email %>.
+      Tu viens de recevoir un message sur le space admin du site https://oeil-de-biche-development.herokuapp.com/admins/sign_in. aperçu du message:
     </p>
+    <ul>
+      <li><%= @contact.email %>
+      <li><%= @contact.name %>
+      <li><%= @contact.status %>
+      <li><%= @contact.subject %>
+      <li><%= @contact.content %>
+    </ul>
     <p>
-      Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : XXà_modifierXX.
+      Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : https://oeil-de-biche-development.herokuapp.com/.
     </p>
     <p> Bonne journée !  </p>
   </body>
