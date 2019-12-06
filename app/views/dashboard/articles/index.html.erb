@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container_fluid">
   <br>
     <div class="card">
       <div class="card-header">
@@ -21,10 +21,10 @@
             <% @articles.each do |article| %>
             <tr>
               <td><%= article.title %>  </td>
-              <td><%= article.admin.id %> </td>
+              <td>Admin n°<%= article.admin.id %> </td>
               <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
               <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
-              <%if article.published %>
+                <%if article.published %>
                   <td>En ligne</td>
                 <%else%>
                   <td>Hors ligne</td>
