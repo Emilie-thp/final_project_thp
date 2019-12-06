@@ -12,8 +12,8 @@ module Dashboard
 	  end
 
 	  def create
-		@project = Project.new(project_params)
-		@project.admin = current_admin
+			@project = Project.new(project_params)
+			@project.admin = current_admin
 			if @project.save
 	    	flash[:notice] = "Une nouvelle réalisation a bien été créée (n°#{@project.id})!"
 				redirect_to edit_dashboard_project_path(@project)
@@ -40,7 +40,6 @@ module Dashboard
 	  	end
 	  end
 
-
 	  def destroy
 	    @project = Project.find(params[:id])
 	    @project.destroy
@@ -53,8 +52,5 @@ module Dashboard
 	  def project_params
 	    params.require(:project).permit(:title, :description, :content, :date, :published)
 	  end
-
 	end
-
 end
-

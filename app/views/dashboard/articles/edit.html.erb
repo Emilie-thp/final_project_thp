@@ -1,0 +1,24 @@
+<div class="wrapper gray-wrapper">
+    <div class="container inner">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+          <h2 class="section-title text-center">Mise à jour de l article</h2>
+          <p class="lead text-center">Remplir le formulaire ci-dessous</p>
+          <div class="space40"></div>
+          <h6><b>Titre de l'article'<b></h6>
+          <%= form_with model: @article, url: dashboard_article_path, local: true do |f| %>
+            <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
+            <div class="space30"></div>
+            <h6><b>Description<b></h6>
+            <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
+            <div class="space30"></div>
+            <h6><b>Contenu<b></h6>
+            <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+            <div class="space30"></div>
+                        <br>
+            <%= f.submit "Editer l'article", class: 'btn btn-oasis' %>
+             <% end %>   
+          <div class="space30"></div>
+        </div>
+    </div>
+</div>
