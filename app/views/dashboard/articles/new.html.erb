@@ -1,4 +1,14 @@
 <div class="wrapper gray-wrapper">
+      <% if @article.errors.any? %>
+      <div class="alert alert-danger" role="alert">
+        <p>Nous n'avons pas réussi à créer l'article pour la (ou les) raison(s) suivante(s) :</p>
+          <ul>
+            <% @article.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>	
+      </div>
     <div class="container inner">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
