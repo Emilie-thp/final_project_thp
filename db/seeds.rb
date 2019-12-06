@@ -14,7 +14,6 @@ Category.destroy_all
 Admin.destroy_all
 
 
-
 admin = Admin.create(email: "admin@yopmail.com", password: "thpstrabourg")
 
 
@@ -23,15 +22,17 @@ categories_array = ["Institutionnel", "Communication", "Documentaire", "Animalie
 t1 = Date.parse("2019-12-31")
 t2 = Date.parse("2022-01-01")
 
-10.times do
-  project = Project.create(
-    title: Faker::Creature::Animal.name,
-    description: "Projet d'exception des animaux dans son cadre naturel. Un instant de magie pure, capturé par nos photographes de renom.",
-    content: Faker::Lorem.paragraph(sentence_count: 10),
-    date: rand(t1..t2),
-    admin_id: admin.id)
-    puts "seed projects"
+i=1 
 
+10.times do
+  project = Project.create(title: Faker::Creature::Animal.name,
+                           description: "Projet d'exception des animaux dans son cadre naturel. Un instant de magie pure, capturé par nos photographes de renom.",
+                           content: Faker::Lorem.paragraph(sentence_count: 20),
+                           date: rand(t1..t2),
+                           admin_id: admin.id)
+  project.thumbnail.attach(io: File.open("./storage/image#{i}.jpg"), filename: "image#{i}.jpg")
+  puts "seed projects"
+  i+=1
 end
 
 
