@@ -10,10 +10,11 @@ module Dashboard
 
     def destroy
       @project = Project.find(params[:project_id])
-      @project.picture.spurge
+      @project.pictures.purge
       redirect_to edit_dashboard_project_path(@project)
     end
 
   end
 
 end
+

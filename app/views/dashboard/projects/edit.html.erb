@@ -7,10 +7,12 @@
           <!-- Form for active_storage -->
             <div class="space30"></div>
             <p class="lead text-center">Ajouter la photo de la vignette</p>
-              <%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
-                <%= file_field_tag :pictures %>
+              <%= form_tag dashboard_project_thumbnails_path(@project) do %>
+                <%= file_field_tag :thumbnail %>
                 <%= submit_tag "Ajouter",  class: 'btn btn-oasis' %>
               <% end %>
+
+            
             <div class="space50"></div>
 
             <div class="space30"></div>
@@ -19,6 +21,15 @@
                 <%= file_field_tag :pictures %>
                 <%= submit_tag "Ajouter",  class: 'btn btn-oasis' %>
               <% end %>
+
+            <%if @project.pictures.attached?%>
+              <% @project.pictures.each do |image| %>
+                <%= image_tag image %> <br />
+              <% end %>
+            <%else%>
+              <p>=== Il n'y a pas encore d'avatar lié à cet utilisateur ===</p>
+            <%end%>
+
             <div class="space50"></div>
 
           <!-- /Form for active_storage -->

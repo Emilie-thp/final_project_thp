@@ -12,8 +12,12 @@ Rails.application.routes.draw do
   namespace :dashboard do 
     resources :articles, :categories
     resources :projects do
-      resources :pictures, :thumbnails
+      resources :pictures
+      resources :thumbnails
     end
+
+    
+
     
   end
 
