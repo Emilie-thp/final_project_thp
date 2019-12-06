@@ -31,6 +31,10 @@
    min-height: 100VH;
  }
 
+ * {
+  font-family: 'Montserrat', sans-serif;
+}
+
 .text-color {
   color: white !important;
 }
