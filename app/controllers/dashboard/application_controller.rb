@@ -5,11 +5,8 @@ module Dashboard
 
 		def index
 			@admin = Admin.find(params[:id])
-			
 		end
 
 	end
 
 end
-
-

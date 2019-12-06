@@ -2,7 +2,10 @@ module Dashboard
 
 	class ProjectsController < ApplicationController
 		layout 'dashboard'
-		
+		before_action :authenticate_admin!
+		before_action :secret, only: [:edit, :update, :destroy]
+
+
 		def index
 			@projects = Project.all
 		end
@@ -47,6 +50,15 @@ module Dashboard
     	redirect_to dashboard_projects_path
 	  end
 
+		def secret
+			@article = Article.find(params[:id])
+			@admin = Admin.find(@article.admin_id)
+				unless @admin.id == current_admin.id
+					flash[:notice] = "Vous n'avez pas le droit d'éditer le projet car vous n'êtes pas l'auteur !"
+					redirect_to dashboard_articles_path
+		end
+	end
+
 	  private
 
 	  def project_params
@@ -54,5 +66,5 @@ module Dashboard
 	  end
 
 	end
-	
+
 end

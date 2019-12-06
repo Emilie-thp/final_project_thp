@@ -2,6 +2,7 @@ module Dashboard
 
   class ContactsController < ApplicationController
  		layout 'dashboard'
+    before_action :authenticate_admin!
 
     def index
       @contacts = Contact.all
@@ -14,4 +15,3 @@ module Dashboard
   end
 
 end
-
