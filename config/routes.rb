@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :projects, only: [:index, :show] 
   resources :project_categories
   resources :categories
+  resources :contacts, only: [:new, :index, :create]
 
   namespace :dashboard do 
     resources :articles, :categories

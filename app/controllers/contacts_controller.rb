@@ -1,11 +1,21 @@
 class ContactsController < ApplicationController
 
+    def new
+        @contact = Contact.new
+    end
+    
     def index
         @contacts = Contact.all
     end
 
     def create
-        @contact = Contact.create(contact_params)
+        @contact = Contact.new(contact_params)
+        if @contact.save
+            redirect_to root_path
+        else
+            render new_contact_path
+
+        end
 
     end
 
