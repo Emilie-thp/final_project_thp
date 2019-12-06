@@ -23,16 +23,12 @@ t2 = Date.parse("2022-01-01")
 project_names = ["Le lièvre du Jura","Le cochon des prés","L'hippo du ter-ter","La galinette sandrée","Le aye-aye perché","L'atome de foin","Le cerf majestueux","L'envol de l'oiseau","La mare aux canards","Le chat perché","A fleur d'eau","L'autruche greluche","Flicaille la canaille","Le chien qui aboit","La peau de l'ours","Roule ta moule"]
 
 i=1 
-15.times do
+10.times do
   project = Project.create(title: project_names[i-1],
                            description: "Un projet réalisé par l'association Oeil de Biche, en partenariat avec la commune de la Pesse et les Parcs Naturels du Jura.",
                            content: Faker::Lorem.paragraph(sentence_count: 40),
                            date: rand(t1..t2),
                            admin_id: admin.id)
-  project.thumbnail.attach(io: File.open("./app/assets/images/seed/image#{i}.jpg"), filename: "thumbnail#{i}.jpg")
-  project.pictures.attach(io: File.open("./app/assets/images/seed/image#{i+10}.jpg"), filename: "pictures#{i}.jpg")
-  project.pictures.attach(io: File.open("./app/assets/images/seed/image#{i+11}.jpg"), filename: "pictures#{i+1}.jpg")
-  project.pictures.attach(io: File.open("./app/assets/images/seed/image#{i+12}.jpg"), filename: "pictures#{i+2}.jpg")
   puts "seed projects"
   i+=1
 end
