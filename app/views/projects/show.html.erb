@@ -17,96 +17,35 @@
     <p class="text"><%=@project.content%></p>
 			</div>
 
+			<%if @project.pictures.attached?%>
+			<!-- diaporama pictures => each loop to do ! -->
+		  <div class="swiper-container-wrapper swiper-auto light-gallery" data-aos="fade">
+		    <div class="swiper-container text-center">
+		      <div class="swiper-wrapper">
+		  			
+		  			<% @project.pictures.each do |image| %>      
+			        <div class="swiper-slide"><img src="style/images/art/cr1.jpg" alt="" />
+			          <div class="link-wrapper">
+			            <div class="link lightbox"><%= image_tag image %></div>
+			          </div>
+			          <!-- .link-wrapper --> 
+			        </div>
+		        <%end%>
+		        <!-- .swiper-slide --> 
+		      </div>
+		      <!-- .swiper-wrapper --> 
+		    </div>
+		    <!-- .swiper-container -->
+		    <div class="swiper-pagination gap-large"></div>
+		    <div class="swiper-button-next"></div>
+		    <div class="swiper-button-prev"></div>
+		  </div>
+		  <!-- .swiper-container-wrapper -->
+		  <div class="space90"></div>
+		</div>
 
-	<!-- diaporama pictures => each loop to do ! -->
-  <div class="swiper-container-wrapper swiper-auto light-gallery" data-aos="fade">
-    <div class="swiper-container text-center">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="style/images/art/cr1.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr1-full.jpg" data-sub-html=".caption1">
-              <div class="caption1 hidden">
-                <h5>Elit Fusce Ligula</h5>
-                <p>Purus Vulputate Sem Tellus Quam</p>
-              </div>
-              </a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr2.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr2-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-       
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr4.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr4-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr5.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr5-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr6.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr6-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr7.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr7-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr8.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr8-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr9.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr9-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr10.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr10-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide -->
-        <div class="swiper-slide"><img src="style/images/art/cr11.jpg" alt="" />
-          <div class="link-wrapper">
-            <div class="link lightbox"><a href="style/images/art/cr11-full.jpg"></a></div>
-          </div>
-          <!-- .link-wrapper --> 
-        </div>
-        <!-- .swiper-slide --> 
-      </div>
-      <!-- .swiper-wrapper --> 
-    </div>
-    <!-- .swiper-container -->
-    <div class="swiper-pagination gap-large"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
-  </div>
-  <!-- .swiper-container-wrapper -->
-  <div class="space90"></div>
-</div>
+		<%else%>
+		<div class="space90"></div>
+		<%end%>
 
+			
