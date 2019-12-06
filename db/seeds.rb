@@ -22,15 +22,20 @@ categories_array = ["Institutionnel", "Communication", "Documentaire", "Animalie
 t1 = Date.parse("2019-12-31")
 t2 = Date.parse("2022-01-01")
 
+project_names = ["Le lièvre du Jura"; "Le cochon des prés" ; "L'hippo du ter-ter" ; "La galinette sandrée" ; "Le aye-aye perché" ; "L'atome crochue" ; "Le cerf majestueux" ; "L'envol de l'oiseau" ; "La mare aux canards" ; "Le chat perché" ; "A fleur d'eau" ; "L'autruche greluche" ; "Flicaille la canaille" ; "Le chien qui aboit" ; "La peau de l'ours" ; "Roule ta moule"]
+
 i=1 
 
-10.times do
-  project = Project.create(title: Faker::Creature::Animal.name,
-                           description: "Projet d'exception des animaux dans son cadre naturel. Un instant de magie pure, capturé par nos photographes de renom.",
+15.times do
+  project = Project.create(title: project_names[i-1],
+                           description: "Un projet réalisé par l'association Oeil de Biche, en partenariat avec la commune de la Pesse et les Parcs Naturels du Jura.",
                            content: Faker::Lorem.paragraph(sentence_count: 20),
                            date: rand(t1..t2),
                            admin_id: admin.id)
   project.thumbnail.attach(io: File.open("./storage/image#{i}.jpg"), filename: "image#{i}.jpg")
+  project.picture.attach(io: File.open("./storage/image#{i+10}.jpg"), filename: "diaporama#{i}.jpg")
+  project.picture.attach(io: File.open("./storage/image#{i+11}.jpg"), filename: "diaporama#{i}.jpg")
+  project.picture.attach(io: File.open("./storage/image#{i+12}.jpg"), filename: "diaporama#{i}.jpg")
   puts "seed projects"
   i+=1
 end
