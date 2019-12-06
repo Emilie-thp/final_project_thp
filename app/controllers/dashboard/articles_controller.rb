@@ -44,13 +44,13 @@ module Dashboard
 			@article = Article.find(params[:id])
 			@article.destroy
     	flash[:notice] = "L'article n°#{@article.id} a bien été supprimé !"
-    	redirect_to dashboard_articles_path
+    	redirect_to dashboard_article_path
 	  end
 
 	  private
 
 	  def article_params
-	    params.require(:article).permit(:title, :description, :content, :date, :published)
-	  end
+	    params.require(:article).permit(:title, :description, :content, :published)
+		end
 	end
 end

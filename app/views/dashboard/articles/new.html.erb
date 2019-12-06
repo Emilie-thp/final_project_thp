@@ -5,7 +5,7 @@
           <h2 class="section-title text-center">Nouvel article</h2>
           <p class="lead text-center">Remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
-          <h6><b>Titre de l'article<b></h6>   
+          <h6><b>Titre de l article<b></h6>   
             <%= form_with model: @article, url: dashboard_articles_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
@@ -15,9 +15,7 @@
             <h6><b>Contenu<b></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div>
-            <h6><b>Date de l'article<b></h6>
-            <%= f.text_field :date, class:"form-control", placeholder: "format jj-mm-aaaa" %><br>
-            <br>
+            
             <%= f.submit "Créer l'article",  class: 'btn btn-oasis' %>
              <% end %>   
           <div class="space30"></div>          
