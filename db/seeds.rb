@@ -29,10 +29,10 @@ i=1
                            content: Faker::Lorem.paragraph(sentence_count: 40),
                            date: rand(t1..t2),
                            admin_id: admin.id)
-  project.thumbnail.attach(io: File.open("./storage/image#{i}.jpg"), filename: "image#{i}.jpg")
-  project.pictures.attach(io: File.open("./storage/image#{i+10}.jpg"), filename: "diaporama#{i}.jpg")
-  project.pictures.attach(io: File.open("./storage/image#{i+11}.jpg"), filename: "diaporama#{i}.jpg")
-  project.pictures.attach(io: File.open("./storage/image#{i+12}.jpg"), filename: "diaporama#{i}.jpg")
+  #project.thumbnail.attach(io: File.open("./storage/image#{i}.jpg"), filename: "image#{i}.jpg")
+  #project.pictures.attach(io: File.open("./storage/image#{i+10}.jpg"), filename: "diaporama#{i}.jpg")
+  #project.pictures.attach(io: File.open("./storage/image#{i+11}.jpg"), filename: "diaporama#{i}.jpg")
+  #project.pictures.attach(io: File.open("./storage/image#{i+12}.jpg"), filename: "diaporama#{i}.jpg")
   puts "seed projects"
   i+=1
 end
