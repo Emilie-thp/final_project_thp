@@ -53,7 +53,7 @@ module Dashboard
 			@article = Article.find(params[:id])
 			@admin = Admin.find(@article.admin_id)
 	 			unless @admin.id == current_admin.id
-					flash[:notice] = "Vous n'avez pas les droits d'accès !"
+					flash[:notice] = "Vous n'avez pas le droit d'éditer l'article car vous n'êtes pas l'auteur !"
 					redirect_to dashboard_articles_path
 		end
  end
