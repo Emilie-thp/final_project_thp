@@ -14,7 +14,7 @@
 
 
             <%if @project.thumbnail.attached?%>
-                <%= image_tag @project.thumbnail %> <br />
+                <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br />
             <%else%>
               <p>=== Veuillez choisir une miniature pour cette réalisation ===</p>
             <%end%>
@@ -31,7 +31,7 @@
 
             <%if @project.pictures.attached?%>
               <% @project.pictures.each do |image| %>
-                <%= image_tag image %> <br />
+                <%= image_tag image.variant(resize: "150x150") %> <br />
               <% end %>
             <%else%>
               <p>=== Veuillez choisir au minimum 3 photos pour le diaporama de cette réalisations ===</p>
