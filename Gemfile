@@ -78,3 +78,5 @@ gem 'devise-i18n'
 gem "table_print"
 
  gem "aws-sdk-s3", require: false
+
+ gem 'image_processing', '~> 1.2'
