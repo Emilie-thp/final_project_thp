@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-  <a class="navbar-brand mr-1" href="index.html">Espace Administrateur</a>
+  <%= link_to 'Espace Administrateur', dashboard_admin_path(current_admin), class:"navbar-brand mr-1"%>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
         <%= link_to 'Revenir au site', root_path, class: 'nav-link' %>
