@@ -34,10 +34,10 @@
 
           <div class="d-flex justify-content-center">
             <%= f.submit t('.sign_in'), class:"btn btn-teal" %>
-          </div>
+          </div><br/>
           <% end %>
-
-        <div class="d-flex justify-content-center"><%= render "devise/shared/links" %></div>
+        <%= link_to  "Inscription", new_admin_registration_path, class:"d-flex justify-content-center" %>
+        <%= link_to  "Mot de passe oublié?", new_admin_password_path, class:"d-flex justify-content-center" %>
       </div>
     </div>
   </div>
