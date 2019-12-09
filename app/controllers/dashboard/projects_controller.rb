@@ -1,7 +1,8 @@
 module Dashboard
 
 	class ProjectsController < ApplicationController
-		layout 'dashboard'
+  	layout 'application', :only => :show
+		layout 'dashboard', :except => :show
 		before_action :authenticate_admin!
 		before_action :secret, only: [:edit, :update, :destroy]
 
