@@ -68,3 +68,7 @@
 .dashboard-btn {
 	margin-top: 11px !important;
 }
+
+.space {
+  white-space: nowrap;
+}
