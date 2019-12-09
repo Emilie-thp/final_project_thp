@@ -10,11 +10,13 @@ Rails.application.routes.draw do
   resources :project_categories
   resources :categories
   resources :contacts, only: [:new, :create]
+  resources :events, only: [:index, :show] 
 
   namespace :dashboard do 
     resources :admins, only: [:show]
     resources :articles, :categories
     resources :contacts, only: [:index, :show]
+    resources :events, only: [:index, :show]
     resources :projects do
       resources :pictures
       resources :thumbnails
