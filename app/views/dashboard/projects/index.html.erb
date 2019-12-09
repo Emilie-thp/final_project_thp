@@ -24,6 +24,7 @@
                     <th>Créée le</th>
                     <th>Modifiée le</th>
                     <th>Statut</th>
+                    <th>Voir</th>
                     <th>Editer</th>
                     <th>Supprimer</th>
                   </tr>
@@ -41,7 +42,11 @@
                         <%else%>
                           <td>Hors ligne</td>
                         <%end%>
-                                         
+                      
+                      <td><%= link_to dashboard_project_path(project.id) do %>
+                          <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
+                        <%end%>
+                      </td>             
                       <td><%= link_to edit_dashboard_project_path(project.id) do %>
                           <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
                         <%end%>
@@ -58,4 +63,50 @@
           </div>
         </div>
       </div>
+
+       <!-- DataTables Example -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <h2 class="section-title text-center">Les réalisations des autres admins</h2>
+      </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Titre</th>
+                    <th>Auteur</th>
+                    <th>Créée le</th>
+                    <th>Modifiée le</th>
+                    <th>Statut</th>
+                    <th>Voir</th>
+                  </tr>
+                </thead>
+                  <% @projects.each do |project| %>
+                    <%unless project.admin == current_admin%>
+                    <tr>
+                      <td><%= project.title %>  </td>
+                      <td>Admin n°<%= project.admin.id %> </td>
+                      <td><%= project.created_at.strftime("%d/%m/%Y") %> </td>
+                      <td><%= project.updated_at.strftime("%d/%m/%Y") %> </td>
+                      
+                        <%if project.published %>
+                          <td>En ligne</td>
+                        <%else%>
+                          <td>Hors ligne</td>
+                        <%end%>
+                                         
+                      <td><%= link_to dashboard_project_path(project.id) do %>
+                          <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
+                        <%end%>
+                      </td>
+                    </tr>
+                  <%else%>
+                  <%end%>
+                <%end%>
+            </table>
+          </div>
+        </div>
+      </div>
+
     </div>
