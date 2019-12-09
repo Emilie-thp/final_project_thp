@@ -1,0 +1,49 @@
+<div class="container-fluid">
+
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">Catégories</li>
+    <li class="breadcrumb-item">
+      <%= link_to 'Voir la page Réalisations du site', projects_path %></a>
+    </li>
+  </ol>
+
+  <!-- DataTables Example -->
+    <div class="card mb-3">
+      <div class="card-header">
+        <h2 class="section-title text-center">Les catégories des réalisations</h2>
+          <p align ="center"><%= link_to "Créer une nouvelle catégrie", new_dashboard_category_path, class:"btn btn-success" %></p>
+      </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Catégorie</th>
+                    <th>Réalisations associées</th>
+                    <th>Créée le</th>
+                    <th>Modifiée le</th>
+                    <th>Editer</th>
+                    <th>Supprimer</th>
+                  </tr>
+                </thead>
+                  <% @categories.each do |cat| %>
+                    <tr>
+                      <td><%= cat.category_name %></td>
+                      <td><%= cat.projects.length %> réalisations</td>
+                      <td><%= cat.created_at.strftime("%d/%m/%Y") %> </td>
+                      <td><%= cat.updated_at.strftime("%d/%m/%Y") %></td>                         
+                      <td><%= link_to edit_dashboard_category_path(cat.id) do %>
+                          <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
+                        <%end%>
+                      </td>
+                      <td><%= link_to dashboard_category_path(cat.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette catégorie à tout jamais ?"}, method: :delete do %>
+                          <i class="fa fa-trash fa-2x d-flex justify-content-center"></i>
+                        <%end%>
+                      </td>
+                    </tr>
+                <%end%>
+            </table>
+          </div>
+        </div>
+      </div>

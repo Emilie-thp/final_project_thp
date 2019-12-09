@@ -2,9 +2,9 @@ module Dashboard
 
 	class CategoriesController < ApplicationController
     layout 'dashboard'
-    
+
 		def index
-			@categories = Category.new
+			@categories = Category.all
 		end
 
 	  def new
