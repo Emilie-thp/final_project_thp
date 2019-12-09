@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 	root to: 'static_pages#home'
 
   devise_for :admins
-  resources :admins, only: [:show]
   resources :articles, only: [:index, :show]
   resources :projects, only: [:index, :show] 
   resources :project_categories
@@ -11,6 +10,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
 
   namespace :dashboard do 
+    resources :admins, only: [:show]
     resources :articles, :categories
     resources :contacts, only: [:index, :show]
     resources :projects do
