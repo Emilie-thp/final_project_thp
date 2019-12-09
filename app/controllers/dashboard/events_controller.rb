@@ -1,10 +1,10 @@
 module Dashboard
 
 	class EventsController < ApplicationController
-		layout 'dashboard'
+		layout 'application', :only => :show
+		layout 'dashboard', :except => :show
 		before_action :authenticate_admin!
 		before_action :secret, only: [:edit, :update, :destroy]
-
 
 		def index
 			@events = Event.all
