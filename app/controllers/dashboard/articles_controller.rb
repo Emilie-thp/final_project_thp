@@ -1,7 +1,8 @@
 module Dashboard
 
 	class ArticlesController < ApplicationController
-		layout 'dashboard'
+  	layout 'application', :only => :show
+		layout 'dashboard', :except => :show
 		before_action :authenticate_admin!
 		before_action :secret, only: [:edit, :update, :destroy]
 
@@ -21,7 +22,7 @@ module Dashboard
 			@article = Article.new(article_params)
 			@article.admin = current_admin
 			if @article.save
-				flash[:notice] = "Un nouvel article a bien été créé (n°#{@article.id})!"
+				flash[:notice] = "Un nouvel article a bien été créé (n°#{@article.id})! Merci d'ajouter une photo avant de le publier."
 				redirect_to edit_dashboard_article_path(@article)
 			else
 				render "new"
