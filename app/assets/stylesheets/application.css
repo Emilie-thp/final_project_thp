@@ -15,7 +15,7 @@
  *= require style
  *= require style/css/bootstrap.min
  *= require font-awesome
- *= require style/css/color/blue
+ *= require style/css/color/forest
  *= require style/css/plugins
  *= require style/revolution/css/layers
  *= require style/revolution/css/navigation
@@ -42,8 +42,16 @@
   margin-left: 7px !important;
 }
 
+.border-top-line {
+  border: none !important;
+}
+
 .text-color {
   color: white !important;
+}
+
+.hover-color:hover {
+  background-color: #67bb7b !important;
 }
 
 .dashboard-text {
