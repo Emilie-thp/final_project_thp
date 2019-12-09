@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
   <%= link_to 'Espace Administrateur', dashboard_admin_path(current_admin), class:"navbar-brand mr-1"%>
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav ml-auto no-letter-spacing">
       <li class="nav-item">
-        <%= link_to 'Revenir au site', root_path, class: 'nav-link' %>
+        <%= link_to "Revenir à l'acceuil du site", root_path, class: 'nav-link no-letter-spacing' %>
       </li>
       <li class="nav-item">
         <%= link_to 'Se Déconnecter', destroy_admin_session_path, method: :delete, class:"nav-link" %>
