@@ -1,41 +1,47 @@
 <div class="container-fluid">
-  <br>
-    <div class="card">
-      <div class="card-header">
-        <h2 class="section-title mb-40 text-center">Message n° <%= @contact.id %></h2>
-        <p align ="center"><%= link_to "Retourner aux messages", dashboard_contacts_path, class:"btn btn-info" %>
-      </div>
-    
-      <div class="card-body">
-        <div class="card-text">
-          <p align ="center">Message envoyé le <%= @contact.created_at.strftime("%d/%m/%Y à  %Hh%M") %></p>
-          <div class="row">
-            <div class="col">
-              <br>
-              <p>Envoyé par </p>
-              <br>    
-              <p>Ses coordonnées</p>
-              <br>              
-              <p>Particulier ou professionnel?</p>
-              <br>
-              <p>Objet</p>
-              <br>  
-              <p>Message:</p>    
-            </div>
-            <div class="col">
-              <br>
-              <p><%= @contact.name %></p>
-              <br>    
-              <p><%= @contact.email %></p>
-              <br>              
-              <p><%= @contact.status %></p>
-              <br>  
-              <p><%= @contact.subject %></p>
-              <br>  
-              <p><%= @contact.content %></p>
+  <div class="card">
+    <div class="card-header">
+      <h2 class="section-title mb-40 text-center">Message de <%= @contact.name %></h2>
+      <p align ="center"><%= link_to "Retourner aux messages", dashboard_contacts_path, class:"btn btn-info" %>
+    </div>
+   
+    <div class="card-body">
+      <div class="card-text">
+        <div class="wrapper light-wrapper">
+          <div class="container">
+            <div class="row">
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <td>Envoyé le :</td>
+                    <td><%= @contact.created_at.strftime("%d/%m/%Y à  %Hh%M") %></td>
+                  </tr>
+                  <tr>
+                    <td>Envoyé par :</td>
+                    <td><%= @contact.name %></td>
+                  </tr>
+                  <tr>
+                    <td>Adresse email :</td>
+                    <td><%= @contact.email %></td>
+                  </tr>
+                  <tr>
+                    <td>Status :</td>
+                    <td><%= @contact.status %></td>
+                  </tr>
+                  <tr>
+                    <td>Objet du message :</td>
+                    <td><%= @contact.subject%></td>
+                  </tr>
+                  <tr>
+                    <td>Contenu du message :</td>
+                    <td><%= @contact.content%></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
 </div>
