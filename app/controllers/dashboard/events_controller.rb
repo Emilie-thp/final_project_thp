@@ -1,6 +1,6 @@
 module Dashboard
 
-	class ProjectsController < ApplicationController
+	class EventsController < ApplicationController
 		layout 'dashboard'
 		before_action :authenticate_admin!
 		before_action :secret, only: [:edit, :update, :destroy]
