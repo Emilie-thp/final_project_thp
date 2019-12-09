@@ -9,16 +9,16 @@
       <div class="collapse navbar-collapse">
         <div class="navbar-nav-wrapper">
           <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle' %>
-              <ul class="dropdown-menu dropdown-menu-left">
-                <li class="nav-item"><a class="dropdown-item" href="#association">Qui sommes-nous ?</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#mission">Nos missions</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#team">L'équipe</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#realisation">Nos réalisations</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#equipment">Notre matériel</a></li>
+            <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle bold-text' %>
+              <ul class="dropdown-menu dropdown-menu-left border-top-line">
+                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#association">Qui sommes-nous ?</a></li>
+                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#mission">Nos missions</a></li>
+                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#team">L'équipe</a></li>
+                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#realisation">Nos réalisations</a></li>
+                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#equipment">Notre matériel</a></li>
               </ul>
             </li>
-            <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link bold-text' %></li>
           </ul>
         </div>
         <div class="navbar-brand d-none d-lg-block">
@@ -28,9 +28,9 @@
         </div>
         <div class="navbar-nav-wrapper">
           <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Actualités</a></li>
-            <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "Contact", new_contact_path, class:"nav-link" %></li>
+            <li class="nav-item"><a class="nav-link bold-text" href="#">Actualités</a></li>
+            <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link bold-text' %></li>
+            <li class="nav-item"><%= link_to "Contact", new_contact_path, class:"nav-link bold-text" %></li>
             <% if admin_signed_in? %>
             <li class="nav-item dashboard-btn"><%= link_to 'Espace Admin', dashboard_admin_path(current_admin), class:'nav-link badge badge-pill bg-forest dashboard-text' %></li>
             <%end%>

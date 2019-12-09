@@ -30,7 +30,7 @@
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link" href="#">Actualités</a></li>
             <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "Contact", new_contact_path, class:"nav-link" %></li>
+            <li class="nav-item"><%= link_to "Contact", new_contact_path, class:'nav-link' %></li>
             <% if admin_signed_in? %>
             <li class="nav-item dashboard-btn"><%= link_to 'Espace Admin', dashboard_admin_path(current_admin), class:'nav-link badge badge-pill bg-forest dashboard-text' %></li>
             <%end%>
