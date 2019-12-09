@@ -14,5 +14,4 @@ class AdminMailer < ApplicationMailer
     mail(to: 'bamby.boutique.thp@gmail.com', subject: "Demande d'utilisateur")
   end
 
-
 end

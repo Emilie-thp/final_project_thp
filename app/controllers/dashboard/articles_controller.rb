@@ -9,6 +9,10 @@ module Dashboard
 			@articles = Article.all
 		end
 
+		def show
+	    @article = Article.find(params[:id])
+	  end
+
 		def new
 			@article = Article.new
 		end
@@ -23,10 +27,6 @@ module Dashboard
 				render "new"
 			end
 		end
-
-		def show
-	    @article = Article.find(params[:id])
-	  end
 
 		def edit
 			@article = Article.find(params[:id])
@@ -49,19 +49,22 @@ module Dashboard
     	redirect_to dashboard_articles_path
 	  end
 
-		def secret
-			@article = Article.find(params[:id])
-			@admin = Admin.find(@article.admin_id)
-	 			unless @admin.id == current_admin.id
-					flash[:notice] = "Vous n'avez pas le droit d'éditer l'article car vous n'êtes pas l'auteur !"
-					redirect_to dashboard_articles_path
-		end
- end
 
 	  private
 
 	  def article_params
 	    params.require(:article).permit(:title, :description, :content, :published)
 		end
+
+		def secret
+			@article = Article.find(params[:id])
+			@admin = Admin.find(@article.admin_id)
+	 			unless @admin.id == current_admin.id
+					flash[:notice] = "Vous n'avez pas le droit d'éditer ou supprimer l'article car vous n'êtes pas l'auteur !"
+					redirect_to dashboard_articles_path
+				end
+		end
+
 	end
+
 end
