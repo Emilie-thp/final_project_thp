@@ -5,27 +5,29 @@
     <div class="space30"></div>
     <div class="blog grid grid-view text-center">
       <div class="row isotope">
-        <% @events.each do |event| %>
-        <div class="item post grid-sizer col-md-6 col-lg-4">
-          <figure class="overlay overlay2 mb-25">
-            <%= link_to image_path('events/event11.jpg') do %>
-                <%= image_tag('events/event11.jpg', class:'', alt:'') %>
-            <%end%>
-          </figure>
-          <div class="post-content pl-10 pr-10">
-            <div class="meta"><span class="date"><%=event.created_at.to_date%></span><span class="comments"><a href="#">2</a></span><span class="category"><%=event.admin.email%></span></div>
-            <h2 class="post-title"><a href="blog-post.html"><%=event.title%></a></h2>
-            <p><%=event.description%></p>
-            <%= link_to "Lire l'event", event_path(event.id), class: "more" %>
-          </div>
-          <!-- /.post-content -->
+          
+      <div class="item post grid-sizer col-md-6 col-lg-4">
+      
+      
+      
+
+      
+      <div class="post-content pl-10 pr-10">
+          <div class="meta"><span class="date"><%=event.created_at.to_date%></span><span class="comments"><a href="#">2</a></span><span class="category"><%=event.admin.email%></span></div>
+          <h2 class="post-title"><a href="blog-post.html"><%=event.title%></a></h2>
+          <p><%=event.description%></p>
+          <%= link_to "Lire l'event", event_path(event.id), class: "more" %>
         </div>
-        <!-- /.post -->
-        <%end%>
-      </div>
-      <!-- /.row -->
+
+        <!-- /.post-content -->
     </div>
-    <!-- /.blog -->
+    <!-- /.post -->
+    <%end%>
+    </div>
+    <!-- /.row -->
+  </div>
+  
+  <!-- /.blog -->
     <div class="space30 d-md-none"></div>
     <div class="pagination bordered d-flex justify-content-center">
       <ul>
@@ -36,6 +38,7 @@
         <li><a href="#"><i class="fa fa-chevron-right"></i></a></li>
       </ul>
     </div>
+
     <!-- /.pagination -->
   </div>
   <!-- /.container -->
