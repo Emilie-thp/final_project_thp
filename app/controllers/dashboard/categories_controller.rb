@@ -15,9 +15,18 @@ module Dashboard
       @category = Category.create(params[:category_name])
     end
   
+    def edit 
+      @category = Category.find(params[:id])
+    end 
+
     def update
       @category = Category.find(params[:id])
-      @category.update(params[:category_name])
+        if @category.update(category_name: params[:category_name])
+          flash[:notice] = "La catégorie a bien été mise à jour !"
+          redirect_to dashboard_categories_path
+        else
+          render "edit"
+        end
     end
   
     def destroy
