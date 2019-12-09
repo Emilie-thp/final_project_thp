@@ -1,20 +1,11 @@
-  <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
-
-    <a class="navbar-brand mr-1" href="index.html">Espace Administrateur</a>
-
-
-    <!-- Navbar -->
+<nav class="navbar navbar-expand navbar-dark bg-dark static-top">
+  <a class="navbar-brand mr-1" href="index.html">Espace Administrateur</a>
     <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fa fa-caret-right"></i>
-          <span>Revenir au site</span></a>
+        <%= link_to 'Revenir au site', root_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="tables.html">
-          <i class="fa fa-user-circle fa-fw"></i>
-          <span>Se déconnecter</span></a>
+        <%= link_to 'Se Déconnecter', destroy_admin_session_path, method: :delete, class:"nav-link" %>
       </li>
     </ul>
-
-  </nav>
+</nav>
