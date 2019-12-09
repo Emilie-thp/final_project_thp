@@ -70,6 +70,6 @@ l=1
                         content: Faker::Lorem.paragraph(sentence_count: 30),
                         date: rand(t1..t2),
                         admin_id: admin.id)
-l+=1
-puts "seed events"
+  l+=1
+  puts "seed events"
 end
