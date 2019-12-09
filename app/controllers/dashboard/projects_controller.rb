@@ -50,20 +50,22 @@ module Dashboard
     	redirect_to dashboard_projects_path
 	  end
 
-		def secret
-			@project = Project.find(params[:id])
-			@admin = Admin.find(@project.admin_id)
-				unless @admin.id == current_admin.id
-					flash[:notice] = "Vous n'avez pas le droit d'éditer le projet car vous n'êtes pas l'auteur !"
-					redirect_to dashboard_projects_path
-		end
-	end
+	
 
 	  private
 
 	  def project_params
 	    params.require(:project).permit(:title, :description, :content, :date, :published)
 	  end
+
+  	def secret
+		@project = Project.find(params[:id])
+		@admin = Admin.find(@project.admin_id)
+			unless @admin.id == current_admin.id
+				flash[:notice] = "Vous n'avez pas le droit d'éditer ou supprimer le projet car vous n'êtes pas l'auteur !"
+				redirect_to dashboard_projects_path
+			end
+		end
 
 	end
 
