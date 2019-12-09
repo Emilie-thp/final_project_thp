@@ -1,5 +1,15 @@
 <!-- /.wrapper -->
 <div id="contact" class="wrapper dark-wrapper">
+        <% if @contact.errors.any? %>
+          <div class="alert alert-danger" role="alert">
+            <p>Nous n'avons pas réussi à envoyer votre demande pour la (ou les) raison(s) suivante(s) :</p>
+            <ul>
+            <% @contact.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+            </ul>
+            </div> 
+            <% end %>
   <div class="container inner">
     <div class="row">
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">

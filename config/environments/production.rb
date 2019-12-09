@@ -93,6 +93,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Redirection for Devise
-  config.action_mailer.default_url_options = { :host => 'oeil-de-biche-production.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'oeil-de-biche.herokuapp.com' }
 
 end
