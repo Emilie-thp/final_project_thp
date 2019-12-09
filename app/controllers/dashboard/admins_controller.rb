@@ -9,6 +9,12 @@ module Dashboard
     	@admin = Admin.find(params[:id])
     end
 
+    def edit 
+      @admin = Admin.find(params[:id])
+    end
+
+    private
+
     def secret
       @admin = Admin.find(params[:id])
         unless @admin.id == current_admin.id

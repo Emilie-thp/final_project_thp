@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   resources :contacts, only: [:new, :create]
 
   namespace :dashboard do 
-    resources :admins, only: [:show]
+    resources :admins, only: [:show, :edit, :update]
     resources :articles, :categories
     resources :contacts, only: [:index, :show]
     resources :projects do
