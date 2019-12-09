@@ -7,6 +7,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.datetime :date
       t.string :location
       t.boolean :published
+      t.belongs_to :admin, index: true, foreign_key: true
 
       t.timestamps
     end

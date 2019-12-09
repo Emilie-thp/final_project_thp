@@ -85,8 +85,10 @@ ActiveRecord::Schema.define(version: 2019_12_09_172236) do
     t.datetime "date"
     t.string "location"
     t.boolean "published"
+    t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["admin_id"], name: "index_events_on_admin_id"
   end
 
   create_table "project_categories", force: :cascade do |t|
@@ -112,5 +114,6 @@ ActiveRecord::Schema.define(version: 2019_12_09_172236) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "articles", "admins"
+  add_foreign_key "events", "admins"
   add_foreign_key "projects", "admins"
 end
