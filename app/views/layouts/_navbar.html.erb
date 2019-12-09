@@ -2,37 +2,54 @@
   <nav class="navbar solid nav-wrapper-dark inverse-text navbar-expand-lg center">
     <div class="container">
       <div class="navbar-header">
-        <div class="navbar-brand d-lg-none d-xl-none"><%= link_to root_path do %><%= image_tag('logos/logo1.png', class:'', alt:'') %><%end%></div>
-        <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
+        <div class="navbar-brand d-lg-none d-xl-none"><%= link_to root_path do %><%= image_tag('logos/logo1.png', class:'', alt:'') %>
+        <%end%>
+        </div>
+      <div class="navbar-hamburger ml-auto d-lg-none d-xl-none">
+        <button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse">
+          <span></span></button>
+      </div>
       </div>
       <!-- /.navbar-header -->
       <div class="collapse navbar-collapse">
         <div class="navbar-nav-wrapper">
           <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle' %>
-              <ul class="dropdown-menu dropdown-menu-left">
-                <li class="nav-item"><a class="dropdown-item" href="#">Qui sommes-nous ?</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#">Nos missions</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#">L'équipe</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#">Nos réalisations</a></li>
-                <li class="nav-item"><a class="dropdown-item" href="#">Notre matériel</a></li>
+            <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle bold-text' %>
+              <ul class="dropdown-menu dropdown-menu-left border-top-line">
+                <li class="nav-item">
+                  <a class="dropdown-item text-color hover-color" href="#association">Qui sommes-nous ?</a>
+                </li>
+                <li class="nav-item">
+                  <a class="dropdown-item text-color hover-color" href="#mission">Nos missions</a>
+                </li>
+                <li class="nav-item">
+                  <a class="dropdown-item text-color hover-color" href="#team">L'équipe</a>
+                </li>
+                <li class="nav-item">
+                  <a class="dropdown-item text-color hover-color" href="#realisation">Nos réalisations</a>
+                </li>
+                <li class="nav-item">
+                  <a class="dropdown-item text-color hover-color" href="#equipment">Notre matériel</a>
+                </li>
               </ul>
             </li>
-            <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link' %></li>
+            <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link bold-text' %></li>
           </ul>
         </div>
         <div class="navbar-brand d-none d-lg-block">
           <%= link_to root_path do %>
-              <%= image_tag('logos/logo1.png', class:'', alt:'') %>
-          <%end%>
+          <%= image_tag('logos/logo1.png', class:'', alt:'') %>
+        <%end%>
         </div>
         <div class="navbar-nav-wrapper">
           <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="#">Actualités</a></li>
-            <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link' %></li>
-            <li class="nav-item"><%= link_to "Contact", new_contact_path, class:'nav-link' %></li>
+            <li class="nav-item">
+              <a class="nav-link bold-text" href="#">Actualités</a>
+            </li>
+            <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link bold-text' %></li>
+            <li class="nav-item"><%= link_to "Contact", new_contact_path, class:"nav-link bold-text" %></li>
             <% if admin_signed_in? %>
-            <li class="nav-item dashboard-btn"><%= link_to 'Espace Admin', dashboard_admin_path(current_admin), class:'nav-link badge badge-pill bg-forest dashboard-text' %></li>
+            <li class="nav-item dashboard-btn"><%= link_to 'Espace Admin', dashboard_admin_path(current_admin), class:'nav-link badge badge-pill bg-teal dashboard-text' %></li>
             <%end%>
           </ul>
         </div>
@@ -43,3 +60,4 @@
     <!-- /.container -->
   </nav>
   <!-- /.navbar -->
+</div>
