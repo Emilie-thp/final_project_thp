@@ -35,6 +35,13 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.bold-text {
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+  padding-right: 15px !important;
+  margin-left: 7px !important;
+}
+
 .text-color {
   color: white !important;
 }
