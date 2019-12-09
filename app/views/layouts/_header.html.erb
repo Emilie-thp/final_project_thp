@@ -11,11 +11,11 @@
           <ul class="nav navbar-nav mr-auto">
             <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle bold-text' %>
               <ul class="dropdown-menu dropdown-menu-left border-top-line">
-                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#association">Qui sommes-nous ?</a></li>
-                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#mission">Nos missions</a></li>
-                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#team">L'équipe</a></li>
-                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#realisation">Nos réalisations</a></li>
-                <li class="nav-item"><a class="dropdown-item text-color hover-color" href="#equipment">Notre matériel</a></li>
+                <li class="nav-item"><%= link_to 'Qui sommes-nous ?', root_path(@root, anchor: 'association'), class:'dropdown-item text-color hover-color' %></li>
+                <li class="nav-item"><%= link_to 'Nos missions', root_path(@root, anchor: 'mission'), class:'dropdown-item text-color hover-color' %></li>
+                <li class="nav-item"><%= link_to 'L\'équipe', root_path(@root, anchor: 'team'), class:'dropdown-item text-color hover-color' %></li>
+                <li class="nav-item"><%= link_to 'Nos réalisations', root_path(@root, anchor: 'realisation'), class:'dropdown-item text-color hover-color' %></li>
+                <li class="nav-item"><%= link_to 'Notre matériel', root_path(@root, anchor: 'equipment'), class:'dropdown-item text-color hover-color' %></li>
               </ul>
             </li>
             <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link bold-text' %></li>
@@ -30,7 +30,7 @@
           <ul class="nav navbar-nav ml-auto">
             <li class="nav-item"><a class="nav-link bold-text" href="#">Actualités</a></li>
             <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link bold-text' %></li>
-            <li class="nav-item"><%= link_to "Contact", new_contact_path, class:"nav-link bold-text" %></li>
+            <li class="nav-item"><%= link_to 'Contact', new_contact_path, class:'nav-link bold-text' %></li>
             <% if admin_signed_in? %>
             <li class="nav-item dashboard-btn"><%= link_to 'Espace Admin', dashboard_admin_path(current_admin), class:'nav-link badge badge-pill bg-teal dashboard-text bold-text' %></li>
             <%end%>
@@ -47,7 +47,7 @@
     <div id="slider" class="rev_slider fullscreenbanner bg-dark" data-version="5.4.7">
       <ul>
         <li data-transition="fade" data-thumb="<%= image_path("header/header1.jpg") %>"><%= image_tag('header/header1.jpg', class:'', alt:'') %>
-          <div class="tp-caption font-weight-500 text-uppercase color-white text-center"
+          <div class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
 	        data-x="center"
 			data-y="middle"
 			data-voffset="['-75','-75','-75','-75']"
@@ -90,7 +90,7 @@
 			data-responsive_offset="on"
 			style="z-index: 9;" href="#association">En savoir plus</a> </li>
         <li data-transition="fade" data-thumb="<%= image_path("header/header2.jpg") %>"><%= image_tag('header/header2.jpg', class:'', alt:'') %>
-          <div class="tp-caption font-weight-500 text-uppercase color-white text-center"
+          <div class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
 	        data-x="center"
 			data-y="middle"
 			data-voffset="['-75','-75','-75','-75']"
@@ -133,7 +133,7 @@
 			data-responsive_offset="on"
 			style="z-index: 9;" href="#association">En savoir plus</a> </li>
         <li data-transition="fade" data-thumb="<%= image_path("header/header3.jpg") %>"><%= image_tag('header/header3.jpg', class:'', alt:'') %>
-          <div class="tp-caption font-weight-500 text-uppercase color-white text-center"
+          <div class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
 	        data-x="center"
 			data-y="middle"
 			data-voffset="['-75','-75','-75','-75']"

@@ -1,13 +1,18 @@
 module Dashboard
 
 	class ArticlesController < ApplicationController
-		layout 'dashboard'
+  	layout 'application', :only => :show
+		layout 'dashboard', :except => :show
 		before_action :authenticate_admin!
 		before_action :secret, only: [:edit, :update, :destroy]
 
 		def index
 			@articles = Article.all
 		end
+
+		def show
+	    @article = Article.find(params[:id])
+	  end
 
 		def new
 			@article = Article.new
@@ -17,16 +22,12 @@ module Dashboard
 			@article = Article.new(article_params)
 			@article.admin = current_admin
 			if @article.save
-				flash[:notice] = "Un nouvel article a bien été créé (n°#{@article.id})!"
+				flash[:notice] = "Un nouvel article a bien été créé (n°#{@article.id})! Merci d'ajouter une photo avant de le publier."
 				redirect_to edit_dashboard_article_path(@article)
 			else
 				render "new"
 			end
 		end
-
-		def show
-	    @article = Article.find(params[:id])
-	  end
 
 		def edit
 			@article = Article.find(params[:id])
@@ -49,19 +50,22 @@ module Dashboard
     	redirect_to dashboard_articles_path
 	  end
 
-		def secret
-			@article = Article.find(params[:id])
-			@admin = Admin.find(@article.admin_id)
-	 			unless @admin.id == current_admin.id
-					flash[:notice] = "Vous n'avez pas le droit d'éditer l'article car vous n'êtes pas l'auteur !"
-					redirect_to dashboard_articles_path
-		end
- end
 
 	  private
 
 	  def article_params
 	    params.require(:article).permit(:title, :description, :content, :published)
 		end
+
+		def secret
+			@article = Article.find(params[:id])
+			@admin = Admin.find(@article.admin_id)
+	 			unless @admin.id == current_admin.id
+					flash[:notice] = "Vous n'avez pas le droit d'éditer ou supprimer l'article car vous n'êtes pas l'auteur !"
+					redirect_to dashboard_articles_path
+				end
+		end
+
 	end
+
 end

@@ -23,6 +23,8 @@ t2 = Date.parse("2022-01-01")
 
 project_names = ["Le lièvre du Jura","Le cochon des prés","L'hippo du ter-ter","La galinette sandrée","Le aye-aye perché","L'atome de foin","Le cerf majestueux","L'envol de l'oiseau","La mare aux canards","Le chat perché","A fleur d'eau","L'autruche greluche","Flicaille la canaille","Le chien qui aboit","La peau de l'ours","Roule ta moule"]
 
+event_names = ["Stand sur la chimie verte","L'agriculture biologique","Scène de bêtes","Papier Ciseaux Forêt Oiseaux","E=mc2","Temps à histoires", "La forêt dans la transition écologique","Atélier Co-écologique","Atélier Bee to Bee", "Les controverses Ecologiques","Demain,hier", "Atelier Fresque du climat"]
+
 i=1 
 10.times do
   project = Project.create(title: project_names[i-1],
@@ -65,7 +67,7 @@ end
 
 l=1
 10.times do
-  event = Event.create(title: project_names[l-1],
+  event = Event.create(title: event_names[l-1],
                         description: "Une actualité qui valorise et respecte l'environnement.",
                         content: Faker::Lorem.paragraph(sentence_count: 40),
                         date: rand(t1..t2),

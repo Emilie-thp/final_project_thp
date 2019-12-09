@@ -10912,3 +10912,7 @@ body.sidebar-toggled footer.sticky-footer {
     width: calc(100% - 90px);
   }
 }
+
+.no-letter-spacing {
+  letter-spacing: normal !important;
+}
