@@ -12,6 +12,7 @@ Project.destroy_all
 Article.destroy_all
 Category.destroy_all
 Admin.destroy_all
+Events.destroy_all
 
 admin = Admin.create(email: "admin@yopmail.com", password: "thpstrabourg")
 
@@ -29,8 +30,9 @@ i=1
                            content: Faker::Lorem.paragraph(sentence_count: 40),
                            date: rand(t1..t2),
                            admin_id: admin.id)
-  puts "seed projects"
   i+=1
+  puts "seed projects"
+ 
 end
 
 j=1
@@ -59,4 +61,15 @@ k=1
                           )
   k+=1
   puts "seed messages"
+end
+
+l=1
+10.times do
+  event = Event.create(title: event_names[l-1],
+                        description: "Une actualité qui valorise et respecte l'environnement.",
+                        content: Faker::Lorem.paragraph(sentence_count: 30),
+                        date: rand(t1..t2),
+                        admin_id: admin.id)
+l+=1
+puts "seed events"
 end
