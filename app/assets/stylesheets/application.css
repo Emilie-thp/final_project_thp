@@ -15,7 +15,7 @@
  *= require style
  *= require style/css/bootstrap.min
  *= require font-awesome
- *= require style/css/color/forest
+ *= require style/css/color/teal
  *= require style/css/plugins
  *= require style/revolution/css/layers
  *= require style/revolution/css/navigation
@@ -51,24 +51,41 @@
   color: white !important;
 }
 
+.resize-home-titles {
+  font-size: 1em !important;
+}
+
+.home-header-font {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 .hover-color:hover {
-  background-color: #67bb7b !important;
+  background-color: #67bbb2 !important;
+  color: black !important;
 }
 
 .dashboard-text {
+  font-family: 'Montserrat', sans-serif !important;
+  color: #212529 !important;
 	font-size: 11px !important;
 	letter-spacing: 0px !important;
 	font-weight: 500 !important;
 	padding-top: 9px !important;
 	padding-bottom: 9px !important;
 	padding-left: 7px !important;
-   padding-right: 7px !important;
+  padding-right: 7px !important;
+}
+
+.dashboard-text:hover {
+  background-color: grey !important;
+  color: white !important;
 }
 
 .dashboard-btn {
 	margin-top: 11px !important;
 }
 
-.space {
-  white-space: nowrap;
+.list-group-item.active {
+    background-color: #67bbb2 !important;
+    border-color: #67bbb2 !important;
 }

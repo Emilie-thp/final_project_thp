@@ -1,18 +1,13 @@
-      <div class="container-fluid">
-
-        <!-- Breadcrumbs-->
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item">
-            <a href="index.html">Dashboard</a>
-          </li>
-          <li class="breadcrumb-item active">Blank Page</li>
-        </ol>
-
-        <!-- Page Content -->
-        <h1>Blank Page</h1>
-        <hr>
-        <p>This is a great starting point for new custom pages.</p>
-
-  
-      </div>
-      <!-- /.container-fluid -->
+<div class="container-fluid">
+  <!-- Page Content -->
+  <h1>Bienvenue dans ton espace administrateur <%= @admin.pseudo %></h1>
+  <hr>
+    <p>Pour naviguer dans cet espace, clique sur les onglets à gauche :</p>
+    <ul class="unordered-list list-blue">
+      <li><strong>Réalisations :</strong> pour créer une nouvelle réasalition ou éditer celles déjà créées. </li>
+      <li><strong>Articles :</strong> pour créer un nouvel article ou éditer ceux déjà créés. </li>
+      <li><strong>Messages :</strong> pour consulter les emails reçus depuis le formulaire de contact. </li>
+      <li><strong>Gérer mon profil :</strong> pour modifier ton pseudo</li>
+      <li><strong>Gérer mon compte :</strong> pour modifier ton email ou ton mot de passe</li>
+    </ul>
+</div>
