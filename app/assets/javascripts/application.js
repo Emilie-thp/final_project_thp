@@ -31,3 +31,4 @@
 //= require style/revolution/js/extensions/revolution.extension.video.min
 //= require style/revolution/revolution-addons/filmstrip/js/revolution.addon.filmstrip.min
 //= require style/revolution/revolution-addons/typewriter/js/revolution.addon.typewriter.min
+//= require dashboard/javascripts/sb-admin

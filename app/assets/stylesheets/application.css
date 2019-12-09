@@ -25,6 +25,7 @@
  *= require style/revolution/revolution-addons/filmstrip/css/revolution.addon.filmstrip
  *= require style/revolution/revolution-addons/typewriter/css/typewriter
  *= require style/type/icons
+ *= require dashboard/stylesheets/sb-admin
  */
 
  #contenu {
