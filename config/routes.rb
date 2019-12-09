@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'events/index'
+  get 'events/show'
 	root to: 'static_pages#home'
 
   devise_for :admins
