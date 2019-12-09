@@ -10,12 +10,12 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  *= require style
  *= require style/css/bootstrap.min
  *= require font-awesome
- *= require style/css/color/blue
+ *= require style/css/color/forest
  *= require style/css/plugins
  *= require style/revolution/css/layers
  *= require style/revolution/css/navigation
@@ -35,8 +35,23 @@
   font-family: 'Montserrat', sans-serif;
 }
 
+.bold-text {
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+  padding-right: 15px !important;
+  margin-left: 7px !important;
+}
+
+.border-top-line {
+  border: none !important;
+}
+
 .text-color {
   color: white !important;
+}
+
+.hover-color:hover {
+  background-color: #67bb7b !important;
 }
 
 .dashboard-text {
