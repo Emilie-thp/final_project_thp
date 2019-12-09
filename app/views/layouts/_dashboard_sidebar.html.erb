@@ -18,6 +18,18 @@
     <%end%>
   </li>
   <li class="nav-item">
+    <%= link_to dashboard_projects_path, class:"nav-link no-letter-spacing" do %>
+      <i class="fa fa-calendar"></i>
+        <span>Actualités</span></a>
+    <%end%>
+  </li>
+  <li class="nav-item">
+    <%= link_to dashboard_categories_path, class:"nav-link no-letter-spacing" do %>
+      <i class="fa fa-hashtag"></i>
+        <span>Catégories</span></a>
+    <%end%>
+  </li>
+  <li class="nav-item">
     <%= link_to dashboard_contacts_path, class:"nav-link no-letter-spacing" do %>
       <i class="fa fa-envelope"></i>
         <span>Messages reçus</span></a>
