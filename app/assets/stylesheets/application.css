@@ -55,6 +55,10 @@
   font-size: 1em !important;
 }
 
+.home-header-font {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
 .hover-color:hover {
   background-color: #67bbb2 !important;
   color: black !important;
