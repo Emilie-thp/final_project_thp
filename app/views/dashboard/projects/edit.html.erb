@@ -1,4 +1,3 @@
-<div class="wrapper gray-wrapper">
     <div class="container inner">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
@@ -6,7 +5,7 @@
 
           <!-- Form for active_storage -->
             <div class="space30"></div>
-            <p class="lead text-center">Ajouter la photo de la vignette</p>
+            <p class="lead text-center">Ajouter une photo pour la miniature</p>
               <%= form_tag dashboard_project_thumbnails_path(@project), multipart: true do %>
                 <%= file_field_tag :thumbnail %>
                 <%= submit_tag "Ajouter",  class: 'btn btn-oasis' %>
@@ -23,7 +22,7 @@
             <div class="space50"></div>
 
             <div class="space30"></div>
-            <p class="lead text-center">Ajouter les photos du diaporama</p>
+            <p class="lead text-center">Ajouter les photos du diaporama (3 photos minium / ou aucune photo)</p>
               <%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
                 <%= file_field_tag :pictures %>
                 <%= submit_tag "Ajouter",  class: 'btn btn-oasis' %>
@@ -60,4 +59,3 @@
              <% end %>   
            </div>
     </div>
-</div>
