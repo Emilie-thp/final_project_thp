@@ -29,6 +29,7 @@
                   </tr>
                 </thead>
                   <% @projects.each do |project| %>
+                    <%if project.admin == current_admin%>
                     <tr>
                       <td><%= project.title %>  </td>
                       <td>Admin n°<%= project.admin.id %> </td>
@@ -40,26 +41,21 @@
                         <%else%>
                           <td>Hors ligne</td>
                         <%end%>
-                      
-                        <%if project.admin == current_admin %>
-                          
-                          <td><%= link_to edit_dashboard_project_path(project.id) do %>
-                              <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
-                            <%end%>
-                          </td>
-                          
-                          <td><%= link_to dashboard_project_path(project.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette réalisation à tout jamais ?"}, method: :delete do %>
-                              <i class="fa fa-trash fa-2x d-flex justify-content-center"></i>
-                            <%end%>
-                          </td>
-                        <%else%>
-                        <td><%= link_to "Editer", edit_dashboard_project_path(project.id), class:"btn btn-info disabled" %></td>
-                        <td><%= link_to "Supprimer", dashboard_project_path(project.id), class:"btn btn-danger disabled",  data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette réalisation à tout jamais ?"}, method: :delete %></td>
-                      </tr>
-              <%end%>
-            <%end%>
-          </table>
+                                         
+                      <td><%= link_to edit_dashboard_project_path(project.id) do %>
+                          <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
+                        <%end%>
+                      </td>
+                      <td><%= link_to dashboard_project_path(project.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette réalisation à tout jamais ?"}, method: :delete do %>
+                          <i class="fa fa-trash fa-2x d-flex justify-content-center"></i>
+                        <%end%>
+                      </td>
+                    </tr>
+                  <%else%>
+                  <%end%>
+                <%end%>
+            </table>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
