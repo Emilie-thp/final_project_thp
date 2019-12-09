@@ -51,6 +51,10 @@
   color: white !important;
 }
 
+.resize-home-titles {
+  font-size: 1em !important;
+}
+
 .hover-color:hover {
   background-color: #67bbb2 !important;
   color: black !important;
