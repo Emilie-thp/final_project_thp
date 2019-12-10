@@ -1,79 +1,71 @@
-
-  <!-- /.wrapper -->
-  <div class="wrapper gray-wrapper">
-    <div class="container inner">
-      <h1 class="heading mb-0 text-center">Nos réalisations</h1>
-      <div class="space50"></div>
-      <div id="slide-portfolio">
-        <div class="tabs-wrapper filtered">
-          <ul class="nav nav-tabs justify-content-center">
-           	<li class="nav-item"><%= link_to 'Tout', projects_path, class:"nav-link active"%></li>
-           	<% @categories.each do |cat| %>
-            <li class="nav-item"> <%= link_to projects_path(category: cat.category_name), class:"nav-link active" do %><%=cat.category_name%>
-            	<%end%>
-            </li>
+<!-- /.wrapper -->
+<div class="wrapper gray-wrapper">
+  <div class="container inner">
+    <h1 class="heading mb-0 text-center">Nos réalisations</h1>
+    <div class="space50"></div>
+    <div id="slide-portfolio">
+      <div class="tabs-wrapper filtered">
+        <ul class="nav nav-tabs justify-content-center">
+          <li class="nav-item"><%= link_to 'Tout', projects_path, class:"nav-link active"%></li>
+          <% @categories.each do |cat| %>
+            <li class="nav-item"><%= link_to projects_path(category: cat.category_name), class:"nav-link active" do %><%=cat.category_name%>
             <%end%>
-
-          </ul>
-          <!-- /.nav-tabs -->
-
-          <div class="space10"></div>
-          <div class="tab-content">
-            <div class="tab-pane fade pb-0 show active" id="tab1-1">
-
-
+          </li>
+        <%end%>
+        </ul>
+        <!-- /.nav-tabs -->
+      <div class="space10"></div>
+        <div class="tab-content">
+          <div class="tab-pane fade pb-0 show active" id="tab1-1">
             <% @projects.each_with_index do |project, index| %>
-
-            	<% if index%2 == 0 %>
-	             <!--/.row 1-->
-	              <div class="row no-gutter block-wrapper arrowed">
-	                <div class="col-md-6 block order-md-2">
+              <% if index%2 == 0 %>
+                <!--/.row 1-->
+                <div class="row no-gutter block-wrapper arrowed">
+                  <div class="col-md-6 block order-md-2">
                     <% if project.thumbnail.attached?%>
-	                  <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
+                      <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
                     <%else%>
-                    <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
+                      <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
                     <%end%>
-	                </div>
-	                <!--/column -->
-	                <div class="col-md-6 block text-center">
-	                  <div class="box bg-white h-100 d-flex flex-column justify-content-center">
-	                    <h3 class="text-uppercase"><%=project.title%></h3>
-	                    <p class="mb-30"><%=project.description%></p>
-	                    <div class="d-inline-block">
+                  </div>
+                  <!--/column -->
+                  <div class="col-md-6 block text-center">
+                    <div class="box bg-white h-100 d-flex flex-column justify-content-center">
+                      <h3 class="text-uppercase"><%=project.title%></h3>
+                      <p class="mb-30"><%=project.description%></p>
+                      <div class="d-inline-block">
                         <%= link_to "En savoir plus", project_path(project.id), class: "more more-inverse" %>
                       </div>
-	                  </div>
-	                </div>
-	                <!--/column -->
-	              </div>
-	              <!--/.row -->
-
-	           <%else%>
-	              <!--/.row 2-->
-	              <div class="row no-gutter block-wrapper arrowed">
-	                <div class="col-md-6 block">
-                   <% if project.thumbnail.attached?%>
-                    <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
+                    </div>
+                  </div>
+                  <!--/column -->
+                </div>
+                <!--/.row -->
+              <%else%>
+                <!--/.row 2-->
+                <div class="row no-gutter block-wrapper arrowed">
+                  <div class="col-md-6 block">
+                    <% if project.thumbnail.attached?%>
+                      <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
                     <%else%>
-                    <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
+                      <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
                     <%end%>
-	                </div>
-	                <!--/column -->
-	                <div class="col-md-6 block text-center">
-	                  <div class="box bg-white h-100 d-flex flex-column justify-content-center">
-	                    <h3 class="text-uppercase"><%=project.title%></h3>
-	                    <p class="mb-30"><%=project.description%></p>
-	                    <div class="d-inline-block">
+                  </div>
+                  <!--/column -->
+                  <div class="col-md-6 block text-center">
+                    <div class="box bg-white h-100 d-flex flex-column justify-content-center">
+                      <h3 class="text-uppercase"><%=project.title%></h3>
+                      <p class="mb-30"><%=project.description%></p>
+                      <div class="d-inline-block">
                         <%= link_to "En savoir plus", project_path(project.id), class: "more more-inverse" %>
                       </div>
-	                  </div>
-	                </div>
-	                <!--/column -->
-	              </div>
-	              <!--/.row -->
-             <%end%>
-           <%end%>
-
+                    </div>
+                  </div>
+                  <!--/column -->
+                </div>
+                <!--/.row -->
+              <%end%>
+            <%end%>
             <!--/.tab-pane -->
           </div>
           <!-- /.tab-content -->
@@ -84,5 +76,5 @@
     </div>
     <!-- /.container -->
   </div>
-  <!-- /.wrapper -->
+<!-- /.wrapper -->
 </div>

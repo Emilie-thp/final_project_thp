@@ -12,7 +12,13 @@ module Dashboard
     end
   
     def create
-      @category = Category.create(params[:category_name])
+      @category = Category.new(category_params)
+      if @category.save
+        flash[:notice] = "La catégorie #{@category.category_name} a été créée !"
+        redirect_to dashboard_categories_path
+      else
+        render "new"
+      end
     end
   
     def edit 
