@@ -8,46 +8,15 @@
             <h1 class="post-title text-center"><a href="blog-post.html"><%=@article.title%></a></h1>
             <p class="text-center"><%=@article.description%></p>
             <div class="meta text-center"><span class="date"><%=@article.created_at.to_date%></span><span class="author">By <a href="#"><%= @article.admin.email%></a></span><span class="comments"><a href="#">2</a></span><span class="category"><a href="#">Simple</a></span></div>
+            <%if @article.image.attached?%>
             <figure class="mb-25">
-                  <%= image_tag('articles/article11_header.jpg', class:'', alt:'') %>
+                <%= image_tag @article.image %>
             </figure>
+            <%end%>
             <div class="post-content">
+              <div class="space10"></div>
               <p><%=@article.content%></p>
-              <p><%=@article.content%></p>
               <div class="space10"></div>
-              <blockquote class="icon icon-left">
-                <p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass.</p>
-                <footer class="blockquote-footer">Pulp fiction</footer>
-              </blockquote>
-              <div class="space10"></div>
-              <h3>Sit Vulputate Bibendum Purus</h3>
-              <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Aenean lacinia bibendum nulla sed consectetur. Cras mattis consectetur purus sit amet fermentum. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Vestibulum id ligula porta felis euismod semper. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.</p>
-              <div class="space10"></div>
-              <div class="tiles light-gallery">
-                <div class="items row text-center">
-                  <div class="item col-md-6">
-                    <figure class="overlay overlay2">
-                      <%= link_to image_path('articles/article11.jpg') do %>
-                          <%= image_tag('articles/article11.jpg', class:'', alt:'') %>
-                      <%end%>
-                    </figure>
-                  </div>
-                  <!--/column -->
-                  <div class="item col-md-6">
-                    <figure class="overlay overlay2">
-                      <%= link_to image_path('articles/article11.jpg') do %>
-                          <%= image_tag('articles/article11.jpg', class:'', alt:'') %>
-                      <%end%>
-                    </figure>
-                  </div>
-                  <!--/column -->
-                </div>
-                <!--/.row -->
-              </div>
-              <!-- /.tiles -->
-              <div class="clearfix"></div>
-              <div class="space20"></div>
-              <p>Cras mattis consectetur purus sit amet fermentum. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Nullam id dolor id nibh ultricies vehicula ut id elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras mattis consectetur purus sit amet fermentum. Donec sed odio dui. Donec id elit non mi porta gravida at eget metus. Maecenas faucibus mollis interdum. Cras mattis consectetur purus sit amet fermentum. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Vestibulum id ligula porta felis euismod semper. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
               <div class="meta tags mb-10 text-center"><a href="#">journal</a>, <a href="#">illustration</a>, <a href="#">design</a>, <a href="#">daily</a></div>
               <ul class="social social-mute social-s text-center">
                 <li><a href="#"><i class="fa fa-facebook"></i></a></li>
@@ -94,7 +63,7 @@
             <!--/column -->
           </div>
           <!--/.row -->
-          <div class="divider-icon"><i class="fa fa-pencil"></i></div>
+          <!-- <div class="divider-icon"><i class="fa fa-pencil"></i></div>
           <div id="comments">
             <h4>4 Comments on "Tellus Adipiscing Nibh Mattis Ligula"</h4>
             <ol id="singlecomments" class="commentlist">
@@ -163,9 +132,9 @@
                 </div>
               </li>
             </ol>
-          </div>
+          </div> -->
           <!-- /#comments -->
-          <div class="divider-icon"><i class="fa fa-pencil"></i></div>
+          <!-- <div class="divider-icon"><i class="fa fa-pencil"></i></div>
           <h4>Would you like to share your thoughts?</h4>
           <p>Your email address will not be published. Required fields are marked *</p>
           <div class="space20"></div>
@@ -183,7 +152,7 @@
               <textarea name="textarea" class="form-control" rows="5" placeholder="Enter your comment here..."></textarea>
             </div>
             <button type="submit" class="btn btn-full-rounded">Submit</button>
-          </form>
+          </form> -->
           <!-- /.comment-form -->
         </div>
         <!-- /.blog -->
@@ -195,16 +164,17 @@
   <!-- /.container -->
 </div>
 <!-- /.wrapper -->
-<div class="wrapper gray-wrapper">
+<!-- <div class="wrapper gray-wrapper">
   <div class="instagram-wrapper">
     <div class="swiper-container-wrapper">
       <div class="swiper-container swiper-instagram2">
         <div id="instafeed4" class="swiper-wrapper"></div>
-      </div>
+      </div> -->
       <!-- /.swiper-container -->
-    </div>
+    <!-- </div> -->
     <!-- /.swiper-container-wrapper -->
-    <a href="https://www.instagram.com/urbanshots/" target="_blank" class="btn btn-full">Follow me @ Instagram</a> </div>
+    <!-- <a href="https://www.instagram.com/urbanshots/" target="_blank" class="btn btn-full">Follow me @ Instagram</a> </div> -->
   <!-- /.instagram-wrapper -->
-</div>
+<!-- </div> -->
 <!-- /.wrapper -->
+<!-- </div> -->
