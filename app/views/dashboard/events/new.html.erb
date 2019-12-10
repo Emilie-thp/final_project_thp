@@ -6,6 +6,7 @@
             <% @event.errors.full_messages.each do |event| %>
               <li><%= message %></li>
             <% end %>
+
           </ul>
         <% end %>	
       </div>
@@ -25,6 +26,7 @@
             <h6><b>Contenu<b></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div>
+            
             
             <%= f.submit "Créer l'actualité',  class: 'btn btn-oasis' %>
              <% end %>   
