@@ -4,8 +4,4 @@ class StaticPagesController < ApplicationController
     @projects = Project.all
   end
 
-  def index
-    @project = Project.find(params[:id])
-  end
-
 end
