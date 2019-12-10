@@ -12,7 +12,8 @@
     <div class="card mb-3">
       <div class="card-header">
         <h2 class="section-title text-center">Mes actualités</h2>
-          <p align ="center"><%= link_to "Créer une nouvelle actualité", new_dashboard_event_path, class:"btn btn-success" %></p>
+          
+        
       </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -82,7 +83,7 @@
                     <th>Voir</th>
                   </tr>
                 </thead>
-                  <% @event.each do |event| %>
+                  <% @events.each do |event| %>
                     <%unless event.admin == current_admin%>
                     <tr>
                       <td><%= event.title %>  </td>
