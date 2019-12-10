@@ -6,6 +6,7 @@ class Admin < ApplicationRecord
 
   has_many :projects
   has_many :articles
+  has_many :events
   
   after_create :welcome_send
   

@@ -1,0 +1,29 @@
+<div class="wrapper gray-wrapper">
+    <div class="container inner">
+      <div class="row">
+        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+          <h2 class="section-title text-center">Mise à jour de l'actualité'</h2>
+          <p class="lead text-center">Remplir le formulaire ci-dessous</p>
+          <div class="space40"></div>
+          <h6><b>Titre de l'actualité'<b></h6>
+          <%= form_with model: @event, url: dashboard_event_path, local: true do |f| %>
+            <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
+            <div class="space30"></div>
+            <h6><b>Description rapide<b></h6>
+            <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
+            <div class="space30"></div>
+            <h6><b>Détails de l'événement<b></h6>
+            <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+            <div class="space30"></div>
+            <h6><b>Localisation (adresse)<b></h6>
+            <%= f.text_area :location, class:"form-control", placeholder: "Contenu" %>
+            <div class="space30"></div><h6><b>Date de la réalisation<b></h6>
+            <h6><b>Date et heure <b></h6>
+            <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019 20:00:00" %><br>
+            <br>                        <br>
+            <%= f.submit "Editer l'actualité", class: 'btn btn-teal' %>
+             <% end %>   
+          <div class="space30"></div>
+        </div>
+    </div>
+</div>

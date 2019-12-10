@@ -1,22 +1,18 @@
 <!-- /.wrapper -->
 <div class="wrapper light-wrapper">
   <div class="container inner">
-    <h2 class="section-title section-title-upper text-center">Nos articles</h2>
+    <h2 class="section-title section-title-upper text-center">Nos actualités et événements</h2>
     <div class="space30"></div>
     <div class="blog grid grid-view text-center">
       <div class="row isotope">
-        <% @articles.each do |article| %>
-        <div class="item post grid-sizer col-md-6 col-lg-4">
-          <figure class="overlay overlay2 mb-25">
-            <%= link_to image_path('articles/article11.jpg') do %>
-                <%= image_tag('articles/article11.jpg', class:'', alt:'') %>
-            <%end%>
-          </figure>
+      <% @events.each do |event| %>
+      <div class="item post grid-sizer col-md-6 col-lg-4">
+        
           <div class="post-content pl-10 pr-10">
-            <div class="meta"><span class="date"><%=article.created_at.to_date%></span><span class="comments"><a href="#">2</a></span><span class="category"><%=article.admin.email%></span></div>
-            <h2 class="post-title"><a href="blog-post.html"><%=article.title%></a></h2>
-            <p><%=article.description%></p>
-            <%= link_to "Lire l'article", article_path(article.id), class: "more" %>
+            <div class="meta"><span class="date"><%=event.created_at.to_date%></span><span class="comments"><a href="#">2</a></span><span class="category"><%=event.admin.email%></span></div>
+            <h2 class="post-title"><a href="#"><%=event.title%></a></h2>
+            <p><%=event.description%></p>
+            <%= link_to "Voir l'actualité", event_path(event.id), class: "more" %>
           </div>
           <!-- /.post-content -->
         </div>

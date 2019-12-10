@@ -1,7 +1,7 @@
 <div class="wrapper gray-wrapper">
       <% if @project.errors.any? %>
       <div class="alert alert-danger" role="alert">
-        <p>Nous n'avons pas réussi à créer le projet pour la (ou les) raison(s) suivante(s) :</p>
+        <p>Nous n avons pas réussi à créer le projet pour la (ou les) raison(s) suivante(s) :</p>
           <ul>
             <% @project.errors.full_messages.each do |message| %>
               <li><%= message %></li>
