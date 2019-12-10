@@ -57,17 +57,15 @@ module Dashboard
 
 		private
 
-		
-
 	  def event_params
-	    params.require(:event).permit(:title, :description, :content, :date, :published)
+	    params.require(:event).permit(:title, :description, :content, :date, :published, :location)
 	  end
 
 		def secret
 			@event = Event.find(params[:id])
 			@admin = Admin.find(@event.admin_id)
 				unless @admin.id == current_admin.id
-					flash[:notice] = "Vous n'avez pas le droit d'éditer le event car vous n'êtes pas l'auteur !"
+					flash[:notice] = "Vous n'avez pas le droit d'éditer l'actualité car vous n'êtes pas l'auteur !"
 					redirect_to dashboard_events_path
 		end
 
