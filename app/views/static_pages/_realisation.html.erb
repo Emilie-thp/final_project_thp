@@ -1,62 +1,42 @@
-<!-- /.wrapper -->
 <div id="realisation" class="wrapper dark-wrapper inverse-text">
   <div class="container inner">
     <h2 class="title-color color-default mb-20 text-center resize-home-titles">Nos principales réalisations</h2>
-    <div id="cube-grid2-filter" class="cbp-filter-container text-center">
-      <!-- <div data-filter="*" class="cbp-filter-item-active cbp-filter-item">All</div>
-      <div data-filter=".commercial" class="cbp-filter-item">Commercial</div>
-      <div data-filter=".conceptual" class="cbp-filter-item">Conceptual</div>
-      <div data-filter=".interior" class="cbp-filter-item">Interior</div>
-      <div data-filter=".macro" class="cbp-filter-item">Macro</div>
-      <div data-filter=".video" class="cbp-filter-item">Video</div>
-    </div> -->
-    <div class="clearfix"></div>
-    <div class="space20"></div>
-    <div id="cube-grid2" class="cbp text-center">
-      <div class="cbp-item conceptual interior">
-        <figure class="overlay overlay1 mb-20">
-          <%= link_to image_path('realisations/realisation1.jpg') do %>
-              <%= image_tag('realisations/realisation1.jpg', class:'', alt:'') %>
-          <%end%>
-          <figcaption class="d-flex">
-            <div class="align-self-center mx-auto">
-              <h5 class="mb-0">Voir l'image</h5>
-            </div>
-          </figcaption>
-        </figure>
-        <h4 class="mb-0 text-color">Dapibus Pellentesque</h4>
+    <div class="blog grid image-grid grid-view boxed tiles tiles-m">
+      <div class="row isotope items">
+        <% @projects.limit(3).each do |project| %>
+          <div class="item post grid-sizer col-md-6 col-lg-4">
+            <% if project.thumbnail.attached?%>
+              <figure class="overlay overlay4">
+                <%= link_to project_path(project.id) do %>
+                <%= image_tag project.thumbnail, alt:'miniature' %>
+                <figcaption class="d-flex text-left">
+                  <div class="align-self-end mt-auto">
+                    <h2 class="post-title"><%=project.title%></h2>
+                  </div>
+                </figcaption>
+                <%end%>
+              </figure>
+            <%else%>
+              <figure class="overlay overlay4">
+                <%= link_to project_path(project.id) do %>
+                <%= image_tag('realisations/fond.jpg', alt:'') %>
+                <figcaption class="d-flex text-left">
+                  <div class="align-self-end mt-auto">
+                    <h2 class="post-title"><%=project.title%></h2>
+                  </div>
+                </figcaption>
+                <%end%>
+              </figure>
+            <%end%>
+          </div>
+          <!--/.post -->
+        <%end%>
       </div>
-      <!--/.cbp-item -->
-      <div class="cbp-item commercial">
-        <figure class="overlay overlay1 mb-20">
-          <%= link_to image_path('realisations/realisation2.jpg') do %>
-              <%= image_tag('realisations/realisation2.jpg', class:'', alt:'') %>
-          <%end%>
-          <figcaption class="d-flex">
-            <div class="align-self-center mx-auto">
-              <h5 class="mb-0">Voir l'image</h5>
-            </div>
-          </figcaption>
-        </figure>
-        <h4 class="mb-0 text-color">Consectetur Tortor</h4>
-      </div>
-      <!--/.cbp-item -->
-      <div class="cbp-item commercial macro">
-        <figure class="overlay overlay1 mb-20">
-          <%= link_to image_path('realisations/realisation3.jpg') do %>
-              <%= image_tag('realisations/realisation3.jpg', class:'', alt:'') %>
-          <%end%>
-          <figcaption class="d-flex">
-            <div class="align-self-center mx-auto">
-              <h5 class="mb-0">Voir l'image</h5>
-            </div>
-          </figcaption>
-        </figure>
-        <h4 class="mb-0 text-color">Justo Ultricies</h4>
-      </div>
-      <!--/.cbp-item -->
+      <!-- /.row -->
     </div>
-    <!--/.cbp -->
+    <!-- /.blog -->
+    <div class="space20"></div>
+    <div class="text-center"><%= link_to "En savoir plus", projects_path, class:"btn btn-full-rounded btn-teal" %></div>
   </div>
   <!-- /.container -->
 </div>
