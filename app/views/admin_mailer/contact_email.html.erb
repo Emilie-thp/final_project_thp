@@ -1,26 +1,33 @@
 <!DOCTYPE html>
 <html>
-  
   <head>
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
-
-  <body>
-    <h1>Bonjour!</h1>
-    <p>
-      Tu viens de recevoir un message sur le space admin du site https://oeil-de-biche-development.herokuapp.com/admins/sign_in. Aperçu du message:
-    </p>
-    <ul>
-      <li><%= @contact.email %>
-      <li><%= @contact.name %>
-      <li><%= @contact.status %>
-      <li><%= @contact.subject %>
-      <li><%= @contact.content %>
-    </ul>
-    <p>
-      Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : https://oeil-de-biche-development.herokuapp.com/.
-    </p>
-    <p> Bonne journée !  </p>
-  </body>
-
+  <div class="container-fluid">
+    <div style="background-color : #ffffff">
+      <span style="columns: #000000;">
+        <body>
+          <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <br>
+            <h3> Bonjour <%= @admin.pseudo %> !,</h3>
+            <p>Tu viens de recevoir un message sur l'espace Admin du site https://oeil-de-biche.herokuapp.com/.</p>
+            <p>Aperçu du message:</p>
+            <p>Le <%=contact.date_created %>, <%= @contact.name %> nous a contacté au sujet de <%= @contact.subject %>.</p>
+            <p>Il s'agit d'un <%= @contact.status %> et son courriel est <%= @contact.email %></p>
+            <br>
+            <p>En voici le détail :</p>
+            <br>
+            <p><%= @contact.content %></p>
+            <br>
+            <p> Merci de lui répondre rapidement depuis le mail.</p>
+            <br>
+            <p>Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : <%= link_to "Mon compte Admin", "https://oeil-de-biche.herokuapp.com/sign_in", :target => "_blank"  %>.</p>
+            <br>
+            <p> Bonne journée !</p>
+            <br>
+          </table>
+        </body>
+      </span>
+    </div>
+  </div>
 </html>
