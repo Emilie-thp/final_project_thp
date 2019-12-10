@@ -31,7 +31,7 @@
                 </thead>
                   <% if @current_projects.length == 0 %>
                     <tr>
-                      <td colspan="8"><center>Vous n'avez pas encore créer de réalisation ! Lancez-vous en cliquant sur le bouton "Créer une nouvelle réalisation"</center></td>
+                      <td colspan="8"><center>Vous n'avez pas encore créé de réalisation ! Lancez-vous en cliquant sur le bouton "Créer une nouvelle réalisation"</center></td>
                   <%else%>
                   <% @projects.each do |project| %>
                     <%if project.admin == current_admin%>
