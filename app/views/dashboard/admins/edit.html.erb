@@ -6,7 +6,7 @@
         <h2 class="section-title mb-40 text-center">Editer votre profil</h2>
         <div class="space40"></div>
         
-        <%= form_with model: @admin, url: dashboard_admin_path, local: true, class: "form-group" do |f| %>
+        <%= form_with model: @admin, url: dashboard_admin_path, local: true do |f| %>
 
 
           <div class="form-group row">
@@ -29,7 +29,7 @@
           <div class="form-group row">
             <label class="col-sm-2">Pseudo</label>
             <div class="col-sm-10">
-             <%= f.text_field :pseudo, class:"form-control", placeholder: @admin.pseudo %>
+             <%= f.text_field :pseudo, class:"form-control",  placeholder: "Pseudo" %>
             </div>
           </div>  
 
