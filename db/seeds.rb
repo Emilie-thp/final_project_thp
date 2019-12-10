@@ -11,10 +11,10 @@ require 'faker'
 Project.destroy_all
 Article.destroy_all
 Category.destroy_all
-Admin.destroy_all
 Event.destroy_all
+Admin.destroy_all
 
-
+admin = Admin.create(email: "admin@yopmail.com", password: "thpstrabourg")
 
 categories_array = ["Institutionnel", "Communication", "Documentaire", "Animalier", "Photographie", "Animation", "Portrait", "Expérimental", "Pellicule", "Drone"]
 
