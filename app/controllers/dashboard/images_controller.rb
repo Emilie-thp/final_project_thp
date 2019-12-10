@@ -1,4 +1,4 @@
-articlemodule Dashboard
+module Dashboard
 
   class ImagesController < ApplicationController
 
