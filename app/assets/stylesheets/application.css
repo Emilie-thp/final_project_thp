@@ -97,3 +97,11 @@
   background-color: #67bbb2 !important;
   border-color: #67bbb2 !important;
 }
+
+.more-inverse {
+  color: #67bbb2 !important;
+}
+
+.more-inverse:hover {
+  color: #aaa !important;
+}

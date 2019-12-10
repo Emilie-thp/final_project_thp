@@ -2,8 +2,8 @@
   <!-- /.wrapper -->
   <div class="wrapper gray-wrapper">
     <div class="container inner">
-      <h2 class="section-title section-title-upper text-center">Nos réalisations</h2>
-      <div class="space30"></div>
+      <h1 class="heading mb-0 text-center">Nos réalisations</h1>
+      <div class="space50"></div>
       <div id="slide-portfolio">
         <div class="tabs-wrapper filtered">
           <ul class="nav nav-tabs justify-content-center">
@@ -13,7 +13,7 @@
             	<%end%>
             </li>
             <%end%>
-          
+
           </ul>
           <!-- /.nav-tabs -->
 
@@ -40,7 +40,7 @@
 	                    <h3 class="text-uppercase"><%=project.title%></h3>
 	                    <p class="mb-30"><%=project.description%></p>
 	                    <div class="d-inline-block">
-                        <%= link_to "En savoir plus", project_path(project.id), class: "more" %>
+                        <%= link_to "En savoir plus", project_path(project.id), class: "more more-inverse" %>
                       </div>
 	                  </div>
 	                </div>
@@ -64,7 +64,7 @@
 	                    <h3 class="text-uppercase"><%=project.title%></h3>
 	                    <p class="mb-30"><%=project.description%></p>
 	                    <div class="d-inline-block">
-                        <%= link_to "En savoir plus", project_path(project.id), class: "more" %>
+                        <%= link_to "En savoir plus", project_path(project.id), class: "more more-inverse" %>
                       </div>
 	                  </div>
 	                </div>
