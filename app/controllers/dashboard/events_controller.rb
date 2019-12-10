@@ -20,7 +20,7 @@ module Dashboard
 			@event.admin = current_admin
 
 			if @event.save
-	    	flash[:notice] = "Une nouvelle activité a bien été créée (n°#{@event.id})!"
+	    	flash[:notice] = "Une nouvelle actualité a bien été créée (n°#{@event.id})!"
 				redirect_to edit_dashboard_event_path(@event)
 		 	else
 				render "new"
@@ -38,7 +38,7 @@ module Dashboard
 	  def update
 	    @event = Event.find(params[:id])
 	    if @event.update(event_params)
-	    	flash[:notice] = "L'activité n°#{@event.id} a bien été éditée !"
+	    	flash[:notice] = "L'actualité n°#{@event.id} a bien été éditée !"
 				redirect_to dashboard_events_path
 			else
 				render "edit"
@@ -49,7 +49,7 @@ module Dashboard
 	  def destroy
 	    @event = Event.find(params[:id])
 	    @event.destroy
-    	flash[:notice] = "L'activité n°#{@event.id} a bien été supprimée !"
+    	flash[:notice] = "L'actualité n°#{@event.id} a bien été supprimée !"
     	redirect_to dashboard_events_path
 	  end
 
