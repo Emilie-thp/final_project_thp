@@ -1,9 +1,10 @@
 module Dashboard
 
 	class CategoriesController < ApplicationController
+    layout 'dashboard'
 
 		def index
-			@categories = Category.new
+			@categories = Category.all
 		end
 
 	  def new
@@ -14,14 +15,35 @@ module Dashboard
       @category = Category.create(params[:category_name])
     end
   
+    def edit 
+      @category = Category.find(params[:id])
+    end 
+
     def update
       @category = Category.find(params[:id])
-      @category.update(params[:category_name])
+        if @category.update(category_params)
+          flash[:notice] = "La catégorie #{@category.category_name} a bien été mise à jour !"
+          redirect_to dashboard_categories_path
+        else
+          render "edit"
+        end
     end
   
     def destroy
       @category = Category.find(params[:id])
+      @category.destroy
+      flash[:notice] = "La catégorie a bien été supprimée !"
+      redirect_to dashboard_categories_path
   	end
+
+
+    private
+
+    def category_params
+      params.require(:category).permit(:category_name)
+    end
+
+
 
 	end
 

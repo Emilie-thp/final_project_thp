@@ -1,12 +1,12 @@
 class Article < ApplicationRecord
 
-    validates :title, presence: true, length: { minimum: 2 }
-    validates :description, presence: true, length: { maximum: 200 }
-    validates :content, presence: true
+    validates :title, presence: {message: "Merci d'indiquer le titre de l'article"}, length: { minimum: 2, message: "Le titre doit avoir au moins 2 caractères" }
+    validates :description, presence: {message: "Merci d'indiquer la description de l'article"}, length: { maximum: 200, message: "La description doit avoir 200 caractères maximum" }
+    validates :content, presence: {message: "Merci d'indiquer le contenu de l'article"}
 
-    belongs_to :admin    
+    belongs_to :admin
  		has_many :article_categories
     has_many :categories, through: :article_categories
-    has_many_attached :pictures
-        
+    has_one_attached :image
+
 end
