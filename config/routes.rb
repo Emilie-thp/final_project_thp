@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  
-  get 'events/index'
-  get 'events/show'
+
 	root to: 'static_pages#home'
 
   devise_for :admins
@@ -14,9 +12,8 @@ Rails.application.routes.draw do
 
   namespace :dashboard do 
     resources :admins, only: [:show, :edit, :update]
-    resources :articles, :categories
+    resources :articles, :categories, :events
     resources :contacts, only: [:index, :show]
-    resources :events, only: [:index, :show]
     resources :projects do
       resources :pictures
       resources :thumbnails
