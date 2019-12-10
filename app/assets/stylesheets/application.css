@@ -28,6 +28,8 @@
  *= require dashboard/stylesheets/sb-admin
  */
 
+ @import url(//db.onlinewebfonts.com/c/0e979bd4a3c1c6ac788ed57ac569667f?family=revicons);
+
  #contenu {
    min-height: 100VH;
  }
