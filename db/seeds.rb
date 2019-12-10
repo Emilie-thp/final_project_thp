@@ -25,9 +25,9 @@ project_names = ["Le lièvre du Jura","Le cochon des prés","L'hippo du ter-ter"
 
 event_names = ["Stand sur la chimie verte","L'agriculture biologique","Scène de bêtes","Papier Ciseaux Forêt Oiseaux","E=mc2","Temps à histoires", "La forêt dans la transition écologique","Atélier Co-écologique","Atélier Bee to Bee", "Les controverses Ecologiques","Demain,hier", "Atelier Fresque du climat"]
 
-i=1 
+i=0 
 10.times do
-  project = Project.create(title: project_names[i-1],
+  project = Project.create(title: project_names[i],
                            description: "Un projet réalisé par l'association Oeil de Biche, en partenariat avec la commune de la Pesse et les Parcs Naturels du Jura.",
                            content: Faker::Lorem.paragraph(sentence_count: 40),
                            date: rand(t1..t2),
@@ -37,7 +37,7 @@ i=1
  
 end
 
-j=1
+j=0
 10.times do
   article = Article.create(title: project_names[j],
                            description: "Un article sur la faune et la flore du Jura par l'association Oeil de Biche.",
@@ -65,9 +65,9 @@ k=1
   puts "seed messages"
 end
 
-l=1
+l=0
 10.times do
-  event = Event.create(title: event_names[l-1],
+  event = Event.create(title: event_names[l],
                         description: "Une actualité qui valorise et respecte l'environnement.",
                         content: Faker::Lorem.paragraph(sentence_count: 40),
                         date: rand(t1..t2),
