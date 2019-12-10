@@ -11,7 +11,9 @@ Rails.application.routes.draw do
   resources :events, only: [:index, :show]
 
   namespace :dashboard do
-    resources :admins, only: [:show, :edit, :update]
+    resources :admins, only: [:show, :edit, :update] do
+      resources :avatars
+    end
     resources :categories, :events
     resources :contacts, only: [:index, :show]
     resources :projects do
