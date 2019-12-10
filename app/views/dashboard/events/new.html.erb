@@ -16,7 +16,7 @@
           <h2 class="section-title text-center">Nouvelle actualité</h2>
           <p class="lead text-center">Remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
-          <h6><b>Titre de l'actualité<b></h6>   
+          <h6><b>Titre de l actualité<b></h6>   
             <%= form_with model: @event, url: dashboard_events_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
