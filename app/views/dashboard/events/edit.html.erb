@@ -9,10 +9,10 @@
           <%= form_with model: @event, url: dashboard_event_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
-            <h6><b>Description<b></h6>
+            <h6><b>Description rapide<b></h6>
             <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
             <div class="space30"></div>
-            <h6><b>Contenu<b></h6>
+            <h6><b>Détails de l'événement<b></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div>
             <h6><b>Localisation (adresse)<b></h6>
