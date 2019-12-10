@@ -15,13 +15,13 @@
             <h6><b>Contenu<b></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div>
-            <h6><b>Endroit<b></h6>
+            <h6><b>Localisation (adresse)<b></h6>
             <%= f.text_area :location, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div><h6><b>Date de la réalisation<b></h6>
-            <h6><b>Date<b></h6>
-            <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019" %><br>
+            <h6><b>Date et heure <b></h6>
+            <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019 20:00:00" %><br>
             <br>                        <br>
-            <%= f.submit "Editer l'actualité", class: 'btn btn-oasis' %>
+            <%= f.submit "Editer l'actualité", class: 'btn btn-teal' %>
              <% end %>   
           <div class="space30"></div>
         </div>
