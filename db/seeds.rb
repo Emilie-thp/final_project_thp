@@ -54,17 +54,14 @@ end
   puts "seed categories"
 end
 
-k=1
-10.times do
-  contact = Contact.create(email: "contact#{k}@mail.com",
-                           name: "Visiteur0#{k}",
-                           status: ["Particulier","Professionnel"].sample,
-                           subject: "Message du visiteur n°#{k}",
-                           content: Faker::Lorem.paragraph(sentence_count: 5)
+contact = Contact.create(email: "contact#{k}@mail.com",
+                         name: "Visiteur0#{k}",
+                         status: ["Particulier","Professionnel"].sample,
+                         subject: "Message du visiteur n°#{k}",
+                         content: Faker::Lorem.paragraph(sentence_count: 5)
                           )
-  k+=1
-  puts "seed messages"
-end
+puts "seed 1 message"
+
 
 l=0
 10.times do
