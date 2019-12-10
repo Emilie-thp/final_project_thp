@@ -1,8 +1,8 @@
 <!-- /.wrapper -->
 <div class="wrapper light-wrapper">
   <div class="container inner">
-    <h2 class="section-title section-title-upper text-center">Nos articles</h2>
-    <div class="space30"></div>
+    <h1 class="heading mb-0 text-center">Nos articles</h1>
+    <div class="space50"></div>
     <div class="blog grid grid-view text-center">
       <div class="row isotope">
         <% @articles.each do |article| %>
@@ -19,7 +19,7 @@
             <div class="meta"><span class="date"><%=article.created_at.to_date%></span><span class="comments"><a href="#">2</a></span><span class="category"><%=article.admin.email%></span></div>
             <h2 class="post-title"><a href="blog-post.html"><%=article.title%></a></h2>
             <p><%=article.description%></p>
-            <%= link_to "Lire l'article", article_path(article.id), class: "more" %>
+            <%= link_to "Lire l'article", article_path(article.id), class: "more more-inverse" %>
           </div>
           <!-- /.post-content -->
         </div>

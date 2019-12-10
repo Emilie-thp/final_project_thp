@@ -71,6 +71,7 @@ l=0
                         description: "Une actualité qui valorise et respecte l'environnement.",
                         content: Faker::Lorem.paragraph(sentence_count: 40),
                         date: rand(t1..t2),
+                        location: Faker::Address.city,
                         admin_id: admin.id)
   l+=1
   puts "seed events"
