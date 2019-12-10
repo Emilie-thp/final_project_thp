@@ -32,7 +32,7 @@
 
             <% @categories.each do |cat| %> 
               <div class="custom-control custom-checkbox">
-               <%= f.check_box('project[category_ids][]', 'cat.id', false, class: 'custom-control-input') %>
+               <%= check_box_tag('project[category_ids][]', 'cat.id', false, class: 'custom-control-input') %>
                 <label class="custom-control-label" for="customCheck1"><%= cat.category_name %></label>
               </div>
             <%end%>
