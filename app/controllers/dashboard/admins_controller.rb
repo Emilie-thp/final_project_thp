@@ -13,7 +13,21 @@ module Dashboard
       @admin = Admin.find(params[:id])
     end
 
+    def update
+      @admin = Admin.find(params[:id])
+      if @admin.update(admin_params)
+        redirect_to edit_dashboard_admin_path(@admin)
+        flash[:notice] = "Modifications prises en compte!"
+      else
+        render "edit"
+      end
+    end
+
     private
+
+    def admin_params
+      params.require(:admin).permit(:first_name, :last_name, :pseudo)
+    end
 
     def secret
       @admin = Admin.find(params[:id])
