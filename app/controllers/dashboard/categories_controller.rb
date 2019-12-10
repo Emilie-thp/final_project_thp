@@ -21,8 +21,8 @@ module Dashboard
 
     def update
       @category = Category.find(params[:id])
-        if @category.update(category_name: params[:category_name])
-          flash[:notice] = "La catégorie a bien été mise à jour !"
+        if @category.update(category_params)
+          flash[:notice] = "La catégorie #{@category.category_name} a bien été mise à jour !"
           redirect_to dashboard_categories_path
         else
           render "edit"
@@ -31,7 +31,19 @@ module Dashboard
   
     def destroy
       @category = Category.find(params[:id])
+      @category.destroy
+      flash[:notice] = "La catégorie a bien été supprimée !"
+      redirect_to dashboard_categories_path
   	end
+
+
+    private
+
+    def category_params
+      params.require(:category).permit(:category_name)
+    end
+
+
 
 	end
 
