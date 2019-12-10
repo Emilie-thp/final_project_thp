@@ -13,6 +13,7 @@ module Dashboard
 
 	  def new
 	    @project = Project.new
+	    @categories = Category.all
 	  end
 
 	  def create
