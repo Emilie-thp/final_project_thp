@@ -47,6 +47,10 @@
   margin-left: 7px !important;
 }
 
+.footer-bold {
+  font-weight: bold !important;
+}
+
 .border-top-line {
   border: none !important;
 }
@@ -90,6 +94,6 @@
 }
 
 .list-group-item.active {
-    background-color: #67bbb2 !important;
-    border-color: #67bbb2 !important;
+  background-color: #67bbb2 !important;
+  border-color: #67bbb2 !important;
 }
