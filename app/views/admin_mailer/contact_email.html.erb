@@ -9,20 +9,19 @@
         <body>
           <table cellspacing="0" cellpadding="0" border="0" width="100%">
             <br>
-            <h3> Bonjour <%= @admin.pseudo %> !,</h3>
-            <p>Tu viens de recevoir un message sur l'espace Admin du site https://oeil-de-biche.herokuapp.com/.</p>
+            <h3> Nouveau message du formulaire de contact !</h3>
+            <p>Tu viens de recevoir un message via le site <%= link_to "oeil-de-biche.herokuapp.com", "https://oeil-de-biche.herokuapp.com/", :target => "_blank" %>.</p>
+            <br>
             <p>Aperçu du message:</p>
-            <p>Le <%=contact.date_created %>, <%= @contact.name %> nous a contacté au sujet de <%= @contact.subject %>.</p>
-            <p>Il s'agit d'un <%= @contact.status %> et son courriel est <%= @contact.email %></p>
+            <p>Le <%=@contact.created_at.strftime("%d/%m/%Y") %>, <%= @contact.name %> vous a contacté avec l'objet suivant : "<strong><%= @contact.subject %></strong>".</p>
+            <p>Il s'agit d'un <strong><%= @contact.status %></strong> et son courriel est <strong><%= @contact.email %></strong></p>
             <br>
-            <p>En voici le détail :</p>
+            <p>Voici le détail de son message :</p>
+            <p>"<strong><%= @contact.content %></strong>"</p>
             <br>
-            <p><%= @contact.content %></p>
+            <p> Merci de lui répondre rapidement par email à l'adresse suivante : <strong><%= @contact.email %></strong>.</p>
             <br>
-            <p> Merci de lui répondre rapidement depuis le mail.</p>
-            <br>
-            <p>Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : <%= link_to "Mon compte Admin", "https://oeil-de-biche.herokuapp.com/sign_in", :target => "_blank"  %>.</p>
-            <br>
+            <p>Pour accéder à ton espace administrateur, connecte-toi à <%= link_to "ton compte", "https://oeil-de-biche.herokuapp.com/admins/sign_in", :target => "_blank"  %>.</p>
             <p> Bonne journée !</p>
             <br>
           </table>
