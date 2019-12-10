@@ -1,15 +1,24 @@
-Salut!
 ==========================================================
 
-Tu viens de recevoir un message sur le space admin du site https://oeil-de-biche-development.herokuapp.com/admins/sign_in. Aperçu du message:
+Bonjour, 
 
-  <%= @contact.email %>
-  <%= @contact.name %>
-  <%= @contact.status %>
-  <%= @contact.subject %>
-  <%= @contact.content %>
+Tu viens de recevoir un message sur le space admin du site https://oeil-de-biche-development.herokuapp.com/admins/sign_in.
+
+Aperçu du message:
+
+Le <%=contact.date_created %>, <%= @contact.name %> nous a contacté au sujet de <%= @contact.subject %>.
+Il s'agit d'un <%= @contact.status %> et son courriel est <%= @contact.email %>
+
+En voici le détail :
+
+<%= @contact.content %>
+
+Merci de lui répondre rapidement depuis le mail.
+
+Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : <%= link_to "Mon compte Admin", "https://oeil-de-biche.herokuapp.com/sign_in", :target => "_blank"  %>.
 
 
-Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : XXà_modifierXX.
- 
 Bonne journée !
+
+
+==========================================================
