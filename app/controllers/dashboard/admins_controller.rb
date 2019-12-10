@@ -16,8 +16,8 @@ module Dashboard
     def update
       @admin = Admin.find(params[:id])
       if @admin.update(admin_params)
-        redirect_to edit_dashboard_admin_path
-        flash[:notice] = "Modifications prises en compte"
+        redirect_to edit_dashboard_admin_path(@admin)
+        flash[:notice] = "Modifications prises en compte!"
       else
         render "edit"
       end
