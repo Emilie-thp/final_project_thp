@@ -14,7 +14,7 @@ Category.destroy_all
 Event.destroy_all
 Admin.destroy_all
 
-admin = Admin.create(email: "admin@yopmail.com", password: "thpstrabourg")
+admin = Admin.create(pseudo:"TeamTHP", email: "admin@yopmail.com", password: "thpstrasbourg")
 
 categories_array = ["Institutionnel", "Communication", "Documentaire", "Animalier", "Photographie", "Animation", "Portrait", "Expérimental", "Pellicule", "Drone"]
 
@@ -47,16 +47,17 @@ j=0
   puts "seed articles"
 end
 
-
-10.times do
-  category = Category.create(category_name: categories_array.sample)
+k=0
+6.times do
+  category = Category.create(category_name: categories_array[k])
   puts "seed categories"
+  k+=1
 end
 
-contact = Contact.create(email: "contact#{k}@mail.com",
-                         name: "Visiteur0#{k}",
+contact = Contact.create(email: "jacqueline@mail.com",
+                         name: "Jacqueline",
                          status: ["Particulier","Professionnel"].sample,
-                         subject: "Message du visiteur n°#{k}",
+                         subject: "Bravo pour votre travail !",
                          content: Faker::Lorem.paragraph(sentence_count: 5)
                           )
 puts "seed 1 message"
