@@ -14,7 +14,6 @@ Category.destroy_all
 Event.destroy_all
 Admin.destroy_all
 
-
 admin = Admin.create(email: "admin@yopmail.com", password: "thpstrabourg")
 
 categories_array = ["Institutionnel", "Communication", "Documentaire", "Animalier", "Photographie", "Animation", "Portrait", "Expérimental", "Pellicule", "Drone"]
@@ -69,6 +68,7 @@ l=0
                         description: "Une actualité qui valorise et respecte l'environnement.",
                         content: Faker::Lorem.paragraph(sentence_count: 40),
                         date: rand(t1..t2),
+                        location: Faker::Address.city,
                         admin_id: admin.id)
   l+=1
   puts "seed events"

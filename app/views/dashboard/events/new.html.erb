@@ -3,7 +3,7 @@
       <div class="alert alert-danger" role="alert">
         <p>Nous n'avons pas réussi à créer l'actualité pour la (ou les) raison(s) suivante(s) :</p>
           <ul>
-            <% @event.errors.full_messages.each do |event| %>
+            <% @event.errors.full_messages.each do |message| %>
               <li><%= message %></li>
             <% end %>
 
@@ -16,7 +16,7 @@
           <h2 class="section-title text-center">Nouvelle actualité</h2>
           <p class="lead text-center">Remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
-          <h6><b>Titre de l'actualité<b></h6>   
+          <h6><b>Titre de l actualité<b></h6>   
             <%= form_with model: @event, url: dashboard_events_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
@@ -33,9 +33,9 @@
             <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019 20:00:00" %><br>
             <br>
             
-            <%= f.submit "Créer l'actualité',  class: 'btn btn-teal' %>
-             <% end %>   
-          <div class="space30"></div>          
+            <%= f.submit "Créer l'actualité",  class: "btn btn-teal" %>
+            <% end %>   
+          </div>
         </div>
     </div>
 </div>
