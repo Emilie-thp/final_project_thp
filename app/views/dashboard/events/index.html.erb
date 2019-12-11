@@ -12,7 +12,7 @@
     <div class="card mb-3">
       <div class="card-header">
         <h2 class="section-title text-center">Mes actualités</h2>
-        <p align ="center"><%= link_to  "Créer une nouvelle actualité", new_dashboard_event_path, class:"btn btn-success" %></p>
+        <p align ="center"><%= link_to  "Créer une nouvelle actualité", new_dashboard_event_path, class:"btn btn-ice home-header-font" %></p>
       </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -37,7 +37,7 @@
                     <%if event.admin == current_admin%>
                     <tr>
                       <td><%= event.title %>  </td>
-                      <td>Admin n°<%= event.admin.id %> </td>
+                      <td><%= event.admin.pseudo %> </td>
                       <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
                       
@@ -91,7 +91,7 @@
                     <%unless event.admin == current_admin%>
                     <tr>
                       <td><%= event.title %>  </td>
-                      <td>Admin n°<%= event.admin.id %> </td>
+                      <td><%= event.admin.pseudo %> </td>
                       <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
                       
