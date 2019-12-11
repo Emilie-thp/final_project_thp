@@ -15,7 +15,7 @@
           <p class="lead text-center">Ajouter une photo pour la miniature</p>
             <%= form_tag dashboard_project_thumbnails_path(@project), multipart: true do %>
            <%= file_field_tag :thumbnail %>
-            <%= submit_tag "Ajouter la photo",  class: 'btn btn-ice home-header-font' %>
+            <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
             <% end %>
           <p>=== Veuillez choisir une miniature pour cette réalisation ===</p>
         <%end%>
