@@ -12,6 +12,10 @@ module Dashboard
 			@current_projects = Project.where(admin_id: current_admin.id)
 		end
 
+	  def show
+	    @project = Project.find(params[:id])
+	  end
+
 	  def new
 	    @project = Project.new
 	    @categories = Category.all
@@ -27,10 +31,6 @@ module Dashboard
 		 	else
 				render "new"
 		 	end
-	  end
-
-	  def show
-	    @project = Project.find(params[:id])
 	  end
 
 	  def edit
@@ -54,10 +54,7 @@ module Dashboard
     	redirect_to dashboard_projects_path
 	  end
 
-	  def update_published
-			puts "#"*60
-			puts params
-			puts "#"*60	  	
+	  def update_published	
 	  	@project = Project.find(params[:id])
 	  		if @project.published 
 	  			@project.update(published:false)

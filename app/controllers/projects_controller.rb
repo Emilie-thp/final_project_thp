@@ -6,9 +6,9 @@ class ProjectsController < ApplicationController
     #if condition is here to sort projects out regarding their categories (params :category in view)
     if params.has_key?(:category)
     	@category = Category.find_by(category_name: params[:category])
-    	@projects = @category.projects
+    	@projects = @category.projects.where(published:true)
     else
- 		  @projects = Project.all
+ 		  @projects = Project.where(published:true)
  		end
  		
   end
