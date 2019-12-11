@@ -29,6 +29,10 @@
                     <th>Supprimer</th>
                   </tr>
                 </thead>
+                  <% if @current_events.length == 0 %>
+                    <tr>
+                      <td colspan="8"><center>Vous n'avez pas encore créé d'actualité ! Lancez-vous en cliquant sur le bouton "Créer une nouvelle actualité"</center></td>
+                  <%else%>
                   <% @events.each do |event| %>
                     <%if event.admin == current_admin%>
                     <tr>
@@ -59,6 +63,7 @@
                   <%else%>
                   <%end%>
                 <%end%>
+              <%end%>
             </table>
           </div>
         </div>
