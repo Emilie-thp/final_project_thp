@@ -20,7 +20,7 @@ module Dashboard
 	  def create
 			@project = Project.new(project_params)
 			@project.admin = current_admin
-			
+			@project.categories << params[:categories]
 			if @project.save
 	    	flash[:notice] = "Une nouvelle réalisation a bien été créée (n°#{@project.id})! Merci d'ajouter les photos avant de la publier."
 				redirect_to edit_dashboard_project_path(@project)
