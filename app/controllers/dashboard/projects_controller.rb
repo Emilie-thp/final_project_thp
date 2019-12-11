@@ -54,6 +54,21 @@ module Dashboard
     	redirect_to dashboard_projects_path
 	  end
 
+	  def update_published
+			puts "#"*60
+			puts params
+			puts "#"*60	  	
+	  	@project = Project.find(params[:id])
+	  		if @project.published 
+	  			@project.update(published:false)
+	  			redirect_to edit_dashboard_project_path(@project)
+	  			flash[:notice] = "Votre réalisation vient d'être mise hors ligne !"
+	  		else
+	  			@project.update(published:true)
+	  			flash[:notice] = "Votre réalisation vient d'être mise en ligne !"
+	  			redirect_to edit_dashboard_project_path(@project)
+	  		end
+	  end
 	
 	  private
 
