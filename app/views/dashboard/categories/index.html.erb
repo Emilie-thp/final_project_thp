@@ -36,13 +36,13 @@
                       <td><%= cat.projects.length %> réalisations</td>
                     <%end%>
                       <td><%= cat.created_at.strftime("%d/%m/%Y") %> </td>
-                      <td><%= cat.updated_at.strftime("%d/%m/%Y") %></td>                         
+                      <td><%= cat.updated_at.strftime("%d/%m/%Y") %></td>
                       <td><%= link_to edit_dashboard_category_path(cat.id) do %>
-                          <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
                         <%end%>
                       </td>
                       <td><%= link_to dashboard_category_path(cat.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette catégorie à tout jamais ?"}, method: :delete do %>
-                          <i class="fa fa-trash fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
                         <%end%>
                       </td>
                     </tr>

@@ -6059,7 +6059,7 @@ list-blue i {
         margin-bottom: 50px !important;
     }
     .sidebar {
-        padding-left: 15px !important
+        /* padding-left: 15px !important */
     }
     .sidebar.left-sidebar {
         padding-right: 15px !important;

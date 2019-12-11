@@ -7,11 +7,11 @@
         <div class="space40"></div>
 
         <!-- Form for active_storage -->
-        <center> 
+        <center>
           <%if @admin.avatar.attached?%>
           <p class="lead text-center">Votre photo de profil</p>
           <%= image_tag @admin.avatar.variant(resize: "150x150") %> <br><br>
-          <%= link_to 'Changer de photo', dashboard_admin_avatar_path(@admin), method: :delete, class: 'btn btn-ice home-header-font' %>  
+          <%= link_to 'Changer de photo', dashboard_admin_avatar_path(@admin), method: :delete, class: 'btn btn-ice home-header-font' %>
           <%else%>
           <p class="lead text-center">Ajouter une photo de profil</p>
 
@@ -34,36 +34,36 @@
           <div class="col-sm-10">
             <%= f.text_field :first_name, class:"form-control" %>
           </div>
-        </div>  
+        </div>
 
         <div class="form-group row">
           <label class="col-sm-2">Nom</label>
           <div class="col-sm-10">
             <%= f.text_field :last_name, class:"form-control" %>
           </div>
-        </div>  
+        </div>
 
         <div class="form-group row">
           <label class="col-sm-2">Pseudo</label>
           <div class="col-sm-10">
             <%= f.text_field :pseudo, class:"form-control",  placeholder: "Pseudo" %>
           </div>
-        </div>  
+        </div>
 
         <div class="form-group row">
           <label class="col-sm-2">Description</label>
           <div class="col-sm-10">
             <%= f.text_area :description, class:"form-control",  placeholder: "Description" %>
           </div>
-        </div>  
+        </div>
 
         <div class="form-group row">
           <label class="col-sm-2">Specialité</label>
           <div class="col-sm-10">
             <%= f.text_field :speciality, class:"form-control",  placeholder: "Specialité" %>
             </div>
-          </div>  
-          
+          </div>
+
           <% if @admin.display == false %>
           <div class="form-group">
             <div class="custom-control custom-checkbox">
@@ -81,7 +81,7 @@
           <%end%>
           <div class="space30"></div>
           <div class="text-center">
-            <%=f.submit "Éditer", class:"btn btn-full-rounded btn-teal"%>
+            <%=f.submit "Éditer", class:"btn btn-full-rounded btn-ice"%>
           </div>
         <% end %>
 
