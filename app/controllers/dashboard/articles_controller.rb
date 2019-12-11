@@ -51,6 +51,20 @@ module Dashboard
     	redirect_to dashboard_articles_path
 	  end
 
+	  #another update method to update only the published column (bolean)
+	  def update_published	
+	  	@article = Article.find(params[:id])
+	  		if @article.published 
+	  			@article.update(published:false)
+	  			redirect_to edit_dashboard_article_path(@article)
+	  			flash[:notice] = "Votre article vient d'être mis hors ligne !"
+	  		else
+	  			@article.update(published:true)
+	  			flash[:notice] = "Votre article vient d'être mis en ligne !"
+	  			redirect_to edit_dashboard_article_path(@article)
+	  		end
+	  end
+	
 
 	  private
 
