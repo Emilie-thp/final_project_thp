@@ -26,6 +26,10 @@ Rails.application.routes.draw do
     end
     resources :articles do
       resources :images
+      member do
+        patch :update_published
+        put :update_published
+      end
     end
   end
 
