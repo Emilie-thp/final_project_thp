@@ -84,6 +84,28 @@
   padding-bottom: 1px !important;
 }
 
+@media (min-width: 320px) and (max-width: 991px) {
+  .dashboard-text{
+    margin: 0px !important;
+    padding-left: 10px !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1240px) {
+  .container{
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1121px) {
+  .img-brand{
+    width: 150% !important;
+  }
+  .navbar-left{
+    margin-right: -119px !important;
+  }
+}
+
 .dashboard-text:hover {
   background-color: grey !important;
   color: white !important;
