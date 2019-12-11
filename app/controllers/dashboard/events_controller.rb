@@ -46,6 +46,20 @@ module Dashboard
 	  	end
 	  end
 
+	  #another update method to update only the published column (bolean)
+	  def update_published	
+	  	@event = Event.find(params[:id])
+	  		if @event.published 
+	  			@event.update(published:false)
+	  			redirect_to edit_dashboard_event_path(@event)
+	  			flash[:notice] = "Votre actualité vient d'être mise hors ligne !"
+	  		else
+	  			@event.update(published:true)
+	  			flash[:notice] = "Votre actualité vient d'être mise en ligne !"
+	  			redirect_to edit_dashboard_event_path(@event)
+	  		end
+	  end
+	
 
 	  def destroy
 	    @event = Event.find(params[:id])
