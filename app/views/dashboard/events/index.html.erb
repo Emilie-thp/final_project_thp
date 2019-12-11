@@ -40,23 +40,23 @@
                       <td><%= event.admin.pseudo %> </td>
                       <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
-                      
+
                         <%if event.published %>
                           <td>En ligne</td>
                         <%else%>
                           <td>Hors ligne</td>
                         <%end%>
-                      
+
                       <td><%= link_to dashboard_event_path(event.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
                         <%end%>
-                      </td>             
+                      </td>
                       <td><%= link_to edit_dashboard_event_path(event.id) do %>
-                          <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
                         <%end%>
                       </td>
                       <td><%= link_to dashboard_event_path(event.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette actualité à tout jamais ?"}, method: :delete do %>
-                          <i class="fa fa-trash fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
                         <%end%>
                       </td>
                     </tr>
@@ -94,13 +94,13 @@
                       <td><%= event.admin.pseudo %> </td>
                       <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
-                      
+
                         <%if event.published %>
                           <td>En ligne</td>
                         <%else%>
                           <td>Hors ligne</td>
                         <%end%>
-                                         
+
                       <td><%= link_to dashboard_event_path(event.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
                         <%end%>
