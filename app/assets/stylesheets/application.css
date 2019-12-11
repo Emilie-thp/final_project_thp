@@ -106,6 +106,21 @@
   }
 }
 
+@media (min-width: 767px) and (max-width: 991px) {
+  .list-group-margin{
+    margin-left: -100px !important;
+    margin-right: -90px !important;
+  }
+}
+
+/* Media Queries pour le block notre matériel sur la page d'accueil */
+/* @media (min-width: 320px) and (max-width: 991px) {
+  .list-group-margin{
+    margin-left: -100px !important;
+    margin-right: -90px !important;
+  }
+} */
+
 .dashboard-text:hover {
   background-color: grey !important;
   color: white !important;
