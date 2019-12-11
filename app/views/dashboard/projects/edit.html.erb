@@ -8,7 +8,10 @@
           <% if @project.published then %>
             <%= link_to 'Mettre hors ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-danger home-header-font' %>  
           <%elsif @project.published == false && @project.thumbnail.attached? == false then %>
+          <div class="tooltip-dashboard">
           <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success disabled home-header-font' %> 
+          <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
+          </div>
           <%else%>
            <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %> 
           <%end%>
@@ -20,9 +23,19 @@
       <!-- Form for active_storage -->
       <center> 
         <%if @project.thumbnail.attached?%>
+          <% if @project.published %>
+          <p class="lead text-center">Photo de miniature de la réalisation </p>
+            <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
+           <div class="tooltip-dashboard">
+            <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font disabled' %>
+              <span class="tooltiptext-dashboard">Merci de mettre votre réalisation hors ligne avant de changer la miniature !</span>
+          </div>
+          <%else%>
           <p class="lead text-center">Photo de miniature de la réalisation </p>
             <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
             <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font' %>  
+          <%end%>
+
         <%else%>
           <p class="lead text-center">Ajouter une photo pour la miniature</p>
             <%= form_tag dashboard_project_thumbnails_path(@project), multipart: true do %>
