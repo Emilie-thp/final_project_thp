@@ -21,7 +21,7 @@
             <p align = center>=== Veuillez choisir une photo de profil ===</p>
           <%end%>
           <br>
-        
+
         <%= form_with model: @admin, url: dashboard_admin_path, local: true do |f| %>
 
           <div class="form-group row">
@@ -29,37 +29,37 @@
             <div class="col-sm-10">
              <%= f.text_field :first_name, class:"form-control" %>
             </div>
-          </div>  
+          </div>
 
           <div class="form-group row">
             <label class="col-sm-2">Nom</label>
             <div class="col-sm-10">
              <%= f.text_field :last_name, class:"form-control" %>
             </div>
-          </div>  
+          </div>
 
           <div class="form-group row">
             <label class="col-sm-2">Pseudo</label>
             <div class="col-sm-10">
              <%= f.text_field :pseudo, class:"form-control",  placeholder: "Pseudo" %>
             </div>
-          </div>  
+          </div>
 
           <div class="form-group row">
             <label class="col-sm-2">Description</label>
             <div class="col-sm-10">
              <%= f.text_area :description, class:"form-control",  placeholder: "Description" %>
             </div>
-          </div>  
+          </div>
 
           <div class="form-group row">
             <label class="col-sm-2">Specialité</label>
             <div class="col-sm-10">
              <%= f.text_field :speciality, class:"form-control",  placeholder: "Specialité" %>
             </div>
-          </div>  
-          
-  
+          </div>
+
+
           <div class="form-group">
             <div class="custom-control custom-checkbox">
               <%= f.check_box :display, {class:"custom-control-input", id:"customCheck1"}, true, false %>
@@ -69,7 +69,7 @@
 
           <div class="space30"></div>
           <div class="text-center">
-            <%=f.submit "Éditer", class:"btn btn-full-rounded btn-teal"%>
+            <%=f.submit "Éditer", class:"btn btn-full-rounded btn-ice"%>
           </div>
         <% end %>
       </div>

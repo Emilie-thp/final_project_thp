@@ -5,14 +5,14 @@
         <h2 class="section-title mb-40 text-center"><%= t('.sign_up') %></h2>
             <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
               <%= render "devise/shared/error_messages", resource: resource %>
-              
+
               <div class="form-group row">
                 <label for="inputEmail3" class="col-sm-2">Email</label>
                 <div class="col-sm-10">
                   <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", id:"inputEmail3", placeholder:"Email"%>
                 </div>
               </div>
-           
+
 
               <div class="form-group row">
                 <label class="col-sm-2">Pseudo</label>
@@ -38,17 +38,16 @@
                 </div>
               </div>
 
-              
+
                 <div class="d-flex justify-content-center">
-                  <%= f.submit t('.sign_up'), class:"btn btn-teal"%>
+                  <%= f.submit t('.sign_up'), class:"btn btn-ice"%>
                 </div>
-              
+
 
             <% end %>
-          
+
             <div class="d-flex justify-content-center"><%= render "devise/shared/links" %></div>
         </div>
-      </div> 
+      </div>
     </div>
   </div>
-        

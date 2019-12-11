@@ -8,7 +8,7 @@
             <% end %>
 
           </ul>
-        <% end %>	
+        <% end %>
       </div>
     <div class="container inner">
       <div class="row">
@@ -16,7 +16,7 @@
           <h2 class="section-title text-center">Nouvelle actualité</h2>
           <p class="lead text-center">Remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
-          <h6><b>Titre de l actualité<b></h6>   
+          <h6><b>Titre de l actualité<b></h6>
             <%= form_with model: @event, url: dashboard_events_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
@@ -32,9 +32,9 @@
             <h6><b>Date et heure de la réalisation<b></h6>
             <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019 20:00:00" %><br>
             <br>
-            
-            <%= f.submit "Créer l'actualité",  class: "btn btn-teal" %>
-            <% end %>   
+
+            <%= f.submit "Créer l'actualité",  class: "btn btn-ice" %>
+            <% end %>
           </div>
         </div>
     </div>
