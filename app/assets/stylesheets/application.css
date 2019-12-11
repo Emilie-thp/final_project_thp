@@ -43,7 +43,6 @@
 .bold-text {
   font-weight: bold !important;
   font-size: 1.1em !important;
-  padding-right: 15px !important;
   margin-left: 7px !important;
 }
 
@@ -72,25 +71,59 @@
   color: black !important;
 }
 
+.dashboard-btn {
+  border-radius: 30px;
+  margin-top: 7px !important;
+}
+
 .dashboard-text {
   font-family: 'Montserrat', sans-serif !important;
-  color: #212529 !important;
-	font-size: 11px !important;
-	letter-spacing: 0px !important;
-	font-weight: 500 !important;
-	padding-top: 9px !important;
-	padding-bottom: 9px !important;
-	padding-left: 7px !important;
-  padding-right: 7px !important;
+  font-size: 0.8em !important;
+  text-transform: uppercase !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
 }
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .dashboard-text{
+    margin: 0px !important;
+    padding-left: 10px !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1240px) {
+  .container{
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1121px) {
+  .img-brand{
+    width: 150% !important;
+  }
+  .navbar-left{
+    margin-right: -119px !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .list-group-margin{
+    margin-left: -100px !important;
+    margin-right: -90px !important;
+  }
+}
+
+/* Media Queries pour le block notre matériel sur la page d'accueil */
+/* @media (min-width: 320px) and (max-width: 991px) {
+  .list-group-margin{
+    margin-left: -100px !important;
+    margin-right: -90px !important;
+  }
+} */
 
 .dashboard-text:hover {
   background-color: grey !important;
   color: white !important;
-}
-
-.dashboard-btn {
-	margin-top: 11px !important;
 }
 
 .list-group-item.active {
@@ -109,7 +142,6 @@
 .margin-picture {
   margin: 10px;
 }
-
 
 .tooltip-dashboard {
   position: relative;
@@ -130,4 +162,11 @@
 
 .tooltip-dashboard:hover .tooltiptext-dashboard {
   visibility: visible;
+}
+.red {
+  color:red;
+}
+
+.green {
+  color:green;
 }

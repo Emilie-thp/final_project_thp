@@ -718,8 +718,8 @@ img.octagon {
     letter-spacing: -0.5px;
     font-weight: 700;
     color: #404040;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    /* padding-top: 13px;
+    padding-bottom: 13px; */
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active,
@@ -5756,8 +5756,8 @@ list-blue i {
     }
     .navbar.fixed .navbar-nav .nav-link,
     .navbar.fixed .navbar-hamburger {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        /* padding-top: 20px;
+        padding-bottom: 20px; */
     }
     .navbar.fixed .navbar-brand {
         padding-top: 0;
@@ -5794,7 +5794,7 @@ list-blue i {
     .navbar-nav .nav-link {
         font-size: 14px;
         padding-left: 30px;
-        padding-right: 30px;
+        /* padding-right: 30px; */
         color: rgba(255, 255, 255, 1) !important;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -6059,7 +6059,7 @@ list-blue i {
         margin-bottom: 50px !important;
     }
     .sidebar {
-        padding-left: 15px !important
+        /* padding-left: 15px !important */
     }
     .sidebar.left-sidebar {
         padding-right: 15px !important;

@@ -40,23 +40,23 @@
                       <td><%= article.admin.pseudo %> </td>
                       <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
-                      
+
                         <%if article.published %>
                           <td>En ligne</td>
                         <%else%>
                           <td>Hors ligne</td>
                         <%end%>
-                      
+
                       <td><%= link_to dashboard_article_path(article.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
                         <%end%>
-                      </td>             
+                      </td>
                       <td><%= link_to edit_dashboard_article_path(article.id) do %>
-                          <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
                         <%end%>
                       </td>
                       <td><%= link_to dashboard_article_path(article.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cet article à tout jamais ?"}, method: :delete do %>
-                          <i class="fa fa-trash fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
                         <%end%>
                       </td>
                     </tr>
@@ -94,13 +94,13 @@
                       <td><%= article.admin.pseudo %> </td>
                       <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
-                      
+
                         <%if article.published %>
                           <td>En ligne</td>
                         <%else%>
                           <td>Hors ligne</td>
                         <%end%>
-                                         
+
                       <td><%= link_to dashboard_article_path(article.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
                         <%end%>

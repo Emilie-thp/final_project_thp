@@ -2,181 +2,199 @@
   <nav class="navbar transparent absolute nav-wrapper-dark inverse-text navbar-expand-lg center justify-content-between">
     <div class="container">
       <div class="navbar-header">
-        <div class="navbar-brand d-lg-none d-xl-none"><%= link_to root_path do %><%= image_tag('logos/logo1.png', class:'', alt:'') %><%end%></div>
-        <div class="navbar-hamburger ml-auto d-lg-none d-xl-none"><button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse"><span></span></button></div>
+        <div class="navbar-brand d-lg-none d-xl-none"><%= link_to root_path do %><%= image_tag('logos/logo1.png', class:'', alt:'') %>
+        <%end%>
       </div>
-      <!-- /.navbar-header -->
-      <div class="collapse navbar-collapse">
-        <div class="navbar-nav-wrapper">
-          <ul class="nav navbar-nav mr-auto">
-            <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle bold-text' %>
-              <ul class="dropdown-menu dropdown-menu-left border-top-line">
-                <li class="nav-item"><%= link_to 'Qui sommes-nous ?', root_path(@root, anchor: 'association'), class:'dropdown-item text-color hover-color' %></li>
-                <li class="nav-item"><%= link_to 'Nos missions', root_path(@root, anchor: 'mission'), class:'dropdown-item text-color hover-color' %></li>
-                <li class="nav-item"><%= link_to 'L\'équipe', root_path(@root, anchor: 'team'), class:'dropdown-item text-color hover-color' %></li>
-                <li class="nav-item"><%= link_to 'Nos réalisations', root_path(@root, anchor: 'realisation'), class:'dropdown-item text-color hover-color' %></li>
-                <li class="nav-item"><%= link_to 'Notre matériel', root_path(@root, anchor: 'equipment'), class:'dropdown-item text-color hover-color' %></li>
-              </ul>
-            </li>
-            <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link bold-text' %></li>
-          </ul>
-        </div>
-        <div class="navbar-brand d-none d-lg-block">
-          <%= link_to root_path do %>
-              <%= image_tag('logos/logo1.png', class:'', alt:'') %>
-          <%end%>
-        </div>
-        <div class="navbar-nav-wrapper">
-          <ul class="nav navbar-nav ml-auto">
-            <li class="nav-item"><%= link_to 'Actualités', events_path, class: 'nav-link bold-text' %></li>
-            <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link bold-text' %></li>
-            <li class="nav-item"><%= link_to 'Contact', new_contact_path, class:'nav-link bold-text' %></li>
-            <% if admin_signed_in? %>
-            <li class="nav-item dashboard-btn"><%= link_to 'Espace Admin', dashboard_admin_path(current_admin), class:'nav-link badge badge-pill bg-ice dashboard-text bold-text' %></li>
-            <%end%>
-          </ul>
-        </div>
-        <!-- /.navbar-nav-wrapper -->
+      <div class="navbar-hamburger ml-auto d-lg-none d-xl-none">
+        <button class="hamburger animate" data-toggle="collapse" data-target=".navbar-collapse">
+          <span></span></button>
       </div>
-      <!-- /.navbar-collapse -->
     </div>
-    <!-- /.container -->
-  </nav>
-  <!-- /.navbar -->
-  <div class="rev_slider_wrapper fullscreen-container">
-    <div id="slider" class="rev_slider fullscreenbanner bg-dark" data-version="5.4.7">
-      <ul>
-        <li data-transition="fade" data-thumb="<%= image_path("header/header1.jpg") %>"><%= image_tag('header/header1.jpg', class:'', alt:'') %>
-          <div class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
-	        data-x="center"
-			data-y="middle"
-			data-voffset="['-75','-75','-75','-75']"
-			data-fontsize="['16','16','16','16']"
-			data-lineheight="['26','26','26','26']"
-			data-width="['600','600','600','600']"
-			data-textAlign="['center','center','center','center']"
-			data-whitespace="['normal','normal','normal','normal']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9; letter-spacing: 3px;">Oeil de Biche Production</div>
-          <div class="tp-caption font-weight-700 color-white text-center"
-	        data-x="center"
-			data-y="middle"
-			data-voffset="['0','0','0','0']"
-			data-fontsize="['55','55','45','35']"
-			data-lineheight="['65','65','55','45']"
-			data-width="['900','900','700','700']"
-			data-textAlign="['center','center','center','center']"
-			data-whitespace="['normal','normal','normal','normal']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9; letter-spacing: -0.5px;">Réalisation de documentaires</div>
-          <a class="tp-caption btn btn-full-rounded btn-l btn-ice"
-			data-x="center"
-			data-y="middle"
-			data-voffset="['100','100','100','100']"
-			data-width="['auto','auto','auto','auto']"
-			data-textAlign="['center','center','center','center']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9;" href="#association">En savoir plus</a> </li>
-        <li data-transition="fade" data-thumb="<%= image_path("header/header2.jpg") %>"><%= image_tag('header/header2.jpg', class:'', alt:'') %>
-          <div class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
-	        data-x="center"
-			data-y="middle"
-			data-voffset="['-75','-75','-75','-75']"
-			data-fontsize="['16','16','16','16']"
-			data-lineheight="['26','26','26','26']"
-			data-width="['600','600','600','600']"
-			data-textAlign="['center','center','center','center']"
-			data-whitespace="['normal','normal','normal','normal']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9; letter-spacing: 3px;">Oeil de Biche Production</div>
-          <div class="tp-caption font-weight-700 color-white text-center"
-	        data-x="center"
-			data-y="middle"
-			data-voffset="['0','0','0','0']"
-			data-fontsize="['55','55','45','35']"
-			data-lineheight="['65','65','55','45']"
-			data-width="['900','900','700','700']"
-			data-textAlign="['center','center','center','center']"
-			data-whitespace="['normal','normal','normal','normal']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9; letter-spacing: -0.5px;">Créations originales</div>
-          <a class="tp-caption btn btn-full-rounded btn-l btn-ice"
-			data-x="center"
-			data-y="middle"
-			data-voffset="['100','100','100','100']"
-			data-width="['auto','auto','auto','auto']"
-			data-textAlign="['center','center','center','center']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9;" href="#association">En savoir plus</a> </li>
-        <li data-transition="fade" data-thumb="<%= image_path("header/header3.jpg") %>"><%= image_tag('header/header3.jpg', class:'', alt:'') %>
-          <div class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
-	        data-x="center"
-			data-y="middle"
-			data-voffset="['-75','-75','-75','-75']"
-			data-fontsize="['16','16','16','16']"
-			data-lineheight="['26','26','26','26']"
-			data-width="['600','600','600','600']"
-			data-textAlign="['center','center','center','center']"
-			data-whitespace="['normal','normal','normal','normal']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9; letter-spacing: 3px;">Oeil de Biche Production</div>
-          <div class="tp-caption font-weight-700 color-white text-center"
-	        data-x="center"
-			data-y="middle"
-			data-voffset="['0','0','0','0']"
-			data-fontsize="['55','55','45','35']"
-			data-lineheight="['65','65','55','45']"
-			data-width="['900','900','700','700']"
-			data-textAlign="['center','center','center','center']"
-			data-whitespace="['normal','normal','normal','normal']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9; letter-spacing: -0.5px;">Promotion des espaces naturels</div>
-          <a class="tp-caption btn btn-full-rounded btn-l btn-ice"
-			data-x="center"
-			data-y="middle"
-			data-voffset="['100','100','100','100']"
-			data-width="['auto','auto','auto','auto']"
-			data-textAlign="['center','center','center','center']"
-			data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
-			data-startslide="0"
-			data-endslide="3"
-			data-responsive="on"
-			data-responsive_offset="on"
-			style="z-index: 9;" href="#association">En savoir plus</a> </li>
+    <!-- /.navbar-header -->
+    <div class="collapse navbar-collapse">
+      <div class="navbar-nav-wrapper navbar-left">
+        <ul class="nav navbar-nav mr-auto">
+          <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle bold-text' %>
+            <ul class="dropdown-menu dropdown-menu-left border-top-line">
+              <li class="nav-item"><%= link_to 'Qui sommes-nous ?', root_path(@root, anchor: 'association'), class:'dropdown-item text-color hover-color' %></li>
+              <li class="nav-item"><%= link_to 'Nos missions', root_path(@root, anchor: 'mission'), class:'dropdown-item text-color hover-color' %></li>
+              <li class="nav-item"><%= link_to 'L\'équipe', root_path(@root, anchor: 'team'), class:'dropdown-item text-color hover-color' %></li>
+              <li class="nav-item"><%= link_to 'Nos réalisations', root_path(@root, anchor: 'realisation'), class:'dropdown-item text-color hover-color' %></li>
+              <li class="nav-item"><%= link_to 'Notre matériel', root_path(@root, anchor: 'equipment'), class:'dropdown-item text-color hover-color' %></li>
+            </ul>
+          </li>
+          <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link bold-text' %></li>
+        </ul>
+      </div>
+      <div class="navbar-brand d-none d-lg-block"><%= link_to root_path do %><%= image_tag('logos/logo1.png', class:'img-brand', alt:'') %>
+      <%end%>
+      </div>
+    <div class="navbar-nav-wrapper">
+      <ul class="nav navbar-nav ml-auto navbar-right">
+        <li class="nav-item"><%= link_to 'Actualités', events_path, class: 'nav-link bold-text' %></li>
+        <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link bold-text' %></li>
+        <li class="nav-item"><%= link_to 'Contact', new_contact_path, class:'nav-link bold-text' %></li>
+        <% if admin_signed_in? %>
+          <li class="nav-item"><%= link_to 'Espace Admin', dashboard_admin_path(current_admin), class:'nav-link bg-ice dashboard-btn dashboard-text bold-text' %></li>
+        <%end%>
       </ul>
-      <div class="tp-bannertimer tp-bottom"></div>
     </div>
-    <!-- /.rev_slider -->
+    <!-- /.navbar-nav-wrapper -->
   </div>
+  <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+<!-- /.navbar -->
+<div class="rev_slider_wrapper fullscreen-container">
+<div id="slider" class="rev_slider fullscreenbanner bg-dark" data-version="5.4.7">
+  <ul>
+    <li data-transition="fade" data-thumb="<%= image_path("header/header1.jpg") %>"><%= image_tag('header/header1.jpg', class:'', alt:'') %>
+      <div
+        class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['-75','-75','-75','-75']"
+        data-fontsize="['16','16','16','16']"
+        data-lineheight="['26','26','26','26']"
+        data-width="['600','600','600','600']"
+        data-textalign="['center','center','center','center']"
+        data-whitespace="['normal','normal','normal','normal']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9; letter-spacing: 3px;">Oeil de Biche Production</div>
+      <div
+        class="tp-caption font-weight-700 color-white text-center"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['0','0','0','0']"
+        data-fontsize="['55','55','45','35']"
+        data-lineheight="['65','65','55','45']"
+        data-width="['900','900','700','700']"
+        data-textalign="['center','center','center','center']"
+        data-whitespace="['normal','normal','normal','normal']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9; letter-spacing: -0.5px;">Réalisation de documentaires</div>
+      <a
+        class="tp-caption btn btn-full-rounded btn-l btn-ice"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['100','100','100','100']"
+        data-width="['auto','auto','auto','auto']"
+        data-textalign="['center','center','center','center']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9;"
+        href="#association">En savoir plus</a>
+    </li>
+    <li data-transition="fade" data-thumb="<%= image_path("header/header2.jpg") %>"><%= image_tag('header/header2.jpg', class:'', alt:'') %>
+      <div
+        class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['-75','-75','-75','-75']"
+        data-fontsize="['16','16','16','16']"
+        data-lineheight="['26','26','26','26']"
+        data-width="['600','600','600','600']"
+        data-textalign="['center','center','center','center']"
+        data-whitespace="['normal','normal','normal','normal']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9; letter-spacing: 3px;">Oeil de Biche Production</div>
+      <div
+        class="tp-caption font-weight-700 color-white text-center"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['0','0','0','0']"
+        data-fontsize="['55','55','45','35']"
+        data-lineheight="['65','65','55','45']"
+        data-width="['900','900','700','700']"
+        data-textalign="['center','center','center','center']"
+        data-whitespace="['normal','normal','normal','normal']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9; letter-spacing: -0.5px;">Créations originales</div>
+      <a
+        class="tp-caption btn btn-full-rounded btn-l btn-ice"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['100','100','100','100']"
+        data-width="['auto','auto','auto','auto']"
+        data-textalign="['center','center','center','center']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9;"
+        href="#association">En savoir plus</a>
+    </li>
+    <li data-transition="fade" data-thumb="<%= image_path("header/header3.jpg") %>"><%= image_tag('header/header3.jpg', class:'', alt:'') %>
+      <div
+        class="tp-caption font-weight-500 text-uppercase color-white text-center home-header-font"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['-75','-75','-75','-75']"
+        data-fontsize="['16','16','16','16']"
+        data-lineheight="['26','26','26','26']"
+        data-width="['600','600','600','600']"
+        data-textalign="['center','center','center','center']"
+        data-whitespace="['normal','normal','normal','normal']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9; letter-spacing: 3px;">Oeil de Biche Production</div>
+      <div
+        class="tp-caption font-weight-700 color-white text-center"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['0','0','0','0']"
+        data-fontsize="['55','55','45','35']"
+        data-lineheight="['65','65','55','45']"
+        data-width="['900','900','700','700']"
+        data-textalign="['center','center','center','center']"
+        data-whitespace="['normal','normal','normal','normal']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":1500,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9; letter-spacing: -0.5px;">Promotion des espaces naturels</div>
+      <a
+        class="tp-caption btn btn-full-rounded btn-l btn-ice"
+        data-x="center"
+        data-y="middle"
+        data-voffset="['100','100','100','100']"
+        data-width="['auto','auto','auto','auto']"
+        data-textalign="['center','center','center','center']"
+        data-frames='[{"from":"y:-50px;sX:2;sY:2;opacity:0;","speed":1000,"to":"o:1;","delay":2000,"ease":"Power4.easeOut"},{"delay":"wait","speed":300,"to":"opacity:0;","ease":"nothing"}]'
+        data-startslide="0"
+        data-endslide="3"
+        data-responsive="on"
+        data-responsive_offset="on"
+        style="z-index: 9;"
+        href="#association">En savoir plus</a>
+    </li>
+  </ul>
+  <div class="tp-bannertimer tp-bottom"></div>
+</div>
+<!-- /.rev_slider -->
+</div>
