@@ -25,6 +25,13 @@ project_names = ["Le lièvre du Jura","Le cochon des prés","L'hippo du ter-ter"
 
 event_names = ["Stand sur la chimie verte","L'agriculture biologique","Scène de bêtes","Papier Ciseaux Forêt Oiseaux","E=mc2","Temps à histoires", "La forêt dans la transition écologique","Atélier Co-écologique","Atélier Bee to Bee", "Les controverses Ecologiques","Demain,hier", "Atelier Fresque du climat"]
 
+k=0
+6.times do
+  category = Category.create(category_name: categories_array[k])
+  puts "seed categories"
+  k+=1
+end
+
 i=0 
 10.times do
   project = Project.create(title: project_names[i],
@@ -32,6 +39,8 @@ i=0
                            content: Faker::Lorem.paragraph(sentence_count: 40),
                            date: rand(t1..t2),
                            admin_id: admin.id)
+  project.categories << Category.all.sample
+  project.categories << Category.all.sample
   i+=1
   puts "seed projects"
  
@@ -45,13 +54,6 @@ j=0
                            admin_id: admin.id)
   j+=1
   puts "seed articles"
-end
-
-k=0
-6.times do
-  category = Category.create(category_name: categories_array[k])
-  puts "seed categories"
-  k+=1
 end
 
 contact = Contact.create(email: "jacqueline@mail.com",

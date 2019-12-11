@@ -26,7 +26,7 @@ module Dashboard
     private
 
     def admin_params
-      params.require(:admin).permit(:first_name, :last_name, :pseudo, :description, :speciality, :display)
+      params.require(:admin).permit(:first_name, :last_name, :pseudo, :description, :speciality)
     end
 
     def secret

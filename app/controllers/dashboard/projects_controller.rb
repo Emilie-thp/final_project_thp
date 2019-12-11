@@ -9,6 +9,7 @@ module Dashboard
 
 		def index
 			@projects = Project.all
+			@current_projects = Project.where(admin_id: current_admin.id)
 		end
 
 	  def new

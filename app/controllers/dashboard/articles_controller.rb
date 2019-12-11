@@ -8,6 +8,7 @@ module Dashboard
 
 		def index
 			@articles = Article.all
+ 			@current_articles = Article.where(admin_id: current_admin.id)
 		end
 
 		def show
