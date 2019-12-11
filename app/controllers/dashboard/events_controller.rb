@@ -22,7 +22,7 @@ module Dashboard
 
 			if @event.save
 	    	flash[:notice] = "Une nouvelle actualité a bien été créée (n°#{@event.id})!"
-				redirect_to edit_dashboard_event_path(@event)
+				redirect_to dashboard_events_path
 		 	else
 				render "new"
 		 	end
