@@ -37,7 +37,7 @@
                     <%if article.admin == current_admin%>
                     <tr>
                       <td><%= article.title %>  </td>
-                      <td>Admin n°<%= article.admin.id %> </td>
+                      <td><%= article.admin.pseudo %> </td>
                       <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
                       
@@ -91,7 +91,7 @@
                     <%unless article.admin == current_admin%>
                     <tr>
                       <td><%= article.title %>  </td>
-                      <td>Admin n°<%= article.admin.id %> </td>
+                      <td><%= article.admin.pseudo %> </td>
                       <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
                       
