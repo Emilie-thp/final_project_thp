@@ -1,48 +1,43 @@
 <div class="container inner">
   <div class="row">
     <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2 class="section-title text-center">Mise à jour de l'article</h2>
+      <h2 class="section-title text-center">Mise à jour de l'article et ajout des photos</h2>
 
-      <!-- Form for active_storage -->
-      <p class="lead text-center">Ajouter une photo pour la miniature</p>
-      <div class="space20"></div>
-      <%= form_tag dashboard_article_images_path(@article), multipart: true do %>
-      <%= file_field_tag :image %>
-      <%= submit_tag "Ajouter", class: 'btn btn-oasis' %>
-      <% end %>
+        <!-- Form for active_storage -->
+        <center> 
+          <%if @article.image.attached?%>
+          <p class="lead text-center">Photo de miniature de l'article </p>
+          <%= image_tag @article.image.variant(resize: "150x150") %> <br><br>
+          <%= link_to 'Changer de photo', dashboard_article_image_path(@article), method: :delete, class: 'btn btn-ice home-header-font' %>  
+          <%else%>
+          <p class="lead text-center">Ajouter une photo pour la miniature</p>
+          <%= form_tag dashboard_article_images_path(@article), multipart: true do %>
+          <%= file_field_tag :image %>
+          <%= submit_tag "Ajouter", class: 'btn btn-oasis' %>
+          <% end %>
+          <p>=== Veuillez choisir une miniature pour cet article ===</p>
+          <%end%>
+        </center>
+          <!-- /Form for active_storage -->
 
-      <%if @article.image.attached?%>
-        <%= image_tag @article.image.variant(resize: "150x150") %>
-        <br/>
-      <%else%>
-        <p>=== Veuillez choisir une miniature pour cet article ===</p>
-      <%end%>
-    </div>
-  </div>
-</div>
+        <div class="space90"></div>
 
-<div class="space30"></div>
-
-  <!-- /Form for active_storage -->
-<div class="container inner">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2 class="section-title text-center">Mise à jour de l'article</h2>
-      <p class="lead text-center">Remplir le formulaire ci-dessous</p>
-      <div class="space40"></div>
-      <h6><b>Titre de l'article'<b></h6>
-        <%= form_with model: @article, url: dashboard_article_path, local: true do |f| %>
-        <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
-        <div class="space30"></div>
-      <h6><b>Description<b></h6>
-        <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
-        <div class="space30"></div>
-      <h6><b>Contenu<b></h6>
-        <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
-        <div class="space30"></div><br/>
-        <%= f.submit "Editer l'article", class: 'btn btn-oasis' %>
-        <% end %>
-        <div class="space30"></div>
-    </div>
-  </div>
-</div>
+    
+              <p class="lead text-center">Pour éditer les informations, remplir le formulaire ci-dessous</p>
+              <div class="space40"></div>
+              <h6><strong>Titre de l'article'</strong></h6>
+                <%= form_with model: @article, url: dashboard_article_path, local: true do |f| %>
+                <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
+                <div class="space30"></div>
+                <h6><strong>Description</strong></h6>
+                  <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
+                  <div class="space30"></div>
+                  <h6><strong>Contenu</strong></h6>
+                    <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+                    <div class="space30"></div><br/>
+                    <%= f.submit "Editer l'article", class: 'btn btn-oasis' %>
+                    <% end %>
+                    <div class="space30"></div>
+                  </div>
+                </div>
+              </div>
