@@ -12,7 +12,7 @@
     </div>
     <!-- /.navbar-header -->
     <div class="collapse navbar-collapse">
-      <div class="navbar-nav-wrapper">
+      <div class="navbar-nav-wrapper navbar-left">
         <ul class="nav navbar-nav mr-auto">
           <li class="nav-item dropdown"><%= link_to 'L\'Association', root_path, class: 'nav-link dropdown-toggle bold-text' %>
             <ul class="dropdown-menu dropdown-menu-left border-top-line">
@@ -26,11 +26,11 @@
           <li class="nav-item"><%= link_to 'Réalisations', projects_path, class: 'nav-link bold-text' %></li>
         </ul>
       </div>
-      <div class="navbar-brand d-none d-lg-block"><%= link_to root_path do %><%= image_tag('logos/logo1.png', class:'', alt:'') %>
+      <div class="navbar-brand d-none d-lg-block"><%= link_to root_path do %><%= image_tag('logos/logo1.png', class:'img-brand', alt:'') %>
       <%end%>
       </div>
     <div class="navbar-nav-wrapper">
-      <ul class="nav navbar-nav ml-auto">
+      <ul class="nav navbar-nav ml-auto navbar-right">
         <li class="nav-item"><%= link_to 'Actualités', events_path, class: 'nav-link bold-text' %></li>
         <li class="nav-item"><%= link_to 'Blog', articles_path, class: 'nav-link bold-text' %></li>
         <li class="nav-item"><%= link_to 'Contact', new_contact_path, class:'nav-link bold-text' %></li>
