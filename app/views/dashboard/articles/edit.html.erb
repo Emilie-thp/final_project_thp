@@ -13,7 +13,7 @@
           <p class="lead text-center">Ajouter une photo pour la miniature</p>
           <%= form_tag dashboard_article_images_path(@article), multipart: true do %>
           <%= file_field_tag :image %>
-          <%= submit_tag "Ajouter", class: 'btn btn-oasis' %>
+          <%= submit_tag "Ajouter", class: 'btn btn-ice home-header-font' %>
           <% end %>
           <p>=== Veuillez choisir une miniature pour cet article ===</p>
           <%end%>
@@ -35,7 +35,7 @@
                   <h6><strong>Contenu</strong></h6>
                     <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
                     <div class="space30"></div><br/>
-                    <%= f.submit "Editer l'article", class: 'btn btn-oasis' %>
+                    <%= f.submit "Editer l'article", class: 'btn btn-ice home-header-font' %>
                     <% end %>
                     <div class="space30"></div>
                   </div>
