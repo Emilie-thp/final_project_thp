@@ -38,7 +38,6 @@ i=0
                            description: "Un projet réalisé par l'association Oeil de Biche, en partenariat avec la commune de la Pesse et les Parcs Naturels du Jura.",
                            content: Faker::Lorem.paragraph(sentence_count: 40),
                            date: rand(t1..t2),
-                           published: true,
                            admin_id: admin.id)
   project.categories << Category.all.sample
   project.categories << Category.all.sample
