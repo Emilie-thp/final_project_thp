@@ -23,7 +23,7 @@ module Dashboard
 			@article = Article.new(article_params)
 			@article.admin = current_admin
 			if @article.save
-				flash[:notice] = "Un nouvel article a bien été créé (n°#{@article.id})! Merci d'ajouter une photo avant de le publier."
+				flash[:notice] = "Vous venez de créer un nouvel article. Ajoutez une photo et relisez les informations avant le mettre en ligne !"
 				redirect_to edit_dashboard_article_path(@article)
 			else
 				render "new"
@@ -37,7 +37,7 @@ module Dashboard
 	  def update
 			@article = Article.find(params[:id])
 			if @article.update(article_params)
-	    	flash[:notice] = "L'article n°#{@article.id} a bien été édité !"
+	    	flash[:notice] = "L'article '#{@article.title}' a bien été édité !"
 				redirect_to dashboard_articles_path
 			else
 				render "edit"
@@ -47,7 +47,7 @@ module Dashboard
 	  def destroy
 			@article = Article.find(params[:id])
 			@article.destroy
-    	flash[:notice] = "L'article n°#{@article.id} a bien été supprimé !"
+    	flash[:notice] = "L'article '#{@article.title}' a bien été supprimé !"
     	redirect_to dashboard_articles_path
 	  end
 
