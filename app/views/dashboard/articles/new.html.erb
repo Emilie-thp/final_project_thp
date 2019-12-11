@@ -12,15 +12,15 @@
     <div class="container inner">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-          <h2 class="section-title text-center">Nouvel article</h2>
-          <p class="lead text-center">Remplir le formulaire ci-dessous</p>
+          <h2 class="section-title text-center">Création d'un article</h2>
+          <p class="lead text-center">Remplir le formulaire ci-dessous puis cliquer sur Enregistrer les informations pour ajouter ensuite une photo</p>
           <div class="space40"></div>
-          <h6><b>Titre de l article<b></h6>   
+          <h6><b>Titre de l'article<b></h6>   
             <%= form_with model: @article, url: dashboard_articles_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
-            <h6><b>Description<b></h6>
-            <%= f.text_area :description, class:"form-control", placeholder: "Description (en 1 phrase)" %>
+            <h6><b>Sous-titre<b></h6>
+            <%= f.text_area :description, class:"form-control", placeholder: "Sous-titre (en 1 phrase)" %>
             <div class="space30"></div>
             <h6><b>Contenu<b></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>

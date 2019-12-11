@@ -4,7 +4,7 @@ class CreateArticles < ActiveRecord::Migration[5.2]
       t.string :title
       t.string :description
       t.text :content
-      t.boolean :published
+      t.boolean :published, null: false, default: false
       t.belongs_to :admin, index: true, foreign_key: true
       t.timestamps
     end

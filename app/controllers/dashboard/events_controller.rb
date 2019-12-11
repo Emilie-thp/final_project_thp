@@ -21,8 +21,8 @@ module Dashboard
 			@event.admin = current_admin
 
 			if @event.save
-	    	flash[:notice] = "Une nouvelle actualité a bien été créée (n°#{@event.id})!"
-				redirect_to edit_dashboard_event_path(@event)
+	    	flash[:notice] = "Vous venez de créer une nouvelle actualité. Vérifiez les informations avant de la mettre en ligne !"
+				redirect_to edit_dashboard_events_path(@event)
 		 	else
 				render "new"
 		 	end
@@ -39,18 +39,32 @@ module Dashboard
 	  def update
 	    @event = Event.find(params[:id])
 	    if @event.update(event_params)
-	    	flash[:notice] = "L'actualité n°#{@event.id} a bien été éditée !"
+	    	flash[:notice] = "L'actualité '#{@event.title}'' a bien été éditée !"
 				redirect_to dashboard_events_path
 			else
 				render "edit"
 	  	end
 	  end
 
+	  #another update method to update only the published column (bolean)
+	  def update_published	
+	  	@event = Event.find(params[:id])
+	  		if @event.published 
+	  			@event.update(published:false)
+	  			redirect_to edit_dashboard_event_path(@event)
+	  			flash[:notice] = "Votre actualité vient d'être mise hors ligne !"
+	  		else
+	  			@event.update(published:true)
+	  			flash[:notice] = "Votre actualité vient d'être mise en ligne !"
+	  			redirect_to edit_dashboard_event_path(@event)
+	  		end
+	  end
+	
 
 	  def destroy
 	    @event = Event.find(params[:id])
 	    @event.destroy
-    	flash[:notice] = "L'actualité n°#{@event.id} a bien été supprimée !"
+    	flash[:notice] = "L'actualité '#{@event.title}'' a bien été supprimée !"
     	redirect_to dashboard_events_path
 	  end
 

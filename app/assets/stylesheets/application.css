@@ -143,6 +143,26 @@
   margin: 10px;
 }
 
+.tooltip-dashboard {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-dashboard .tooltiptext-dashboard {
+  visibility: hidden;
+  width: 190px;
+  background-color: #e91d1d;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip-dashboard:hover .tooltiptext-dashboard {
+  visibility: visible;
+}
 .red {
   color:red;
 }
