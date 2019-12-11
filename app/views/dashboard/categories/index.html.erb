@@ -12,7 +12,7 @@
     <div class="card mb-3">
       <div class="card-header">
         <h2 class="section-title text-center">Les catégories des réalisations</h2>
-          <p align ="center"><%= link_to "Créer une nouvelle catégorie", new_dashboard_category_path, class:"btn btn-success" %></p>
+          <p align ="center"><%= link_to "Créer une nouvelle catégorie", new_dashboard_category_path, class:"btn btn-ice home-header-font" %></p>
       </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -36,13 +36,13 @@
                       <td><%= cat.projects.length %> réalisations</td>
                     <%end%>
                       <td><%= cat.created_at.strftime("%d/%m/%Y") %> </td>
-                      <td><%= cat.updated_at.strftime("%d/%m/%Y") %></td>                         
+                      <td><%= cat.updated_at.strftime("%d/%m/%Y") %></td>
                       <td><%= link_to edit_dashboard_category_path(cat.id) do %>
-                          <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
                         <%end%>
                       </td>
                       <td><%= link_to dashboard_category_path(cat.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette catégorie à tout jamais ?"}, method: :delete do %>
-                          <i class="fa fa-trash fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
                         <%end%>
                       </td>
                     </tr>

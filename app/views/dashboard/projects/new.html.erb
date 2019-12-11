@@ -15,20 +15,20 @@
           <h2 class="section-title text-center">Nouvelle réalisation</h2>
           <p class="lead text-center">Remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
-          <h6><b>Titre de la réalisation<b></h6>   
+          <h6><strong>Titre de la réalisation<strong></h6>   
             <%= form_with model: @project, url: dashboard_projects_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
-            <h6><b>Description<b></h6>
+            <h6><strong>Description<strong></h6>
             <%= f.text_area :description, class:"form-control", placeholder: "Description (en 1 phrase)" %>
             <div class="space30"></div>
-            <h6><b>Contenu<b></h6>
+            <h6><strong>Contenu<strong></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div>
-            <h6><b>Date de la réalisation<b></h6>
+            <h6><strong>Date de la réalisation<strong></h6>
             <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019" %><br>
             <div class="space30"></div>
-            <h6><b>Catégorie(s) de la réalisation<b></h6>
+            <h6><strong>Catégorie(s) de la réalisation<strong></h6>
 
             <% @categories.each do |cat| %> 
               <div class="custom-control custom-checkbox">
@@ -38,7 +38,7 @@
             <%end%>
 
             <br>
-            <%= f.submit "Créer la réalisation",  class: 'btn btn-oasis' %>
+            <%= f.submit "Créer la réalisation",  class: 'btn btn-ice home-header-font' %>
              <% end %>   
           <div class="space30"></div>          
         </div>

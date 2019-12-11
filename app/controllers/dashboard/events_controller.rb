@@ -8,6 +8,7 @@ module Dashboard
 
 		def index
 			@events = Event.all
+			@current_events = Event.where(admin_id: current_admin.id)
 		end
 
 	  def new

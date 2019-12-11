@@ -12,7 +12,7 @@
     <div class="card mb-3">
       <div class="card-header">
         <h2 class="section-title text-center">Mes articles</h2>
-          <p align ="center"><%= link_to "Créer un nouvel article", new_dashboard_article_path, class:"btn btn-success" %></p>
+          <p align ="center"><%= link_to "Créer un nouvel article", new_dashboard_article_path, class:"btn btn-ice home-header-font" %></p>
       </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -29,36 +29,41 @@
                     <th>Supprimer</th>
                   </tr>
                 </thead>
+                  <% if @current_articles.length == 0 %>
+                    <tr>
+                      <td colspan="8"><center>Vous n'avez pas encore créé d'article ! Lancez-vous en cliquant sur le bouton "Créer un nouvel article"</center></td>
+                  <%else%>
                   <% @articles.each do |article| %>
                     <%if article.admin == current_admin%>
                     <tr>
                       <td><%= article.title %>  </td>
-                      <td>Admin n°<%= article.admin.id %> </td>
+                      <td><%= article.admin.pseudo %> </td>
                       <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
-                      
+
                         <%if article.published %>
                           <td>En ligne</td>
                         <%else%>
                           <td>Hors ligne</td>
                         <%end%>
-                      
+
                       <td><%= link_to dashboard_article_path(article.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
                         <%end%>
-                      </td>             
+                      </td>
                       <td><%= link_to edit_dashboard_article_path(article.id) do %>
-                          <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
                         <%end%>
                       </td>
                       <td><%= link_to dashboard_article_path(article.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cet article à tout jamais ?"}, method: :delete do %>
-                          <i class="fa fa-trash fa-2x d-flex justify-content-center"></i>
+                          <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
                         <%end%>
                       </td>
                     </tr>
                   <%else%>
                   <%end%>
                 <%end%>
+              <%end%>
             </table>
           </div>
         </div>
@@ -86,16 +91,16 @@
                     <%unless article.admin == current_admin%>
                     <tr>
                       <td><%= article.title %>  </td>
-                      <td>Admin n°<%= article.admin.id %> </td>
+                      <td><%= article.admin.pseudo %> </td>
                       <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
-                      
+
                         <%if article.published %>
                           <td>En ligne</td>
                         <%else%>
                           <td>Hors ligne</td>
                         <%end%>
-                                         
+
                       <td><%= link_to dashboard_article_path(article.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
                         <%end%>

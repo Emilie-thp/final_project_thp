@@ -14,7 +14,7 @@ Category.destroy_all
 Event.destroy_all
 Admin.destroy_all
 
-admin = Admin.create(email: "admin@yopmail.com", password: "thpstrabourg")
+admin = Admin.create(pseudo:"TeamTHP", email: "admin@yopmail.com", password: "thpstrasbourg")
 
 categories_array = ["Institutionnel", "Communication", "Documentaire", "Animalier", "Photographie", "Animation", "Portrait", "Expérimental", "Pellicule", "Drone"]
 
@@ -25,6 +25,13 @@ project_names = ["Le lièvre du Jura","Le cochon des prés","L'hippo du ter-ter"
 
 event_names = ["Stand sur la chimie verte","L'agriculture biologique","Scène de bêtes","Papier Ciseaux Forêt Oiseaux","E=mc2","Temps à histoires", "La forêt dans la transition écologique","Atélier Co-écologique","Atélier Bee to Bee", "Les controverses Ecologiques","Demain,hier", "Atelier Fresque du climat"]
 
+k=0
+6.times do
+  category = Category.create(category_name: categories_array[k])
+  puts "seed categories"
+  k+=1
+end
+
 i=0 
 10.times do
   project = Project.create(title: project_names[i],
@@ -32,6 +39,8 @@ i=0
                            content: Faker::Lorem.paragraph(sentence_count: 40),
                            date: rand(t1..t2),
                            admin_id: admin.id)
+  project.categories << Category.all.sample
+  project.categories << Category.all.sample
   i+=1
   puts "seed projects"
  
@@ -47,16 +56,10 @@ j=0
   puts "seed articles"
 end
 
-
-10.times do
-  category = Category.create(category_name: categories_array.sample)
-  puts "seed categories"
-end
-
-contact = Contact.create(email: "contact@mail.com",
-                         name: "Visiteur0",
+contact = Contact.create(email: "jacqueline@mail.com",
+                         name: "Jacqueline",
                          status: ["Particulier","Professionnel"].sample,
-                         subject: "Message du visiteur n°",
+                         subject: "Bravo pour votre travail !",
                          content: Faker::Lorem.paragraph(sentence_count: 5)
                           )
 puts "seed 1 message"

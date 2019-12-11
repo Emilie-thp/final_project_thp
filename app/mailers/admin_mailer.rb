@@ -11,7 +11,7 @@ class AdminMailer < ApplicationMailer
   def contact_email(contact)
     @contact = contact
     @url  = 'http://oeil-de-biche.fr/' 
-    mail(to: 'bamby.boutique.thp@gmail.com', subject: "Demande d'utilisateur")
+    mail(to: 'bamby.boutique.thp@gmail.com', subject: "Nouveau message sur votre site")
   end
 
 end

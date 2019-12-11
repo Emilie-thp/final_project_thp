@@ -17,12 +17,16 @@
             <br>
             <p>En voici le détail :</p>
             <br>
-            <p><%= @contact.content %></p>
+            <p>Aperçu du message:</p>
+            <p>Le <%=@contact.created_at.strftime("%d/%m/%Y") %>, <%= @contact.name %> vous a contacté avec l'objet suivant : "<strong><%= @contact.subject %></strong>".</p>
+            <p>Il s'agit d'un <strong><%= @contact.status %></strong> et son courriel est <strong><%= @contact.email %></strong></p>
             <br>
-            <p> Merci de lui répondre rapidement depuis le mail.</p>
+            <p>Voici le détail de son message :</p>
+            <p>"<strong><%= @contact.content %></strong>"</p>
             <br>
-            <p>Pour accéder à ton espace administrateur, connecte-toi via l'url suivante : <%= link_to "Mon compte Admin", "https://oeil-de-biche.herokuapp.com/sign_in", :target => "_blank"  %>.</p>
+            <p> Merci de lui répondre rapidement par email à l'adresse suivante : <strong><%= @contact.email %></strong>.</p>
             <br>
+            <p>Pour accéder à ton espace administrateur, connecte-toi à <%= link_to "ton compte", "https://oeil-de-biche.herokuapp.com/admins/sign_in", :target => "_blank"  %>.</p>
             <p> Bonne journée !</p>
             <br>
           </table>
