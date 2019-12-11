@@ -9,7 +9,7 @@
           <%= form_with model: @category, url: dashboard_category_path, local: true do |f| %>
             <%= f.text_field :category_name, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
-  
+
             <%= f.submit "Editer la catégorie", class: 'btn btn-ice home-header-font' %>
              <% end %>   
 
@@ -21,12 +21,12 @@
                 <div class="table-responsive">
                   <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <% @category.projects.each do |project| %>
-                    <tr>            
-                      <td>Titre : <%= project.title %> </td>    
+                    <tr>
+                      <td>Titre : <%= project.title %> </td>
                       <td><%= link_to edit_dashboard_project_path(project.id) do %>
                           <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
                         <%end%>
-                      </td> 
+                      </td>
                     </tr>
                   <%end%>
                 </table>
@@ -35,4 +35,3 @@
               <%end%>
             </div>
           </div>
-

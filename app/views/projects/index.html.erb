@@ -15,69 +15,69 @@
           <%end%>
           </li>
         <%end%>
-        </ul>
-        <!-- /.nav-tabs -->
+      </ul>
+      <!-- /.nav-tabs -->
       <div class="space10"></div>
-        <div class="tab-content">
-          <div class="tab-pane fade pb-0 show active" id="tab1-1">
-            <% @projects.each_with_index do |project, index| %>
-              <% if index%2 == 0 %>
-                <!--/.row 1-->
-                <div class="row no-gutter block-wrapper arrowed">
-                  <div class="col-md-6 block order-md-2">
-                    <% if project.thumbnail.attached?%>
-                      <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
-                    <%else%>
-                      <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
-                    <%end%>
-                  </div>
-                  <!--/column -->
-                  <div class="col-md-6 block text-center">
-                    <div class="box bg-white h-100 d-flex flex-column justify-content-center">
-                      <h3 class="text-uppercase"><%=project.title%></h3>
-                      <p class="mb-30"><%=project.description%></p>
-                      <div class="d-inline-block">
-                        <%= link_to "En savoir plus", project_path(project.id), class: "more more-inverse" %>
-                      </div>
+      <div class="tab-content">
+        <div class="tab-pane fade pb-0 show active" id="tab1-1">
+          <% @projects.each_with_index do |project, index| %>
+            <% if index%2 == 0 %>
+              <!--/.row 1-->
+              <div class="row no-gutter block-wrapper arrowed">
+                <div class="col-md-6 block order-md-2">
+                  <% if project.thumbnail.attached?%>
+                    <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
+                  <%else%>
+                    <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
+                  <%end%>
+                </div>
+                <!--/column -->
+                <div class="col-md-6 block text-center">
+                  <div class="box bg-white h-100 d-flex flex-column justify-content-center">
+                    <h3 class="text-uppercase"><%=project.title%></h3>
+                    <p class="mb-30"><%=project.description%></p>
+                    <div class="d-inline-block">
+                      <%= link_to "En savoir plus", project_path(project.id), class: "more more-inverse" %>
                     </div>
                   </div>
-                  <!--/column -->
                 </div>
-                <!--/.row -->
-              <%else%>
-                <!--/.row 2-->
-                <div class="row no-gutter block-wrapper arrowed">
-                  <div class="col-md-6 block">
-                    <% if project.thumbnail.attached?%>
-                      <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
-                    <%else%>
-                      <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
-                    <%end%>
-                  </div>
-                  <!--/column -->
-                  <div class="col-md-6 block text-center">
-                    <div class="box bg-white h-100 d-flex flex-column justify-content-center">
-                      <h3 class="text-uppercase"><%=project.title%></h3>
-                      <p class="mb-30"><%=project.description%></p>
-                      <div class="d-inline-block">
-                        <%= link_to "En savoir plus", project_path(project.id), class: "more more-inverse" %>
-                      </div>
+                <!--/column -->
+              </div>
+              <!--/.row -->
+            <%else%>
+              <!--/.row 2-->
+              <div class="row no-gutter block-wrapper arrowed">
+                <div class="col-md-6 block">
+                  <% if project.thumbnail.attached?%>
+                    <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
+                  <%else%>
+                    <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
+                  <%end%>
+                </div>
+                <!--/column -->
+                <div class="col-md-6 block text-center">
+                  <div class="box bg-white h-100 d-flex flex-column justify-content-center">
+                    <h3 class="text-uppercase"><%=project.title%></h3>
+                    <p class="mb-30"><%=project.description%></p>
+                    <div class="d-inline-block">
+                      <%= link_to "En savoir plus", project_path(project.id), class: "more more-inverse" %>
                     </div>
                   </div>
-                  <!--/column -->
                 </div>
-                <!--/.row -->
-              <%end%>
+                <!--/column -->
+              </div>
+              <!--/.row -->
             <%end%>
-            <!--/.tab-pane -->
-          </div>
-          <!-- /.tab-content -->
+          <%end%>
+          <!--/.tab-pane -->
         </div>
-        <!-- /.tabs-wrapper -->
+        <!-- /.tab-content -->
       </div>
-      <!--/#slide-portfolio -->
+      <!-- /.tabs-wrapper -->
     </div>
-    <!-- /.container -->
+    <!--/#slide-portfolio -->
   </div>
+  <!-- /.container -->
+</div>
 <!-- /.wrapper -->
 </div>
