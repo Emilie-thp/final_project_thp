@@ -19,6 +19,10 @@ Rails.application.routes.draw do
     resources :projects do
       resources :pictures
       resources :thumbnails
+      member do
+        patch :update_published
+        put :update_published
+      end
     end
     resources :articles do
       resources :images
