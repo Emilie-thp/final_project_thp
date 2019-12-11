@@ -22,6 +22,10 @@ module Dashboard
 			@project.admin = current_admin
 			
 			if @project.save
+				category_array = params[:project][:categories]
+				category_array.each do |category|
+				@project.categories << Category.find_by(category_name: category)
+				end
 	    	flash[:notice] = "Une nouvelle réalisation a bien été créée (n°#{@project.id})! Merci d'ajouter les photos avant de la publier."
 				redirect_to edit_dashboard_project_path(@project)
 		 	else
@@ -58,7 +62,7 @@ module Dashboard
 	  private
 
 	  def project_params
-	    params.require(:project).permit(:title, :description, :content, :date, :published)
+	    params.require(:project).permit(:title, :description, :content, :date, :published, :categories)
 	  end
 
   	def secret
