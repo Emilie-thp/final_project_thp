@@ -54,6 +54,7 @@ module Dashboard
     	redirect_to dashboard_projects_path
 	  end
 
+	  #another update method to update only the published column (bolean)
 	  def update_published	
 	  	@project = Project.find(params[:id])
 	  		if @project.published 
