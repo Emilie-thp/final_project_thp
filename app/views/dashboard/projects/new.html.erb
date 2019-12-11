@@ -13,7 +13,7 @@
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
           <h2 class="section-title text-center">Nouvelle réalisation</h2>
-          <p class="lead text-center">Remplir le formulaire ci-dessous</p>
+          <p class="lead text-center">Remplir le formulaire ci-dessous puis cliquer sur Enregistrer les informations pour ajouter ensuite les photos</p>
           <div class="space40"></div>
           <h6><strong>Titre de la réalisation<strong></h6>   
             <%= form_with model: @project, url: dashboard_projects_path, local: true do |f| %>
@@ -38,7 +38,7 @@
             <%end%>
 
             <br>
-            <%= f.submit "Créer la réalisation",  class: 'btn btn-ice home-header-font' %>
+            <%= f.submit "Enregistrer les informations",  class: 'btn btn-ice home-header-font' %>
              <% end %>   
           <div class="space30"></div>          
         </div>
