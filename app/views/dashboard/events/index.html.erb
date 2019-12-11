@@ -37,7 +37,7 @@
                     <%if event.admin == current_admin%>
                     <tr>
                       <td><%= event.title %>  </td>
-                      <td>Admin n°<%= event.admin.id %> </td>
+                      <td><%= event.admin.pseudo %> </td>
                       <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
                       
@@ -91,7 +91,7 @@
                     <%unless event.admin == current_admin%>
                     <tr>
                       <td><%= event.title %>  </td>
-                      <td>Admin n°<%= event.admin.id %> </td>
+                      <td><%= event.admin.pseudo %> </td>
                       <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
                       
