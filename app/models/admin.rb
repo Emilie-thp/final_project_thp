@@ -4,7 +4,7 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :pseudo, presence: {message: ": merci d'indiquer un pseudo pour une expérience adminsitrateur complète ;)"}
+  validates :pseudo, presence: {message: ": merci d'indiquer un pseudo pour une expérience adminsitrateur complète ;)"}, length: { minimum: 2, message: "Le pseudo doit avoir au moins 2 caractères" }
 
   has_many :projects
   has_many :articles
