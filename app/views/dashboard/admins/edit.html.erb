@@ -59,14 +59,21 @@
             </div>
           </div>  
           
-  
+          <% if @admin.display == false %>
           <div class="form-group">
             <div class="custom-control custom-checkbox">
               <%= f.check_box :display, {class:"custom-control-input", id:"customCheck1"}, true, false %>
-              <label class="custom-control-label" for="customCheck1">Afficher dans la page d'accueil</label>
+              <label class="custom-control-label" for="customCheck1">Figurer dans la partie Équipe de la page d'accueil</label>
             </div>
           </div>
-
+          <%else%>
+           <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <%= f.check_box :display, {class:"custom-control-input", id:"customCheck1"}, false, true %>
+              <label class="custom-control-label" for="customCheck1">Ne pas figurer dans la partie Équipe de la page d'accueil</label>
+            </div>
+          </div>
+          <%end%>
           <div class="space30"></div>
           <div class="text-center">
             <%=f.submit "Éditer", class:"btn btn-full-rounded btn-teal"%>
