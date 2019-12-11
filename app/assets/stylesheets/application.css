@@ -101,3 +101,7 @@
 .more-inverse:hover {
   color: #aaa !important;
 }
+
+.margin-picture {
+  margin: 10px;
+}
