@@ -1,9 +1,21 @@
 <div class="container inner">
   <div class="row">
     <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2 class="section-title text-center">Mise à jour de la réalisation et ajout des photos</h2>
+      <h2 class="section-title text-center">Ajout des photos et mise à jour des informations</h2>
 
-      <div class="space30"></div>
+      <!-- Button for published / unpublished -->
+        <center>
+          <% if @project.published then %>
+            <%= link_to 'Mettre hors ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-danger home-header-font' %>  
+          <%elsif @project.published == false && @project.thumbnail.attached? == false then %>
+          <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success disabled home-header-font' %> 
+          <%else%>
+           <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %> 
+          <%end%>
+        </center>
+      <!-- /Button for published / unpublished -->
+
+      <div class="space60"></div>
 
       <!-- Form for active_storage -->
       <center> 
@@ -20,7 +32,7 @@
           <p>=== Veuillez choisir une miniature pour cette réalisation ===</p>
         <%end%>
 
-        <div class="space90"></div>
+        <div class="space60"></div>
 
         <%if @project.pictures.length == 0%>
           <p class="lead text-center">Ajouter les photos du diaporama (3 minimum pour une belle mise en page ou aucune !)</p>
@@ -54,10 +66,10 @@
       </center>   
       <!-- /Form for active_storage -->
 
-      <div class="space90"></div>
+      <div class="space60"></div>
 
-        <p class="lead text-center">Pour éditer les informations, remplir le formulaire ci-dessous</p>
-          <div class="space40"></div>
+        <p class="lead text-center">Si vous souhaiter modifier certaines informations, modifier le formulaire ci-dessous et cliquer sur Enregistrer les modifications</p>
+          <div class="space10"></div>
             <h6><strong>Titre de la réalisation</strong></h6>
               <%= form_with model: @project, url: dashboard_project_path, local: true do |f| %>
               <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
@@ -70,7 +82,7 @@
             <div class="space30"></div>
             <h6><strong>Date de la réalisation</strong></h6>
               <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019" %><br><br>
-              <%= f.submit "Editer la réalisation", class: 'btn btn-ice home-header-font' %>
+              <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
               <% end %>   
 
     </div>
