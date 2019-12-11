@@ -29,14 +29,23 @@
             <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019" %><br>
             <div class="space30"></div>
             <h6><strong>Catégorie(s) de la réalisation<strong></h6>
-
-            <% @categories.each do |cat| %> 
-              <div class="custom-control custom-checkbox">
-               <%= check_box_tag('project[category_ids][]', 'cat.id', false, class: 'custom-control-input') %>
-                <label class="custom-control-label" for="customCheck1"><%= cat.category_name %></label>
+            
+            <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <%= f.check_box :categories, {class:"custom-control-input", id:"customCheck1", multiple: true}, "Animal", nil %>
+              <label class="custom-control-label" for="customCheck1">Animal</label>
               </div>
-            <%end%>
+            </div>
 
+            <div class="form-group">
+            <div class="custom-control custom-checkbox">
+              <%= f.check_box :categories, {class:"custom-control-input", id:"customCheck1", multiple: true}, "Animal", nil %>
+              <label class="custom-control-label" for="customCheck1">Animal</label>
+              </div>
+            </div>
+            
+                  
+            
             <br>
             <%= f.submit "Créer la réalisation",  class: 'btn btn-ice home-header-font' %>
              <% end %>   
