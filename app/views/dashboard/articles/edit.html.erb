@@ -1,7 +1,22 @@
 <div class="container inner">
   <div class="row">
     <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2 class="section-title text-center">Mise à jour de l'article et ajout des photos</h2>
+      <h2 class="section-title text-center">Ajout de la photo et mise à jour de l'article</h2>
+
+       <!-- Button for published / unpublished -->
+        <center>
+          <% if @article.published then %>
+            <%= link_to 'Mettre hors ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-danger home-header-font' %>  
+          <%elsif @article.published == false && @article.image.attached? == false then %>
+          <div class="tooltip-dashboard">
+          <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success disabled home-header-font' %> 
+          <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
+          </div>
+          <%else%>
+           <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success home-header-font' %> 
+          <%end%>
+        </center>
+      <!-- /Button for published / unpublished -->
 
         <!-- Form for active_storage -->
         <center> 
