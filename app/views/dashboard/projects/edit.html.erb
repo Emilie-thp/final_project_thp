@@ -1,61 +1,78 @@
-    <div class="container inner">
-      <div class="row">
-        <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-          <h2 class="section-title text-center">Mise à jour de la réalisation</h2>
+<div class="container inner">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+      <h2 class="section-title text-center">Mise à jour de la réalisation et ajout des photos</h2>
 
-          <!-- Form for active_storage -->
-            <div class="space30"></div>
-            <p class="lead text-center">Ajouter une photo pour la miniature</p>
-              <%= form_tag dashboard_project_thumbnails_path(@project), multipart: true do %>
-                <%= file_field_tag :thumbnail %>
-                <%= submit_tag "Ajouter",  class: 'btn btn-oasis' %>
-              <% end %>
+      <div class="space30"></div>
 
+      <!-- Form for active_storage -->
+      <center> 
+        <%if @project.thumbnail.attached?%>
+          <p class="lead text-center">Photo de miniature de la réalisation </p>
+            <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
+            <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font' %>  
+        <%else%>
+          <p class="lead text-center">Ajouter une photo pour la miniature</p>
+            <%= form_tag dashboard_project_thumbnails_path(@project), multipart: true do %>
+           <%= file_field_tag :thumbnail %>
+            <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
+            <% end %>
+          <p>=== Veuillez choisir une miniature pour cette réalisation ===</p>
+        <%end%>
 
-            <%if @project.thumbnail.attached?%>
-                <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br />
-            <%else%>
-              <p>=== Veuillez choisir une miniature pour cette réalisation ===</p>
-            <%end%>
+        <div class="space90"></div>
 
-            
-            <div class="space50"></div>
+        <%if @project.pictures.length == 0%>
+          <p class="lead text-center">Ajouter les photos du diaporama (3 minimum pour une belle mise en page ou aucune !)</p>
+           <%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
+           <%= file_field_tag :pictures %>
+           <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
+           <% end %>
+          <p>=== Veuillez choisir au minimum 3 photos pour le diaporama de cette réalisation - à sélectionner 1 par 1 ===</p>
 
-            <div class="space30"></div>
-            <p class="lead text-center">Ajouter les photos du diaporama (3 photos minium / ou aucune photo)</p>
-              <%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
-                <%= file_field_tag :pictures %>
-                <%= submit_tag "Ajouter",  class: 'btn btn-oasis' %>
-              <% end %>
+        <%else%>
+          <p class="lead text-center">Les photos du diaporama (3 minimum pour une belle mise en page ou aucune !) </p>
+          <p><%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
+          <%= file_field_tag :pictures %>
+          <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
+          <% end %></p>
 
-            <%if @project.pictures.attached?%>
-              <% @project.pictures.each do |image| %>
-                <%= image_tag image.variant(resize: "150x150") %> <br />
-              <% end %>
-            <%else%>
-              <p>=== Veuillez choisir au minimum 3 photos pour le diaporama de cette réalisations ===</p>
-            <%end%>
+          <table>
+            <% @project.pictures.each do |image| %>
+            <tr>
+              <td>
+                <div class="margin-picture"><%= image_tag image.variant(resize: "150x150") %></div></td>
+              <td> </td>
+              <td>
+                <%= link_to 'Supprimer cette photo', dashboard_project_picture_path(@project, image), method: :delete, class: 'btn btn-ice home-header-font' %><br><br>
+              </td>
+            </tr>
+            <% end %>
+          </table>
 
-            <div class="space50"></div>
+        <%end%>
+      </center>   
+      <!-- /Form for active_storage -->
 
-          <!-- /Form for active_storage -->
+      <div class="space90"></div>
 
-          <p class="lead text-center">Pour éditer les informations, remplir le formulaire ci-dessous</p>
+        <p class="lead text-center">Pour éditer les informations, remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
-          <h6><b>Titre de la réalisation<b></h6>
-          <%= form_with model: @project, url: dashboard_project_path, local: true do |f| %>
-            <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
+            <h6><strong>Titre de la réalisation</strong></h6>
+              <%= form_with model: @project, url: dashboard_project_path, local: true do |f| %>
+              <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
-            <h6><b>Description<b></h6>
-            <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
+            <h6><strong>Description</strong></h6>
+              <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
             <div class="space30"></div>
-            <h6><b>Contenu<b></h6>
-            <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+            <h6><strong>Contenu</strong></h6>
+              <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div>
-            <h6><b>Date de la réalisation<b></h6>
-            <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019" %><br>
-            <br>
-            <%= f.submit "Editer la réalisation", class: 'btn btn-oasis' %>
-             <% end %>   
-           </div>
+            <h6><strong>Date de la réalisation</strong></h6>
+              <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019" %><br><br>
+              <%= f.submit "Editer la réalisation", class: 'btn btn-ice home-header-font' %>
+              <% end %>   
+
     </div>
+  </div>
+</div>

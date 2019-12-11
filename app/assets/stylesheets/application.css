@@ -15,7 +15,7 @@
  *= require style
  *= require style/css/bootstrap.min
  *= require font-awesome
- *= require style/css/color/teal
+ *= require style/css/color/ice
  *= require style/css/plugins
  *= require style/revolution/css/layers
  *= require style/revolution/css/navigation
@@ -68,7 +68,7 @@
 }
 
 .hover-color:hover {
-  background-color: #67bbb2 !important;
+  background-color: #9eb9d7 !important;
   color: black !important;
 }
 
@@ -94,15 +94,18 @@
 }
 
 .list-group-item.active {
-  background-color: #67bbb2 !important;
-  border-color: #67bbb2 !important;
+  background-color: #9eb9d7 !important;
+  border-color: #9eb9d7 !important;
 }
 
 .more-inverse {
-  color: #67bbb2 !important;
+  color: #9eb9d7 !important;
 }
 
 .more-inverse:hover {
   color: #aaa !important;
 }
 
+.margin-picture {
+  margin: 10px;
+}
