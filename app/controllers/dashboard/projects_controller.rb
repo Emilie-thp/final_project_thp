@@ -15,8 +15,8 @@ module Dashboard
 		end
 
 		def new
-			@categories = Category.all
 			@project = Project.new
+			@categories = Category.all
 		end
 
 		def create
