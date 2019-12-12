@@ -9,9 +9,9 @@
         <ul class="nav nav-tabs justify-content-center">
           <li class="nav-item"><%= link_to 'Tout', projects_path, class:"nav-link active"%></li>
           <% @categories.each do |cat| %>
-            <% if cat.projects.length == 0  %>
+            <% if cat.projects.where(published:true).length > 0  %>
+              <li class="nav-item"><%= link_to projects_path(category: cat.category_name), class:"nav-link active" do %><%=cat.category_name%>
             <%else%>
-            <li class="nav-item"><%= link_to projects_path(category: cat.category_name), class:"nav-link active" do %><%=cat.category_name%>
             <%end%>
           <%end%>
           </li>

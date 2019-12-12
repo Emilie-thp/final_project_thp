@@ -68,7 +68,7 @@
         <%if @project.pictures.length == 0%>
         <p class="lead text-center">Ajouter les photos du diaporama (3 minimum pour une belle mise en page ou aucune !)</p>
         <%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
-        <%= file_field_tag :pictures %>
+        <%= file_field_tag 'pictures[]', :multiple => true%>
         <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
         <% end %>
         <p>=== Veuillez choisir au minimum 3 photos pour le diaporama de cette réalisation - à sélectionner 1 par 1 ===</p>

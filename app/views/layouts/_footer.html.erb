@@ -20,28 +20,22 @@
               <h3 class="widget-title footer-bold">Nous suivre</h3>
               <ul class="social social-mute social-s">
                 <li>
-                  <a href="#">
-                    <i class="fa fa-flickr"></i>
-                  </a>
+                  <%= link_to "https://www.facebook.com/oeil.debiche.739" do %>
+                    <i class="fa fa-facebook"></i>
+                  <%end%>
                 </li>
                 <li>
-                  <a href="#">
-                    <i class="fa fa-twitter"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i class="fa fa-facebook-f"></i>
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
+                  <%= link_to "https://instagram.com" do %>
                     <i class="fa fa-instagram"></i>
-                  </a>
+                  <%end%>
                 </li>
               </ul>
               <div class="space40"></div>
-              <%= link_to "Se connecter", new_admin_session_path, class:"btn btn-ice" %>
+              <% if admin_signed_in? %>
+                  <%= link_to 'Se déconnecter', destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
+              <%else%>
+                  <%= link_to "Espace admin", new_admin_session_path, class:"btn btn-ice" %>
+                <%end%>
             </div>
             <!-- /.widget -->
           </div>

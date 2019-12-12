@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    @projects = Project.all
+    @projects = Project.where(published: true)
     @admins = Admin.all
   end
 
