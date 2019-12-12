@@ -86,7 +86,7 @@
 
 @media (min-width: 320px) and (max-width: 991px) {
   .dashboard-text{
-    margin: 0px !important;
+    margin: 7px !important;
     padding-left: 10px !important;
   }
 }
@@ -120,6 +120,14 @@
     margin-right: -90px !important;
   }
 } */
+
+figure {
+  margin: 0px !important;
+}
+
+.nav-tabs {
+  padding-bottom: 10px !important;
+}
 
 .dashboard-text:hover {
   background-color: grey !important;
