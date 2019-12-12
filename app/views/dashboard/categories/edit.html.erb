@@ -11,41 +11,20 @@
 </div>
 
 
-
 <div class="container inner">
   <div class="row">
     <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2 class="section-title text-center">Mise à jour de la catégorie <%=@category.category_name%></h2>
+      <h2 class="section-title text-center">Mise à jour de la catégorie "<%=@category.category_name%>"</h2>
 
-      <p class="lead text-center">Pour éditer la catégorie, remplir le formulaire ci-dessous</p>
+      <p class="lead text-center">Pour modifier la catégorie, remplir le formulaire ci-dessous</p>
       <div class="space30"></div>
       <h6><b>Nom de la catégorie<b></h6>
         <%= form_with model: @category, url: dashboard_category_path, local: true do |f| %>
         <%= f.text_field :category_name, class:"form-control", placeholder: "Titre" %>
         <div class="space30"></div>
 
-        <%= f.submit "Editer la catégorie", class: 'btn btn-ice home-header-font' %>
+        <%= f.submit "Modifer la catégorie", class: 'btn btn-ice home-header-font' %>
         <% end %>   
 
-        <div class="space30"></div>
-        <% if @category.projects.length == 0 %>
-        <h6><b>Pour information, aucune réalisation n'est encore associée à cette catégorie !<b></h6>
-          <%else%>
-          <h6><b>Pour information, voici les réalisations associées à cette catégorie : <b></h6>
-            <div class="table-responsive">
-              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <% @category.projects.each do |project| %>
-                <tr>
-                  <td>Titre : <%= project.title %> </td>
-                  <td><%= link_to edit_dashboard_project_path(project.id) do %>
-                    <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
-                    <%end%>
-                  </td>
-                </tr>
-                <%end%>
-              </table>
-            </div>
-
-            <%end%>
-          </div>
-        </div>
+      </div>
+    </div>
