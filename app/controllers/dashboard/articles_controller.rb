@@ -45,9 +45,15 @@ module Dashboard
 	  def destroy
 			@article = Article.find(params[:id])
 			@article.destroy
-    	flash[:notice] = "L'article '#{@article.title}' a bien été supprimé !"
-    	redirect_to dashboard_articles_path
-	  end
+			respond_to do |format|
+				format.html do
+        	flash[:notice] = "L'article '#{@article.title}' a bien été supprimé !"
+					redirect_to dashboard_articles_path
+	      end
+	      format.js do
+				end
+			end
+		end
 
 	  #another update method to update only the published column (bolean)
 	  def update_published	
