@@ -2,10 +2,6 @@ module Dashboard
 
 	class ThumbnailsController < ApplicationController
 
-		def show
-			@project = Project.find(params[:project_id])
-		end 
-
 		def create
 	    @project = Project.find(params[:project_id])
 	    @project.thumbnail.attach(params[:thumbnail])

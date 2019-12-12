@@ -1,7 +1,6 @@
 module Dashboard
 
   class ContactsController < ApplicationController
- 		layout 'dashboard'
     before_action :authenticate_admin!
 
     def index
