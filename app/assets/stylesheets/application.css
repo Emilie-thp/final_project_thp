@@ -66,6 +66,10 @@
   font-family: 'Montserrat', sans-serif !important;
 }
 
+.wrap-title {
+  white-space:normal !important;
+}
+
 .hover-color:hover {
   background-color: #9eb9d7 !important;
   color: black !important;
