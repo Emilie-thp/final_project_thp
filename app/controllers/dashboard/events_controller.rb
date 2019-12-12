@@ -22,7 +22,7 @@ module Dashboard
 
 			if @event.save
 	    	flash[:notice] = "Vous venez de créer une nouvelle actualité. Vérifiez les informations avant de la mettre en ligne !"
-				redirect_to edit_dashboard_events_path(@event)
+				redirect_to edit_dashboard_event_path(@event)
 		 	else
 				render "new"
 		 	end
@@ -63,13 +63,16 @@ module Dashboard
 
 	  def destroy
 	    @event = Event.find(params[:id])
-	    @event.destroy
-    	flash[:notice] = "L'actualité '#{@event.title}'' a bien été supprimée !"
+			@event.destroy
+			format.html do
+				flash[:notice] = "L'actualité '#{@event.title}'' a bien été supprimée !"
     	redirect_to dashboard_events_path
-	  end
-
-
-
+			end
+			format.js do
+			end
+		end
+			
+		
 		private
 
 	  def event_params
