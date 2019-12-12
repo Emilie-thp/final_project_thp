@@ -125,8 +125,13 @@
   }
 } */
 
-figure {
+figure.mb-project {
   margin: 0px !important;
+}
+
+figure.img-fixed-size {
+  width: 350px;
+  height: 234px;
 }
 
 .nav-tabs {
@@ -175,6 +180,7 @@ figure {
 .tooltip-dashboard:hover .tooltiptext-dashboard {
   visibility: visible;
 }
+
 .red {
   color:red;
 }

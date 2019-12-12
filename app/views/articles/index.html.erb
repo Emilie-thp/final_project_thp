@@ -9,11 +9,11 @@
         <% @articles.each do |article| %>
         <div class="item post grid-sizer col-md-6 col-lg-4">
           <% if article.image.attached?%>
-          <figure class="overlay overlay2 mb-25">
+          <figure class="overlay overlay2 mb-25 img-fixed-size">
             <%= image_tag article.image, alt: 'miniature' %>
           </figure>
           <%else%>
-          <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %>
+          <figure><%= image_tag('realisations/fond.jpg', class:'img-fixed-size', alt:'') %>
           </figure>
           <%end%>
           <div class="post-content pl-10 pr-10">
