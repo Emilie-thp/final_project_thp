@@ -20,15 +20,16 @@
 
       <!-- Button for published / unpublished -->
       <center>
-        <% if @project.published then %>
+        <% if @project.published %>
         <%= link_to 'Mettre hors ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-danger home-header-font' %>  
-        <%elsif @project.published == false && @project.thumbnail.attached? == false then %>
-        <div class="tooltip-dashboard">
+        <%elsif @project.published == false && @project.thumbnail.attached? == true %>
+            <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %> 
+
+        <%else%>
+            <div class="tooltip-dashboard">
           <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success disabled home-header-font' %> 
           <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
         </div>
-        <%else%>
-        <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %> 
         <%end%>
       </center>
       <!-- /Button for published / unpublished -->
