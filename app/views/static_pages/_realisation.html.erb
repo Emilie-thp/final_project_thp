@@ -7,7 +7,7 @@
         <% @projects.limit(3).each do |project| %>
           <div class="item post grid-sizer col-md-6 col-lg-4">
             <% if project.thumbnail.attached?%>
-              <figure class="overlay overlay4">
+              <figure class="overlay overlay4 img-fixed-size">
                 <%= link_to project_path(project.id) do %>
                 <%= image_tag project.thumbnail, alt:'miniature' %>
                 <figcaption class="d-flex text-left">
@@ -18,7 +18,7 @@
                 <%end%>
               </figure>
             <%else%>
-              <figure class="overlay overlay4">
+              <figure class="overlay overlay4 img-fixed-size">
                 <%= link_to project_path(project.id) do %>
                 <%= image_tag('realisations/fond.jpg', alt:'') %>
                 <figcaption class="d-flex text-left">
