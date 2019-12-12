@@ -1,8 +1,7 @@
 module Dashboard
 
 	class CategoriesController < ApplicationController
-    layout 'dashboard'
-
+    
 		def index
 			@categories = Category.all
 		end
