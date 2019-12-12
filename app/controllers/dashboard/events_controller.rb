@@ -1,8 +1,6 @@
 module Dashboard
 
 	class EventsController < ApplicationController
-		layout 'application', :only => :show
-		layout 'dashboard', :except => :show
 		before_action :authenticate_admin!
 		before_action :secret, only: [:edit, :update, :destroy]
 
@@ -47,9 +45,9 @@ module Dashboard
 	  end
 
 	  #another update method to update only the published column (bolean)
-	  def update_published	
+	  def update_published
 	  	@event = Event.find(params[:id])
-	  		if @event.published 
+	  		if @event.published
 	  			@event.update(published:false)
 	  			redirect_to edit_dashboard_event_path(@event)
 	  			flash[:notice] = "Votre actualité vient d'être mise hors ligne !"
@@ -59,7 +57,7 @@ module Dashboard
 	  			redirect_to edit_dashboard_event_path(@event)
 	  		end
 	  end
-	
+
 
 	  def destroy
 	    @event = Event.find(params[:id])

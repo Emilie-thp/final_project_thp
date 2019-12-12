@@ -1,10 +1,6 @@
 module Dashboard 
   class AvatarsController < ApplicationController
     
-    def show
-			@admin = Admin.find(params[:admin_id])
-		end
-
 		def create
 	    @admin = Admin.find(params[:admin_id])
 	    @admin.avatar.attach(params[:avatar])

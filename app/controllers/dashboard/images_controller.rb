@@ -2,10 +2,6 @@ module Dashboard
 
   class ImagesController < ApplicationController
 
-    def show
-			@article = Article.find(params[:article_id])
-		end
-
 		def create
 	    @article = Article.find(params[:article_id])
 	    @article.image.attach(params[:image])

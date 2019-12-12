@@ -125,8 +125,17 @@
   }
 } */
 
-figure {
+figure.mb-project {
   margin: 0px !important;
+}
+
+figure.img-fixed-size {
+  width: 350px;
+  height: 234px;
+}
+
+figure.swiper-resize {
+  height: 382px !important;
 }
 
 .nav-tabs {
@@ -175,6 +184,7 @@ figure {
 .tooltip-dashboard:hover .tooltiptext-dashboard {
   visibility: visible;
 }
+
 .red {
   color:red;
 }

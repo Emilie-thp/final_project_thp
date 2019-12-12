@@ -1,7 +1,7 @@
 module Dashboard
 
 	class CategoriesController < ApplicationController
-    layout 'dashboard'
+    before_action :authenticate_admin!
 
 		def index
 			@categories = Category.all
