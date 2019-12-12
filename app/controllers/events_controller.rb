@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
+  
   def index
-    @events = Event.all
+    @events = Event.where(published:true)
   end
 
   def show

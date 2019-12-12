@@ -5794,7 +5794,7 @@ list-blue i {
     .navbar-nav .nav-link {
         font-size: 14px;
         padding-left: 30px;
-        padding-right: 30px;
+        /* padding-right: 30px; */
         color: rgba(255, 255, 255, 1) !important;
         padding-top: 10px;
         padding-bottom: 10px;

@@ -32,7 +32,7 @@
 fr:
   activerecord:
     attributes:
-      user:
+      admin:
         confirmation_sent_at: Date d'envoi de la confirmation
         confirmation_token: Clé de confirmation du mot de passe
         confirmed_at: Confirmé à
@@ -58,7 +58,7 @@ fr:
         updated_at: Date de mise à jour
     models:
       user: Utilisateur
-      
+      admin: Administrateur
   devise:
     confirmations:
       confirmed: Votre compte a bien été confirmé.
@@ -93,7 +93,7 @@ fr:
       reset_password_instructions:
         action: Changer mon mot de passe
         greeting: Bonjour %{recipient} !
-        instruction: 'Quelqu''un a demandé un lien pour changer votre mot de passe, le voici :'
+        instruction: 'Quelqu''un a demandé un lien pour modifier votre mot de passe, le voici :'
         instruction_2: Si vous n'avez pas émis cette demande, merci d'ignorer ce courriel.
         instruction_3: Votre mot de passe ne changera pas tant que vous n'aurez pas cliqué sur ce lien et renseigné un nouveau mot de passe.
         subject: Instructions pour changer le mot de passe
@@ -166,6 +166,21 @@ fr:
       unlocked: Votre compte a bien été déverrouillé. Veuillez vous connecter.
   errors:
     messages:
+      confirmation: non reussi(e)
+      too_long:
+        one: est trop long (pas plus d'un caractère)
+        other: est trop long (pas plus de %{count} caractères)
+      too_short:
+        one: est trop court (au moins un caractère)
+        other: est trop court (au moins %{count} caractères)
+      wrong_length:
+        one: ne fait pas la bonne longueur (doit comporter un seul caractère)
+        other: ne fait pas la bonne longueur (doit comporter %{count} caractères)
+      blank: doit être rempli(e)
+      required: doit exister
+      taken: n'est pas disponible
+      invalid: n'est pas valide
+      empty: doit être rempli(e)
       already_confirmed: a déjà été confirmé(e)
       confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
       expired: est expiré, veuillez en demander un autre

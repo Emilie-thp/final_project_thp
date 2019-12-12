@@ -2,21 +2,17 @@
 <div id="team" class="wrapper dark-wrapper inverse-text">
   <div class="container inner">
     <h2 class="title-color color-default mb-20 text-center resize-home-titles">Notre équipe</h2>
+    <h2 class="section-title text-center">Sous-titre</h2>
     <div class="swiper-container-wrapper swiper-col4" data-aos="fade">
       <div class="swiper-container text-center">
         <div class="swiper-wrapper">
           <%@admins.each do |profile|%>
             <%if profile.display && profile.avatar.attached? %>
               <div class="swiper-slide">
-                <figure class="mb-20"><%= image_tag profile.avatar %></figure>
+                <figure class="mb-20 swiper-resize"><%= image_tag profile.avatar %></figure>
                 <h5 class="mb-2 text-color"><%= profile.first_name%> <%=profile.last_name %></h5>
                 <div class="meta"><%= profile.speciality %></div>
                 <p class="text-color"><%= profile.description %></p>
-                <ul class="social social-color social-s">
-                  <li><a href="#"><i class="fa fa-twitter"></i></a></li>
-                  <li><a href="#"><i class="fa fa-facebook"></i></a></li>
-                  <li><a href="#"><i class="fa fa-flickr"></i></a></li>
-                </ul>
               </div>
             <%end%>
           <%end%>

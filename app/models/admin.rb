@@ -5,7 +5,7 @@ class Admin < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :pseudo, presence: true, length: { minimum: 2}
-  
+
   has_many :projects
   has_many :articles
   has_many :events

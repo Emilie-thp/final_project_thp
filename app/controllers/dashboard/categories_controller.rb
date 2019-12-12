@@ -1,11 +1,15 @@
 module Dashboard
 
 	class CategoriesController < ApplicationController
-    layout 'dashboard'
+    before_action :authenticate_admin!
 
 		def index
 			@categories = Category.all
 		end
+
+    def show
+      @category = Category.find(params[:id])
+    end
 
 	  def new
       @category = Category.new  
@@ -38,8 +42,15 @@ module Dashboard
     def destroy
       @category = Category.find(params[:id])
       @category.destroy
-      flash[:notice] = "La catégorie a bien été supprimée !"
-      redirect_to dashboard_categories_path
+      respond_to do |format|
+				format.html do
+          flash[:notice] = "La catégorie a bien été supprimée !"
+          redirect_to dashboard_categories_path
+				end
+				format.js do
+				end
+			end
+      
   	end
 
 
