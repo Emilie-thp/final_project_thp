@@ -57,6 +57,7 @@ module Dashboard
 
 		def destroy
 			@project = Project.find(params[:id])
+			@project.pictures.purge
 			@project.destroy
 			respond_to do |format|
 				format.html do
@@ -64,7 +65,7 @@ module Dashboard
 				redirect_to dashboard_projects_path
 	      end
 	      format.js do
-	      end
+				end
 			end
 		end
 

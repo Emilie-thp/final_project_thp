@@ -81,3 +81,4 @@ gem "table_print"
 
  gem 'image_processing', '~> 1.2'
 gem "pry", "~> 0.12.2"
+
