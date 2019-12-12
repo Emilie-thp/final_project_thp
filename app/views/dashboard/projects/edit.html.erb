@@ -21,15 +21,17 @@
       <!-- Button for published / unpublished -->
       <center>
         <% if @project.published %>
-        <%= link_to 'Mettre hors ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-danger home-header-font' %>  
+                <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
+                <%= link_to 'Mettre hors ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-danger home-header-font' %>
         <%elsif @project.published == false && @project.thumbnail.attached? == true %>
-            <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %> 
-
+                <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
+                <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %>
         <%else%>
             <div class="tooltip-dashboard">
-          <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success disabled home-header-font' %> 
-          <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
-        </div>
+                <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
+                <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success disabled home-header-font' %>
+                    <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
+            </div>
         <%end%>
       </center>
       <!-- /Button for published / unpublished -->
@@ -37,7 +39,7 @@
       <div class="space60"></div>
 
       <!-- Form for active_storage -->
-      <center> 
+      <center>
         <%if @project.thumbnail.attached?%>
         <% if @project.published %>
         <p class="lead text-center">Photo de miniature de la réalisation </p>
@@ -49,7 +51,7 @@
         <%else%>
         <p class="lead text-center">Photo de miniature de la réalisation </p>
         <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
-        <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font' %>  
+        <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font' %>
         <%end%>
 
         <%else%>
@@ -92,7 +94,7 @@
 
 
             <%end%>
-          </center>   
+          </center>
           <!-- /Form for active_storage -->
 
           <div class="space90"></div>
@@ -110,7 +112,7 @@
           <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
           <div class="space30"></div>
           <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
-          <% end %>   
+          <% end %>
 
         </div>
       </div>

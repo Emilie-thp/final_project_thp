@@ -19,14 +19,17 @@
         <!-- Button for published / unpublished -->
         <center>
           <% if @article.published then %>
-          <%= link_to 'Mettre hors ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-danger home-header-font' %>  
+          <%= link_to 'Prévisualiser', @article, class: 'btn btn-ice home-header-font' %>
+          <%= link_to 'Mettre hors ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-danger home-header-font' %>
           <%elsif @article.published == false && @article.image.attached? == false then %>
           <div class="tooltip-dashboard">
-            <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success disabled home-header-font' %> 
+            <%= link_to 'Prévisualiser', @article, class: 'btn btn-ice home-header-font' %>
+            <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success disabled home-header-font' %>
             <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
           </div>
           <%else%>
-          <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success home-header-font' %> 
+          <%= link_to 'Prévisualiser', @article, class: 'btn btn-ice home-header-font' %>
+          <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success home-header-font' %>
           <%end%>
         </center>
         <!-- /Button for published / unpublished -->
@@ -34,11 +37,11 @@
         <div class="space60"></div>
 
         <!-- Form for active_storage -->
-        <center> 
+        <center>
           <%if @article.image.attached?%>
           <p class="lead text-center">Photo de miniature de l'article </p>
           <%= image_tag @article.image.variant(resize: "150x150") %> <br><br>
-          <%= link_to 'Changer de photo', dashboard_article_image_path(@article), method: :delete, class: 'btn btn-ice home-header-font' %>  
+          <%= link_to 'Changer de photo', dashboard_article_image_path(@article), method: :delete, class: 'btn btn-ice home-header-font' %>
           <%else%>
           <p class="lead text-center">Ajouter une photo pour la miniature</p>
           <%= form_tag dashboard_article_images_path(@article), multipart: true do %>

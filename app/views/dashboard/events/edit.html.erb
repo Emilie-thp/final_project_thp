@@ -18,9 +18,11 @@
           <!-- Button for published / unpublished -->
             <center>
               <% if @event.published then %>
-                <%= link_to 'Mettre hors ligne', update_published_dashboard_event_path(@event), method: :put, class: 'btn btn-danger home-header-font' %>  
+              <%= link_to 'Prévisualiser', @event, class: 'btn btn-ice home-header-font' %>
+                <%= link_to 'Mettre hors ligne', update_published_dashboard_event_path(@event), method: :put, class: 'btn btn-danger home-header-font' %>
               <%else%>
-               <%= link_to 'Mettre en ligne', update_published_dashboard_event_path(@event), method: :put, class: 'btn btn-success home-header-font' %> 
+              <%= link_to 'Prévisualiser', @event, class: 'btn btn-ice home-header-font' %>
+               <%= link_to 'Mettre en ligne', update_published_dashboard_event_path(@event), method: :put, class: 'btn btn-success home-header-font' %>
               <%end%>
             </center>
           <!-- /Button for published / unpublished -->
@@ -44,9 +46,9 @@
             <div class="space30"></div>
             <h6><b>Date et heure (si nécessaire) <b></h6>
             <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019 20:00:00" %>
-            <br><br>            
+            <br><br>
             <%= f.submit "Modifier les informations", class: 'btn btn-ice home-header-font' %>
-             <% end %>   
+             <% end %>
 
           <div class="space30"></div>
         </div>
