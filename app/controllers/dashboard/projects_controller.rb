@@ -58,8 +58,14 @@ module Dashboard
 		def destroy
 			@project = Project.find(params[:id])
 			@project.destroy
-			flash[:notice] = "La réalisation '#{@project.title}' a bien été supprimée !"
-			redirect_to dashboard_projects_path
+			respond_to do |format|
+				format.html do
+       	flash[:notice] = "La réalisation '#{@project.title}' a bien été supprimée !"
+				redirect_to dashboard_projects_path
+	      end
+	      format.js do
+	      end
+			end
 		end
 
 	  #another update method to update only the published column (bolean)
