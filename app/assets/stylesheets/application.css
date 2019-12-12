@@ -134,6 +134,10 @@ figure.img-fixed-size {
   height: 234px;
 }
 
+figure.swiper-resize {
+  height: 382px !important;
+}
+
 .nav-tabs {
   padding-bottom: 10px !important;
 }
