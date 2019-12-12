@@ -2,6 +2,7 @@
 <div class="wrapper gray-wrapper">
   <div class="container inner">
     <h1 class="heading mb-0 text-center">Nos réalisations</h1>
+    <h2 class="section-title text-center">Sous-titre</h2>
     <div class="space50"></div>
     <div id="slide-portfolio">
       <div class="tabs-wrapper filtered">
@@ -26,9 +27,9 @@
               <div class="row no-gutter block-wrapper arrowed">
                 <div class="col-md-6 block order-md-2">
                   <% if project.thumbnail.attached?%>
-                    <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
+                    <figure class="mb-project"><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
                   <%else%>
-                    <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
+                    <figure class="mb-project"><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
                   <%end%>
                 </div>
                 <!--/column -->
@@ -49,9 +50,9 @@
               <div class="row no-gutter block-wrapper arrowed">
                 <div class="col-md-6 block">
                   <% if project.thumbnail.attached?%>
-                    <figure><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
+                    <figure class="mb-project"><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
                   <%else%>
-                    <figure><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
+                    <figure class="mb-project"><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
                   <%end%>
                 </div>
                 <!--/column -->

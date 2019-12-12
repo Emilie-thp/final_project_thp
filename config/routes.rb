@@ -14,14 +14,28 @@ Rails.application.routes.draw do
     resources :admins, only: [:show, :edit, :update] do
       resources :avatars
     end
-    resources :categories, :events
+    resources :categories
+    resources :events do
+      member do    
+        patch :update_published
+        put :update_published
+      end
+    end
     resources :contacts, only: [:index, :show]
     resources :projects do
       resources :pictures
       resources :thumbnails
+      member do
+        patch :update_published
+        put :update_published
+      end
     end
     resources :articles do
       resources :images
+      member do
+        patch :update_published
+        put :update_published
+      end
     end
   end
 

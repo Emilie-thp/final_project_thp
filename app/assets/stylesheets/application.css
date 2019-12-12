@@ -66,6 +66,10 @@
   font-family: 'Montserrat', sans-serif !important;
 }
 
+.wrap-title {
+  white-space:normal !important;
+}
+
 .hover-color:hover {
   background-color: #9eb9d7 !important;
   color: black !important;
@@ -82,6 +86,56 @@
   text-transform: uppercase !important;
   padding-top: 1px !important;
   padding-bottom: 1px !important;
+}
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .dashboard-text{
+    margin: 7px !important;
+    padding-left: 10px !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1240px) {
+  .container{
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1121px) {
+  .img-brand{
+    width: 150% !important;
+  }
+  .navbar-left{
+    margin-right: -119px !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .list-group-margin{
+    margin-left: -100px !important;
+    margin-right: -90px !important;
+  }
+}
+
+/* Media Queries pour le block notre matériel sur la page d'accueil */
+/* @media (min-width: 320px) and (max-width: 991px) {
+  .list-group-margin{
+    margin-left: -100px !important;
+    margin-right: -90px !important;
+  }
+} */
+
+figure.mb-project {
+  margin: 0px !important;
+}
+
+figure.img-fixed-size {
+  width: 350px;
+  height: 234px;
+}
+
+.nav-tabs {
+  padding-bottom: 10px !important;
 }
 
 .dashboard-text:hover {
@@ -104,6 +158,27 @@
 
 .margin-picture {
   margin: 10px;
+}
+
+.tooltip-dashboard {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-dashboard .tooltiptext-dashboard {
+  visibility: hidden;
+  width: 190px;
+  background-color: #e91d1d;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip-dashboard:hover .tooltiptext-dashboard {
+  visibility: visible;
 }
 
 .red {

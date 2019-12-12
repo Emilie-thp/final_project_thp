@@ -4,7 +4,7 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item active">Catégories</li>
     <li class="breadcrumb-item">
-      <%= link_to 'Voir la page Réalisations du site', projects_path %></a>
+      <%= link_to 'Voir la page Réalisations du site', projects_path %>
     </li>
   </ol>
 
@@ -12,7 +12,7 @@
     <div class="card mb-3">
       <div class="card-header">
         <h2 class="section-title text-center">Les catégories des réalisations</h2>
-          <p align ="center"><%= link_to "Créer une nouvelle catégorie", new_dashboard_category_path, class:"btn btn-ice home-header-font" %></p>
+          <p align ="center"><%= link_to "Créer une nouvelle catégorie", new_dashboard_category_path, class:"btn btn-ice home-header-font wrap-title" %></p>
       </div>
         <div class="card-body">
           <div class="table-responsive">
@@ -33,7 +33,7 @@
                     <%if cat.projects.length == 0 %>
                       <td>Aucune réalisation</td>
                     <%else%>
-                      <td><%= cat.projects.length %> réalisations</td>
+                      <td> <%= link_to "#{cat.projects.length} réalisations", dashboard_category_path(cat) %></td>
                     <%end%>
                       <td><%= cat.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= cat.updated_at.strftime("%d/%m/%Y") %></td>
