@@ -4,7 +4,6 @@ class ApplicationController < ActionController::Base
   layout :layout_manager
   before_action :configure_devise_parameters, if: :devise_controller?
 
- 
   private
 
   def layout_manager
