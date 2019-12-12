@@ -28,7 +28,7 @@
                   </tr>
                 </thead>
                   <% @categories.each do |cat| %>
-                    <tr id ="category<%= cat.id%>">
+                    <tr id ="category<%=cat.id%>">
                       <td><%= cat.category_name %></td>
                     <%if cat.projects.length == 0 %>
                       <td>Aucune réalisation</td>
