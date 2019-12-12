@@ -129,6 +129,11 @@ figure.mb-project {
   margin: 0px !important;
 }
 
+figure.img-fixed-size {
+  width: 350px;
+  height: 234px;
+}
+
 .nav-tabs {
   padding-bottom: 10px !important;
 }
@@ -175,6 +180,7 @@ figure.mb-project {
 .tooltip-dashboard:hover .tooltiptext-dashboard {
   visibility: visible;
 }
+
 .red {
   color:red;
 }
