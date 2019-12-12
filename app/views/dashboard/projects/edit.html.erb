@@ -107,6 +107,16 @@
           <div class="space30"></div>
           <h6><strong>Contenu</strong></h6>
           <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+          <%i = 0 %>
+          <% @categories.each do |category| %>
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <%= f.check_box :categories, {class:"custom-control-input", id:"customCheck#{i}", multiple: true}, category.category_name, nil %>
+                <label class="custom-control-label" for= <%="customCheck#{i}"%>><%=category.category_name%></label>
+              </div>
+            </div>
+            <% i = i + 1 %>
+           <%end%> 
           <div class="space30"></div>
           <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
           <% end %>   
