@@ -64,11 +64,13 @@ module Dashboard
 	  def destroy
 	    @event = Event.find(params[:id])
 			@event.destroy
-			format.html do
+			respond_to do |format|
+				format.html do
 				flash[:notice] = "L'actualité '#{@event.title}'' a bien été supprimée !"
-    	redirect_to dashboard_events_path
-			end
-			format.js do
+    		redirect_to dashboard_events_path
+				end
+				format.js do
+				end
 			end
 		end
 			
