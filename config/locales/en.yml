@@ -32,7 +32,7 @@
 fr:
   activerecord:
     attributes:
-      user:
+      admin:
         confirmation_sent_at: Date d'envoi de la confirmation
         confirmation_token: Clé de confirmation du mot de passe
         confirmed_at: Confirmé à
@@ -56,12 +56,9 @@ fr:
         unconfirmed_email: Courriel non confirmé
         unlock_token: Clé de déverrouillage
         updated_at: Date de mise à jour
-        admin:
-          password_blank: blancoooo
     models:
       user: Utilisateur
       admin: Administrateur
-      
   devise:
     confirmations:
       confirmed: Votre compte a bien été confirmé.
@@ -169,7 +166,7 @@ fr:
       unlocked: Votre compte a bien été déverrouillé. Veuillez vous connecter.
   errors:
     messages:
-      password_blank: blanco
+      blank: doit être rempli(e)
       already_confirmed: a déjà été confirmé(e)
       confirmation_period_expired: doit être confirmé(e) en %{period}, veuillez en demander un(e) autre
       expired: est expiré, veuillez en demander un autre
