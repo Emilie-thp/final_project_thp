@@ -1,12 +1,12 @@
 <div class="container-fluid">
 
  <!-- Breadcrumbs-->
- <ol class="breadcrumb">
-  <li class="breadcrumb-item active">Mise à jour de la réalisation</li>
-  <li class="breadcrumb-item">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">Mise à jour de la réalisation</li>
+    <li class="breadcrumb-item">
     <%= link_to 'Revenir à toutes les réalisations', dashboard_projects_path %></a>
-  </li>
-</ol>
+    </li>
+  </ol>
 
 </div>
 
@@ -21,17 +21,17 @@
       <!-- Button for published / unpublished -->
       <center>
         <% if @project.published %>
-                <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
-                <%= link_to 'Mettre hors ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-danger home-header-font' %>
+          <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
+          <%= link_to 'Mettre hors ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-danger home-header-font' %>
         <%elsif @project.published == false && @project.thumbnail.attached? == true %>
-                <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
-                <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %>
+          <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
+          <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %>
         <%else%>
-            <div class="tooltip-dashboard">
-                <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
-                <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success disabled home-header-font' %>
-                    <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
-            </div>
+          <div class="tooltip-dashboard">
+            <%= link_to 'Prévisualiser', @project, class: 'btn btn-ice home-header-font' %>
+            <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success disabled home-header-font' %>
+            <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
+          </div>
         <%end%>
       </center>
       <!-- /Button for published / unpublished -->
@@ -41,40 +41,41 @@
       <!-- Form for active_storage -->
       <center>
         <%if @project.thumbnail.attached?%>
-        <% if @project.published %>
-        <p class="lead text-center">Photo de miniature de la réalisation </p>
-        <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
-        <div class="tooltip-dashboard">
-          <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font disabled' %>
-          <span class="tooltiptext-dashboard">Merci de mettre votre réalisation hors ligne avant de changer la miniature !</span>
-        </div>
-        <%else%>
-        <p class="lead text-center">Photo de miniature de la réalisation </p>
-        <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
-        <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font' %>
-        <%end%>
+          <% if @project.published %>
+            <p class="lead text-center">Photo de miniature de la réalisation </p>
+            <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
+            <div class="tooltip-dashboard">
+              <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font disabled' %>
+              <span class="tooltiptext-dashboard">Merci de mettre votre réalisation hors ligne avant de changer la miniature !</span>
+            </div>
+          <%else%>
+            <p class="lead text-center">Photo de miniature de la réalisation </p>
+              <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
+              <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font' %>
+          <%end%>
 
         <%else%>
-        <p class="lead text-center">Ajouter une photo pour la miniature</p>
-        <%= form_tag dashboard_project_thumbnails_path(@project), multipart: true do %>
-        <%= file_field_tag :thumbnail %>
-        <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
+          <p class="lead text-center">Ajouter une photo pour la miniature</p>
+            <%= form_tag dashboard_project_thumbnails_path(@project), multipart: true do %>
+            <%= file_field_tag :thumbnail %>
+            <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
         <% end %>
-        <p>=== Veuillez choisir une miniature pour cette réalisation ===</p>
+          <p>=== Veuillez choisir une miniature pour cette réalisation ===</p>
         <%end%>
 
         <div class="space60"></div>
 
         <%if @project.pictures.length == 0%>
-        <p class="lead text-center">Ajouter les photos du diaporama (3 minimum pour une belle mise en page ou aucune !)</p>
-        <%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
-        <%= file_field_tag 'pictures[]', :multiple => true%>
-        <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
+          <p class="lead text-center">Ajouter les photos du diaporama (3 minimum pour une belle mise en page ou aucune !)</p>
+            <%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
+            <%= file_field_tag 'pictures[]', :multiple => true%>
+            <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
         <% end %>
-        <p>=== Veuillez choisir au minimum 3 photos pour le diaporama de cette réalisation - à sélectionner 1 par 1 ===</p>
+          <p>=== Veuillez choisir au minimum 3 photos pour le diaporama de cette réalisation - à sélectionner 1 par 1 ===</p>
 
         <%else%>
-        <p class="lead text-center">Les photos du diaporama (3 minimum pour une belle mise en page ou aucune !) </p>
+          <p class="lead text-center">Les photos du diaporama (3 minimum pour une belle mise en page ou aucune !) </p>
+        
         <table>
           <% @project.pictures.each do |image| %>
           <tr>
@@ -87,43 +88,61 @@
             </tr>
             <% end %>
           </table>
-          <p><%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
-            <%= file_field_tag :pictures %>
-            <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
-            <% end %></p>
+            <p><%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
+              <%= file_field_tag :pictures %>
+              <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
+              <% end %></p>
 
 
-            <%end%>
-          </center>
-          <!-- /Form for active_storage -->
+        <%end%>
+      </center>
+      <!-- /Form for active_storage -->
 
-          <div class="space90"></div>
+        <div class="space90"></div>
 
-          <p class="lead text-center">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous et cliquer sur Enregistrer les modifications</p>
-          <div class="space10"></div>
+      <p class="lead text-center">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous et cliquer sur Enregistrer les modifications</p>
+        <div class="space10"></div>
           <h6><strong>Titre de la réalisation</strong></h6>
-          <%= form_with model: @project, url: dashboard_project_path, local: true do |f| %>
-          <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
-          <div class="space30"></div>
+            <%= form_with model: @project, url: dashboard_project_path, local: true do |f| %>
+            <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
+        <div class="space30"></div>
           <h6><strong>Description (en 1 phrase)</strong></h6>
-          <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
-          <div class="space30"></div>
+            <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
+        <div class="space30"></div>
           <h6><strong>Contenu</strong></h6>
-          <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
-           <div class="space30"></div>
-            <h6><strong>Catégorie(s) de la réalisation<strong></h6>
+            <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+        <div class="space30"></div>
+          
+        <h6><strong>Catégorie</strong></h6>
+          <%if @project.categories.length > 0 %>  
+            <p>La (ou les) catégorie(s) actuelle(s) de la réalisations sont :</p>
+            <ul class="nav nav-tabs justify-content-center">
+              <%@current_categories.each do |cat|%>
+                <li class="nav-item">"<%= cat.category_name %>"</li>
+              <%end%>
+            </ul>
+        <div class="space10"></div>
+
+          <p>Avant de cliquer sur le bouton "Enregistrer les modifications", merci d'indiquer à nouveau les catégories que vous souhaitez appliquer à cette réalisation en les sélectionnant ci-dessous. Vous pouvez également en choisir des nouvelles.</p>
+        
+        <%else%>
+          <p>Vous n'avez pas encore sélectionné de catégories pour cette réalisation, vous pouvez le faire en cochant une ou plusieurs cases ci-dessous.</p>
+        <%end%>
+
+        <div class="space10"></div>
+
           <%i = 0 %>
           <% @categories.each do |category| %>
             <div class="form-group">
               <div class="custom-control custom-checkbox">
-                <%= f.check_box :categories, {class:"custom-control-input", id:"customCheck#{i}", multiple: true}, category.category_name, nil %>
+                <%= f.check_box :categories, {class:"custom-control-input", id:"customCheck#{i}", multiple: true}, category.id, nil %>
                 <label class="custom-control-label" for= <%="customCheck#{i}"%>><%=category.category_name%></label>
               </div>
             </div>
-            <% i = i + 1 %>
-           <%end%> 
+          <% i = i + 1 %>
+         <%end%> 
           <div class="space30"></div>
-          <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
+            <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
           <% end %>
 
         </div>
