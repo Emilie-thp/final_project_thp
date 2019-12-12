@@ -1,7 +1,6 @@
 module Dashboard
 
   class AdminsController < ApplicationController
-   	layout 'dashboard'
   	before_action :authenticate_admin!
     before_action :secret, only: [:show]
 
