@@ -20,15 +20,16 @@
 
       <!-- Button for published / unpublished -->
       <center>
-        <% if @project.published then %>
+        <% if @project.published %>
         <%= link_to 'Mettre hors ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-danger home-header-font' %>  
-        <%elsif @project.published == false && @project.thumbnail.attached? == false then %>
-        <div class="tooltip-dashboard">
+        <%elsif @project.published == false && @project.thumbnail.attached? == true %>
+            <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %> 
+
+        <%else%>
+            <div class="tooltip-dashboard">
           <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success disabled home-header-font' %> 
           <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
         </div>
-        <%else%>
-        <%= link_to 'Mettre en ligne', update_published_dashboard_project_path(@project), method: :put, class: 'btn btn-success home-header-font' %> 
         <%end%>
       </center>
       <!-- /Button for published / unpublished -->
@@ -107,6 +108,18 @@
           <div class="space30"></div>
           <h6><strong>Contenu</strong></h6>
           <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+           <div class="space30"></div>
+            <h6><strong>Catégorie(s) de la réalisation<strong></h6>
+          <%i = 0 %>
+          <% @categories.each do |category| %>
+            <div class="form-group">
+              <div class="custom-control custom-checkbox">
+                <%= f.check_box :categories, {class:"custom-control-input", id:"customCheck#{i}", multiple: true}, category.category_name, nil %>
+                <label class="custom-control-label" for= <%="customCheck#{i}"%>><%=category.category_name%></label>
+              </div>
+            </div>
+            <% i = i + 1 %>
+           <%end%> 
           <div class="space30"></div>
           <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
           <% end %>   

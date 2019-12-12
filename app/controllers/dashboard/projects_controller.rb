@@ -22,9 +22,7 @@ module Dashboard
 		def create
 			@project = Project.new(project_params)
 			@project.admin = current_admin
-			
 			if @project.save
-
 				category_array = params[:project][:categories]
 				category_array.each do |category|
 				@project.categories << Category.find_by(category_name: category)
@@ -38,11 +36,16 @@ module Dashboard
 
 		def edit
 			@project = Project.find(params[:id])
+			@categories = Category.all
 		end
 
 		def update
 			@project = Project.find(params[:id])
 			if @project.update(project_params)
+				category_array = params[:project][:categories]
+				category_array.each do |category|
+				@project.categories.update(category_name: category)
+				end
 				flash[:notice] = "La réalisation '#{@project.title}' a bien été éditée !"
 				redirect_to dashboard_projects_path
 			else
@@ -74,7 +77,7 @@ module Dashboard
 	  private
 
 	  def project_params
-	  	params.require(:project).permit(:title, :description, :content, :date, :published, :categories)
+	  	params.require(:project).permit(:title, :description, :content, :date, :published)
 	  end
 
 	  def secret
