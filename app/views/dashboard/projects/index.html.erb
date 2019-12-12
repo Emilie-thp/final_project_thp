@@ -55,7 +55,7 @@
                           <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
                         <%end%>
                       </td>
-                      <td><%= link_to dashboard_project_path(project.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette réalisation à tout jamais ?"}, method: :delete, remote: true do %>
+                      <td id = "project-<%= project.id %>"><%= link_to dashboard_project_path(project.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette réalisation à tout jamais ?"}, method: :delete, remote: true do %>
                           <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
                         <%end%>
                       </td>
