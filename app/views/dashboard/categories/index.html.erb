@@ -33,7 +33,7 @@
                     <%if cat.projects.length == 0 %>
                       <td>Aucune réalisation</td>
                     <%else%>
-                      <td><%= cat.projects.length %> réalisations</td>
+                      <td> <%= link_to "#{cat.projects.length} réalisations", dashboard_category_path(cat) %></td>
                     <%end%>
                       <td><%= cat.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= cat.updated_at.strftime("%d/%m/%Y") %></td>

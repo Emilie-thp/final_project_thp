@@ -1,0 +1,41 @@
+ 
+
+<div class="container-fluid">
+
+ <!-- Breadcrumbs-->
+ <ol class="breadcrumb">
+  <li class="breadcrumb-item active">Réalisations liées à une catégorie
+  <li class="breadcrumb-item">
+    <%= link_to 'Revenir à toutes les catégories', dashboard_categories_path %></a>
+  </li>
+</ol>
+
+</div>
+
+
+<div class="container inner">
+  <div class="row">
+    <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+      <h2 class="section-title text-center">Les réalisations associées à la catégorie "<%=@category.category_name%>"</h2>
+
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <%i=1%>
+        <% @category.projects.each do |project| %>
+        <tr>
+          <td><%= i %>
+          <td><%= project.title %> </td>
+          <td><%= link_to edit_dashboard_project_path(project.id) do %>
+            <i class="fa fa-edit fa-2x d-flex justify-content-center"></i>
+          <%i+=1%>
+            <%end%>
+          </td>
+        </tr>
+        <%end%>
+      </table>
+    </div>
+
+</div>
+</div>
+
+</div>
