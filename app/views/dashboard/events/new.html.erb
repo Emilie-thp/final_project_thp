@@ -26,15 +26,15 @@
             <h6><b>Détails de l'actualité<b></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Détails" %>
             <div class="space30"></div>
-            <h6><b>Localisation (adresse)<b></h6>
-            <%= f.text_area :location, class:"form-control", placeholder: "Adresse" %>
+            <h6><b>Localisation<b></h6>
+            <%= f.text_area :location, class:"form-control", placeholder: "Ville" %>
             <div class="space30"></div>
             <h6><b>Date et heure (si nécéssaire)<b></h6>
-            <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019 20:00:00" %><br>
+            <%= f.text_field :datetime, class:"form-control", placeholder: "31-12-2019 20:00" %><br>
             <br>
-            
+
             <%= f.submit "Créer l'actualité",  class: "btn btn-ice home-header-font" %>
-            <% end %>   
+            <% end %>
 
           </div>
         </div>

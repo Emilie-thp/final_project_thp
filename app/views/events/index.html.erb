@@ -1,17 +1,17 @@
 <div class="wrapper light-wrapper">
   <div class="container inner">
-    <h1 class="heading mb-0 text-center">Nos actualités et événements</h1>
-    <h2 class="section-title text-center">Sous-titre</h2>
+    <h1 class="heading mb-2 text-center">Nos actualités</h1>
+    <h2 class="section-title text-center">Projections, débats, ateliers, expositions, tables rondes...</h2>
     <div class="space50"></div>
     <div class="blog grid grid-view boxed newspaper">
       <div class="row isotope">
         <% @events.each do |event| %>
         <div class="item post grid-sizer col-md-6 col-lg-4">
           <div class="box box-border">
-            <div class="meta"><span class="date"><%=event.created_at.to_date%></span><span class="comments"><a href="#">2</a></span><span class="category"><%=event.admin.email%></span></div>
             <h2 class="post-title"><%=event.title%></h2>
             <div class="post-content text-left">
               <p><%=event.description%></p>
+              <div class="meta"><span class="date"><%=event.date.strftime("%d-%m-%Y")%></span><span class="date"><%=event.date.strftime("%H:%M")%></span><span class="comments"><%=event.location%></span></div>
               <%= link_to "En savoir plus", event_path(event.id), class: "more more-inverse" %>
             </div>
             <!-- /.post-content -->
