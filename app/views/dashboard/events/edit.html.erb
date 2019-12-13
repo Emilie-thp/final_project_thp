@@ -36,16 +36,16 @@
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
             <h6><b>Description rapide<b></h6>
-            <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
+            <%= f.text_area :description, class:"form-control", placeholder: "Description (en 1 phrase)" %>
             <div class="space30"></div>
             <h6><b>Détails de l'actualité<b></h6>
-            <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
+            <%= f.text_area :content, class:"form-control", placeholder: "Détails" %>
             <div class="space30"></div>
-            <h6><b>Localisation (adresse)<b></h6>
-            <%= f.text_area :location, class:"form-control", placeholder: "Contenu" %>
+            <h6><b>Localisation<b></h6>
+            <%= f.text_area :location, class:"form-control", placeholder: "Ville" %>
             <div class="space30"></div>
             <h6><b>Date et heure (si nécessaire) <b></h6>
-            <%= f.text_field :date, class:"form-control", placeholder: "31-12-2019 20:00:00" %>
+            <%= f.text_field :datetime, class:"form-control", placeholder: "31-12-2019 20:00" %>
             <br><br>
             <%= f.submit "Modifier les informations", class: 'btn btn-ice home-header-font' %>
              <% end %>
