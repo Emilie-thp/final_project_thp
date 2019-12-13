@@ -22,6 +22,7 @@ module Dashboard
 		def create
 			@project = Project.new(project_params)
 			@project.admin = current_admin
+			@categories = Category.all
 			if @project.save
 #for the case when admin does not check any box
 				unless params[:project][:categories] == nil
