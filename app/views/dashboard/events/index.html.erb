@@ -41,11 +41,11 @@
                       <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
 
-                        <%if event.published %>
-                          <td>En ligne</td>
-                        <%else%>
-                          <td>Hors ligne</td>
-                        <%end%>
+                      <%if event.published %>
+                        <td class="online-bold">En ligne</td>
+                      <%else%>
+                        <td class="offline-fade">Hors ligne</td>
+                      <%end%>
 
                       <td><%= link_to dashboard_event_path(event.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
@@ -95,11 +95,11 @@
                       <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
 
-                        <%if event.published %>
-                          <td>En ligne</td>
-                        <%else%>
-                          <td>Hors ligne</td>
-                        <%end%>
+                      <%if event.published %>
+                        <td class="online-bold">En ligne</td>
+                      <%else%>
+                        <td class="offline-fade">Hors ligne</td>
+                      <%end%>
 
                       <td><%= link_to dashboard_event_path(event.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>

@@ -42,9 +42,9 @@
                       <td><%= project.updated_at.strftime("%d/%m/%Y") %> </td>
 
                         <%if project.published %>
-                          <td>En ligne</td>
+                          <td class="online-bold">En ligne</td>
                         <%else%>
-                          <td>Hors ligne</td>
+                          <td class="offline-fade">Hors ligne</td>
                         <%end%>
 
                       <td><%= link_to dashboard_project_path(project.id) do %>
@@ -95,11 +95,11 @@
                       <td><%= project.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= project.updated_at.strftime("%d/%m/%Y") %> </td>
 
-                        <%if project.published %>
-                          <td>En ligne</td>
-                        <%else%>
-                          <td>Hors ligne</td>
-                        <%end%>
+                      <%if project.published %>
+                        <td class="online-bold">En ligne</td>
+                      <%else%>
+                        <td class="offline-fade">Hors ligne</td>
+                      <%end%>
 
                       <td><%= link_to dashboard_project_path(project.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
