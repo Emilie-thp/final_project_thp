@@ -63,22 +63,18 @@
             <%= f.text_field :speciality, class:"form-control"  %>
             </div>
           </div>
+         
+          <p> Figurer dans la partie Équipe de la page d'accueil</p>
 
-          <% if @admin.display == false %>
-          <div class="form-group">
-            <div class="custom-control custom-checkbox">
-              <%= f.check_box :display, {class:"custom-control-input", id:"customCheck1"}, true, false %>
-              <label class="custom-control-label" for="customCheck1">Figurer dans la partie Équipe de la page d'accueil (photo de profil obligatoire!)</label>
-            </div>
+          <div class="custom-control custom-radio">
+            <%= f.radio_button("display", true, { id: "customRadio1", class:"custom-control-input"} )%>
+            <label class="custom-control-label" for="customRadio1">Oui</label>
           </div>
-          <%else%>
-           <div class="form-group">
-            <div class="custom-control custom-checkbox">
-              <%= f.check_box :display, {class:"custom-control-input", id:"customCheck1"}, false, true %>
-              <label class="custom-control-label" for="customCheck1">Ne pas figurer dans la partie Équipe de la page d'accueil</label>
-            </div>
+          <div class="custom-control custom-radio">
+            <%= f.radio_button("display", false, { id: "customRadio2", class:"custom-control-input"} )%>
+            <label class="custom-control-label" for="customRadio2">Non</label>
           </div>
-          <%end%>
+
           <div class="space30"></div>
           <div class="text-center">
             <%=f.submit "Éditer", class:"btn btn-full-rounded btn-ice"%>

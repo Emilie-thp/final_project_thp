@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_153645) do
     t.string "title"
     t.string "description"
     t.text "content"
-    t.boolean "published", default: false, null: false
+    t.boolean "published"
     t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -87,7 +87,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_153645) do
     t.text "content"
     t.datetime "date"
     t.string "location"
-    t.boolean "published", default: false, null: false
+    t.boolean "published"
     t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -107,7 +107,7 @@ ActiveRecord::Schema.define(version: 2019_12_12_153645) do
     t.string "title"
     t.string "description"
     t.text "content"
-    t.boolean "published", default: false, null: false
+    t.boolean "published"
     t.bigint "admin_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
