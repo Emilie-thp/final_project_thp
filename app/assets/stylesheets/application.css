@@ -75,6 +75,10 @@
   color: black !important;
 }
 
+.title-color {
+  color: #9eb9d7 !important;
+}
+
 .dashboard-btn {
   border-radius: 30px;
   margin-top: 7px !important;

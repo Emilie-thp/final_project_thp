@@ -11,16 +11,16 @@
                   <p class="text-center"><strong><%=@project.description%></strong></p>
                   <div class="space10"></div>
                   <% if @project.thumbnail.attached?%>
-                    <figure class="mb-25"><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
+                    <figure class="mb-25"><%= image_tag @project.thumbnail, alt: 'miniature' %></figure>
                   <%else%>
                     <figure class="mb-25"><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
                   <%end%>
                   <div class="post-content">
                     <p class="text"><%=simple_format(@project.content)%></p>
                     <div class="space10"></div>
-                    <div class="meta tags mb-10 text-center more-inverse">
+                    <div class="meta tags mb-10 text-center">
                     <% @project.categories.each do |cat| %>
-                      <span class="date">#<%=cat.category_name%></span>
+                      <span class="title-color">#<%=cat.category_name%></span>
                     <%end%>
                     </div>
                   </div>

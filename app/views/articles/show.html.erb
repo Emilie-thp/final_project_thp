@@ -8,10 +8,10 @@
             <div class="post">
               <h1 class="post-title text-center"><%=@article.title%></h1>
               <p class="text-center"><strong><%=@article.description%></strong></p>
-              <div class="meta tags text-center more-inverse"><span class="date">Ecrit le <%=@article.created_at.strftime("%d-%m-%Y")%></span><span class="author">Par <a href="#"><%= @article.admin.pseudo%></a></span>
+              <div class="meta tags text-center"><span class="date">Ecrit le <%=@article.created_at.strftime("%d-%m-%Y")%></span><span class="author">Par <a href="#"><%= @article.admin.pseudo%></a></span>
               </div>
               <% if @article.image.attached?%>
-                <figure class="mb-25"><%= image_tag article.image, alt: 'miniature' %></figure>
+                <figure class="mb-25"><%= image_tag @article.image, alt: 'miniature' %></figure>
               <%else%>
                 <figure class="mb-25"><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
               <%end%>
