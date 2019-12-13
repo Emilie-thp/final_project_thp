@@ -138,6 +138,19 @@ figure.swiper-resize {
   height: 382px !important;
 }
 
+.client-logo-resize {
+  width: 160px !important;
+  height: 160px !important;
+}
+
+.online-bold {
+  font-weight: bold !important;
+}
+
+.offline-fade {
+  color: darkgray !important;
+}
+
 .nav-tabs {
   padding-bottom: 10px !important;
 }
