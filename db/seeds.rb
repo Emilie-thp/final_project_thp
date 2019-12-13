@@ -30,11 +30,12 @@ for i in 0..3 do
     pseudo:admin_pseudos[i],
     description:admin_descriptions[i],
     speciality:admin_specialities[i],
+    display:true,
     email:admin_emails[i],
     password:admin_passwords[i]
   )
 end
-puts "4 admins initalized"
+puts "#{Admin.all.length} admins initalized"
 
 
 #categories initialization
@@ -45,7 +46,7 @@ for i in 0..8 do
     category_name: category_names[i]
   )
 end
-puts "9 categories initalized"
+puts "#{Category.all.length} categories initalized"
 
 
 #projects initialization
@@ -58,11 +59,12 @@ for i in 0..11 do
     title: project_titles[i],
     description: project_descriptions[i],
     content: project_contents[i],
+    published:true,
     admin_id: Admin.all.sample
   )
   project.categories << Category.all.sample(2)
 end
-puts "12 projects initialized"
+puts "#{Project.all.length} projects initialized"
 
  
 #articles initialization
@@ -76,10 +78,11 @@ for i in 0..1 do
     title: article_titles[i],
     description: article_descriptions[i],
     content: article_contents[i],
+    published:true,
     admin_id: Admin.all.sample
   )
 end
-puts "2 articles initialized"
+puts "#{Article.all.length} articles initialized"
 
 #contacts initialization
 contact1 = Contact.create(
@@ -98,28 +101,27 @@ contact2 = Contact.create(
   content: "Je tenais à vous dire que votre venus dans le Jura sur nos terres de chasse ne nous enchante guère... Les projections et débats que vous organisez n'intéresse personne de toutes façons! Atention le plomb ça part vite!!!!!!!!"
 )
 
-puts "2 contacts initialized"
+puts "#{Contact.all.length} contacts initialized"
 
 
 #events initialization
-event_titles=[i]
-event_descriptions=[i]
-event_contents=[i]
-event_dates=[i]
-event_locations=[i]
+event_titles = ["Stand sur le forum de la nature","Projection de De Terre et d'Os, le film","Papier Ciseaux Forêt Oiseaux", "Temps à histoires", "Débat : La forêt dans la transition écologique","Atélier Bee to Bee", "Les controverses Ecologiques"]
+event_descriptions=["Venez nous rencontrer lors du grand forum de la nature !", "Un film à voir pour comprendre nos souterrains","Un atelier pédagogique à l'Ecole Maternelle des Fenouils", "Des lectures d'histoires qui vous feront voyager par dessus les montagnes", "Venez débattre de ce sujet passionnant","Apprenez à fabriquer votre miel sans vous faire piquer !", "Tables rondes en présence d'acteurs incoutournables du sujet!"]
+event_contents=[]
+event_dates=[]
+event_locations=[]
 
 for i in 0..15 do
   event = Event.create(
     title: event_titles[i],
-    description: event_descriptions[i],
-    content: event_contents[i],
-    date: event_dates[i],
-    location: event_locations,
+    description:"test", #event_descriptions[i],
+    content: "test", #event_contents[i],
+    date: "test", #event_dates[i],
+    location: "test", #event_locations,
+    published:true,
     admin_id: Admin.all.sample
   )
 end
-puts "events initialized"
+puts "#{Event.all.length} events initialized"
 
 
-
-    v.image.attach(io: File.open('/path/to/file'), filename: 'file.jpg')
