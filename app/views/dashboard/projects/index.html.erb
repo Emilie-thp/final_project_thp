@@ -35,7 +35,7 @@
                   <%else%>
                   <% @projects.each do |project| %>
                     <%if project.admin == current_admin%>
-                    <tr>
+                    <tr id ="project<%= project.id%>">
                       <td><%= project.title %>  </td>
                       <td><%= project.admin.pseudo %> </td>
                       <td><%= project.created_at.strftime("%d/%m/%Y") %> </td>
@@ -55,7 +55,7 @@
                           <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
                         <%end%>
                       </td>
-                      <td><%= link_to dashboard_project_path(project.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette réalisation à tout jamais ?"}, method: :delete do %>
+                      <td> <%= link_to dashboard_project_path(project.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette réalisation à tout jamais ?"}, method: :delete, remote: true do %>
                           <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
                         <%end%>
                       </td>

@@ -6,8 +6,9 @@
         <div class="blog classic-view">
           <div class="post">
             <h1 class="post-title text-center"><a href="blog-post.html"><%=@article.title%></a></h1>
-            <p class="text-center"><%=@article.description%></p>
-            <div class="meta text-center"><span class="date"><%=@article.created_at.to_date%></span><span class="author">By <a href="#"><%= @article.admin.email%></a></span><span class="comments"><a href="#">2</a></span><span class="category"><a href="#">Simple</a></span></div>
+            <p class="text-center"><strong><%=@article.description%></strong></p>
+            <div class="meta text-center"><span class="date">Ecrit le <%=@article.created_at.strftime("%d/%m/%Y")%></span><span class="author">Par <a href="#"><%= @article.admin.pseudo%></a></span>
+            </div>
             <%if @article.image.attached?%>
             <figure class="mb-25">
                 <%= image_tag @article.image %>
@@ -15,25 +16,12 @@
             <%end%>
             <div class="post-content">
               <div class="space10"></div>
-              <p><%=@article.content%></p>
-              <div class="space10"></div>
-              <div class="meta tags mb-10 text-center"><a href="#">journal</a>, <a href="#">illustration</a>, <a href="#">design</a>, <a href="#">daily</a></div>
+              <p><%=simple_format(@article.content)%></p>
               <!-- /.social -->
             </div>
             <!-- /.post-content -->
           </div>
-          <!-- /.post -->
-          <div class="divider-icon"><i class="fa fa-pencil"></i></div>
-          <div class="post-nav-wrapper">
-            <div class="post-nav prev">
-              <div class="meta"><i class="fa fa-angle-double-left"></i>Previous Article</div>
-              <h4><a href="#">Cursus Quam Ullamcorper Cras Ornare Etiam Aenean</a></h4>
-            </div>
-            <div class="post-nav next">
-              <div class="meta">Next Article<i class="fa fa-angle-double-right"></i></div>
-              <h4><a href="#">Fringilla Ligula Consectetur Ridiculus Vulputate</a></h4>
-            </div>
-          </div>
+
           <!-- /.post-nav -->
           <div class="divider-icon"><i class="fa fa-pencil"></i></div>
           <div class="row">
@@ -46,8 +34,8 @@
             </div>
             <!--/column -->
             <div class="col-md-8">
-              <h4>About <%= @article.admin.email%></h4>
-              <p>Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Maecenas faucibus mollis interdum. Fusce dapibus, tellus ac.</p>
+                <h4>Un article de <%= @article.admin.pseudo%></h4>
+                <p><%=@article.admin.description%></p>
             </div>
             <!--/column -->
           </div>
