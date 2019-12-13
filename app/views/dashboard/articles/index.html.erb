@@ -41,11 +41,11 @@
                       <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
 
-                        <%if article.published %>
-                          <td>En ligne</td>
-                        <%else%>
-                          <td>Hors ligne</td>
-                        <%end%>
+                      <%if article.published %>
+                        <td class="online-bold">En ligne</td>
+                      <%else%>
+                        <td class="offline-fade">Hors ligne</td>
+                      <%end%>
 
                       <td><%= link_to dashboard_article_path(article.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
@@ -95,11 +95,11 @@
                       <td><%= article.created_at.strftime("%d/%m/%Y") %> </td>
                       <td><%= article.updated_at.strftime("%d/%m/%Y") %> </td>
 
-                        <%if article.published %>
-                          <td>En ligne</td>
-                        <%else%>
-                          <td>Hors ligne</td>
-                        <%end%>
+                      <%if article.published %>
+                        <td class="online-bold">En ligne</td>
+                      <%else%>
+                        <td class="offline-fade">Hors ligne</td>
+                      <%end%>
 
                       <td><%= link_to dashboard_article_path(article.id) do %>
                           <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
