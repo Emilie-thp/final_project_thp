@@ -1,19 +1,30 @@
-
-<!-- title and description -->
-</br>
-<div class="wrapper light-wrapper">
-  <div class="container pb-20">
-    <h1 class="section-title text-center"><%=@event.title%></h1>
-    <p class="text-center"><%=@event.description%></p>
+<div class="content-wrapper">
+  <!-- /.wrapper -->
+  <div class="wrapper light-wrapper">
+    <div class="container inner">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="blog classic-view">
+            <div class="post">
+              <h1 class="post-title text-center"><%=@event.title%></h1>
+              <div class="space10"></div>
+              <p class="text-center"><strong><%=@event.description%></strong></p>
+              <div class="space10"></div>
+              <div class="post-content">
+                <p class="text"><%=simple_format(@event.content)%></p>
+                <div class="space10"></div>
+                <div class="meta tags mb-10 text-center more-inverse"><span class="date"><%=@event.date%></span><span class="comments"><%=@event.location%></span></div>
+              </div>
+              <!-- /.post-content -->
+            </div>
+          </div>
+        </div>
+        <div class="space40"></div>
+        <!-- /.post -->
+      </div>
+      <!--/.row -->
+    </div>
+    <!-- /.container -->
   </div>
- </div>
-
-
- 	<!-- video => if condition to do ! -->
-
-
-
-	<!-- content -->
-     <div class="container pb-20">
-    <p class="text"><%=simple_format(@event.content)%></p>
-			</div>
+  <!-- /.wrapper -->
+</div>

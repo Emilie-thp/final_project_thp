@@ -1,1 +1,30 @@
-#
+<div class="content-wrapper">
+  <!-- /.wrapper -->
+  <div class="wrapper light-wrapper">
+    <div class="container inner">
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+          <div class="blog classic-view">
+            <div class="post">
+              <h1 class="post-title text-center"><%=@event.title%></h1>
+              <div class="space10"></div>
+              <p class="text-center"><strong><%=@event.description%></strong></p>
+              <div class="space10"></div>
+              <div class="post-content">
+                <p class="text"><%=simple_format(@event.content)%></p>
+                <div class="space10"></div>
+                <div class="meta tags mb-10 text-center more-inverse"><span class="date"><%=@event.date%></span><span class="comments"><%=@event.location%></span></div>
+              </div>
+              <!-- /.post-content -->
+            </div>
+          </div>
+        </div>
+        <div class="space40"></div>
+        <!-- /.post -->
+      </div>
+      <!--/.row -->
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.wrapper -->
+</div>
