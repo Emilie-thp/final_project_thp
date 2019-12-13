@@ -34,7 +34,7 @@ for i in 0..3 do
     email:admin_emails[i],
     password:admin_passwords[i]
   )
-  admin.avatar.attach(io: File.open("../active_storage/admin/avatar#{i}.jpg"), filename: "avatar#{i}.jpg", content_type: 'image/jpg')
+  admin.avatar.attach(io: File.open("./image/admin/avatar#{i}.jpg"), filename: "avatar#{i}.jpg", content_type: 'image/jpg')
 end
 
 puts "#{Admin.all.length} admins initalized"
@@ -65,7 +65,7 @@ for i in 0..11 do
     admin_id: Admin.all.sample.id
   )
   project.categories << Category.all.sample(2)
-	project.thumbnail.attach(io: File.open("../active_storage/project/thumbnail#{i}.jpg"), filename: "thumbnail#{i}.jpg", content_type: 'image/jpg')
+	project.thumbnail.attach(io: File.open("./image/project/thumbnail#{i}.jpg"), filename: "thumbnail#{i}.jpg", content_type: 'image/jpg')
 end
 puts "#{Project.all.length} projects initialized"
 
@@ -88,7 +88,7 @@ for i in 0..2 do
     published:true,
     admin_id: Admin.all.sample.id
   )
-	article.image.attach(io: File.open("../active_storage/article/image#{i}.jpg"), filename: "image#{i}.jpg", content_type: 'image/jpg')
+	article.image.attach(io: File.open("./image/article/image#{i}.jpg"), filename: "image#{i}.jpg", content_type: 'image/jpg')
 end
 
 for i in 0..2 do
@@ -99,7 +99,7 @@ for i in 0..2 do
     published:true,
     admin_id: Admin.all.sample.id
   )
-	article.image.attach(io: File.open("../active_storage/article/image2#{i}.jpg"), filename: "image2#{i}.jpg", content_type: 'image/jpg')
+	article.image.attach(io: File.open("./image/article/image2#{i}.jpg"), filename: "image2#{i}.jpg", content_type: 'image/jpg')
 end
 
 puts "#{Article.all.length} articles initialized"
