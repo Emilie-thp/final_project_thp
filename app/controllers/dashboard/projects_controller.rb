@@ -23,12 +23,16 @@ module Dashboard
 			@project = Project.new(project_params)
 			@project.admin = current_admin
 			if @project.save
-				category_array = params[:project][:categories]
-				category_array.each do |category|
-				@project.categories << Category.find_by(category_name: category)
+#for the case when admin does not check any box
+				unless params[:project][:categories] == nil
+					category_array = params[:project][:categories]
+					category_array.each do |category|
+						@project.categories << Category.find(category)
+					end
 				end
-				flash[:notice] = "Vous venez de créer une nouvelle réalisation. Ajoutez des photos et relisez les informations avant de la mettre en ligne !"
-				redirect_to edit_dashboard_project_path(@project)
+					flash[:notice] = "Vous venez de créer une nouvelle réalisation. Ajoutez des photos et relisez les informations avant de la mettre en ligne !"
+					redirect_to edit_dashboard_project_path(@project)
+				
 			else
 				render "new"
 			end
@@ -37,14 +41,21 @@ module Dashboard
 		def edit
 			@project = Project.find(params[:id])
 			@categories = Category.all
+			@current_categories = @project.categories 
 		end
 
 		def update
 			@project = Project.find(params[:id])
 			if @project.update(project_params)
-				category_array = params[:project][:categories]
-				category_array.each do |category|
-				@project.categories.update(category_name: category)
+#for the case when admin does not check any box
+				unless params[:project][:categories] == nil
+					category_array = params[:project][:categories]
+	
+#have to delete the previous associated categories in order to take into account the new one 
+					@project.categories=[]
+					category_array.each do |category|
+						@project.categories << Category.find(category)
+					end
 				end
 				flash[:notice] = "La réalisation '#{@project.title}' a bien été éditée !"
 				redirect_to dashboard_projects_path

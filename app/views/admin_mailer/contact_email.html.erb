@@ -17,7 +17,7 @@
             <p>Il s'agit d'un <strong><%= @contact.status %></strong> et son courriel est <strong><%= @contact.email %></strong></p>
             <br>
             <p>Voici le détail de son message :</p>
-            <p>"<strong><%= @contact.content %></strong>"</p>
+            <p>"<strong><%=simple_format(@contact.content)%></strong>"</p>
             <br>
             <p> Merci de lui répondre rapidement par email à l'adresse suivante : <strong><%= @contact.email %></strong>.</p>
             <br>

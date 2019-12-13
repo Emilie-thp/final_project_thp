@@ -2,14 +2,14 @@
 <div class="wrapper light-wrapper">
   <div class="container inner">
     <h1 class="heading mb-0 text-center">Nos articles</h1>
-    <h2 class="section-title text-center">Sous-titre</h2>
+    <h2 class="section-title text-center">Un lieu d'expression sur la nature dans toutes ses dimensions</h2>
     <div class="space50"></div>
     <div class="blog grid grid-view text-center">
       <div class="row isotope">
         <% @articles.each do |article| %>
         <div class="item post grid-sizer col-md-6 col-lg-4">
           <% if article.image.attached?%>
-          <figure class="overlay overlay2 mb-25 img-fixed-size">
+          <figure class="overlay mb-25 img-fixed-size">
             <%= image_tag article.image, alt: 'miniature' %>
           </figure>
           <%else%>
@@ -17,8 +17,9 @@
           </figure>
           <%end%>
           <div class="post-content pl-10 pr-10">
-            <div class="meta"><span class="date"><%=article.created_at.to_date%></span><span class="comments"><a href="#">2</a></span><span class="category"><%=article.admin.email%></span></div>
-            <h2 class="post-title"><a href="blog-post.html"><%=article.title%></a></h2>
+            <div class="meta"><span class="date"> <%=article.created_at.strftime("%d/%m/%Y")%></span>
+              <span class="category"><%=article.admin.pseudo%></span></div>
+            <h2 class="post-title"><%= link_to article.title, article_path(article.id)%></h2>
             <p><%=article.description%></p>
             <%= link_to "Lire l'article", article_path(article.id), class: "more more-inverse" %>
           </div>
