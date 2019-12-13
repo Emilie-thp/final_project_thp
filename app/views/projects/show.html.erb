@@ -15,7 +15,7 @@
 
 	<!-- content -->
      <div class="container pb-20">
-    <p class="text"><%=@project.content%></p>
+    <p class="text"><%=simple_format(@project.content)%></p>
 			</div>
 
 			<%if @project.pictures.attached?%>
