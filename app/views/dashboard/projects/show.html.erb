@@ -11,7 +11,7 @@
                   <p class="text-center"><strong><%=@project.description%></strong></p>
                   <div class="space10"></div>
                   <% if @project.thumbnail.attached?%>
-                    <figure class="mb-25"><%= image_tag project.thumbnail, alt: 'miniature' %></figure>
+                    <figure class="mb-25"><%= image_tag @project.thumbnail, alt: 'miniature' %></figure>
                   <%else%>
                     <figure class="mb-25"><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
                   <%end%>
