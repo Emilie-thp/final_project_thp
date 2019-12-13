@@ -14,64 +14,112 @@ Category.destroy_all
 Event.destroy_all
 Admin.destroy_all
 
-admin = Admin.create(pseudo:"TeamTHP", email: "admin@yopmail.com", password: "thpstrasbourg")
+#admins initialization
+admin_first_names = %w[Steeve Romane Lucas Martin]
+admin_last_names = %w[Voccia Charraud Bischoff Bondonneau]
+admin_pseudos = %w[Steeve Romane Lucas Martin]
+admin_descriptions = ["Steeve est un cadreur et droniste émérite. De l’animation aux drones, il est le touche à tout de l’équipe.", "Romane est une femme engagée et pétillante qui aime réaliser des portraits touchants et intimistes.", "Lucas est un amoureux de la nature et de ses bruits. Il transforme l’image en poésie et la prise de son en mélodie.", "Martin est une usine à mondes. Il nous transporte à travers des contrées inexplorées, toujours à l'affût de nouvelles techniques."]
+admin_specialities = ["Expert Porcin", "Expert Buse", "Expert Nuit", "Expert Pixel"]
+admin_emails = %w[steeve@yopmail.com romane@yopmail.com lucas@yopmail.com martin@yopmail.com]
+admin_passwords = %w[steeve romane lucas0 martin]
 
-categories_array = ["Institutionnel", "Communication", "Documentaire", "Animalier", "Photographie", "Animation", "Portrait", "Expérimental", "Pellicule", "Drone"]
-
-t1 = Date.parse("2019-12-31")
-t2 = Date.parse("2022-01-01")
-
-project_names = ["Le lièvre du Jura","Le cochon des prés","L'hippo du ter-ter","La galinette sandrée","Le aye-aye perché","L'atome de foin","Le cerf majestueux","L'envol de l'oiseau","La mare aux canards","Le chat perché","A fleur d'eau","L'autruche greluche","Flicaille la canaille","Le chien qui aboit","La peau de l'ours","Roule ta moule"]
-
-event_names = ["Stand sur la chimie verte","L'agriculture biologique","Scène de bêtes","Papier Ciseaux Forêt Oiseaux","E=mc2","Temps à histoires", "La forêt dans la transition écologique","Atélier Co-écologique","Atélier Bee to Bee", "Les controverses Ecologiques","Demain,hier", "Atelier Fresque du climat"]
-
-k=0
-6.times do
-  category = Category.create(category_name: categories_array[k])
-  puts "seed categories"
-  k+=1
+for i in 0..3 do
+  admin = Admin.create(
+    first_name:admin_first_names[i],
+    last_name:admin_last_names[i],
+    pseudo:admin_pseudos[i],
+    description:admin_descriptions[i],
+    speciality:admin_specialities[i],
+    email:admin_emails[i],
+    password:admin_passwords[i]
+  )
 end
+puts "admins initalized"
 
-i=0 
-10.times do
-  project = Project.create(title: project_names[i],
-                           description: "Un projet réalisé par l'association Oeil de Biche, en partenariat avec la commune de la Pesse et les Parcs Naturels du Jura.",
-                           content: Faker::Lorem.paragraph(sentence_count: 40),
-                           admin_id: admin.id)
-  project.categories << Category.all.sample
-  project.categories << Category.all.sample
-  i+=1
-  puts "seed projects"
+
+#categories initialization
+category_names = ["Institutionnel", "Communication", "Documentaire", "Animalier", "Animation", "Portrait", "Expérimental", "Pellicule", "Drone"]
+
+for i in 0..8 do
+  category = Category.create(
+    category_name: category_names[i]
+  )
+end
+puts "categories initalized"
+
+
+#projects initialization
+project_titles=[i]
+project_descriptions=[i]
+project_contents=[i]
+
+for i in 0..15 do
+  project = Project.create(
+    title: project_titles[i],
+    description: project_descriptions[i],
+    content: project_contents[i],
+    admin_id: Admin.all.sample
+  )
+  project.categories << Category.all.sample(2)
+end
+puts "projects initialized"
+
  
+#articles initialization
+article_titles=[i]
+article_descriptions=[i]
+article_contents=[i]
+
+for i in 0..15 do
+  article = Article.create(
+    title: article_titles[i],
+    description: article_descriptions[i],
+    content: article_contents[i],
+    admin_id: Admin.all.sample
+  )
 end
+puts "articles initialized"
 
-j=0
-10.times do
-  article = Article.create(title: project_names[j],
-                           description: "Un article sur la faune et la flore du Jura par l'association Oeil de Biche.",
-                           content: Faker::Lorem.paragraph(sentence_count: 80),
-                           admin_id: admin.id)
-  j+=1
-  puts "seed articles"
+#contacts initialization
+contact1 = Contact.create(
+  email: "jacqueline@mail.com",
+  name: "Jacqueline Poulet",
+  status: "Particulier",
+  subject: "Bravo pour votre travail !",
+  content: "Je tenais à vous féliciter personnellement pour ce travail magnifique que vous fournissez chaque jour afin de nous faire goûter à tous une nature un peu plus belle chaque jour. Continuez comme ça! Et ne lâchez rien face au loby chasseur qui crève vos pneus tous les mois ! On les aura!"
+)
+
+contact2 = Contact.create(
+  email: "robert@mail.com",
+  name: "Robert Chasseur",
+  status: "Professionnel",
+  subject: "Des comptes à régler !",
+  content: "Je tenais à vous dire que votre venus dans le Jura sur nos terres de chasse ne nous enchante guère... Les projections et débats que vous organisez n'intéresse personne de toutes façons! Atention le plomb ça part vite!!!!!!!!"
+)
+
+puts "contacts initialized"
+
+
+#events initialization
+event_titles=[i]
+event_descriptions=[i]
+event_contents=[i]
+event_dates=[i]
+event_locations=[i]
+
+for i in 0..15 do
+  event = Event.create(
+    title: event_titles[i],
+    description: event_descriptions[i],
+    content: event_contents[i],
+    date: event_dates[i],
+    location: event_locations,
+    admin_id: Admin.all.sample
+  )
 end
-
-contact = Contact.create(email: "jacqueline@mail.com",
-                         name: "Jacqueline",
-                         status: ["Particulier","Professionnel"].sample,
-                         subject: "Bravo pour votre travail !",
-                         content: Faker::Lorem.paragraph(sentence_count: 5)
-                          )
-puts "seed 1 message"
+puts "events initialized"
 
 
-l=0
-10.times do
-  event = Event.create(title: event_names[l],
-                        description: "Une actualité qui valorise et respecte l'environnement.",
-                        content: Faker::Lorem.paragraph(sentence_count: 40),
-                        date: rand(t1..t2),
-                        location: Faker::Address.city,
-                        admin_id: admin.id)
-  l+=1
-  puts "seed events"
-end
+
+    v.image.attach(io: File.open('/path/to/file'), filename: 'file.jpg')
+    
