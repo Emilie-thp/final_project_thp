@@ -26,6 +26,7 @@
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div>
             <h6><strong>Catégorie(s) de la réalisation<strong></h6>
+            
             <%i = 0 %>
             <% @categories.each do |category| %>
             <div class="form-group">
@@ -33,10 +34,9 @@
                 <%= f.check_box :categories, {class:"custom-control-input", id:"customCheck#{i}", multiple: true}, category.id, nil %>
                   <label class="custom-control-label" for= <%="customCheck#{i}"%>><%=category.category_name%></label>
               </div>
+              <% i = i + 1 %>
+              <%end%>
             </div>
-            <% i = i + 1 %>
-             <%end%>
-            
             <br>
             <%= f.submit "Enregistrer les informations",  class: 'btn btn-ice home-header-font' %>
              <% end %>   
