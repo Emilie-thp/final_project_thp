@@ -1,36 +1,48 @@
-<div class="container-fluid">
+<div class="wrapper gray-wrapper">
+  <% if @article.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <p class="home-header-font">Nous n'avons pas réussi à créer l'article pour la (ou les) raison(s) suivante(s) :</p>
+      <ul>
+        <% @article.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+  </div>
 
- <!-- Breadcrumbs-->
- <ol class="breadcrumb">
-  <li class="breadcrumb-item active">Mise à jour de l'article</li>
-  <li class="breadcrumb-item">
-    <%= link_to 'Revenir à toutes les articles', dashboard_articles_path %>
-  </li>
-</ol>
+  <div class="container-fluid">
 
-</div>
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active">Mise à jour de l'article</li>
+      <li class="breadcrumb-item">
+        <%= link_to 'Revenir à tous les articles', dashboard_articles_path %>
+      </li>
+    </ol>
 
-<div class="container inner">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2 class="section-title text-center">Article "<%=@article.title%>"
-        <br>Ajout de la photo et mise à jour des informations</h2>
+  </div>
+
+  <div class="container inner">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <h2 class="section-title text-center">Article "<%= @article.title %>"
+          <br>Ajout de la photo et mise à jour des informations</h2>
 
         <!-- Button for published / unpublished -->
         <center>
-          <% if @article.published then %>
-          <%= link_to 'Prévisualiser', @article, class: 'btn btn-ice home-header-font' %>
-          <%= link_to 'Mettre hors ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-danger home-header-font' %>
-          <%elsif @article.published == false && @article.image.attached? == false then %>
-          <div class="tooltip-dashboard">
+          <% if @article.published %>
+            <%= link_to 'Prévisualiser', dashboard_article_path(@article), class: 'btn btn-ice home-header-font' %>
+            <%= link_to 'Mettre hors ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-danger home-header-font' %>
+          <% elsif @article.published == false && @article.image.attached? == false then %>
+            <div class="tooltip-dashboard">
+              <%= link_to 'Prévisualiser', dashboard_article_path(@article), class: 'btn btn-ice home-header-font' %>
+              <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success disabled home-header-font' %>
+              <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
+            </div>
+          <% else %>
             <%= link_to 'Prévisualiser', @article, class: 'btn btn-ice home-header-font' %>
-            <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success disabled home-header-font' %>
-            <span class="tooltiptext-dashboard">Ajouter une photo de miniature avant de mettre en ligne !</span>
-          </div>
-          <%else%>
-          <%= link_to 'Prévisualiser', @article, class: 'btn btn-ice home-header-font' %>
-          <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success home-header-font' %>
-          <%end%>
+            <%= link_to 'Mettre en ligne', update_published_dashboard_article_path(@article), method: :put, class: 'btn btn-success home-header-font' %>
+          <% end %>
         </center>
         <!-- /Button for published / unpublished -->
 
@@ -38,39 +50,41 @@
 
         <!-- Form for active_storage -->
         <center>
-          <%if @article.image.attached?%>
-          <p class="home-header-font">Photo de miniature de l'article </p>
-          <%= image_tag @article.image.variant(resize: "150x150") %> <br><br>
-          <%= link_to 'Changer de photo', dashboard_article_image_path(@article), method: :delete, class: 'btn btn-ice home-header-font' %>
-          <%else%>
-          <p class="home-header-font">Ajouter une photo pour la miniature</p>
-          <%= form_tag dashboard_article_images_path(@article), multipart: true do %>
-          <%= file_field_tag :image %>
-          <%= submit_tag "Ajouter", class: 'btn btn-ice home-header-font' %>
+          <% if @article.image.attached? %>
+            <p class="home-header-font">Photo de miniature de l'article </p>
+            <%= image_tag @article.image.variant(resize: "150x150") %> <br><br>
+            <%= link_to 'Changer de photo', dashboard_article_image_path(@article), method: :delete, class: 'btn btn-ice home-header-font' %>
+          <% else %>
+            <p class="home-header-font">Ajouter une photo pour la miniature</p>
+            <%= form_tag dashboard_article_images_path(@article), multipart: true do %>
+              <%= file_field_tag :image %>
+              <%= submit_tag "Ajouter", class: 'btn btn-ice home-header-font' %>
+            <% end %>
+            <p>=== Veuillez choisir une miniature pour cet article ===</p>
           <% end %>
-          <p>=== Veuillez choisir une miniature pour cet article ===</p>
-          <%end%>
         </center>
         <!-- /Form for active_storage -->
 
         <div class="space90"></div>
 
-
-        <p class="home-header-font">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous et cliquer sur Enregistrer les modifications</p>
+        <p class="home-header-font">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous
+          et cliquer sur Enregistrer les modifications.</p>
         <div class="space10"></div>
         <h6><strong>Titre de l'article</strong></h6>
         <%= form_with model: @article, url: dashboard_article_path, local: true do |f| %>
-        <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
-        <div class="space30"></div>
-        <h6><strong>Sous-titre</strong></h6>
-        <%= f.text_area :description, class:"form-control", placeholder: "Description" %>
-        <div class="space30"></div>
-        <h6><strong>Contenu</strong></h6>
-        <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
-        <div class="space30"></div><br/>
-        <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
+          <%= f.text_field :title, class: "form-control", placeholder: "Titre" %>
+          <div class="space30"></div>
+          <h6><strong>Sous-titre</strong></h6>
+          <%= f.text_area :description, class: "form-control", placeholder: "Description" %>
+          <div class="space30"></div>
+          <h6><strong>Contenu</strong></h6>
+          <%= f.text_area :content, class: "form-control", placeholder: "Contenu", :rows => 6 %>
+          <div class="space30"></div>
+          <br/>
+          <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
         <% end %>
         <div class="space30"></div>
       </div>
     </div>
   </div>
+</div>

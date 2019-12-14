@@ -46,6 +46,8 @@ module Dashboard
 
     def update
       @project = Project.find(params[:id])
+      @categories = Category.all
+      @current_categories = @project.categories
       if @project.update(project_params)
 				#unless the case when one admin does not check any box
         unless params[:project][:categories] == nil

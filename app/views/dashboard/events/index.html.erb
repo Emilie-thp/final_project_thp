@@ -9,109 +9,113 @@
   </ol>
 
   <!-- DataTables Example -->
-    <div class="card mb-3">
-      <div class="card-header">
-        <h2 class="section-title text-center">Mes actualités</h2>
-        <p align ="center"><%= link_to  "Créer une nouvelle actualité", new_dashboard_event_path, class:"btn btn-ice home-header-font wrap-title" %></p>
-      </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Titre</th>
-                    <th>Auteur</th>
-                    <th>Créée le</th>
-                    <th>Modifiée le</th>
-                    <th>Statut</th>
-                    <th>Voir</th>
-                    <th>Editer</th>
-                    <th>Supprimer</th>
-                  </tr>
-                </thead>
-                  <% if @current_events.length == 0 %>
-                    <tr>
-                      <td colspan="8"><center>Vous n'avez pas encore créé d'actualité ! Lancez-vous en cliquant sur le bouton "Créer une nouvelle actualité"</center></td>
-                  <%else%>
-                  <% @events.each do |event| %>
-                    <%if event.admin == current_admin%>
-                    <tr id ="event<%= event.id%>">
-                      <td><%= event.title %>  </td>
-                      <td><%= event.admin.pseudo %> </td>
-                      <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
-                      <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
-
-                      <%if event.published %>
-                        <td class="online-bold">En ligne</td>
-                      <%else%>
-                        <td class="offline-fade">Hors ligne</td>
-                      <%end%>
-
-                      <td><%= link_to dashboard_event_path(event.id) do %>
-                          <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
-                        <%end%>
-                      </td>
-                      <td><%= link_to edit_dashboard_event_path(event.id) do %>
-                          <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
-                        <%end%>
-                      </td>
-                      <td><%= link_to dashboard_event_path(event.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette actualité à tout jamais ?"}, method: :delete, remote: true do %>
-                          <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
-                        <%end%>
-                      </td>
-                    </tr>
-                  <%else%>
-                  <%end%>
-                <%end%>
-              <%end%>
-            </table>
-          </div>
-        </div>
-      </div>
-
-       <!-- DataTables Example -->
-    <div class="card mb-3">
-      <div class="card-header">
-        <h2 class="section-title text-center">Les autres actualités</h2>
-      </div>
-        <div class="card-body">
-          <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
-                  <tr>
-                    <th>Titre</th>
-                    <th>Auteur</th>
-                    <th>Créée le</th>
-                    <th>Modifiée le</th>
-                    <th>Statut</th>
-                    <th>Voir</th>
-                  </tr>
-                </thead>
-                  <% @events.each do |event| %>
-                    <%unless event.admin == current_admin%>
-                    <tr>
-                      <td><%= event.title %>  </td>
-                      <td><%= event.admin.pseudo %> </td>
-                      <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
-                      <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
-
-                      <%if event.published %>
-                        <td class="online-bold">En ligne</td>
-                      <%else%>
-                        <td class="offline-fade">Hors ligne</td>
-                      <%end%>
-
-                      <td><%= link_to dashboard_event_path(event.id) do %>
-                          <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
-                        <%end%>
-                      </td>
-                    </tr>
-                  <%else%>
-                  <%end%>
-                <%end%>
-            </table>
-          </div>
-        </div>
-      </div>
-
+  <div class="card mb-3">
+    <div class="card-header">
+      <h2 class="section-title text-center">Mes actualités</h2>
+      <p align="center"><%= link_to "Créer une nouvelle actualité", new_dashboard_event_path, class: "btn btn-ice home-header-font wrap-title" %></p>
     </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Créée le</th>
+            <th>Modifiée le</th>
+            <th>Statut</th>
+            <th>Voir</th>
+            <th>Editer</th>
+            <th>Supprimer</th>
+          </tr>
+          </thead>
+          <% if @current_events.length == 0 %>
+            <tr>
+              <td colspan="8">
+                <center>Vous n'avez pas encore créé d'actualité ! Lancez-vous en cliquant sur le bouton "Créer une
+                  nouvelle actualité."
+                </center>
+              </td>
+          <% else %>
+            <% @events.each do |event| %>
+              <% if event.admin == current_admin %>
+                <tr id="event<%= event.id %>">
+                  <td><%= event.title %>  </td>
+                  <td><%= event.admin.pseudo %> </td>
+                  <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
+                  <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
+
+                  <% if event.published %>
+                    <td class="online-bold">En ligne</td>
+                  <% else %>
+                    <td class="offline-fade">Hors ligne</td>
+                  <% end %>
+
+                  <td><%= link_to dashboard_event_path(event.id) do %>
+                      <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
+                    <% end %>
+                  </td>
+                  <td><%= link_to edit_dashboard_event_path(event.id) do %>
+                      <i class="fa fa-edit fa-2x d-flex justify-content-center green"></i>
+                    <% end %>
+                  </td>
+                  <td><%= link_to dashboard_event_path(event.id), data: {confirm: "Êtes-vous sûr.e de vouloir supprimer cette actualité à tout jamais ?"}, method: :delete, remote: true do %>
+                      <i class="fa fa-trash fa-2x d-flex justify-content-center red"></i>
+                    <% end %>
+                  </td>
+                </tr>
+              <% else %>
+              <% end %>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- DataTables Example -->
+  <div class="card mb-3">
+    <div class="card-header">
+      <h2 class="section-title text-center">Les autres actualités</h2>
+    </div>
+    <div class="card-body">
+      <div class="table-responsive">
+        <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+          <thead>
+          <tr>
+            <th>Titre</th>
+            <th>Auteur</th>
+            <th>Créée le</th>
+            <th>Modifiée le</th>
+            <th>Statut</th>
+            <th>Voir</th>
+          </tr>
+          </thead>
+          <% @events.each do |event| %>
+            <% unless event.admin == current_admin %>
+              <tr>
+                <td><%= event.title %>  </td>
+                <td><%= event.admin.pseudo %> </td>
+                <td><%= event.created_at.strftime("%d/%m/%Y") %> </td>
+                <td><%= event.updated_at.strftime("%d/%m/%Y") %> </td>
+
+                <% if event.published %>
+                  <td class="online-bold">En ligne</td>
+                <% else %>
+                  <td class="offline-fade">Hors ligne</td>
+                <% end %>
+
+                <td><%= link_to dashboard_event_path(event.id) do %>
+                    <i class="fa fa-search fa-2x d-flex justify-content-center"></i>
+                  <% end %>
+                </td>
+              </tr>
+            <% else %>
+            <% end %>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,22 +1,24 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
-  <div class="container-fluid">
-    <div style="background-color : #ffffff">
+<head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+</head>
+<div class="container-fluid">
+  <div style="background-color : #ffffff">
       <span style="columns: #000000;">
         <body>
           <table cellspacing="0" cellpadding="0" border="0" width="100%">
             <br>
             <h3> Bienvenue <%= @admin.pseudo %> !</h3>
-            <p>Tu viens de créer un compte administrateur sur le site <%= link_to "oeil-de-biche.herokuapp.com", "https://oeil-de-biche.herokuapp.com/", :target => "_blank"  %> avec l'e-mail suivant : <%= @admin.email %>.</p>
-            <p>Pour accéder à ton espace administrateur, connecte-toi à <%= link_to "ton compte", "https://oeil-de-biche.herokuapp.com/admins/sign_in", :target => "_blank"  %>.</p>
+            <p>Tu viens de créer un compte administrateur sur le site <%= link_to "oeil-de-biche.herokuapp.com", "https://oeil-de-biche.herokuapp.com/", :target => "_blank" %>
+              avec l'e-mail suivant : <%= @admin.email %>.</p>
+            <p>Pour accéder à ton espace administrateur, connecte-toi à <%= link_to "ton compte", "https://oeil-de-biche.herokuapp.com/admins/sign_in", :target => "_blank" %>
+              .</p>
             <p> Bonne journée !</p>
             <br>
           </table>
         </body>
       </span>
-    </div>
   </div>
+</div>
 </html>    

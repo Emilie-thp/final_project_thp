@@ -7,38 +7,38 @@
       <div class="row isotope items">
         <% @projects.limit(3).each do |project| %>
           <div class="item post grid-sizer col-md-6 col-lg-4">
-            <% if project.thumbnail.attached?%>
+            <% if project.thumbnail.attached? %>
               <figure class="overlay overlay4 img-fixed-size">
                 <%= link_to project_path(project.id) do %>
-                <%= image_tag project.thumbnail, alt:'miniature' %>
-                <figcaption class="d-flex text-left">
-                  <div class="align-self-end mt-auto">
-                    <h2 class="post-title"><%=project.title%></h2>
-                  </div>
-                </figcaption>
-                <%end%>
+                  <%= image_tag project.thumbnail, alt: 'miniature' %>
+                  <figcaption class="d-flex text-left">
+                    <div class="align-self-end mt-auto">
+                      <h2 class="post-title"><%= project.title %></h2>
+                    </div>
+                  </figcaption>
+                <% end %>
               </figure>
-            <%else%>
+            <% else %>
               <figure class="overlay overlay4 img-fixed-size">
                 <%= link_to project_path(project.id) do %>
-                <%= image_tag('realisations/fond.jpg', alt:'') %>
-                <figcaption class="d-flex text-left">
-                  <div class="align-self-end mt-auto">
-                    <h2 class="post-title"><%=project.title%></h2>
-                  </div>
-                </figcaption>
-                <%end%>
+                  <%= image_tag('realisations/fond.jpg', alt: '') %>
+                  <figcaption class="d-flex text-left">
+                    <div class="align-self-end mt-auto">
+                      <h2 class="post-title"><%= project.title %></h2>
+                    </div>
+                  </figcaption>
+                <% end %>
               </figure>
-            <%end%>
+            <% end %>
           </div>
           <!--/.post -->
-        <%end%>
+        <% end %>
       </div>
       <!-- /.row -->
     </div>
     <!-- /.blog -->
     <div class="space20"></div>
-    <div class="text-center"><%= link_to "En savoir plus", projects_path, class:"btn btn-full-rounded btn-ice" %></div>
+    <div class="text-center"><%= link_to "En savoir plus", projects_path, class: "btn btn-full-rounded btn-ice" %></div>
   </div>
   <!-- /.container -->
 </div>

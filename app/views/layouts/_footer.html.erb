@@ -22,20 +22,20 @@
                 <li>
                   <%= link_to "https://www.facebook.com/oeil.debiche.739" do %>
                     <i class="fa fa-facebook fa-2x"></i>
-                  <%end%>
+                  <% end %>
                 </li>
                 <li>
                   <%= link_to "https://www.youtube.com/channel/UCj3lkjkrwOtzATmIH1OOmGw?disable_polymer=true" do %>
                     <i class="fa fa-youtube fa-2x"></i>
-                  <%end%>
+                  <% end %>
                 </li>
               </ul>
               <div class="space40"></div>
               <% if admin_signed_in? %>
-                  <%= link_to 'Se déconnecter', destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
-              <%else%>
-                  <%= link_to "Espace admin", new_admin_session_path, class:"btn btn-ice" %>
-                <%end%>
+                <%= link_to 'Se déconnecter', destroy_admin_session_path, method: :delete, class: 'btn btn-danger' %>
+              <% else %>
+                <%= link_to "Espace admin", new_admin_session_path, class: "btn btn-ice" %>
+              <% end %>
             </div>
             <!-- /.widget -->
           </div>
@@ -44,7 +44,7 @@
             <div class="widget">
               <h3 class="widget-title footer-bold">Contact</h3>
               <address class="mb-0">
-                <%= link_to "bamby.boutique.thp@gmail.com", new_contact_path, class:'nocolor' %><br/>
+                <%= link_to "bamby.boutique.thp@gmail.com", new_contact_path, class: 'nocolor' %><br/>
                 06.70.54.32.11
               </address>
             </div>
@@ -58,7 +58,7 @@
     </div>
     <!-- /.row -->
     <div class="space40"></div>
-    <p class="text-center">© 2019 Oeil de Biche Production. Tous droits réservés.</p>
+    <p class="text-center">© 2019 Oeil de Biche. Tous droits réservés.</p>
   </div>
   <!-- /.container -->
 </footer>

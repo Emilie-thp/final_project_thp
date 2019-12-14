@@ -1,50 +1,50 @@
 <ul class="sidebar navbar-nav no-letter-spacing">
   <li class="nav-item">
-    <%= link_to dashboard_admin_path(current_admin), class:"nav-link no-letter-spacing" do %>
-        <i class="fa fa-home"></i>
-          <span>Accueil</span>
-    <%end%>
+    <%= link_to dashboard_admin_path(current_admin), class: "nav-link no-letter-spacing" do %>
+      <i class="fa fa-home"></i>
+      <span>Accueil</span>
+    <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to dashboard_projects_path, class:"nav-link no-letter-spacing" do %>
-        <i class="fa fa-image"></i>
-          <span>Réalisations</span>
-    <%end%>
+    <%= link_to dashboard_projects_path, class: "nav-link no-letter-spacing" do %>
+      <i class="fa fa-image"></i>
+      <span>Réalisations</span>
+    <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to dashboard_categories_path, class:"nav-link no-letter-spacing" do %>
+    <%= link_to dashboard_categories_path, class: "nav-link no-letter-spacing" do %>
       <i class="fa fa-hashtag"></i>
-        <span>Catégories</span>
-    <%end%>
+      <span>Catégories</span>
+    <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to dashboard_articles_path, class:"nav-link no-letter-spacing" do %>
+    <%= link_to dashboard_articles_path, class: "nav-link no-letter-spacing" do %>
       <i class="fa fa-edit"></i>
-        <span>Articles</span>
-    <%end%>
+      <span>Articles</span>
+    <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to dashboard_events_path, class:"nav-link no-letter-spacing" do %>
+    <%= link_to dashboard_events_path, class: "nav-link no-letter-spacing" do %>
       <i class="fa fa-calendar"></i>
-        <span>Actualités</span>
-    <%end%>
+      <span>Actualités</span>
+    <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to dashboard_contacts_path, class:"nav-link no-letter-spacing" do %>
+    <%= link_to dashboard_contacts_path, class: "nav-link no-letter-spacing" do %>
       <i class="fa fa-envelope"></i>
-        <span>Messages reçus</span>
-    <%end%>
-  </li>
-    <li class="nav-item">
-    <%= link_to edit_dashboard_admin_path(current_admin), class:"nav-link no-letter-spacing" do %>
-      <i class="fa fa-user-circle"></i>
-        <span>Mes informations</span>
-    <%end%>
+      <span>Messages reçus</span>
+    <% end %>
   </li>
   <li class="nav-item">
-    <%= link_to edit_admin_registration_path, class:"nav-link no-letter-spacing" do %>
+    <%= link_to edit_dashboard_admin_path(current_admin), class: "nav-link no-letter-spacing" do %>
+      <i class="fa fa-user-circle"></i>
+      <span>Mes informations</span>
+    <% end %>
+  </li>
+  <li class="nav-item">
+    <%= link_to edit_admin_registration_path, class: "nav-link no-letter-spacing" do %>
       <i class="fa fa-unlock-alt"></i>
-        <span>Mon compte</span>
-    <%end%>
+      <span>Mon compte</span>
+    <% end %>
   </li>
 </ul>
