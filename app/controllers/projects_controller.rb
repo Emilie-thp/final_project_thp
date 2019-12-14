@@ -3,14 +3,14 @@ class ProjectsController < ApplicationController
   def index
     @categories = Category.all
 
-    #if condition is here to sort projects out regarding their categories (params :category in view)
+    #condition to sort projects out depending on their categories (thanks to a params :category in view index)
     if params.has_key?(:category)
-    	@category = Category.find_by(category_name: params[:category])
-    	@projects = @category.projects.where(published:true)
+      @category = Category.find_by(category_name: params[:category])
+      @projects = @category.projects.where(published: true).order('created_at DESC')
     else
- 		  @projects = Project.where(published:true)
- 		end
- 		
+      @projects = Project.where(published: true).order('created_at DESC')
+    end
+
   end
 
   def show
