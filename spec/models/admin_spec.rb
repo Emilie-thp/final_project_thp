@@ -2,7 +2,8 @@ require 'rails_helper'
 
 RSpec.describe Admin, type: :model do
   
-  before(:each) do @admin = Admin.create(first_name: "John", last_name: "Doe", pseudo: "jojo", speciality: "Carpenter", email: "wwww@mail.com", password:"gagaga", display:"false", description:"bonhomme")
+  before(:each) do 
+    @admin = Admin.create(first_name: "John", last_name: "Doe", pseudo: "jojo", speciality: "Carpenter", email: "wwww@mail.com", password:"gagaga", display:"false", description:"bonhomme")
   end
 
   context "validation" do
@@ -19,6 +20,7 @@ RSpec.describe Admin, type: :model do
         expect(invalid_admin.errors.include?(:pseudo)).to eq(true)
       end
     end
+  
   end
 
   context "associations" do
@@ -29,5 +31,7 @@ RSpec.describe Admin, type: :model do
         expect(@admin.projects.include?(project)).to eq(true)
       end
     end
+  
   end   
+
 end
