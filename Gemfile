@@ -83,3 +83,5 @@ gem "table_print"
  gem 'image_processing', '~> 1.2'
 gem "pry", "~> 0.12.2"
 
+
+gem "rubocop", "~> 0.77.0"
