@@ -4,7 +4,7 @@
   <ol class="breadcrumb">
     <li class="breadcrumb-item active">Mise à jour de la réalisation</li>
     <li class="breadcrumb-item">
-    <%= link_to 'Revenir à toutes les réalisations', dashboard_projects_path %></a>
+    <%= link_to 'Revenir à toutes les réalisations', dashboard_projects_path %>
     </li>
   </ol>
 
@@ -42,20 +42,20 @@
       <center>
         <%if @project.thumbnail.attached?%>
           <% if @project.published %>
-            <p class="lead text-center">Photo de miniature de la réalisation </p>
+            <p class="home-header-font">Photo de miniature de la réalisation </p>
             <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
             <div class="tooltip-dashboard">
               <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font disabled' %>
               <span class="tooltiptext-dashboard">Merci de mettre votre réalisation hors ligne avant de changer la miniature !</span>
             </div>
           <%else%>
-            <p class="lead text-center">Photo de miniature de la réalisation </p>
+            <p class="home-header-font">Photo de miniature de la réalisation </p>
               <%= image_tag @project.thumbnail.variant(resize: "150x150") %> <br><br>
               <%= link_to 'Changer de photo', dashboard_project_thumbnail_path(@project), method: :delete, class: 'btn btn-ice home-header-font' %>
           <%end%>
 
         <%else%>
-          <p class="lead text-center">Ajouter une photo pour la miniature</p>
+          <p class="home-header-font">Ajouter une photo pour la miniature</p>
             <%= form_tag dashboard_project_thumbnails_path(@project), multipart: true do %>
             <%= file_field_tag :thumbnail %>
             <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
@@ -66,7 +66,7 @@
         <div class="space60"></div>
 
         <%if @project.pictures.length == 0%>
-          <p class="lead text-center">Ajouter les photos du diaporama (3 minimum pour une belle mise en page ou aucune !)</p>
+          <p class="home-header-font">Ajouter les photos du diaporama (3 minimum pour une belle mise en page ou aucune !)</p>
             <%= form_tag dashboard_project_pictures_path(@project), multipart: true do %>
             <%= file_field_tag 'pictures[]', :multiple => true%>
             <%= submit_tag "Ajouter",  class: 'btn btn-ice home-header-font' %>
@@ -74,8 +74,8 @@
           <p>=== Veuillez choisir au minimum 3 photos pour le diaporama de cette réalisation - à sélectionner 1 par 1 ===</p>
 
         <%else%>
-          <p class="lead text-center">Les photos du diaporama (3 minimum pour une belle mise en page ou aucune !) </p>
-        
+          <p class="home-header-font">Les photos du diaporama (3 minimum pour une belle mise en page ou aucune !) </p>
+
         <table>
           <% @project.pictures.each do |image| %>
           <tr>
@@ -100,7 +100,7 @@
 
         <div class="space90"></div>
 
-      <p class="lead text-center">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous et cliquer sur Enregistrer les modifications</p>
+      <p class="home-header-font">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous et cliquer sur Enregistrer les modifications</p>
         <div class="space10"></div>
           <h6><strong>Titre de la réalisation</strong></h6>
             <%= form_with model: @project, url: dashboard_project_path, local: true do |f| %>
@@ -112,9 +112,9 @@
           <h6><strong>Contenu</strong></h6>
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
         <div class="space30"></div>
-          
+
         <h6><strong>Catégorie</strong></h6>
-          <%if @project.categories.length > 0 %>  
+          <%if @project.categories.length > 0 %>
             <p>La (ou les) catégorie(s) actuelle(s) de la réalisations sont :</p>
             <ul class="nav nav-tabs justify-content-center">
               <%@current_categories.each do |cat|%>
@@ -124,7 +124,7 @@
         <div class="space10"></div>
 
           <p>Avant de cliquer sur le bouton "Enregistrer les modifications", merci d'indiquer à nouveau les catégories que vous souhaitez appliquer à cette réalisation en les sélectionnant ci-dessous. Vous pouvez également en choisir des nouvelles.</p>
-        
+
         <%else%>
           <p>Vous n'avez pas encore sélectionné de catégories pour cette réalisation, vous pouvez le faire en cochant une ou plusieurs cases ci-dessous.</p>
         <%end%>
@@ -140,7 +140,7 @@
               </div>
             </div>
           <% i = i + 1 %>
-         <%end%> 
+         <%end%>
           <div class="space30"></div>
             <%= f.submit "Enregistrer les modifications", class: 'btn btn-ice home-header-font' %>
           <% end %>
