@@ -1,12 +1,12 @@
 <div class="container-fluid">
 
- <!-- Breadcrumbs-->
- <ol class="breadcrumb">
-  <li class="breadcrumb-item active">Mise à jour de la catégorie</li>
-  <li class="breadcrumb-item">
-    <%= link_to 'Revenir à toutes les catégories', dashboard_categories_path %>
-  </li>
-</ol>
+  <!-- Breadcrumbs-->
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active">Mise à jour de la catégorie</li>
+    <li class="breadcrumb-item">
+      <%= link_to 'Revenir à toutes les catégories', dashboard_categories_path %>
+    </li>
+  </ol>
 
 </div>
 
@@ -14,17 +14,18 @@
 <div class="container inner">
   <div class="row">
     <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2 class="section-title text-center">Mise à jour de la catégorie "<%=@category.category_name%>"</h2>
+      <h2 class="section-title text-center">Mise à jour de la catégorie "<%= @category.category_name %>"</h2>
 
       <p class="home-header-font">Pour modifier la catégorie, remplir le formulaire ci-dessous</p>
       <div class="space30"></div>
-      <h6><b>Nom de la catégorie<b></h6>
-        <%= form_with model: @category, url: dashboard_category_path, local: true do |f| %>
-        <%= f.text_field :category_name, class:"form-control", placeholder: "Titre" %>
+      <h6><b>Nom de la catégorie</b></h6>
+      <%= form_with model: @category, url: dashboard_category_path, local: true do |f| %>
+        <%= f.text_field :category_name, class: "form-control", placeholder: "Titre" %>
         <div class="space30"></div>
 
         <%= f.submit "Modifer la catégorie", class: 'btn btn-ice home-header-font' %>
-        <% end %>
+      <% end %>
 
-      </div>
     </div>
+  </div>
+</div>
