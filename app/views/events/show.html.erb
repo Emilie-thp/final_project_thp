@@ -8,12 +8,15 @@
             <div class="post">
               <h1 class="post-title text-center"><%=@event.title%></h1>
               <div class="space10"></div>
-              <p class="text-center"><strong><%=@event.description%></strong></p>
+              <p class="text-center">
+                <strong><%=@event.description%></strong>
+              </p>
               <div class="space10"></div>
               <div class="post-content">
                 <p class="text"><%=simple_format(@event.content)%></p>
                 <div class="space10"></div>
-                <div class="meta tags mb-10 text-center title-color"><span class="date"><%=@event.date%></span><span class="comments"><%=@event.location%></span></div>
+                <div class="meta tags mb-10 text-center title-color">
+                  <span class="date"><%=@event.date%></span><span class="comments"><%=@event.location%></span></div>
               </div>
               <!-- /.post-content -->
             </div>
