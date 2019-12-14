@@ -23,7 +23,6 @@ Rails.application.routes.draw do
     resources :events do
       # to define another update methode (dedicated to online / offline mode)
       member do    
-        patch :update_published
         put :update_published
       end
     end
@@ -34,7 +33,6 @@ Rails.application.routes.draw do
       resources :thumbnails, only: [:create, :destroy]
       # to define another update methode (dedicated to online / offline mode)
       member do
-        patch :update_published
         put :update_published
       end
     end
@@ -44,7 +42,6 @@ Rails.application.routes.draw do
       resources :images, only: [:create, :destroy]
       # to define another update methode (dedicated to online / offline mode)
       member do
-        patch :update_published
         put :update_published
       end
     end
