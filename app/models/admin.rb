@@ -4,15 +4,15 @@ class Admin < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :pseudo, presence: true, length: { minimum: 2}
+  validates :pseudo, presence: true, length: {minimum: 2}
 
   has_many :projects
   has_many :articles
   has_many :events
   has_one_attached :avatar
-  
+
   after_create :welcome_send
-  
+
   def welcome_send
     AdminMailer.welcome_email(self).deliver_now
   end
