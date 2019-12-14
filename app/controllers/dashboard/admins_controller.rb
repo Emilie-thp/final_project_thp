@@ -1,14 +1,14 @@
 module Dashboard
 
   class AdminsController < ApplicationController
-  	before_action :authenticate_admin!
+    before_action :authenticate_admin!
     before_action :secret, only: [:show]
 
     def show
-    	@admin = Admin.find(params[:id])
+      @admin = Admin.find(params[:id])
     end
 
-    def edit 
+    def edit
       @admin = Admin.find(params[:id])
     end
 
@@ -28,12 +28,13 @@ module Dashboard
       params.require(:admin).permit(:first_name, :last_name, :pseudo, :description, :speciality, :display)
     end
 
+    #method to prevent one admin to go on another admin's dashboard
     def secret
       @admin = Admin.find(params[:id])
-        unless @admin.id == current_admin.id
-          flash[:notice] = "Vous n'avez pas les droits d'accès au dashboard d'un autre admin!"
-          redirect_to admin_path(current_admin)
-        end
+      unless @admin.id == current_admin.id
+        flash[:notice] = "Vous n'avez pas les droits d'accès au dashboard d'un autre admin!"
+        redirect_to admin_path(current_admin)
+      end
     end
 
   end
