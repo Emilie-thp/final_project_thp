@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <div class="container-fluid">
+    <div style="background-color : #ffffff">
+      <span style="columns: #000000;">
+        <body>
+          <table cellspacing="0" cellpadding="0" border="0" width="100%">
+            <br>
+            <h3> Nouveau message du formulaire de contact !</h3>
+            <p>Tu viens de recevoir un message via le site <%= link_to "oeil-de-biche.herokuapp.com", "https://oeil-de-biche.herokuapp.com/", :target => "_blank" %>.</p>
+            <br>
+            <p>Aperçu du message:</p>
+            <p>Le <%=@contact.created_at.strftime("%d/%m/%Y") %>, <%= @contact.name %> vous a contacté avec l'objet suivant : "<strong><%= @contact.subject %></strong>".</p>
+            <p>Il s'agit d'un <strong><%= @contact.status %></strong> et son courriel est <strong><%= @contact.email %></strong></p>
+            <br>
+            <p>Voici le détail de son message :</p>
+            <p>"<strong><%=simple_format(@contact.content)%></strong>"</p>
+            <br>
+            <p> Merci de lui répondre rapidement par email à l'adresse suivante : <strong><%= @contact.email %></strong>.</p>
+            <br>
+            <p>Pour accéder à ton espace administrateur, connecte-toi à <%= link_to "ton compte", "https://oeil-de-biche.herokuapp.com/admins/sign_in", :target => "_blank"  %>.</p>
+            <p> Bonne journée !</p>
+            <br>
+          </table>
+        </body>
+      </span>
+    </div>
+  </div>
+</html>

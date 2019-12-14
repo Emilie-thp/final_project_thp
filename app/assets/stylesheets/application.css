@@ -10,56 +10,200 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
  *= require_self
+ *= require_tree .
  *= require style
+ *= require style/css/bootstrap.min
  *= require font-awesome
- *= require style/css/color/aqua
- *= require style/css/color/blue
- *= require style/css/color/brown
- *= require style/css/color/forest
- *= require style/css/color/green
  *= require style/css/color/ice
- *= require style/css/color/navy
- *= require style/css/color/oasis
- *= require style/css/color/orange
- *= require style/css/color/pink
- *= require style/css/color/purple
- *= require style/css/color/red
- *= require style/css/color/salmon
- *= require style/css/color/sky
- *= require style/css/color/teal
- *= require style/css/color/yellow
- *= require style/css/font/font2
- *= require style/css/font/font3
- *= require style/css/font/font4
- *= require style/css/font/font5
- *= require style/css/font/font6
  *= require style/css/plugins
  *= require style/revolution/css/layers
  *= require style/revolution/css/navigation
  *= require style/revolution/css/settings
- *= require style/revolution/css/settings-source
- *= require style/revolution/css/tp-color-picker
- *= require style/revolution/css/navigation-skins/ares
- *= require style/revolution/css/navigation-skins/custom
- *= require style/revolution/css/navigation-skins/dione
- *= require style/revolution/css/navigation-skins/erinyen
- *= require style/revolution/css/navigation-skins/gyges
- *= require style/revolution/css/navigation-skins/hades
- *= require style/revolution/css/navigation-skins/hebe
- *= require style/revolution/css/navigation-skins/hephaistos
- *= require style/revolution/css/navigation-skins/hermes
- *= require style/revolution/css/navigation-skins/hesperiden
- *= require style/revolution/css/navigation-skins/metis
- *= require style/revolution/css/navigation-skins/persephone
- *= require style/revolution/css/navigation-skins/uranus
- *= require style/revolution/css/navigation-skins/zeus
  *= require style/revolution/fonts/font-awesome/css/font-awesome
  *= require style/revolution/fonts/font-awesome/css/font-awesome.min
- *= require style/revolution/fonts/pe-icon-7-stroke/css/helper
- *= require style/revolution/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke
  *= require style/revolution/revolution-addons/filmstrip/css/revolution.addon.filmstrip
  *= require style/revolution/revolution-addons/typewriter/css/typewriter
  *= require style/type/icons
+ *= require dashboard/stylesheets/sb-admin
  */
+
+ @import url(//db.onlinewebfonts.com/c/0e979bd4a3c1c6ac788ed57ac569667f?family=revicons);
+
+ @font-face {font-family: "revicons"; src: url("//db.onlinewebfonts.com/t/0e979bd4a3c1c6ac788ed57ac569667f.eot"); src: url("//db.onlinewebfonts.com/t/0e979bd4a3c1c6ac788ed57ac569667f.eot?#iefix") format("embedded-opentype"), url("//db.onlinewebfonts.com/t/0e979bd4a3c1c6ac788ed57ac569667f.woff2") format("woff2"), url("//db.onlinewebfonts.com/t/0e979bd4a3c1c6ac788ed57ac569667f.woff") format("woff"), url("//db.onlinewebfonts.com/t/0e979bd4a3c1c6ac788ed57ac569667f.ttf") format("truetype"), url("//db.onlinewebfonts.com/t/0e979bd4a3c1c6ac788ed57ac569667f.svg#revicons") format("svg"); }
+
+ #contenu {
+   min-height: 100VH;
+ }
+
+ * {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.bold-text {
+  font-weight: bold !important;
+  font-size: 1.1em !important;
+  margin-left: 7px !important;
+}
+
+.footer-bold {
+  font-weight: bold !important;
+}
+
+.border-top-line {
+  border: none !important;
+}
+
+.text-color {
+  color: white !important;
+}
+
+.resize-home-titles {
+  font-size: 1em !important;
+}
+
+.home-header-font {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.wrap-title {
+  white-space:normal !important;
+}
+
+.hover-color:hover {
+  background-color: #9eb9d7 !important;
+  color: black !important;
+}
+
+.title-color {
+  color: #9eb9d7 !important;
+}
+
+.dashboard-btn {
+  border-radius: 30px;
+  margin-top: 7px !important;
+}
+
+.back-link {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.dashboard-text {
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 0.8em !important;
+  text-transform: uppercase !important;
+  padding-top: 1px !important;
+  padding-bottom: 1px !important;
+}
+
+@media (min-width: 320px) and (max-width: 991px) {
+  .dashboard-text{
+    margin: 7px !important;
+    padding-left: 10px !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1240px) {
+  .container{
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 991px) and (max-width: 1121px) {
+  .img-brand{
+    width: 150% !important;
+  }
+  .navbar-left{
+    margin-right: -119px !important;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+  .list-group-margin{
+    margin-left: -100px !important;
+    margin-right: -90px !important;
+  }
+}
+
+figure.mb-project {
+  margin: 0px !important;
+}
+
+figure.img-fixed-size {
+  width: 350px;
+  height: 234px;
+}
+
+figure.swiper-resize {
+  height: 382px !important;
+}
+
+.client-logo-resize {
+  width: 160px !important;
+  height: 160px !important;
+}
+
+.online-bold {
+  font-weight: bold !important;
+}
+
+.offline-fade {
+  color: darkgray !important;
+}
+
+.nav-tabs {
+  padding-bottom: 10px !important;
+}
+
+.dashboard-text:hover {
+  background-color: grey !important;
+  color: white !important;
+}
+
+.list-group-item.active {
+  background-color: #9eb9d7 !important;
+  border-color: #9eb9d7 !important;
+}
+
+.more-inverse {
+  color: #9eb9d7 !important;
+}
+
+.more-inverse:hover {
+  color: #aaa !important;
+}
+
+.margin-picture {
+  margin: 10px;
+}
+
+.tooltip-dashboard {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip-dashboard .tooltiptext-dashboard {
+  visibility: hidden;
+  width: 190px;
+  background-color: #e91d1d;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip-dashboard:hover .tooltiptext-dashboard {
+  visibility: visible;
+}
+
+.red {
+  color:red;
+}
+
+.green {
+  color:green;
+}

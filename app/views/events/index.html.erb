@@ -1,0 +1,32 @@
+<div class="wrapper light-wrapper">
+  <div class="container inner">
+    <h1 class="heading mb-2 text-center">Nos actualités</h1>
+    <h2 class="section-title text-center">Projections, débats, ateliers, expositions, tables rondes...</h2>
+    <div class="space50"></div>
+    <div class="blog grid grid-view boxed newspaper">
+      <div class="row isotope">
+        <% @events.each do |event| %>
+          <div class="item post grid-sizer col-md-6 col-lg-4">
+            <div class="box box-border">
+              <h2 class="post-title"><%= event.title %></h2>
+              <div class="post-content text-left">
+                <p><%= event.description %></p>
+                <div class="meta"><span class="date"><%= event.date %></span>
+                  <br><span class="comments"><%= event.location %></span>
+                </div>
+                <%= link_to "En savoir plus", event_path(event.id), class: "more more-inverse" %>
+              </div>
+              <!-- /.post-content -->
+            </div>
+            <!-- /.box -->
+          </div>
+          <!-- /.post -->
+        <% end %>
+        <!-- /.row -->
+      </div>
+      <!-- /.blog -->
+    </div>
+  </div>
+  <!-- /.container -->
+</div>
+<!-- /.wrapper -->

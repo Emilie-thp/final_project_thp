@@ -1,48 +1,20 @@
 class ProjectsController < ApplicationController
+
   def index
+    @categories = Category.all
 
-    @project = Project.all
-
-  end
-
-  def new
-    @project = Project.new
-
-  end
-
-  def create
-  
-   @project = Project.create(project_params)
+    #condition to sort projects out depending on their categories (thanks to a params :category in view index)
+    if params.has_key?(:category)
+      @category = Category.find_by(category_name: params[:category])
+      @projects = @category.projects.where(published: true).order('created_at DESC')
+    else
+      @projects = Project.where(published: true).order('created_at DESC')
+    end
 
   end
 
   def show
-
-    @project = Project.find(params[:id])
-
-  end
-
-  def edit
-  
     @project = Project.find(params[:id])
   end
-
-  def update
-  
-    @project = Project.find(params[:id])
-
-  end
-
-  def destroy
-    @project = Project.find(params[:id])
-
-  end
-
-  private
-
-  def project_params
-    params.require(:project).permit(:title, :description, :context, :date, :published)
-  end
-
 
 end

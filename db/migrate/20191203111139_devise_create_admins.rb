@@ -9,6 +9,9 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
       t.string :first_name,         null: false, default: ""
       t.string :last_name,          null: false, default: ""
       t.string :pseudo,             null: false, default: ""
+      t.string :speciality,         null: false, default: ""
+      t.string :description,        null: false, default: ""
+      t.boolean :display,           null: false, default: false
 
       ## Recoverable
       t.string   :reset_password_token
@@ -31,7 +34,7 @@ class DeviseCreateAdmins < ActiveRecord::Migration[5.2]
       # t.string   :unconfirmed_email # Only if using reconfirmable
 
       ## Lockable
-      # t.integer  :failed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
+      # t.integer  :fFaker::Lorem.paragraph(sentence_count: 5ailed_attempts, default: 0, null: false # Only if lock strategy is :failed_attempts
       # t.string   :unlock_token # Only if unlock strategy is :email or :both
       # t.datetime :locked_at
 

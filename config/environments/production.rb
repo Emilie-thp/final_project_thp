@@ -39,7 +39,7 @@ Rails.application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for NGINX
 
   # Store uploaded files on the local file system (see config/storage.yml for options)
-  config.active_storage.service = :local
+  config.active_storage.service = :amazon
 
   # Mount Action Cable outside main process or domain
   # config.action_cable.mount_path = nil
@@ -93,6 +93,6 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 
   # Redirection for Devise
-  config.action_mailer.default_url_options = { :host => 'oeil-de-biche-production.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'oeil-de-biche.herokuapp.com' }
 
 end

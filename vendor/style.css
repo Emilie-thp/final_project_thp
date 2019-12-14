@@ -521,7 +521,7 @@ hr.double {
     display: none !important;
 }
 .rounded,
-figure.rounded span.bg, 
+figure.rounded span.bg,
 figure.rounded img,
 .rounded.overlay-info figcaption {
     border-radius: 5px !important;
@@ -718,8 +718,8 @@ img.octagon {
     letter-spacing: -0.5px;
     font-weight: 700;
     color: #404040;
-    padding-top: 13px;
-    padding-bottom: 13px;
+    /* padding-top: 13px;
+    padding-bottom: 13px; */
 }
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active,
@@ -736,7 +736,7 @@ img.octagon {
     min-width: 160px;
     padding: 0;
     margin: 0;
-    background-color: #151515;
+    background-color: #151515 !important;
     border: 0;
     border-radius: 0
 }
@@ -1678,7 +1678,7 @@ ol {
     border-bottom: 0;
 }
 /*-----------------------------------------------------------------------------------*/
-/*	11. SLIDER REVOLUTION 
+/*	11. SLIDER REVOLUTION
 /*-----------------------------------------------------------------------------------*/
 .rev_slider_wrapper {
     left: 0px;
@@ -1891,7 +1891,7 @@ ol {
     text-align: center;
 }
 /*-----------------------------------------------------------------------------------*/
-/*	15. BLOCK	
+/*	15. BLOCK
 /*-----------------------------------------------------------------------------------*/
 .block-wrapper.arrowed .block:first-child {
     position: relative;
@@ -4760,7 +4760,7 @@ pre {
     position: relative;
 }
 .image-wrapper:not(.box-shadow):not(*:root) {
-    -webkit-transform: translateZ(0)	
+    -webkit-transform: translateZ(0)
 }
 .image-wrapper:not(.mobile) {
     background-attachment: fixed !important
@@ -5626,9 +5626,9 @@ list-blue i {
 /*-----------------------------------------------------------------------------------*/
 /*	52. BOX LAYOUT
 /*-----------------------------------------------------------------------------------*/
-@media (min-width: 1240px) { 
+@media (min-width: 1240px) {
 	.box-layout {
-	    position: relative;    
+	    position: relative;
 	}
 	.box-layout .content-wrapper,
 	.box-layout footer:not(.blockquote-footer) {
@@ -5756,8 +5756,8 @@ list-blue i {
     }
     .navbar.fixed .navbar-nav .nav-link,
     .navbar.fixed .navbar-hamburger {
-        padding-top: 20px;
-        padding-bottom: 20px;
+        /* padding-top: 20px;
+        padding-bottom: 20px; */
     }
     .navbar.fixed .navbar-brand {
         padding-top: 0;
@@ -5794,7 +5794,7 @@ list-blue i {
     .navbar-nav .nav-link {
         font-size: 14px;
         padding-left: 30px;
-        padding-right: 30px;
+        /* padding-right: 30px; */
         color: rgba(255, 255, 255, 1) !important;
         padding-top: 10px;
         padding-bottom: 10px;
@@ -5902,11 +5902,11 @@ list-blue i {
     .image-block-wrapper .box {
         padding: 60px 50px;
     }
-    [class*="table-responsive"] > thead > tr > th, 
+    [class*="table-responsive"] > thead > tr > th,
     [class*="table-responsive"] > tbody > tr > th,
-    [class*="table-responsive"] > tfoot > tr > th, 
+    [class*="table-responsive"] > tfoot > tr > th,
     [class*="table-responsive"] > thead > tr > td,
-    [class*="table-responsive"] > tbody > tr > td, 
+    [class*="table-responsive"] > tbody > tr > td,
     [class*="table-responsive"] > tfoot > tr > td {
         white-space: nowrap
     }
@@ -6059,7 +6059,7 @@ list-blue i {
         margin-bottom: 50px !important;
     }
     .sidebar {
-        padding-left: 15px !important
+        /* padding-left: 15px !important */
     }
     .sidebar.left-sidebar {
         padding-right: 15px !important;

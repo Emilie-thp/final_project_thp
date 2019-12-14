@@ -4,10 +4,48 @@ Rails.application.routes.draw do
 
   devise_for :admins
 
-  resources :articles
-  resources :projects
-  resources :project_categories
-  resources :categories
+#routes for visitors' website
+  resources :articles, only: [:index, :show]
+  resources :events, only: [:index, :show]
+  resources :projects, only: [:index, :show]
+  resources :contacts, only: [:new, :create]
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+#routes for admins' dashboard
+  namespace :dashboard do
+
+    resources :categories
+    resources :contacts, only: [:index, :show]
+
+    resources :admins, only: [:show, :edit, :update] do
+      #for active_storage 
+      resources :avatars
+    end
+    resources :events do
+      # to define another update methode (dedicated to online / offline mode)
+      member do    
+        put :update_published
+      end
+    end
+
+    resources :projects do
+      #for active_storage 
+      resources :pictures, only: [:create, :destroy]
+      resources :thumbnails, only: [:create, :destroy]
+      # to define another update methode (dedicated to online / offline mode)
+      member do
+        put :update_published
+      end
+    end
+
+    resources :articles do
+      #for active_storage 
+      resources :images, only: [:create, :destroy]
+      # to define another update methode (dedicated to online / offline mode)
+      member do
+        put :update_published
+      end
+    end
+    
+  end
+
 end

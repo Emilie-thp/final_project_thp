@@ -1,0 +1,106 @@
+<div class="wrapper gray-wrapper">
+  <% if @admin.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <p class="home-header-font">Nous n'avons pas réussi à éditer votre profil pour la raison suivante :</p>
+      <ul>
+        <% @admin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+  </div>
+
+<!-- /.wrapper -->
+<div class="wrapper light-wrapper">
+  <div class="container inner">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <h2 class="section-title mb-40 text-center">Compléter votre profil</h2>
+        <div class="space40"></div>
+
+        <!-- Form for active_storage -->
+        <center>
+          <% if @admin.avatar.attached? %>
+            <p class="lead text-center">Votre photo de profil</p>
+            <%= image_tag @admin.avatar.variant(resize: "150x150") %> <br><br>
+            <%= link_to 'Changer de photo', dashboard_admin_avatar_path(@admin), method: :delete, class: 'btn btn-ice home-header-font' %>
+          <% else %>
+            <p class="lead text-center">Ajouter une photo de profil</p>
+
+            <%= form_tag dashboard_admin_avatars_path(@admin), multipart: true do %>
+              <%= file_field_tag :avatar %>
+              <%= submit_tag "Ajouter", class: 'btn btn-ice home-header-font' %>
+            <% end %>
+            <p>=== Veuillez choisir une photo de profil ===</p>
+          <% end %>
+        </center>
+        <!-- /Form for active_storage -->
+
+        <div class="space90"></div>
+
+        <p class="lead text-center">Pour modifier les informations, remplir le formulaire ci-dessous</p>
+        <div class="space30"></div>
+
+        <%= form_with model: @admin, url: dashboard_admin_path, local: true do |f| %>
+
+          <div class="form-group row">
+            <label class="col-sm-3">Prénom</label>
+            <div class="col-sm-9">
+              <%= f.text_field :first_name, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3">Nom</label>
+            <div class="col-sm-9">
+              <%= f.text_field :last_name, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3">Pseudo</label>
+            <div class="col-sm-9">
+              <%= f.text_field :pseudo, class: "form-control", placeholder: "Pseudo" %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3">Description</label>
+            <div class="col-sm-9">
+              <%= f.text_area :description, class: "form-control" %>
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label class="col-sm-3">Spécialité</label>
+            <div class="col-sm-9">
+              <%= f.text_field :speciality, class: "form-control" %>
+            </div>
+          </div>
+          <div class="space30"></div>
+
+          <p> Figurer dans la partie Équipe de la page d'accueil (photo de profil obligatoire!)</p>
+
+          <div class="custom-control custom-radio">
+            <%= f.radio_button("display", true, {id: "customRadio1", class: "custom-control-input"}) %>
+            <label class="custom-control-label" for="customRadio1">Oui</label>
+          </div>
+          <div class="custom-control custom-radio">
+            <%= f.radio_button("display", false, {id: "customRadio2", class: "custom-control-input"}) %>
+            <label class="custom-control-label" for="customRadio2">Non</label>
+          </div>
+
+          <div class="space30"></div>
+          <div class="text-center">
+            <%= f.submit "Éditer mon profil", class: "btn btn-full-rounded btn-ice" %>
+          </div>
+        <% end %>
+
+      </div>
+    </div>
+    <!-- /column -->
+  </div>
+  <!-- /.row -->
+</div>
+<!-- /.container -->
+</div>

@@ -1,0 +1,47 @@
+<div class="container-fluid">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="section-title mb-40 text-center">Message de <%= @contact.name %></h2>
+      <p align="center"><%= link_to "Retourner aux messages", dashboard_contacts_path, class: "btn btn-ice home-header-font" %></p>
+    </div>
+
+    <div class="card-body">
+      <div class="card-text">
+        <div class="wrapper light-wrapper">
+          <div class="container">
+            <div class="row">
+              <table class="table">
+                <tbody>
+                <tr>
+                  <td>Envoyé le :</td>
+                  <td><%= @contact.created_at.strftime("%d/%m/%Y à  %Hh%M") %></td>
+                </tr>
+                <tr>
+                  <td>Envoyé par :</td>
+                  <td><%= @contact.name %></td>
+                </tr>
+                <tr>
+                  <td>Adresse mail :</td>
+                  <td><%= @contact.email %></td>
+                </tr>
+                <tr>
+                  <td>Profil :</td>
+                  <td><%= @contact.status %></td>
+                </tr>
+                <tr>
+                  <td>Objet du message :</td>
+                  <td><%= @contact.subject %></td>
+                </tr>
+                <tr>
+                  <td>Contenu du message :</td>
+                  <td><%= @contact.content %></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
