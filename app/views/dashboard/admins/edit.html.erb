@@ -1,3 +1,15 @@
+<div class="wrapper gray-wrapper">
+  <% if @admin.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <p class="home-header-font">Nous n'avons pas réussi à éditer votre profil pour la raison suivante :</p>
+      <ul>
+        <% @admin.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+  </div>
+
 <!-- /.wrapper -->
 <div class="wrapper light-wrapper">
   <div class="container inner">
@@ -91,3 +103,4 @@
   <!-- /.row -->
 </div>
 <!-- /.container -->
+</div>
