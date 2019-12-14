@@ -84,6 +84,14 @@
   margin-top: 7px !important;
 }
 
+.back-link {
+  display: flex;
+  justify-content: center;
+  z-index: auto;
+  margin-top: 50px;
+  align-items: : 100px;
+}
+
 .dashboard-text {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 0.8em !important;
