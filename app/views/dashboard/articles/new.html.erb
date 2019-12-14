@@ -14,7 +14,7 @@
       <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
         <h2 class="section-title text-center">Création d'un article</h2>
         <p class="home-header-font">Remplir le formulaire ci-dessous puis cliquer sur Enregistrer les informations pour
-          ajouter ensuite une photo.</p>
+          ajouter ensuite une photo</p>
         <div class="space40"></div>
         <h6><b>Titre de l'article</b></h6>
         <%= form_with model: @article, url: dashboard_articles_path, local: true do |f| %>
@@ -24,10 +24,10 @@
           <%= f.text_area :description, class: "form-control", placeholder: "Sous-titre (en 1 phrase)" %>
           <div class="space30"></div>
           <h6><b>Contenu</b></h6>
-          <%= f.text_area :content, class: "form-control", placeholder: "Contenu", :rows => 6 %>
+          <%= f.text_area :content, class: "form-control", placeholder: "Contenu" %>
           <div class="space30"></div>
 
-          <%= f.submit "Enregistrer les informations", class: 'btn btn-ice home-header-font' %>
+          <%= f.submit "Créer l'article", class: 'btn btn-ice home-header-font' %>
         <% end %>
         <div class="space30"></div>
       </div>

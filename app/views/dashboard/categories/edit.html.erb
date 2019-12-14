@@ -1,31 +1,44 @@
-<div class="container-fluid">
+<div class="wrapper gray-wrapper">
+  <% if @category.errors.any? %>
+    <div class="alert alert-danger" role="alert">
+      <p class="home-header-font">Nous n'avons pas réussi à créer la catégorie pour la raison suivante :</p>
+      <ul>
+        <% @category.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+  <% end %>
+  </div>
 
-  <!-- Breadcrumbs-->
-  <ol class="breadcrumb">
-    <li class="breadcrumb-item active">Mise à jour de la catégorie</li>
-    <li class="breadcrumb-item">
-      <%= link_to 'Revenir à toutes les catégories', dashboard_categories_path %>
-    </li>
-  </ol>
+  <div class="container-fluid">
 
-</div>
+    <!-- Breadcrumbs-->
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active">Mise à jour de la catégorie</li>
+      <li class="breadcrumb-item">
+        <%= link_to 'Revenir à toutes les catégories', dashboard_categories_path %>
+      </li>
+    </ol>
+
+  </div>
 
 
-<div class="container inner">
-  <div class="row">
-    <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
-      <h2 class="section-title text-center">Mise à jour de la catégorie "<%= @category.category_name %>"</h2>
+  <div class="container inner">
+    <div class="row">
+      <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
+        <h2 class="section-title text-center">Mise à jour de la catégorie "<%= @category.category_name %>"</h2>
 
-      <p class="home-header-font">Pour modifier la catégorie, remplir le formulaire ci-dessous</p>
-      <div class="space30"></div>
-      <h6><b>Nom de la catégorie</b></h6>
-      <%= form_with model: @category, url: dashboard_category_path, local: true do |f| %>
-        <%= f.text_field :category_name, class: "form-control", placeholder: "Titre" %>
+        <p class="home-header-font">Pour modifier la catégorie, remplir le formulaire ci-dessous</p>
         <div class="space30"></div>
+        <h6><b>Nom de la catégorie</b></h6>
+        <%= form_with model: @category, url: dashboard_category_path, local: true do |f| %>
+          <%= f.text_field :category_name, class: "form-control", placeholder: "Titre" %>
+          <div class="space30"></div>
 
-        <%= f.submit "Modifer la catégorie", class: 'btn btn-ice home-header-font' %>
-      <% end %>
+          <%= f.submit "Modifer la catégorie", class: 'btn btn-ice home-header-font' %>
+        <% end %>
 
+      </div>
     </div>
   </div>
 </div>

@@ -46,20 +46,20 @@
         <p class="home-header-font">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous
           et cliquer sur Enregistrer les modifications.</p>
         <div class="space10"></div>
-        <h6><b>Titre de l'actualité<b></h6>
+        <h6><b>Titre de l'actualité</b></h6>
         <%= form_with model: @event, url: dashboard_event_path, local: true do |f| %>
           <%= f.text_field :title, class: "form-control", placeholder: "Titre" %>
           <div class="space30"></div>
-          <h6><b>Description rapide<b></h6>
+          <h6><b>Description rapide</b></h6>
           <%= f.text_area :description, class: "form-control", placeholder: "Description (en 1 phrase)" %>
           <div class="space30"></div>
-          <h6><b>Détails de l'actualité<b></h6>
+          <h6><b>Détails de l'actualité</b></h6>
           <%= f.text_area :content, class: "form-control", placeholder: "Détails", :rows => 6 %>
           <div class="space30"></div>
-          <h6><b>Adresse de l'événement (si nécessaire)<b></h6>
+          <h6><b>Adresse de l'événement (si nécessaire)</b></h6>
           <%= f.text_area :location, class: "form-control", placeholder: "Ville" %>
           <div class="space30"></div>
-          <h6><b>Date et heure de l'événement (si nécessaire) <b></h6>
+          <h6><b>Date et heure de l'événement (si nécessaire) </b></h6>
           <%= f.text_field :date, class: "form-control", placeholder: "Date et heure" %>
           <br><br>
           <%= f.submit "Modifier les informations", class: 'btn btn-ice home-header-font' %>
@@ -68,3 +68,5 @@
         <div class="space30"></div>
       </div>
     </div>
+  </div>
+</div>
