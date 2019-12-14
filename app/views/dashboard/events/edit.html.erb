@@ -4,7 +4,7 @@
  <ol class="breadcrumb">
   <li class="breadcrumb-item active">Mise à jour de l'actualité</li>
   <li class="breadcrumb-item">
-    <%= link_to 'Revenir à toutes les actualités', dashboard_events_path %></a>
+    <%= link_to 'Revenir à toutes les actualités', dashboard_events_path %>
   </li>
 </ol>
 
@@ -29,7 +29,7 @@
 
           <div class="space60"></div>
 
-          <p class="lead text-center">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous et cliquer sur Enregistrer les modifications</p>
+          <p class="home-header-font">Si vous souhaitez modifier certaines informations, modifier le formulaire ci-dessous et cliquer sur Enregistrer les modifications</p>
           <div class="space10"></div>
           <h6><b>Titre de l'actualité<b></h6>
           <%= form_with model: @event, url: dashboard_event_path, local: true do |f| %>

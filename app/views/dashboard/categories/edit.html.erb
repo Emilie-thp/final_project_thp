@@ -4,7 +4,7 @@
  <ol class="breadcrumb">
   <li class="breadcrumb-item active">Mise à jour de la catégorie</li>
   <li class="breadcrumb-item">
-    <%= link_to 'Revenir à toutes les catégories', dashboard_categories_path %></a>
+    <%= link_to 'Revenir à toutes les catégories', dashboard_categories_path %>
   </li>
 </ol>
 
@@ -16,7 +16,7 @@
     <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
       <h2 class="section-title text-center">Mise à jour de la catégorie "<%=@category.category_name%>"</h2>
 
-      <p class="lead text-center">Pour modifier la catégorie, remplir le formulaire ci-dessous</p>
+      <p class="home-header-font">Pour modifier la catégorie, remplir le formulaire ci-dessous</p>
       <div class="space30"></div>
       <h6><b>Nom de la catégorie<b></h6>
         <%= form_with model: @category, url: dashboard_category_path, local: true do |f| %>
@@ -24,7 +24,7 @@
         <div class="space30"></div>
 
         <%= f.submit "Modifer la catégorie", class: 'btn btn-ice home-header-font' %>
-        <% end %>   
+        <% end %>
 
       </div>
     </div>

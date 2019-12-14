@@ -1,21 +1,21 @@
 <div class="wrapper gray-wrapper">
       <% if @project.errors.any? %>
       <div class="alert alert-danger" role="alert">
-        <p>Nous n avons pas réussi à créer le projet pour la (ou les) raison(s) suivante(s) :</p>
+        <p class="home-header-font">Nous n avons pas réussi à créer le projet pour la (ou les) raison(s) suivante(s) :</p>
           <ul>
             <% @project.errors.full_messages.each do |message| %>
               <li><%= message %></li>
             <% end %>
           </ul>
-        <% end %>	
+        <% end %>
       </div>
     <div class="container inner">
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
           <h2 class="section-title text-center">Création d'une réalisation</h2>
-          <p class="lead text-center">Remplir le formulaire ci-dessous puis cliquer sur Enregistrer les informations pour ajouter ensuite les photos</p>
+          <p class="home-header-font">Remplir le formulaire ci-dessous puis cliquer sur Enregistrer les informations pour ajouter ensuite les photos</p>
           <div class="space40"></div>
-          <h6><strong>Titre de la réalisation<strong></h6>   
+          <h6><strong>Titre de la réalisation<strong></h6>
             <%= form_with model: @project, url: dashboard_projects_path, local: true do |f| %>
             <%= f.text_field :title, class:"form-control", placeholder: "Titre" %>
             <div class="space30"></div>
@@ -26,7 +26,7 @@
             <%= f.text_area :content, class:"form-control", placeholder: "Contenu" %>
             <div class="space30"></div>
             <h6><strong>Catégorie(s) de la réalisation<strong></h6>
-            
+
             <%i = 0 %>
             <% @categories.each do |category| %>
             <div class="form-group">
@@ -39,9 +39,9 @@
               <%end%>
             <br>
             <%= f.submit "Enregistrer les informations",  class: 'btn btn-ice home-header-font' %>
-             <% end %>   
-             
-          <div class="space30"></div>          
+             <% end %>
+
+          <div class="space30"></div>
         </div>
     </div>
 </div>

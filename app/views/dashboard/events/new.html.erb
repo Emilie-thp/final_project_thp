@@ -1,7 +1,7 @@
 <div class="wrapper gray-wrapper">
       <% if @event.errors.any? %>
       <div class="alert alert-danger" role="alert">
-        <p>Nous n'avons pas réussi à créer l'actualité pour la (ou les) raison(s) suivante(s) :</p>
+        <p class="home-header-font">Nous n'avons pas réussi à créer l'actualité pour la (ou les) raison(s) suivante(s) :</p>
           <ul>
             <% @event.errors.full_messages.each do |message| %>
               <li><%= message %></li>
@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col-lg-10 offset-lg-1 col-xl-8 offset-xl-2">
           <h2 class="section-title text-center">Création d'une actualité</h2>
-          <p class="lead text-center">Remplir le formulaire ci-dessous</p>
+          <p class="home-header-font">Remplir le formulaire ci-dessous</p>
           <div class="space40"></div>
           <h6><b>Titre de l'actualité<b></h6>
             <%= form_with model: @event, url: dashboard_events_path, local: true do |f| %>
