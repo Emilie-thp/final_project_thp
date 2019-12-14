@@ -1,30 +1,30 @@
 <div class="content-wrapper">
   <!-- /.wrapper -->
   <div class="wrapper light-wrapper">
-    <p class="back-link"><%= link_to "<< Toutes les réalisations", projects_path, class:"more-inverse online-bold" %></p>
+    <p class="back-link"><%= link_to "Toutes les réalisations", projects_path, class: "more more-inverse online-bold" %></p>
     <div class="container container mt-20 mb-90">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="blog classic-view">
             <div class="post">
-              <h1 class="post-title text-center"><%=@project.title%></h1>
+              <h1 class="post-title text-center"><%= @project.title %></h1>
               <div class="space10"></div>
               <p class="text-center">
-                <strong><%=@project.description%></strong>
+                <strong><%= @project.description %></strong>
               </p>
               <div class="space10"></div>
-              <% if @project.thumbnail.attached?%>
+              <% if @project.thumbnail.attached? %>
                 <figure class="mb-40 text-center"><%= image_tag @project.thumbnail, alt: 'miniature' %></figure>
-              <%else%>
-                <figure class="mb-40 text-center"><%= image_tag('realisations/fond.jpg', class:'', alt:'') %></figure>
-              <%end%>
+              <% else %>
+                <figure class="mb-40 text-center"><%= image_tag('realisations/fond.jpg', class: '', alt: '') %></figure>
+              <% end %>
               <div class="post-content">
-                <p class="text"><%=simple_format(@project.content)%></p>
+                <p class="text"><%= simple_format(@project.content) %></p>
                 <div class="space10"></div>
                 <div class="meta tags mb-10 text-center">
                   <% @project.categories.each do |cat| %>
-                    <span class="title-color">#<%=cat.category_name%></span>
-                  <%end%>
+                    <span class="title-color">#<%= cat.category_name %></span>
+                  <% end %>
                 </div>
               </div>
               <!-- /.post-content -->
@@ -37,7 +37,7 @@
       </div>
       <!--/.row -->
     </div>
-    <%if @project.pictures.attached?%>
+    <% if @project.pictures.attached? %>
       <!-- diaporama pictures => each loop to do ! -->
       <div class="swiper-container-wrapper swiper-auto light-gallery" data-aos="fade">
         <div class="swiper-container text-center">
@@ -47,7 +47,7 @@
                 <div class="link-wrapper"></div>
                 <!-- .link-wrapper -->
               </div>
-            <%end%>
+            <% end %>
             <!-- .swiper-slide -->
           </div>
           <!-- .swiper-wrapper -->
@@ -59,9 +59,9 @@
         <div class="swiper-button-prev"></div>
       </div>
       <div class="space90"></div>
-    <%else%>
+    <% else %>
       <div class="space90"></div>
-    <%end%>
+    <% end %>
   </div>
   <!-- /.container -->
 </div>

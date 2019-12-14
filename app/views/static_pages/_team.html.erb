@@ -2,23 +2,24 @@
 <div id="team" class="wrapper dark-wrapper inverse-text">
   <div class="container inner">
     <h2 class="title-color color-default mb-20 text-center resize-home-titles">Notre équipe</h2>
-    <h2 class="section-title text-center">Des intervenants motivés et experts de leur sujet</h2>
+    <h2 class="section-title text-center">Des intervenants motivés et experts dans leur domaine</h2>
     <div class="space40"></div>
     <div class="swiper-container-wrapper swiper-col4" data-aos="fade">
       <div class="swiper-container text-center">
         <div class="swiper-wrapper">
-          <%@admins.each do |profile|%>
-            <%if profile.display && profile.avatar.attached? %>
+          <% @admins.each do |profile| %>
+            <% if profile.display && profile.avatar.attached? %>
               <div class="swiper-slide">
                 <figure class="mb-20"><%= image_tag profile.avatar %></figure>
-                <h5 class="mb-2 text-color"><%= profile.first_name%> <%=profile.last_name %></h5>
+                <h5 class="mb-2 text-color"><%= profile.first_name %> <%= profile.last_name %></h5>
                 <div class="meta title-color"><%= profile.speciality %></div>
                 <p class="text-color"><%= profile.description %></p>
               </div>
-            <%end%>
-          <%end%>
+            <% end %>
+          <% end %>
         </div>
       </div>
-    <div class="swiper-pagination gap-large"></div>
+      <div class="swiper-pagination gap-large"></div>
+    </div>
   </div>
 </div>
