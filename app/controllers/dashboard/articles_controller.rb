@@ -5,7 +5,7 @@ module Dashboard
 		before_action :secret, only: [:edit, :update, :destroy]
 
 		def index
-			@articles = Article.all
+			@articles = Article.all.order('created_at DESC')
  			@current_articles = Article.where(admin_id: current_admin.id)
 		end
 

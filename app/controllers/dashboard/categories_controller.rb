@@ -4,7 +4,7 @@ module Dashboard
     before_action :authenticate_admin!
 
 		def index
-			@categories = Category.all
+			@categories = Category.all.order('created_at DESC')
 		end
 
     def show
