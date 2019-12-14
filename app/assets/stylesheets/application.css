@@ -87,13 +87,7 @@
 .back-link {
   display: flex;
   justify-content: center;
-  z-index: auto;
   margin-top: 50px;
-  align-items: : 100px;
-}
-
-.mt-10 {
-  margin-top: 20px !important;
 }
 
 .dashboard-text {
