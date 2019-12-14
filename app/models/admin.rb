@@ -6,10 +6,10 @@ class Admin < ApplicationRecord
 
   validates :pseudo, presence: true, length: { minimum: 2}
 
-  has_many :projects
-  has_many :articles
-  has_many :events
-  has_one_attached :avatar
+  has_many :projects, dependent: :delete_all
+  has_many :articles, dependent: :delete_all
+  has_many :events, dependent: :delete_all
+  has_one_attached :avatar, dependent: :delete_all
   
   after_create :welcome_send
   
