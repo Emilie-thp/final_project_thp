@@ -84,6 +84,18 @@
   margin-top: 7px !important;
 }
 
+.back-link {
+  display: flex;
+  justify-content: center;
+  z-index: auto;
+  margin-top: 50px;
+  align-items: : 100px;
+}
+
+.mt-10 {
+  margin-top: 20px !important;
+}
+
 .dashboard-text {
   font-family: 'Montserrat', sans-serif !important;
   font-size: 0.8em !important;
@@ -120,14 +132,6 @@
     margin-right: -90px !important;
   }
 }
-
-/* Media Queries pour le block notre matériel sur la page d'accueil */
-/* @media (min-width: 320px) and (max-width: 991px) {
-  .list-group-margin{
-    margin-left: -100px !important;
-    margin-right: -90px !important;
-  }
-} */
 
 figure.mb-project {
   margin: 0px !important;

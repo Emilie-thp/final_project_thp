@@ -10,7 +10,7 @@
           <%@admins.each do |profile|%>
             <%if profile.display && profile.avatar.attached? %>
               <div class="swiper-slide">
-                <figure class="mb-20 swiper-resize"><%= image_tag profile.avatar %></figure>
+                <figure class="mb-20"><%= image_tag profile.avatar %></figure>
                 <h5 class="mb-2 text-color"><%= profile.first_name%> <%=profile.last_name %></h5>
                 <div class="meta title-color"><%= profile.speciality %></div>
                 <p class="text-color"><%= profile.description %></p>
