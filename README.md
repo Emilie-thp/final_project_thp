@@ -14,8 +14,6 @@ Through the navigation bar visitors can access the association profil: Who we ar
 Also they access to projects link where they will find all the projects created by the association members.
 A complete access to the events organized by the association, same for blog (Articles) pages, which is available through the navbar.
 
-However only administratons can create, edit or delete PROJECTS and ARTICLES.
-
 If they want to get in touch with administrators, visitors can complete and send a CONTACT form. The administrator webmaster will receive a warning email to let them know.
 
 -----
@@ -24,6 +22,7 @@ If they want to get in touch with administrators, visitors can complete and send
 
 *https://oeil-de-biche.herokuapp.com/admins/sign_up*
 
+First, adminsitrators have to click on the **ESPACE ADMIN button located in the FOOTER of the website**
 After completing a sign-in or a sign up form, administrators land on the website’s home page where they will find a “espace admin” button linking to a dashboard page where they will find a side bar with all the projects, articles, events, categories and messages sent by visitors through the contact form. Admins are allow to create, edit (add photos, save modifications, add categories to projects, etc...) and delete only the objects they created on their own, they can only have a view-access to the others members work. 
 A very nice feature, allow admins to put online or offline their work, saving the work done ,in case of pair-review of the content. In other words when the content is complete and corrected an admin can click on “mettre en ligne” to show it on the home page.
 
