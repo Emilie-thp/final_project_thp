@@ -6,24 +6,25 @@
     <div class="blog grid grid-view boxed newspaper">
       <div class="row isotope">
         <% @events.each do |event| %>
-        <div class="item post grid-sizer col-md-6 col-lg-4">
-          <div class="box box-border">
-            <h2 class="post-title"><%=event.title%></h2>
-            <div class="post-content text-left">
-              <p><%=event.description%></p>
-              <div class="meta"><span class="date"><%=event.date%></span>
-                <br><span class="comments"><%=event.location%></span></div>
-              <%= link_to "En savoir plus", event_path(event.id), class: "more more-inverse" %>
+          <div class="item post grid-sizer col-md-6 col-lg-4">
+            <div class="box box-border">
+              <h2 class="post-title"><%= event.title %></h2>
+              <div class="post-content text-left">
+                <p><%= event.description %></p>
+                <div class="meta"><span class="date"><%= event.date %></span>
+                  <br><span class="comments"><%= event.location %></span>
+                </div>
+                <%= link_to "En savoir plus", event_path(event.id), class: "more more-inverse" %>
+              </div>
+              <!-- /.post-content -->
             </div>
-            <!-- /.post-content -->
+            <!-- /.box -->
           </div>
-          <!-- /.box -->
-        </div>
-        <!-- /.post -->
-        <%end%>
-      <!-- /.row -->
+          <!-- /.post -->
+        <% end %>
+        <!-- /.row -->
       </div>
-    <!-- /.blog -->
+      <!-- /.blog -->
     </div>
   </div>
   <!-- /.container -->

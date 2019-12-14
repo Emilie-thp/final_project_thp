@@ -1,23 +1,24 @@
 <div class="content-wrapper">
   <!-- /.wrapper -->
   <div class="wrapper light-wrapper">
-    <p class="back-link"><%= link_to "<< Toutes les actualités", events_path, class:"more-inverse online-bold" %></p>
+    <p class="back-link"><%= link_to "<< Toutes les actualités", events_path, class: "more-inverse online-bold" %></p>
     <div class="container container mt-20 mb-90">
       <div class="row">
         <div class="col-lg-8 offset-lg-2">
           <div class="blog classic-view">
             <div class="post">
-              <h1 class="post-title text-center"><%=@event.title%></h1>
+              <h1 class="post-title text-center"><%= @event.title %></h1>
               <div class="space10"></div>
               <p class="text-center">
-                <strong><%=@event.description%></strong>
+                <strong><%= @event.description %></strong>
               </p>
               <div class="space10"></div>
               <div class="post-content">
-                <p class="text"><%=simple_format(@event.content)%></p>
+                <p class="text"><%= simple_format(@event.content) %></p>
                 <div class="space10"></div>
                 <div class="meta tags mb-10 text-center title-color">
-                  <span class="date"><%=@event.date%></span><span class="comments"><%=@event.location%></span></div>
+                  <h6 class="date"><%= @event.date %></h6>
+                  <h6 class="comments"><%= @event.location %></h6></div>
               </div>
               <!-- /.post-content -->
             </div>
