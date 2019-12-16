@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Admin, type: :model do
   
   before(:each) do 
-    @admin = Admin.create(first_name: "John", last_name: "Doe", pseudo: "jojo", speciality: "Carpenter", email: "wwww@mail.com", password:"gagaga", display:"false", description:"bonhomme")
+    @admin = Admin.create(first_name: "John", last_name: "Doe", pseudo: "jojo", speciality: "Carpenter", email: "wwww@mail.com", password:"gagaga7", display: "true" , description:"great photographer")
   end
 
   context "validation" do
@@ -27,8 +27,22 @@ RSpec.describe Admin, type: :model do
 
     describe "projects" do
       it "should have_many projets" do
-        project = Project.create(title: "Vidéoblog", description:"Foret", content:"chouette", admin: @admin)
+        project = Project.create(title: "Videoblog", description:"forest", content:"nicepics", admin: @admin, published: "true")
         expect(@admin.projects.include?(project)).to eq(true)
+      end
+    end
+
+    describe "articles" do
+      it "should have_many articles" do
+        article = Article.create(title: "Great photos", description:"Photos in winter", content:"Winter 2020", admin: @admin, published: "false")
+        expect(@admin.articles.include?(article)).to eq(true)
+      end
+    end
+
+    describe "events" do
+      it "should have_many events" do
+        event = Event.create(title: "Meeting on sunday", description:"Everybody can come", content:"Discover our associatios", admin: @admin, date: "12-22-2019", location: "Park", published: "false")
+        expect(@admin.events.include?(event)).to eq(true)
       end
     end
   
