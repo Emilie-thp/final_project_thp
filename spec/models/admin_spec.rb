@@ -31,6 +31,20 @@ RSpec.describe Admin, type: :model do
         expect(@admin.projects.include?(project)).to eq(true)
       end
     end
+
+    describe "articles" do
+      it "should have_many articles" do
+        article = Article.create(title: "Great photos", description:"Photos in winter", content:"Winter 2020", admin: @admin, published: "false")
+        expect(@admin.articles.include?(article)).to eq(true)
+      end
+    end
+
+    describe "events" do
+      it "should have_many events" do
+        event = Event.create(title: "Meeting on sunday", description:"Everybody can come", content:"Discover our associatios", admin: @admin, date: "12-22-2019", location: "Park", published: "false")
+        expect(@admin.events.include?(event)).to eq(true)
+      end
+    end
   
   end   
 
